@@ -35,6 +35,7 @@ return {
 				"emmet_ls",
 				"pyright",
 				"gopls",
+				"jsonls",
 				-- "tailwindcss", -- examples
 				-- "svelte",
 			},

@@ -8,10 +8,6 @@ return {
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
 
-		-- change color for arrows in tree to light blue
-		vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
-		vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
-
 		-- configure nvim-tree
 		nvimtree.setup({
 			view = {
@@ -23,6 +19,7 @@ return {
 				indent_markers = {
 					enable = true,
 				},
+				highlight_opened_files = "name", -- highlights all recently opened files
 				icons = {
 
 					glyphs = {
@@ -65,6 +62,14 @@ return {
 			},
 			git = {
 				ignore = false,
+				enable = true, -- enables the icons mentioned above for each file
+			},
+			disable_netrw = true,
+			hijack_netrw = true,
+			sync_root_with_cwd = true,
+			update_focused_file = {
+				enable = true,
+				update_root = false,
 			},
 		})
 

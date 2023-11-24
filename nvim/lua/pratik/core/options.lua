@@ -39,5 +39,5 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- turn off swapfile
 opt.swapfile = false
 
--- - is a  part of the word. 
+-- - is a  part of the word.
 opt.iskeyword:append("-")
