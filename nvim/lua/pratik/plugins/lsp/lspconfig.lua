@@ -58,7 +58,12 @@ return {
 
 			opts.desc = "Restart LSP"
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+			opts.desc = "View line diagnostic"
+			vim.keymap.set("n", "<leader>gl", vim.diagnostic.open_float, opts)
 		end
+
+		vim.diagnostic.config({ virtual_text = false }) -- disable virtual text that annoys the crap out of me.
 
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
