@@ -24,3 +24,7 @@ mv ~/.cache/nvim{,.bak}
 ```
 
 - Clone the repo
+
+```shell
+git clone git@github.com:xaaha/dev-env.git
+```
