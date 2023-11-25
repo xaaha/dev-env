@@ -6,6 +6,8 @@
   - Need this for telescope grep
 - Install Trash `brew install trash`
   - To avoid error "trash.cmd" is not executable in nvim-tree
+- Install fd. `brew install fd`
+  - venv selector needs fd to find the venv folder.
 - Git obviously
 - a [Nerd Font](https://www.nerdfonts.com/) **_(optional)_**
 
