@@ -26,3 +26,5 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 -- colorscheme
 keymap.set("n", "<leader>ui", ":colorscheme ", { desc = "Toggle colorscheme" }) -- Toggle colorscheme and installed themes easily
+keymap.set("n", "<leader>ud", ":colorscheme github_dark<CR>", { desc = "Toggle dark theme" })
+keymap.set("n", "<leader>ul", ":colorscheme github_light<CR>", { desc = "Toggle light theme" })
