@@ -19,6 +19,7 @@ return {
 				graphql = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
+				go = { "gofumpt", "golines", "goimports" },
 				-- svelte = { "prettier" }, -- add as needed
 			},
 			format_on_save = {
