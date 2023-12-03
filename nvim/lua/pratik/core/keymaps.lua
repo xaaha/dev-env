@@ -36,5 +36,5 @@ keymap.set("n", "<leader>ul", ":colorscheme github_light<CR>", { desc = "Toggle 
 ---------------------
 -- Move text up and down
 ---------------------
-keymap.set("n", "<C-k>", ":m .-2<CR>==", { noremap = true, silent = true }, { desc = "Move current line up" })
-keymap.set("n", "<C-j>", ":m .+1<CR>==", { noremap = true, silent = true }, { desc = "Move current line down" })
+keymap.set("n", "<Down>", ":m .+1<CR>==", { noremap = true, silent = true }, { desc = "Move current line down" })
+keymap.set("n", "<Up>", ":m .-2<CR>==", { noremap = true, silent = true }, { desc = "Move current line up" })
