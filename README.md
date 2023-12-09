@@ -27,6 +27,12 @@ mv ~/.cache/nvim{,.bak}
 
 - Clone the repo
 
+Make sure to clone & spread the repo inside the .config folder
+
 ```shell
-git clone git@github.com:xaaha/dev-env.git
+cd ~/.config # navigate to .config folder
+git init  # initialize it as a git repo
+git remote add origin git@github.com:xaaha/dev-env.git #  https://www.github.com/xaaha/dev-env
+git fetch
+git checkout -t origin/main
 ```
