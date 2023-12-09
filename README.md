@@ -36,3 +36,29 @@ git remote add origin git@github.com:xaaha/dev-env.git #  https://www.github.com
 git fetch
 git checkout -t origin/main
 ```
+
+## Zshrc Alias
+
+```.zshrc
+# common commands
+alias pn=pnpm
+alias rrr="clear"
+alias python=python3
+alias v="nvim"
+
+# navigation
+alias .="cd .."
+alias ..="cd ../.."
+alias ...="cd ../../.."
+alias ....="cd ../../../.."
+
+# common directories
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias dc="cd ~/Documents"
+alias pp="cd ~/Documents/Projects"
+alias home="cd ~"
+
+#Git
+alias gs="git status"
+```

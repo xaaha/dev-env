@@ -1,8 +1,6 @@
-configstore
-fish
-iterm2
-yarn
-zed
-Microsoft**
-.DS**
-darktable
+*
+!.gitignore
+!nvim/
+!iTermProfiles.json
+!README.md
+
