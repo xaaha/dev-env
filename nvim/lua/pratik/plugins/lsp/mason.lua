@@ -49,7 +49,8 @@ return {
 				"stylua", -- lua formatter
 				"isort", -- python formatter
 				"black", -- python formatter
-				"pylint", -- python linter
+				"ruff", -- python linter and formatter
+				"mypy", -- python type checker
 				"eslint_d", -- js linter
 				"gofumpt", -- go linters 👇
 				"goimports",
