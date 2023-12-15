@@ -62,3 +62,27 @@ alias home="cd ~"
 #Git
 alias gs="git status"
 ```
+
+## Useful Tools
+
+- Jump: To easily navigate between folders
+
+```shell
+brew install jump
+```
+
+After installation, put this in the `.zshrc`
+
+```shell
+eval "$(jump shell)"
+```
+
+- zshrc plugins
+
+```.zshrc
+plugins=(
+ git
+ zsh-autosuggestions
+ zsh-syntax-highlighting
+ )
+```
