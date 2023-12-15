@@ -58,7 +58,8 @@ return {
 				},
 			},
 			filters = {
-				custom = { ".DS_Store" },
+				custom = { ".DS_Store", ".git", ".mypy_cache", ".pytest_cache", "__pycache__" }, -- don't show
+				exclude = { ".gitignore" }, -- exclude from filter, means always show
 			},
 			git = {
 				ignore = false,

@@ -22,6 +22,14 @@ return {
 				},
 				vimgrep_arguments = {
 					"--hidden",
+					"rg",
+					"-L",
+					"--color=never",
+					"--no-heading",
+					"--with-filename",
+					"--line-number",
+					"--column",
+					"--smart-case",
 				},
 				mappings = {
 					i = {
@@ -45,7 +53,7 @@ return {
 		keymap.set(
 			"n",
 			"<leader>fa",
-			"<cmd>Telescope find_files hidden=true<cr>",
+			"<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>",
 			{ desc = "Find all files (including hidden) in cwd" }
 		)
 	end,
