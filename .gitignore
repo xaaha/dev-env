@@ -1,6 +1,7 @@
 *
 !.gitignore
 !nvim/
+!nvim/**
 !iTermProfiles.json
 !README.md
 
