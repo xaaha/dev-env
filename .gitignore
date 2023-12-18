@@ -4,4 +4,4 @@
 !nvim/**
 !iTermProfiles.json
 !README.md
-
+.DS_Store
