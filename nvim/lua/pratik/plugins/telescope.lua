@@ -21,8 +21,8 @@ return {
 					".git",
 				},
 				vimgrep_arguments = {
-					"--hidden",
 					"rg",
+					"--no-ignore",
 					"-L",
 					"--color=never",
 					"--no-heading",
