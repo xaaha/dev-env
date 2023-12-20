@@ -16,6 +16,7 @@ return {
 			},
 			-- change folder arrow icons
 			renderer = {
+				root_folder_label = false, -- disables the working folder file path
 				indent_markers = {
 					enable = true,
 				},
