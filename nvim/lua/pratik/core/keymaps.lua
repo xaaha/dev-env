@@ -33,32 +33,14 @@ keymap.set("n", "<leader>sd", "<cmd>vertical resize -5<CR>", { desc = "Decrease 
 ---------------------
 -- Colorscheme
 ---------------------
-
-local darkThemes = {
-	"github_dark",
-	"tokyonight-moon",
-	"tokyonight-night",
-	"tokyonight-storm",
-	"onedark",
-	"catppuccin-frappe",
-	"catppuccin-mocha",
-	"catppuccin-macchiato",
-}
-local darkThemeIndex = 1
--- Function to toggle dark themes
-function ToggleDarkTheme()
-	darkThemeIndex = darkThemeIndex % #darkThemes + 1
-	vim.cmd("colorscheme " .. darkThemes[darkThemeIndex])
-end
-
 keymap.set(
 	"n",
 	"<leader>ud",
-	[[:lua ToggleDarkTheme()<CR>]],
-	{ noremap = true, silent = false, desc = "Toggle dark theme" }
+	":colorscheme tokyonight-moon<CR>",
+	{ silent = false, desc = "Toggle default dark theme" }
 )
 keymap.set("n", "<leader>ui", ":colorscheme ", { desc = "Toggle colorscheme" }) -- Toggle colorscheme and installed themes easily
-keymap.set("n", "<leader>ul", ":colorscheme github_light<CR>", { desc = "Toggle light theme" })
+keymap.set("n", "<leader>ul", ":colorscheme github_light<CR>", { desc = "Toggle default light theme" })
 
 ---------------------
 -- Move text up and down
