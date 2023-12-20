@@ -56,5 +56,6 @@ return {
 			"<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>",
 			{ desc = "Find all files (including hidden) in cwd" }
 		)
+		keymap.set("n", "<leader>us", "<cmd>Telescope colorscheme<CR>", { desc = "Switch colorscheme with telescope" })
 	end,
 }
