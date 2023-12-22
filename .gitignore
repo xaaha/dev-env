@@ -3,5 +3,6 @@
 !nvim/
 !nvim/**
 !iTermProfiles.json
+!**iTerm2**
 !README.md
 .DS_Store
