@@ -10,7 +10,7 @@ return {
 			typescript = { "eslint_d" },
 			javascriptreact = { "eslint_d" },
 			typescriptreact = { "eslint_d" },
-			python = { "pylint" },
+			python = { "ruff" },
 			go = { "golangcilint" },
 			-- svelte = { "eslint_d" }, -- add others as needed
 		}
