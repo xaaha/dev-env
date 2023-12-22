@@ -26,7 +26,7 @@ return {
 					comments = { "italic" }, -- Change the style of comments
 					conditionals = { "italic" },
 					loops = {},
-					functions = {},
+					functions = { "italic" },
 					keywords = {},
 					strings = {},
 					variables = {},
@@ -52,27 +52,37 @@ return {
 					-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 				},
 			})
-			-- vim.cmd("colorscheme catppuccin")
+			vim.cmd("colorscheme catppuccin")
 		end,
+		priority = 1000,
+		lazy = false,
 	},
 	{
 		"projekt0n/github-nvim-theme",
-		priority = 1000,
-		lazy = false,
-		config = function()
-			vim.cmd("colorscheme github_light")
-		end,
+		-- priority = 1000,
+		-- lazy = false,
+		-- config = function()
+		-- 	vim.cmd("colorscheme github_light")
+		-- end,
 	},
 	{
 		"folke/tokyonight.nvim",
 	},
 	{
-		"shatur/neovim-ayu",
+		"shatur/neovim-ayu", -- light: ayu
 	},
 	{
 		"olimorris/onedarkpro.nvim",
 	},
 	{
 		"gbprod/nord.nvim",
+	},
+	{
+		"sainnhe/edge", -- mainly installed for edge light
+	},
+	{
+		"EdenEast/nightfox.nvim",
+		-- tons of variants. Especially, nordfox is great nord theme.
+		-- Day and Dawn fox for light themes
 	},
 }
