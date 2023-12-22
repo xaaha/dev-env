@@ -72,4 +72,7 @@ return {
 	{
 		"olimorris/onedarkpro.nvim",
 	},
+	{
+		"gbprod/nord.nvim",
+	},
 }
