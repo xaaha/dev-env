@@ -63,7 +63,28 @@ return {
 			vim.keymap.set("n", "<leader>gl", vim.diagnostic.open_float, opts)
 		end
 
-		vim.diagnostic.config({ virtual_text = false }) -- disable virtual text that annoys the crap out of me.
+		local border = {
+			{ "┌", "FloatBorder" },
+			{ "─", "FloatBorder" },
+			{ "┐", "FloatBorder" },
+			{ "│", "FloatBorder" },
+			{ "┘", "FloatBorder" },
+			{ "─", "FloatBorder" },
+			{ "└", "FloatBorder" },
+			{ "│", "FloatBorder" },
+		}
+
+		-- Add the border on hover and on signature help popup window
+		local handlers = {
+			["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+			["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+		}
+		vim.diagnostic.config({
+			virtual_text = false,
+			float = {
+				border = border,
+			},
+		}) -- disable virtual text that annoys the crap out of me.
 
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
@@ -79,24 +100,28 @@ return {
 		lspconfig["html"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 		})
 
 		-- configure typescript server with plugin
 		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 		})
 
 		-- configure css server
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 		})
 
 		-- configure jsonls language server
 		lspconfig["jsonls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 		})
 
 		-- configure graphql language server
@@ -104,6 +129,7 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+			handlers = handlers,
 		})
 
 		-- configure emmet language server
@@ -111,6 +137,7 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+			handlers = handlers,
 		})
 
 		-- configure python server
@@ -121,6 +148,7 @@ return {
 			-- https://github.com/microsoft/pyright/blob/main/docs/configuration.md#execution-environment-options
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 			settings = {
 				python = {
 					analysis = {
@@ -137,6 +165,7 @@ return {
 		lspconfig["gopls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 			filetypes = { "go", "gomod", "gowork", "gotmpl" },
 			cmd = { "gopls" },
 			root_dir = util.root_pattern("go.work", "go.mod", ".git"),
@@ -155,6 +184,7 @@ return {
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 			settings = { -- custom settings for lua
 				Lua = {
 					-- make the language server recognize "vim" global
