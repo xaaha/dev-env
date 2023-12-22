@@ -52,18 +52,16 @@ return {
 					-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 				},
 			})
-			vim.cmd("colorscheme catppuccin")
+			-- vim.cmd("colorscheme catppuccin-frappe")
 		end,
-		priority = 1000,
-		lazy = false,
 	},
 	{
 		"projekt0n/github-nvim-theme",
-		-- priority = 1000,
-		-- lazy = false,
-		-- config = function()
-		-- 	vim.cmd("colorscheme github_light")
-		-- end,
+		priority = 1000,
+		lazy = false,
+		config = function()
+			vim.cmd("colorscheme github_light")
+		end,
 	},
 	{
 		"folke/tokyonight.nvim",

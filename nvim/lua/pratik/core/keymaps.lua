@@ -36,7 +36,7 @@ keymap.set("n", "<leader>sd", "<cmd>vertical resize -5<CR>", { desc = "Decrease 
 keymap.set(
 	"n",
 	"<leader>ud",
-	":colorscheme catppuccin-frappe<CR>",
+	":colorscheme tokyonight-moon<CR>",
 	{ silent = false, desc = "Toggle default dark theme" }
 )
 keymap.set("n", "<leader>ui", ":colorscheme ", { desc = "Toggle colorscheme" }) -- Toggle colorscheme and installed themes easily
