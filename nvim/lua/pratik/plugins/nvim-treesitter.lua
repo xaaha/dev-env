@@ -44,6 +44,7 @@ return {
 					"gitignore",
 					"query",
 					"python",
+					"go",
 					--"svelte",
 				},
 				incremental_selection = {
