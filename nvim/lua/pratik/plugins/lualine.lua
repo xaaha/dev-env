@@ -7,9 +7,9 @@ return {
 
 		local colors = {
 			blue = "#65D1FF",
-			green = "#80debf",
-			violet = "#FF61EF",
-			yellow = "#FFDA7B",
+			green = "#06d6a0",
+			greenish = "#87bba2", -- visual mode
+			orange = "#fb8500",
 			red = "#FF4A4A",
 			fg = "#c3ccdc",
 			bg = "#112638",
@@ -29,12 +29,12 @@ return {
 				c = { bg = colors.bg, fg = colors.fg },
 			},
 			visual = {
-				a = { bg = colors.violet, fg = colors.bg, gui = "bold" },
+				a = { bg = colors.greenish, fg = colors.bg, gui = "bold" },
 				b = { bg = colors.bg, fg = colors.fg },
 				c = { bg = colors.bg, fg = colors.fg },
 			},
 			command = {
-				a = { bg = colors.yellow, fg = colors.bg, gui = "bold" },
+				a = { bg = colors.orange, fg = colors.bg, gui = "bold" },
 				b = { bg = colors.bg, fg = colors.fg },
 				c = { bg = colors.bg, fg = colors.fg },
 			},
