@@ -36,9 +36,15 @@ return {
 					types = {},
 					operators = {},
 				},
-				color_overrides = {},
+				color_overrides = {
+					latte = {
+						base = "#d7d9dd",
+						mantle = "#eff1f5", -- "#eff1f5" or "#f4f5f8" both works
+					},
+				},
 				custom_highlights = {},
 				integrations = {
+					telescope = true,
 					cmp = true,
 					gitsigns = true,
 					indent_blankline = { enabled = true },
