@@ -122,6 +122,12 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			handlers = handlers,
+			settings = {
+				json = {
+					schemas = require("schemastore").json.schemas(),
+					validate = { enable = true },
+				},
+			},
 		})
 
 		-- configure graphql language server
