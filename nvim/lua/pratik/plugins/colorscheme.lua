@@ -2,7 +2,7 @@ return {
 	{
 		"catppuccin/nvim",
 		as = "catppuccin",
-		-- priority = 1000, -- make sure to load this before all the other start plugins
+		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
 			-- configure the colorscheme here
 			require("catppuccin").setup({
@@ -38,8 +38,8 @@ return {
 				},
 				color_overrides = {
 					latte = {
-						base = "#d7d9dd",
-						mantle = "#eff1f5", -- "#eff1f5" or "#f4f5f8" both works
+						base = "#cccccc", -- "#d7d9dd" or "#cccccc"
+						mantle = "#fcfcfc", -- "#eff1f5" or "#f4f5f8" or "#f2f2f2"
 					},
 				},
 				custom_highlights = {},
