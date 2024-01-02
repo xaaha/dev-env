@@ -59,6 +59,7 @@ return {
 		})
 
 		telescope.load_extension("fzf")
+		telescope.load_extension("aerial")
 
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
@@ -74,5 +75,6 @@ return {
 			{ desc = "Find all files (including hidden) in cwd" }
 		)
 		keymap.set("n", "<leader>us", "<cmd>Telescope colorscheme<CR>", { desc = "Switch colorscheme with telescope" })
+		keymap.set("n", "<leader>fl", "<cmd>Telescope aerial<CR>", { desc = "Goto Symbol (Aerial)" })
 	end,
 }
