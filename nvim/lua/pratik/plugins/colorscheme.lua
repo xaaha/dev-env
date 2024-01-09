@@ -1,6 +1,7 @@
 return {
 	{
 		"catppuccin/nvim",
+		lazy = false,
 		as = "catppuccin",
 		config = function()
 			-- configure the colorscheme here
