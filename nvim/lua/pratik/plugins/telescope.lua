@@ -11,6 +11,11 @@ return {
 		local actions = require("telescope.actions")
 
 		telescope.setup({
+			pickers = {
+				oldfiles = {
+					cwd_only = true, -- show old/recent files of the cwd only.
+				},
+			},
 			defaults = {
 				path_display = { "truncate " },
 				file_ignore_patterns = {
