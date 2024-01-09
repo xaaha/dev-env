@@ -58,9 +58,6 @@ return {
 
 			opts.desc = "Restart LSP"
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
-
-			opts.desc = "View line diagnostic"
-			vim.keymap.set("n", "<leader>gl", vim.diagnostic.open_float, opts)
 		end
 
 		local border = {
