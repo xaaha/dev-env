@@ -41,3 +41,10 @@ opt.swapfile = false
 
 -- - is a  part of the word.
 opt.iskeyword:append("-")
+
+-- scroll behavior
+opt.scrolloff = 999 --start scroll when the cursor is at the middle position
+
+-- editing modes
+opt.virtualedit = "block" -- let's you move to the end of line in Visual block mode even after end character. :h virtualedit
+opt.inccommand = "split" -- groups the global search and replace to a window below with a line number
