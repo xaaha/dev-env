@@ -7,7 +7,7 @@ local keymap = vim.keymap -- for conciseness
 -- General Keymaps
 ---------------------
 -- Most basic
-keymap.set("n", "<leader>ss", "<cmd>w<CR>", { desc = "Save current split" }) -- :w on current split
+keymap.set("n", "<leader>ss", "<cmd>wa<CR>", { desc = "Save current split" }) -- :w on current split
 keymap.set("n", "<leader>qq", "<cmd>wqa<CR>", { desc = "Save current split" }) -- :w on current split
 
 -- use jk & kj  to exit insert mode
