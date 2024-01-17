@@ -43,7 +43,7 @@ opt.swapfile = false
 opt.iskeyword:append("-")
 
 -- scroll behavior
-opt.scrolloff = 999 --start scroll when the cursor is at the middle position
+--opt.scrolloff = 999 --start scroll when the cursor is at the middle position
 
 -- editing modes
 opt.virtualedit = "block" -- let's you move to the end of line in Visual block mode even after end character. :h virtualedit
