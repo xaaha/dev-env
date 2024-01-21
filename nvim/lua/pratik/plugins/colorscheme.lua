@@ -8,12 +8,7 @@ return {
 				styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
 					functions = { "italic" },
 				},
-				color_overrides = {
-					latte = {
-						base = "#cccccc", -- "#d7d9dd" or "#cccccc"
-						mantle = "#fcfcfc", -- "#eff1f5" or "#f4f5f8" or "#f2f2f2"
-					},
-				},
+				color_overrides = {},
 				custom_highlights = {},
 				integrations = {
 					telescope = {
