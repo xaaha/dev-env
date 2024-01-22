@@ -1,5 +1,7 @@
 *
 !.gitignore
+!alacritty/
+!alacritty/**
 !nvim/
 !nvim/**
 !iTermProfiles.json

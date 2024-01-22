@@ -1,0 +1,51 @@
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 17.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Heavy"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Heavy Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Medium Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[window]
+decorations = "full"
+# Available values:
+  # - full: borders and title bar
+  # - none: neither borders nor title bar
+  # - transparent: title bar, transparent background and title bar buttons
+  # - buttonless: title bar, transparent background, but no title bar buttons
+dynamic_padding = false
+opacity = 1.0 # 0 to 1
+
+[window.padding]
+# spacing around the window 
+# x = 0
+# y = 0 
+
+[window.dimensions]
+columns = 150
+lines = 57 
+
+[colors.primary]
+background = "0x01867e" # solarized dark color  #002b36 or #01867e
+foreground = "0xfcfcfc" # makes text color bright
+
+[colors.cursor]
+cursor = "0x860109" # #860109 #2cc894
+
+[colors.normal]
+green = "0x2cc894"
+red = "0x9c224b"
