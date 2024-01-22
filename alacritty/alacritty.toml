@@ -44,7 +44,7 @@ background = "0x01867e" # solarized dark color  #002b36 or #01867e
 foreground = "0xfcfcfc" # makes text color bright
 
 [colors.cursor]
-cursor = "0x860109" # #860109 #2cc894
+cursor = "0x6a6a6a" # #860109 #2cc894
 
 [colors.normal]
 green = "0x2cc894"
