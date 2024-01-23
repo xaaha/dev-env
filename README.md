@@ -95,3 +95,10 @@ plugins=(
  zsh-syntax-highlighting
  )
 ```
+
+- Amazon CodeWhisperer (Command line Utility). [Get here](https://aws.amazon.com/codewhisperer/resources/#Getting_started/)
+- After Installation, run
+
+```shell
+cw integrations install input-method
+```
