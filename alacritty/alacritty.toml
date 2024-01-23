@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/themes/catppuccin_frappe.toml"]
+import = ["~/.config/alacritty/themes/my_theme.toml"]
 
 [env]
 TERM = "xterm-256color"

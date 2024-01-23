@@ -10,6 +10,19 @@
   - venv selector needs fd to find the venv folder.
 - Git obviously
 - a [Nerd Font](https://www.nerdfonts.com/) **_(optional)_**
+- Terminal: `brew install alacritty`
+  - For mac, in the application folder, right click on the `alacritty` icon click Open & click Open again
+- To change the theme you need to create a sym link to the file you want with the following command.
+
+  - run and re-start alacritty
+
+  ```shell
+  # for light theme
+  ln -s ~/.config/alacritty/themes/light.toml ~/.config/alacritty/themes/my_theme.toml
+
+  # for dark theme
+  ln -s ~/.config/alacritty/themes/dark.toml ~/.config/alacritty/themes/my_theme.toml
+  ```
 
 ## Install
 
@@ -39,7 +52,7 @@ git checkout -t origin/main
 
 ## Zshrc Alias
 
-```.zshrc
+````.zshrc
 # common commands
 alias pn=pnpm
 alias rrr="clear"
@@ -57,11 +70,7 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dc="cd ~/Documents"
 alias pp="cd ~/Documents/Projects"
-alias home="cd ~"
 
-#Git
-alias gs="git status"
-```
 
 ## Useful Tools
 
@@ -69,7 +78,7 @@ alias gs="git status"
 
 ```shell
 brew install jump
-```
+````
 
 After installation, put this in the `.zshrc`
 
