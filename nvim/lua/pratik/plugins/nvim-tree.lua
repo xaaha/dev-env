@@ -61,8 +61,8 @@ return {
 				},
 			},
 			filters = {
-				custom = { ".DS_Store", ".git", ".mypy_cache", ".pytest_cache", "__pycache__" }, -- don't show
-				exclude = { ".gitignore", "gitsigns.lua" }, -- exclude from filter, means always show
+				custom = { ".DS_Store", ".mypy_cache", ".pytest_cache", "__pycache__", ".git$" }, -- don't show
+				-- exclude = { ".gitignore", "gitsigns.lua" }, -- exclude from filter, means always show
 			},
 			git = {
 				ignore = false,
