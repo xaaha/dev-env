@@ -31,6 +31,7 @@ decorations = "full"
   # - buttonless: title bar, transparent background, but no title bar buttons
 dynamic_padding = false
 opacity = 1.0 # 0 to 1
+decorations_theme_variant = "Dark" # "Dark", "Light", "None" <- default
 
 [window.padding]
 # spacing around the window 
