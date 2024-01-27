@@ -35,7 +35,7 @@ decorations_theme_variant = "Dark" # "Dark", "Light", "None" <- default
 
 [window.padding]
 # spacing around the window 
-x = 10
+x = 5 
 # y = 10 
 
 [window.dimensions]
