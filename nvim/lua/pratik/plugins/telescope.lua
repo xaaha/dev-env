@@ -80,6 +80,14 @@ return {
 			"<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>",
 			{ desc = "Find all files (including hidden) in cwd" }
 		)
+		-- this is also the key map if you want to select lsp suggestions but
+		-- they don't overlap and don't cause any issue
+		keymap.set(
+			"n",
+			"<C-p>",
+			"<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>",
+			{ desc = "Find all files (including hidden) in cwd" }
+		)
 		keymap.set("n", "<leader>fl", "<cmd>Telescope aerial<CR>", { desc = "Goto Symbol (Aerial)" })
 		keymap.set("n", "<leader>us", "<cmd>Telescope colorscheme<CR>", { desc = "Switch colorscheme with telescope" })
 	end,
