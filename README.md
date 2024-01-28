@@ -55,9 +55,11 @@ git checkout -t origin/main
 ````.zshrc
 # common commands
 alias pn=pnpm
-alias rrr="clear"
 alias python=python3
+alias pip=pip3
 alias v="nvim"
+alias lg=lazygit
+alias ls=lsd
 
 # navigation
 alias .="cd .."
@@ -70,7 +72,6 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dc="cd ~/Documents"
 alias pp="cd ~/Documents/Projects"
-
 
 ## Useful Tools
 
