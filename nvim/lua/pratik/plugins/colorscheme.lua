@@ -1,6 +1,8 @@
 return {
 	{
 		"catppuccin/nvim",
+		priority = 1000,
+		lazy = false,
 		config = function()
 			-- configure the colorscheme here
 			require("catppuccin").setup({
@@ -21,15 +23,16 @@ return {
 					-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 				},
 			})
+			vim.cmd("colorscheme catppuccin-latte")
 		end,
 	},
 	{
 		"projekt0n/github-nvim-theme",
-		priority = 1000,
-		lazy = false,
-		config = function()
-			vim.cmd("colorscheme github_light_tritanopia")
-		end,
+		-- priority = 1000,
+		-- lazy = false,
+		-- config = function()
+		-- 	vim.cmd("colorscheme github_light_tritanopia")
+		-- end,
 	},
 	{
 		"folke/tokyonight.nvim",
