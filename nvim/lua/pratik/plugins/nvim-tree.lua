@@ -28,16 +28,6 @@ return {
 					glyphs = {
 						default = "󰈚",
 						symlink = "",
-						folder = {
-							default = "",
-							empty = "",
-							empty_open = "",
-							open = "",
-							symlink = "",
-							symlink_open = "",
-							arrow_open = "",
-							arrow_closed = "",
-						},
 						git = {
 							unstaged = "✗",
 							staged = "✓",
@@ -62,7 +52,7 @@ return {
 			},
 			filters = {
 				custom = { ".DS_Store", ".mypy_cache", ".pytest_cache", "__pycache__", ".git$", ".vscode$" }, -- don't show
-				-- exclude = { ".gitignore", "gitsigns.lua" }, -- exclude from filter, means always show
+				-- exclude = { ".gitignore" }, -- exclude from filter, means always show
 			},
 			git = {
 				ignore = false,
@@ -80,7 +70,6 @@ return {
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
 
-		keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
 		keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
 		keymap.set(
 			"n",

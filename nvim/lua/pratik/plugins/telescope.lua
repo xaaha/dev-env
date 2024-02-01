@@ -74,12 +74,6 @@ return {
 		keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find open buffers" })
 		keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
 		keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-		keymap.set(
-			"n",
-			"<leader>fa",
-			"<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>",
-			{ desc = "Find all files (including hidden) in cwd" }
-		)
 		-- this is also the key map if you want to select lsp suggestions but
 		-- they don't overlap and don't cause any issue
 		keymap.set(
