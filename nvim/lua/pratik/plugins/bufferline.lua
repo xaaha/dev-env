@@ -17,7 +17,7 @@ return {
 				show_tab_indicators = true,
 				indicator = {
 					style = "icon", -- underline, icon, none
-					icon = "🌵", -- remove this line if the style is other than icon
+					icon = "🏕️", -- remove this line if the style is other than icon
 				},
 			},
 		})
