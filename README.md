@@ -52,7 +52,7 @@ git checkout -t origin/main
 
 ## Zshrc Alias
 
-````.zshrc
+```.zshrc
 # common commands
 alias pn=pnpm
 alias python=python3
@@ -66,6 +66,7 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dc="cd ~/Documents"
 alias pp="cd ~/Documents/Projects"
+```
 
 ## Useful Tools
 
@@ -73,7 +74,7 @@ alias pp="cd ~/Documents/Projects"
 
 ```shell
 brew install jump
-````
+```
 
 After installation, put this in the `.zshrc`
 
