@@ -61,12 +61,6 @@ alias v="nvim"
 alias lg=lazygit
 alias ls=lsd
 
-# navigation
-alias .="cd .."
-alias ..="cd ../.."
-alias ...="cd ../../.."
-alias ....="cd ../../../.."
-
 # common directories
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
@@ -102,4 +96,24 @@ plugins=(
 
 ```shell
 cw integrations install input-method
+```
+
+- Nightfall: To easily switch between dark and light mode
+
+```shell
+brew install nightfall
+```
+
+- [Scroll Reverser](https://pilotmoon.com/scrollreverser/): To make using mouse and mouse pad natural
+
+- Rectangle: Window Management
+
+```shell
+brew install --cask rectangle
+```
+
+- Dozer: To sweep up all the items in the menu bar
+
+```shell
+brew install --cask dozer
 ```
