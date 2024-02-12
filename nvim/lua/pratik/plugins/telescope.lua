@@ -23,7 +23,7 @@ return {
 					"build",
 					"dist",
 					"yarn.lock",
-					".git",
+					".git/",
 				},
 				selection_caret = "👉 ",
 				prompt_prefix = "🔎 ",
