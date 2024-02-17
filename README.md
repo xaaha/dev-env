@@ -66,6 +66,7 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dc="cd ~/Documents"
 alias pp="cd ~/Documents/Projects"
+alias pf="fzf  --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
 ```
 
 ## Useful Tools
