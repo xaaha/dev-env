@@ -51,3 +51,15 @@ keymap.set("n", "<leader>ul", ":colorscheme github_light_tritanopia<CR>", { desc
 ---------------------
 keymap.set("n", "<Down>", ":m .+1<CR>==", { noremap = true, silent = true }, { desc = "Move current line down" })
 keymap.set("n", "<Up>", ":m .-2<CR>==", { noremap = true, silent = true }, { desc = "Move current line up" })
+
+---------------------
+-- Copy absolute & relative file path
+---------------------
+
+keymap.set("n", "<leader>cr", function()
+	vim.cmd("let @+=expand('%')")
+end, { noremap = true, silent = true, desc = "Copy relative file path" })
+
+keymap.set("n", "<leader>cc", function()
+	vim.cmd("let @+=expand('%:p')")
+end, { noremap = true, silent = true, desc = "Copy complete/absolute file path" })
