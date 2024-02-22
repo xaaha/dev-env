@@ -119,3 +119,9 @@ brew install --cask rectangle
 ```shell
 brew install --cask dozer
 ```
+
+- sd: Search and Displace
+
+```shell
+brew install sd
+```
