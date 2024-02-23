@@ -40,11 +40,11 @@ keymap.set("n", "<leader>sd", "<cmd>vertical resize -5<CR>", { desc = "Decrease 
 keymap.set(
 	"n",
 	"<leader>ud",
-	":colorscheme tokyonight-moon<CR>",
+	":colorscheme catppuccin-frappe<CR>",
 	{ silent = false, desc = "Toggle default dark theme" }
 )
 keymap.set("n", "<leader>ui", ":colorscheme ", { desc = "Toggle colorscheme" }) -- Toggle colorscheme and installed themes easily
-keymap.set("n", "<leader>ul", ":colorscheme github_light_tritanopia<CR>", { desc = "Toggle default light theme" })
+keymap.set("n", "<leader>ul", ":colorscheme catppuccin-latte<CR>", { desc = "Toggle default light theme" })
 
 ---------------------
 -- Move text up and down
