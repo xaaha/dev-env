@@ -8,7 +8,13 @@
   - To avoid error "trash.cmd" is not executable in nvim-tree
 - Install fd. `brew install fd`
   - venv selector needs fd to find the venv folder.
-- Git obviously
+- jq: Command Line Json processor
+
+```shell
+brew install jq
+```
+
+- Git
 - a [Nerd Font](https://www.nerdfonts.com/) **_(optional)_**
 - Terminal: `brew install alacritty`
   - For mac, in the application folder, right click on the `alacritty` icon click Open & click Open again
