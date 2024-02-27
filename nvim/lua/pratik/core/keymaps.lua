@@ -63,3 +63,14 @@ end, { noremap = true, silent = true, desc = "Copy relative file path" })
 keymap.set("n", "<leader>cc", function()
 	vim.cmd("let @+=expand('%:p')")
 end, { noremap = true, silent = true, desc = "Copy complete/absolute file path" })
+
+---------------------
+-- Format files, useful for gitignored files
+---------------------
+
+keymap.set(
+	"n",
+	"<leader>jf",
+	[[:%!jq .<CR>:w<CR>]],
+	{ noremap = true, silent = true, desc = "Format and save json files" }
+)
