@@ -4,6 +4,9 @@
 !alacritty/**
 !nvim/
 !nvim/**
+!wezterm/
+!wezterm/**
+!wezterm/.**
 !iTermProfiles.json
 !**iTerm2**
 !README.md
