@@ -4,7 +4,7 @@ import = ["~/.config/alacritty/themes/my_theme.toml"]
 TERM = "xterm-256color"
 
 [font]
-size = 17.0
+size = 18.0
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
