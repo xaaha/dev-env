@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 
 return {
 	-- font
-	font_size = 14,
+	font_size = 16,
 	font = wezterm.font("JetBrainsMono Nerd Font"),
 	-- font = wezterm.font_with_fallback({ "Hack Nerd Font", { family = "JetBrainsMono Nerd Font", scale = 0.75 } }),
 	use_cap_height_to_scale_fallback_fonts = true,
@@ -58,4 +58,6 @@ return {
 	},
 	window_decorations = "RESIZE",
 	hide_tab_bar_if_only_one_tab = true,
+	initial_cols = 150,
+	initial_rows = 57,
 }
