@@ -49,6 +49,16 @@ return {
 		quick_select_match_bg = { AnsiColor = "Navy" },
 		quick_select_match_fg = { Color = "#ffffff" },
 	},
+	window_background_gradient = { -- overrides the colors table above since they are both doing the same thing
+		orientation = "Horizontal", -- "Vertical" or "Horizontal"
+		colors = {
+			"#27243e",
+			"#454073",
+			"#3a3a51",
+		},
+		interpolation = "Linear", -- "Linear", "Basis", and "CatmullRom"
+		blend = "Rgb", -- "Rgb", "LinearRgb", "Hsv" and "Oklab"
+	},
 	-- window management
 	window_padding = {
 		left = 5,
