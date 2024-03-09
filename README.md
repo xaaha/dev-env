@@ -1,5 +1,28 @@
 # Development Configurations
 
+## List of All Apps that needs
+
+```text
+ripgrep
+trash
+fzf
+fd
+jq
+jump
+nightfall
+scroll-reverser
+rectangle
+dozer
+sd
+alacritty
+```
+
+- Copy items in a text file, one item per line, and then run
+
+```bash
+xargs brew install < apps.txt
+```
+
 ## Pre-requisite
 
 - Install ripgrep `brew install ripgrep`
@@ -10,7 +33,7 @@
   - venv selector needs fd to find the venv folder.
 - jq: Command Line Json processor
 
-```shell
+```bash
 brew install jq
 ```
 
@@ -22,7 +45,7 @@ brew install jq
 
   - run and re-start alacritty
 
-  ```shell
+  ```bash
   # for light theme
   ln -s ~/.config/alacritty/themes/light.toml ~/.config/alacritty/themes/my_theme.toml
 
@@ -34,7 +57,7 @@ brew install jq
 
 - Backup Neovim Files
 
-```shell
+```bash
 # required
 mv ~/.config/nvim{,.bak}
 
@@ -48,7 +71,7 @@ mv ~/.cache/nvim{,.bak}
 
 Make sure to clone & spread the repo inside the .config folder
 
-```shell
+```bash
 cd ~/.config # navigate to .config folder
 git init  # initialize it as a git repo
 git remote add origin git@github.com:xaaha/dev-env.git #  https://www.github.com/xaaha/dev-env
@@ -79,14 +102,14 @@ alias pf="fzf  --preview='less {}' --bind shift-up:preview-page-up,shift-down:pr
 
 - Jump: To easily navigate between folders
 
-```shell
+```bash
 brew install jump
 ```
 
 After installation, put this in the `.zshrc`
 
-```shell
-eval "$(jump shell)"
+```bash
+eval "$(jump bash)"
 ```
 
 - zshrc plugins
@@ -102,13 +125,13 @@ plugins=(
 - Amazon CodeWhisperer (Command line Utility). [Get here](https://aws.amazon.com/codewhisperer/resources/#Getting_started/)
 - After Installation, run
 
-```shell
+```bash
 cw integrations install input-method
 ```
 
 - Nightfall: To easily switch between dark and light mode
 
-```shell
+```bash
 brew install nightfall
 ```
 
@@ -116,18 +139,18 @@ brew install nightfall
 
 - Rectangle: Window Management
 
-```shell
+```bash
 brew install --cask rectangle
 ```
 
 - Dozer: To sweep up all the items in the menu bar
 
-```shell
+```bash
 brew install --cask dozer
 ```
 
 - sd: Search and Displace
 
-```shell
+```bash
 brew install sd
 ```
