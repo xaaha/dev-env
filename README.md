@@ -15,6 +15,7 @@ rectangle
 dozer
 sd
 alacritty
+wezterm
 ```
 
 - Copy items in a text file, one item per line, and then run
