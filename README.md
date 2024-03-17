@@ -16,6 +16,7 @@ dozer
 sd
 alacritty
 wezterm
+lsd
 ```
 
 - Copy items in a text file, one item per line, and then run
