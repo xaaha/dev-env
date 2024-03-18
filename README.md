@@ -17,6 +17,7 @@ sd
 alacritty
 wezterm
 lsd
+notunes
 ```
 
 - Copy items in a text file, one item per line, and then run
