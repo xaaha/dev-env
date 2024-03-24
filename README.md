@@ -21,15 +21,16 @@ notunes
 ```
 
 - Copy items in a text file, one item per line, and then run
-- Install the rmtree to remove formulae and all dependencies
+
+```bash
+xargs brew install < apps.txt
+```
+
+- Install the rmtree to remove formulae and all their dependencies
 
 ```bash
 brew tap beeftornado/rmtree
 brew rmtree <packagename>
-```
-
-```bash
-xargs brew install < apps.txt
 ```
 
 ## Pre-requisite
