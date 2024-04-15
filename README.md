@@ -33,6 +33,13 @@ brew tap beeftornado/rmtree
 brew rmtree <packagename>
 ```
 
+- Enable fzf keybindings
+
+```bash
+# paste this and hit yes for all
+$(brew --prefix)/opt/fzf/install
+```
+
 ## Pre-requisite
 
 - Install ripgrep `brew install ripgrep`
