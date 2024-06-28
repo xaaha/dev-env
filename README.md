@@ -171,3 +171,35 @@ brew install --cask dozer
 ```bash
 brew install sd
 ```
+
+### Language Tools
+
+- GoDoc: Go Standard library documentation offline
+
+```bash
+go install golang.org/x/tools/cmd/godoc@latest
+```
+
+Add this to the `.zshrc` file
+
+```bash
+export PATH=$PATH:$(go env GOPATH)/bin
+```
+
+Source and reload the zsh config
+
+```bash
+source .zshrc
+```
+
+Then, run with
+
+```bash
+godoc -http=:6060
+```
+
+Lastly on the browser
+
+```bash
+http://localhost:6060/
+```
