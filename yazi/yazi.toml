@@ -1,0 +1,6 @@
+[opener]
+edit = [
+{ run = 'nvim "$@"', block = true },
+{ run = 'zed "$@"', block = true},
+{ run = 'code "$@"', block = true},
+]

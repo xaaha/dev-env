@@ -12,3 +12,5 @@
 !README.md
 .DS_Store
 alacritty/themes/my_theme.toml
+!yazi/
+!yazi/**
