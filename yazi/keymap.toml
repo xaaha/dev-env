@@ -1,0 +1,9 @@
+# Incomplete work
+
+# [convert-to-jpg]
+# Bind the key "C" to run the convert_to_jpg plugin in sync mode
+# [manager]
+# keymap = [
+# { on = [ "c", "t" ], run = 'plugin convert-to-jpg --sync --args=\"{file_path}\"', desc = "Convert image to jpg" },
+# ]
+# R = "plugin convert-to-jpg --sync --args=\"{file_path}\""
