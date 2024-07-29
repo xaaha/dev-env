@@ -1,9 +1,2 @@
-# Incomplete work
-
-# [convert-to-jpg]
-# Bind the key "C" to run the convert_to_jpg plugin in sync mode
-# [manager]
-# keymap = [
-# { on = [ "c", "t" ], run = 'plugin convert-to-jpg --sync --args=\"{file_path}\"', desc = "Convert image to jpg" },
-# ]
-# R = "plugin convert-to-jpg --sync --args=\"{file_path}\""
+# see the keymaps in  
+# https://github.com/sxyazi/yazi/blob/bce0fc1175c855ecb2dbee6f8575857b1e9616d4/yazi-config/preset/keymap.toml#L39
