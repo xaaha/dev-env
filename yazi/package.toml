@@ -1,0 +1,6 @@
+[plugin]
+# https://github.com/yazi-rs/plugins/tree/main/full-border.yazi
+deps = [{ use = "yazi-rs/plugins#full-border", commit = "39f2753" }]
+
+[flavor]
+deps = []
