@@ -12,6 +12,7 @@ return {
 			typescriptreact = { "eslint_d" },
 			python = { "ruff" },
 			go = { "golangcilint" },
+			ruby = { "rubocop" },
 			-- svelte = { "eslint_d" }, -- add others as needed
 		}
 

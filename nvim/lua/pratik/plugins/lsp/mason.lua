@@ -33,9 +33,10 @@ return {
 				"lua_ls",
 				"graphql",
 				"emmet_ls",
-				"pyright",
+				"pyright", -- python
 				"gopls",
 				"jsonls",
+				"solargraph", -- ruby
 				-- "tailwindcss", -- examples
 				-- "svelte",
 			},
@@ -55,7 +56,8 @@ return {
 				"gofumpt", -- go linters 👇
 				"goimports",
 				"golines",
-				"golangci-lint", -- go linters end
+				"golangci-lint", -- go linters end,
+				"rubocop", --  ruby linter and formatter
 			},
 		})
 	end,

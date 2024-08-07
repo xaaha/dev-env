@@ -234,5 +234,12 @@ return {
 				},
 			},
 		})
+
+		-- configure ruby server
+		lspconfig["solargraph"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			handlers = handlers,
+		})
 	end,
 }
