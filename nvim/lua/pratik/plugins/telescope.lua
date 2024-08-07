@@ -9,6 +9,7 @@ return {
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
+		local open_with_trouble = require("trouble.sources.telescope").open
 
 		telescope.setup({
 			pickers = {
@@ -58,7 +59,9 @@ return {
 						["<C-k>"] = actions.move_selection_previous, -- move to prev result
 						["<C-j>"] = actions.move_selection_next, -- move to next result
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+						["<c-t>"] = open_with_trouble,
 					},
+					n = { ["<c-t>"] = open_with_trouble },
 				},
 			},
 		})
