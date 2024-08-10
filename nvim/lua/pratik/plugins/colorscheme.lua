@@ -54,4 +54,5 @@ return {
 		-- tons of variants. Especially, nordfox is great nord theme.
 		-- Day and Dawn fox for light themes
 	},
+	{ "rose-pine/neovim", name = "rose-pine" },
 }
