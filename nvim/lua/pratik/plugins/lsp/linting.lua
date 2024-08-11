@@ -6,14 +6,14 @@ return {
 		local lint = require("lint")
 
 		lint.linters_by_ft = {
-			javascript = { "eslint_d" },
-			typescript = { "eslint_d" },
-			javascriptreact = { "eslint_d" },
-			typescriptreact = { "eslint_d" },
+			javascript = { "biomejs" },
+			typescript = { "biomejs" },
+			javascriptreact = { "biomejs" },
+			typescriptreact = { "biomejs" },
 			python = { "ruff" },
 			go = { "golangcilint" },
 			ruby = { "rubocop" },
-			-- svelte = { "eslint_d" }, -- add others as needed
+			-- svelte = { "eslint_d" }, -- add others as needed. Add with Mason first
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

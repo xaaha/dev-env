@@ -46,13 +46,13 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
+				"biome", -- JS, TS, TSX and JSON formatter, linter and LSP
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter
 				"black", -- python formatter
 				"ruff", -- python linter and formatter
 				"mypy", -- python type checker
-				"eslint_d", -- js linter
 				"gofumpt", -- go linters 👇
 				"goimports",
 				"golines",
