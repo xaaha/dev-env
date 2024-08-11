@@ -10,7 +10,7 @@ return {
 	use_cap_height_to_scale_fallback_fonts = true,
 	--colorscheme
 	-- colors = xaaha.XAAHA_BLUE,
-	color_scheme = "rose-pine-moon",
+	color_scheme = "duskfox",
 	-- window management
 	window_padding = {
 		left = 5,
