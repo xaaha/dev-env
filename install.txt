@@ -1,0 +1,30 @@
+ripgrep
+trash
+fzf
+fd
+jq
+jump
+nightfall
+scroll-reverser
+--cask rectangle
+--cask dozer
+sd
+alacritty
+wezterm
+lsd
+notunes
+tmux
+tealdear
+yazi 
+ffmpegthumbnailer 
+sevenzip 
+zoxide 
+imagemagick 
+font-symbols-only-nerd-font
+nvm
+pnpm
+poppler
+stow
+rbenv
+neovim
+lazygit

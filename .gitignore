@@ -1,16 +1,29 @@
+# Be deliberate about what we push up in the public repo
+.DS_Store
 *
-!.gitignore
-!alacritty/
-!alacritty/**
-!nvim/
-!nvim/**
+# Everything is ignored besides 
+
+## unignore config folder 
+!config/
+## ignore everything in the config folder 
+config/*
+# Unignore specific files or directories inside config/
+!config/.config/
+!config/.config/alacritty/
+!config/.config/alacritty/**
+!config/.config/nvim/
+!config/.config/nvim/**
+!config/.config/yazi/
+!config/.config/yazi/**
+
+
+!tmux/
+!tmux/**
+
 !wezterm/
 !wezterm/**
-!wezterm/.**
-!iTermProfiles.json
-!**iTerm2**
+
+!.stow-local-ignore
+
 !README.md
-.DS_Store
-alacritty/themes/my_theme.toml
-!yazi/
-!yazi/**
+!install.txt

@@ -1,5 +1,4 @@
 -- Pull in the wezterm API
-local xaaha = require("themes.xaaha")
 local wezterm = require("wezterm")
 
 return {

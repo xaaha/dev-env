@@ -1,29 +1,11 @@
 # Development Configurations
 
-## List of All Apps that needs
+## Install Pre-requisite 
 
-```text
-ripgrep
-trash
-fzf
-fd
-jq
-jump
-nightfall
-scroll-reverser
-rectangle
-dozer
-sd
-alacritty
-wezterm
-lsd
-notunes
-```
-
-- Copy items in a text file, one item per line, and then run
+- Intall all the brew apps from `install.txt`
 
 ```bash
-xargs brew install < apps.txt
+xargs brew install < install.txt
 ```
 
 - Install the rmtree to remove formulae and all their dependencies
@@ -40,22 +22,15 @@ brew rmtree <packagename>
 $(brew --prefix)/opt/fzf/install
 ```
 
-## Pre-requisite
-
-- Install ripgrep `brew install ripgrep`
-  - Need this for telescope grep
-- Install Trash `brew install trash`
-  - To avoid error "trash.cmd" is not executable in nvim-tree
-- Install fd. `brew install fd`
-  - venv selector needs fd to find the venv folder.
-- jq: Command Line Json processor
+- **Jump**: To easily navigate between folders. After installation, put this in the `.zshrc`
 
 ```bash
-brew install jq
+eval "$(jump bash)"
 ```
 
-- Git
 - a [Nerd Font](https://www.nerdfonts.com/) **_(optional)_**
+
+### Enable Alacritty
 - Terminal: `brew install alacritty`
   - For mac, in the application folder, right click on the `alacritty` icon click Open & click Open again
 - To change the theme you need to create a sym link to the file you want with the following command.
@@ -86,14 +61,15 @@ mv ~/.cache/nvim{,.bak}
 
 - Clone the repo
 
-Make sure to clone & spread the repo inside the .config folder
+```bash
+git clone git@github.com:xaaha/dev-env.git #  https://www.github.com/xaaha/dev-env
+```
+- Stow all the folder you need with 
 
 ```bash
-cd ~/.config # navigate to .config folder
-git init  # initialize it as a git repo
-git remote add origin git@github.com:xaaha/dev-env.git #  https://www.github.com/xaaha/dev-env
-git fetch
-git checkout -t origin/main
+stow -t ~ config # to stow the config 
+stow -t ~ wezterm # to stow the wezterm and so on 
+stow -t ~ tmux
 ```
 
 ## Zshrc Alias
@@ -115,19 +91,7 @@ alias pp="cd ~/Documents/Projects"
 alias pf="fzf  --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
 ```
 
-## Useful Tools
-
-- Jump: To easily navigate between folders
-
-```bash
-brew install jump
-```
-
-After installation, put this in the `.zshrc`
-
-```bash
-eval "$(jump bash)"
-```
+## Useful Steps for tools
 
 - zshrc plugins
 
@@ -144,32 +108,6 @@ plugins=(
 
 ```bash
 cw integrations install input-method
-```
-
-- Nightfall: To easily switch between dark and light mode
-
-```bash
-brew install nightfall
-```
-
-- [Scroll Reverser](https://pilotmoon.com/scrollreverser/): To make using mouse and mouse pad natural
-
-- Rectangle: Window Management
-
-```bash
-brew install --cask rectangle
-```
-
-- Dozer: To sweep up all the items in the menu bar
-
-```bash
-brew install --cask dozer
-```
-
-- sd: Search and Displace
-
-```bash
-brew install sd
 ```
 
 ### Language Tools
