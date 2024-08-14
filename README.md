@@ -1,6 +1,6 @@
 # Development Configurations
 
-## Install Pre-requisite 
+## Install Pre-requisite
 
 - Intall all the brew apps from `install.txt`
 
@@ -31,6 +31,7 @@ eval "$(jump bash)"
 - a [Nerd Font](https://www.nerdfonts.com/) **_(optional)_**
 
 ### Enable Alacritty
+
 - Terminal: `brew install alacritty`
   - For mac, in the application folder, right click on the `alacritty` icon click Open & click Open again
 - To change the theme you need to create a sym link to the file you want with the following command.
@@ -64,11 +65,18 @@ mv ~/.cache/nvim{,.bak}
 ```bash
 git clone git@github.com:xaaha/dev-env.git #  https://www.github.com/xaaha/dev-env
 ```
-- Stow all the folder you need with 
+
+- Stow all the folder you need with
 
 ```bash
-stow -t ~ config # to stow the config 
-stow -t ~ wezterm # to stow the wezterm and so on 
+# stow all at once
+for dir in $(pwd)/*/; do stow -t ~ $(basename "$dir"); done
+```
+
+```bash
+# stow one at a time
+stow -t ~ config # to stow the config
+stow -t ~ wezterm # to stow the wezterm and so on
 stow -t ~ tmux
 ```
 
