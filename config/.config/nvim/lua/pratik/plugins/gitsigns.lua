@@ -1,6 +1,6 @@
 return {
 	"lewis6991/gitsigns.nvim",
-	tag = "v0.7",
+	tag = "v0.9.0",
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("gitsigns").setup({

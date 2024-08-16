@@ -1,6 +1,6 @@
 return {
 	"folke/noice.nvim",
-	tag = "v4.0.1",
+	tag = "v4.5.0",
 	event = "VeryLazy",
 	opts = {
 		-- add any options here
@@ -45,6 +45,9 @@ return {
 					["vim.lsp.util.stylize_markdown"] = true,
 					["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
 				},
+			},
+			presets = {
+				lsp_doc_border = true,
 			},
 		})
 	end,
