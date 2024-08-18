@@ -95,5 +95,17 @@ return {
 		)
 		keymap.set("n", "<leader>fl", "<cmd>Telescope aerial<CR>", { desc = "Goto Symbol (Aerial)" })
 		keymap.set("n", "<leader>us", "<cmd>Telescope colorscheme<CR>", { desc = "Switch colorscheme with telescope" })
+		keymap.set(
+			"n",
+			"<leader>fw",
+			"<cmd>Telescope current_buffer_fuzzy_find<cr>",
+			{ desc = "Grep in current buffer" }
+		)
+		keymap.set(
+			"n",
+			"<leader>fe",
+			"<cmd>Telescope live_grep grep_open_files=true<cr>",
+			{ desc = "Grep in recent buffers" }
+		)
 	end,
 }
