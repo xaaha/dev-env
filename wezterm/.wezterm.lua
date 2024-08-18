@@ -9,7 +9,7 @@ return {
 	use_cap_height_to_scale_fallback_fonts = true,
 	--colorscheme
 	-- colors = xaaha.XAAHA_BLUE,
-	color_scheme = "duskfox",
+	color_scheme = "Catppuccin Frappé (Gogh)",
 	-- window management
 	window_padding = {
 		left = 5,
