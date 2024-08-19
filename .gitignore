@@ -1,21 +1,22 @@
 # Be deliberate about what we push up in the public repo
 .DS_Store
 *
-# Everything is ignored besides 
 
-## unignore config folder 
-!config/
-## ignore everything in the config folder 
-config/*
-# Unignore specific files or directories inside config/
-!config/.config/
-!config/.config/alacritty/
-!config/.config/alacritty/**
-!config/.config/nvim/
-!config/.config/nvim/**
-!config/.config/yazi/
-!config/.config/yazi/**
+# nvim
+!nvim/
+!nvim/.config/
+!nvim/.config/**
+!nvim/.config/nvim/*
 
+# yazi
+!yazi/
+!yazi/.config
+!yazi/.config/**
+
+# alacritty
+!alacritty/
+!alacritty/.config/
+!alacritty/.config/**
 
 !tmux/
 !tmux/**
