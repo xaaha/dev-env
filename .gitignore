@@ -24,11 +24,13 @@
 !wezterm/
 !wezterm/**
 
+# zsh config
 !zsh
 !zsh/.zshrc
 !zsh/.config
 !zsh/.config/zsh
 !zsh/.config/zsh/*
+zsh/.config/zsh/secrets.zsh
 
 !.stow-local-ignore
 

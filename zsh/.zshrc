@@ -13,6 +13,7 @@ plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/exports.zsh"
 plug "$HOME/.config/zsh/functions.zsh"
 plug "$HOME/.config/zsh/prompt.zsh"
+plug "$HOME/.config/zsh/secrets.zsh"
 
 #plugins
 plug "zsh-users/zsh-autosuggestions"
