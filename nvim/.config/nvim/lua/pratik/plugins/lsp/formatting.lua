@@ -20,7 +20,7 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				go = { "gofumpt", "golines", "goimports" },
-				ruby = { "rubocop", "standardrb" },
+				ruby = { "rubyfmt", "rubocop", "standardrb" },
 				eruby = { "erb-format" },
 				-- svelte = { "prettier" }, -- add as needed
 			},

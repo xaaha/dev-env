@@ -57,6 +57,7 @@ return {
 				"goimports",
 				"golines",
 				"golangci-lint", -- go linters end,
+				"rubyfmt",
 				"rubocop", --  ruby linter and formatter
 				"erb-formatter", -- embeded ruby formatter
 				"erb-lint", -- ruby end
