@@ -5,7 +5,10 @@ return {
 		local lualine = require("lualine")
 		-- local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 		lualine.setup({
-			options = { section_separators = "", component_separators = "" }, -- comment out to enable default ">" section and component section separator
+			options = {
+				component_separators = "",
+				section_separators = { left = "", right = "" },
+			}, -- comment out to enable default ">" section and component section separator
 			sections = {
 				lualine_x = {
 					-- {
