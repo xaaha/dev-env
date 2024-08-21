@@ -16,7 +16,7 @@ plug "$HOME/.config/zsh/prompt.zsh"
 plug "$HOME/.config/zsh/secrets.zsh"
 
 #plugins
-# plug "zsh-users/zsh-autosuggestions"
+plug "zsh-users/zsh-autosuggestions"
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/vim"
 plug "zap-zsh/fzf"
