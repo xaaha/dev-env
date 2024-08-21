@@ -24,6 +24,12 @@
 !wezterm/
 !wezterm/**
 
+!zsh
+!zsh/.zshrc
+!zsh/.config
+!zsh/.config/zsh
+!zsh/.config/zsh/*
+
 !.stow-local-ignore
 
 !README.md
