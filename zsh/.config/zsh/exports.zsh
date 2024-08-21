@@ -38,7 +38,11 @@ export NVM_DIR="$HOME/.nvm"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source $HOME/.docker/init-zsh.sh || true # Added by Docker Desktop
+# modified docker command 
+if [ -f "$HOME/.docker/init-zsh.sh" ]; then
+  source $HOME/.docker/init-zsh.sh
+fi
+
 # export PATH="$HOME/.docker/bin":$PATH
 
 case "$(uname -s)" in
