@@ -21,6 +21,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
+# ohmyposh init & it's path to the conifg
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
+
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"

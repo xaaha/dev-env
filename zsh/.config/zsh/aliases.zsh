@@ -19,7 +19,6 @@ alias pip=pip3
 alias pn=pnpm
 alias python=python3
 alias v="nvim"
-alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
 # confirm before overwriting something
 alias cp="cp -i"
