@@ -28,6 +28,7 @@ alias rm="rm -i"
 #tmux
 alias t="tmux"
 alias ts="tmux ls"
+alias tn="tmux new -s"
 alias ta="tmux a"
 alias tat="tmux a -t"
 
