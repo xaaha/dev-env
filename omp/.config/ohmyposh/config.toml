@@ -14,7 +14,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     style = 'plain'
     background = 'transparent'
     foreground = 'blue'
-    template = '{{ .Path }}'
+    template = '{{ .Folder }}' # {{ .PATH }} if you need full path
 
     [blocks.segments.properties]
       style = 'full'
@@ -43,12 +43,12 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     template = '{{ .FormattedMs }}'
 
     [blocks.segments.properties]
-      threshold = 5000
+      threshold = 500
 
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
-  newline = true
+  # newline = true # if you want a new line for your command
 
   [[blocks.segments]]
     type = 'text'
@@ -58,7 +58,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
       "{{if eq .Code 0}}magenta{{end}}",
     ]
     background = 'transparent'
-    template = '❯'
+    template = '→'
 
 [transient_prompt]
   foreground_templates = [
