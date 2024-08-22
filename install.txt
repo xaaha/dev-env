@@ -28,3 +28,4 @@ stow
 rbenv
 neovim
 lazygit
+jandedobbeleer/oh-my-posh/oh-my-posh
