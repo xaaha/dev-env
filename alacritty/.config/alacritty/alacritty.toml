@@ -23,7 +23,7 @@ family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [window]
-decorations = "full"
+decorations = "buttonless"
 # Available values:
   # - full: borders and title bar
   # - none: neither borders nor title bar
