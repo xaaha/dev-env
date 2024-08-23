@@ -7,5 +7,5 @@ return {
 
 	"RRethy/vim-illuminate", -- highlight other uses of the word under the cursor
 
-	"preservim/vimux",
+	"preservim/vimux", -- vim test requires this
 }
