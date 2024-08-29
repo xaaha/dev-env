@@ -30,7 +30,7 @@ eval "$(jump bash)"
 
 - a [Nerd Font](https://www.nerdfonts.com/) **_(optional)_**
 
-### Enable Alacritty
+### Alacritty Notes
 
 - Terminal: `brew install alacritty`
   - For mac, in the application folder, right click on the `alacritty` icon click Open & click Open again
@@ -45,6 +45,15 @@ eval "$(jump bash)"
   # for dark theme
   ln -s ~/.config/alacritty/themes/dark.toml ~/.config/alacritty/themes/my_theme.toml
   ```
+
+- By default, font smoothing causes fonts to be slightly bolder in Alacritty.
+
+```bash
+# disble font smoothing
+defaults -currentHost write -g AppleFontSmoothing -int 0
+# reset font smoothing
+defaults -currentHost delete -g AppleFontSmoothing
+```
 
 ## Install
 
