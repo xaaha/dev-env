@@ -7,19 +7,19 @@ TERM = "xterm-256color"
 size = 17.0
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
-style = "Heavy"
+family = "VictorMono Nerd Font"
+style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font"
-style = "Heavy Italic"
+family = "VictorMono Nerd Font"
+style = "SemiBold Italic"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "VictorMono Nerd Font"
 style = "Medium Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "VictorMono Nerd Font"
 style = "Regular"
 
 [window]
@@ -30,7 +30,8 @@ decorations = "buttonless"
   # - transparent: title bar, transparent background and title bar buttons
   # - buttonless: title bar, transparent background, but no title bar buttons
 dynamic_padding = false
-opacity = 1.0 # 0 to 1
+opacity = 0.88 # 0 to 1
+blur = true
 decorations_theme_variant = "Dark" # "Dark", "Light", "None" <- default
 
 [window.padding]
