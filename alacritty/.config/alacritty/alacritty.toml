@@ -12,11 +12,11 @@ style = "Bold"
 
 [font.bold_italic]
 family = "VictorMono Nerd Font"
-style = "SemiBold Italic"
+style = "Medium Oblique"
 
 [font.italic]
 family = "VictorMono Nerd Font"
-style = "Medium Italic"
+style = "Light Oblique"
 
 [font.normal]
 family = "VictorMono Nerd Font"
