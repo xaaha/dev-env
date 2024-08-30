@@ -37,6 +37,7 @@ return {
 				"gopls",
 				"jsonls",
 				"solargraph", -- ruby
+				"yamlls",
 				-- "tailwindcss", -- examples
 				-- "svelte",
 			},
@@ -61,6 +62,8 @@ return {
 				"rubocop", --  ruby linter and formatter
 				"erb-formatter", -- embeded ruby formatter
 				"erb-lint", -- ruby end
+				"yamllint", -- yaml
+				"yq", -- yaml formatter
 			},
 		})
 	end,
