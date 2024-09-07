@@ -53,8 +53,8 @@ keymap.set("n", "<leader>ul", ":colorscheme catppuccin-latte<CR>", { desc = "Tog
 ---------------------
 -- Move text up and down
 ---------------------
-keymap.set("n", "<Down>", ":m .+1<CR>==", { noremap = true, silent = true }, { desc = "Move current line down" })
-keymap.set("n", "<Up>", ":m .-2<CR>==", { noremap = true, silent = true }, { desc = "Move current line up" })
+keymap.set("n", "<Down>", ":m .+1<CR>==", { noremap = true, silent = true, desc = "Move current line down" })
+keymap.set("n", "<Up>", ":m .-2<CR>==", { noremap = true, silent = true, desc = "Move current line up" })
 
 ---------------------
 -- Copy absolute & relative file path
