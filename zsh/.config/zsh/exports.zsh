@@ -9,7 +9,7 @@ export HOMEBREW_NO_ENV_HINTS=1
 # go
 # export PATH=$HOME/.local/share/go/bin:$PATH
 # export GOPATH=$HOME/.local/share/go
-export PATH=$PATH:$(go env GOPATH)/bin # PATH for Go tools 
+export PATH=$PATH:$(go env GOPATH)/bin # PATH for Go doc
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

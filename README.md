@@ -28,25 +28,27 @@ $(brew --prefix)/opt/fzf/install
 eval "$(jump bash)"
 ```
 
-- a [Nerd Font](https://www.nerdfonts.com/) **_(optional)_**
+- A [Nerd Font](https://www.nerdfonts.com/) **_(optional)_**
 
-### Alacritty Notes
+> [!TIP]
+> Get Amazon Q [here](https://aws.amazon.com/codewhisperer/resources/#Getting_started/) if it's not installed with brew.
+> After Installation, run `cw integrations install input-method`
 
-- Terminal: `brew install alacritty`
-  - For mac, in the application folder, right click on the `alacritty` icon click Open & click Open again
+- Alacritty
+
+> [!TIP]
+> To open Alacritty on mac, right click on the `alacritty` icon click Open & click Open again
+
 - To change the theme you need to create a sym link to the file you want with the following command.
-
-  - run and re-start alacritty
 
   ```bash
   # for light theme
   ln -s ~/.config/alacritty/themes/light.toml ~/.config/alacritty/themes/my_theme.toml
-
   # for dark theme
   ln -s ~/.config/alacritty/themes/dark.toml ~/.config/alacritty/themes/my_theme.toml
   ```
 
-- By default, font smoothing causes fonts to be slightly bolder in Alacritty.
+- By default, font smoothing causes fonts to be slightly bold in Alacritty.
 
 ```bash
 # disble font smoothing
@@ -89,43 +91,7 @@ stow -t ~ wezterm # to stow the wezterm and so on
 stow -t ~ tmux
 ```
 
-## Zshrc Alias
-
-```.zshrc
-# common commands
-alias pn=pnpm
-alias python=python3
-alias pip=pip3
-alias v="nvim"
-alias lg=lazygit
-alias ls=lsd
-
-# common directories
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias dc="cd ~/Documents"
-alias pp="cd ~/Documents/Projects"
-alias pf="fzf  --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
-```
-
 ## Useful Steps for tools
-
-- zshrc plugins
-
-```.zshrc
-plugins=(
- git
- zsh-autosuggestions
- zsh-syntax-highlighting
- )
-```
-
-- Amazon CodeWhisperer (Command line Utility). [Get here](https://aws.amazon.com/codewhisperer/resources/#Getting_started/)
-- After Installation, run
-
-```bash
-cw integrations install input-method
-```
 
 ### Language Tools
 

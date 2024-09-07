@@ -31,3 +31,4 @@ lazygit
 jandedobbeleer/oh-my-posh/oh-my-posh
 font-victor-mono-nerd-font 
 font-jetbrains-mono-nerd-font
+--cask amazon-q
