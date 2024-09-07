@@ -38,16 +38,10 @@ return {
 		"folke/tokyonight.nvim",
 	},
 	{
-		"shatur/neovim-ayu", -- light: ayu
-	},
-	{
 		"olimorris/onedarkpro.nvim",
 	},
 	{
 		"gbprod/nord.nvim",
-	},
-	{
-		"sainnhe/edge", -- mainly installed for edge light
 	},
 	{
 		"EdenEast/nightfox.nvim",
