@@ -38,9 +38,6 @@ return {
 		"folke/tokyonight.nvim",
 	},
 	{
-		"olimorris/onedarkpro.nvim",
-	},
-	{
 		"gbprod/nord.nvim",
 	},
 	{
