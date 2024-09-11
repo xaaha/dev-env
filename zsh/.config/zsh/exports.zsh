@@ -42,6 +42,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # modified docker command 
 if [ -f "$HOME/.docker/init-zsh.sh" ]; then
