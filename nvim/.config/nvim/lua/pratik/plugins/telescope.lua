@@ -26,21 +26,21 @@ return {
 					"yarn.lock",
 					".git/",
 				},
-				selection_caret = "👉 ",
-				prompt_prefix = "🔎 ",
-				sorting_strategy = "ascending",
+				selection_caret = "→ ",
+				prompt_prefix = "🔭 ",
+				-- sorting_strategy = "ascending",
 				layout_strategy = "horizontal",
 				layout_config = {
 					horizontal = {
-						prompt_position = "top",
-						preview_width = 0.55,
-						results_width = 0.8,
+						-- prompt_position = "top",
+						preview_width = 0.50,
+						-- results_width = 0.9,
 					},
 					vertical = {
 						mirror = false,
 					},
-					width = 0.87,
-					height = 0.80,
+					width = 0.9,
+					height = 0.9,
 					preview_cutoff = 120,
 				},
 				vimgrep_arguments = {
@@ -61,7 +61,11 @@ return {
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 						["<c-t>"] = open_with_trouble,
 					},
-					n = { ["<c-t>"] = open_with_trouble },
+					n = {
+						["<c-t>"] = open_with_trouble,
+						["d"] = require("telescope.actions").delete_buffer,
+						["q"] = require("telescope.actions").close,
+					},
 				},
 			},
 		})
@@ -71,9 +75,14 @@ return {
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
 
-		keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+		keymap.set("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
 		keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
-		keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find open buffers" })
+		keymap.set(
+			"n",
+			"<c-b>",
+			"<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<cr>",
+			{ desc = "Find open buffers" }
+		)
 		keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd, exclude hidden" })
 		keymap.set("n", "<leader>fg", function()
 			require("telescope.builtin").live_grep({
@@ -88,7 +97,7 @@ return {
 		-- they don't overlap and don't cause any issue
 		keymap.set(
 			"n",
-			"<C-p>",
+			"<leader>ff",
 			"<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>",
 			{ desc = "Find all files (including hidden) in cwd" }
 		)

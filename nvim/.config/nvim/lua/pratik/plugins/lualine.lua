@@ -10,16 +10,7 @@ return {
 				section_separators = { left = "", right = "" },
 			}, -- comment out to enable default ">" section and component section separator
 			sections = {
-				lualine_x = {
-					-- {
-					-- 	lazy_status.updates,
-					-- 	cond = lazy_status.has_updates,
-					-- 	color = { fg = "#c3ccdc" },
-					-- },
-					{ "encoding" },
-					{ "fileformat" },
-					{ "filetype" },
-				},
+				lualine_c = { { "filename", path = 1 } }, -- 0 for file name only, 1 for relative file path
 			},
 		})
 	end,
