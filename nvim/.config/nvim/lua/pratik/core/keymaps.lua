@@ -2,6 +2,7 @@
 vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
+local opts = { noremap = true, silent = true }
 
 ---------------------
 -- General Keymaps
@@ -9,6 +10,7 @@ local keymap = vim.keymap -- for conciseness
 -- Most basic
 keymap.set("n", "<leader>ss", "<cmd>wa<CR>", { desc = "Save all" })
 keymap.set("n", "<leader>qq", "<cmd>wqa<CR>", { desc = "Write quit all" })
+keymap.set("v", "p", '"_dP', { desc = "Don't override yank on visual mode" })
 
 -- use jk & kj  to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
@@ -53,8 +55,29 @@ keymap.set("n", "<leader>ul", ":colorscheme catppuccin-latte<CR>", { desc = "Tog
 ---------------------
 -- Move text up and down
 ---------------------
-keymap.set("n", "<Down>", ":m .+1<CR>==", { noremap = true, silent = true, desc = "Move current line down" })
-keymap.set("n", "<Up>", ":m .-2<CR>==", { noremap = true, silent = true, desc = "Move current line up" })
+--- in normal mode
+keymap.set(
+	"n",
+	"<Down>",
+	":m .+1<CR>==",
+	{ noremap = true, silent = true, desc = "Move current line down with down arraw key" }
+)
+keymap.set(
+	"n",
+	"<Up>",
+	":m .-2<CR>==",
+	{ noremap = true, silent = true, desc = "Move current line up with up arrow key" }
+)
+-- in visual, mode use control j or k
+keymap.set("v", "<c-j>", ":m .+1<CR>==", opts)
+keymap.set("v", "<c-k>", ":m .-2<CR>==", opts)
+
+-- Visual Block --
+-- Move text up and down
+keymap.set("x", "J", ":move '>+1<CR>gv-gv", opts)
+keymap.set("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap.set("x", "<c-j>", ":move '>+1<CR>gv-gv", opts)
+keymap.set("x", "<c-k>", ":move '<-2<CR>gv-gv", opts)
 
 ---------------------
 -- Copy absolute & relative file path
