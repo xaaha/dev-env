@@ -11,6 +11,10 @@ return {
 			}, -- comment out to enable default ">" section and component section separator
 			sections = {
 				lualine_c = { { "filename", path = 1 } }, -- 0 for file name only, 1 for relative file path
+				lualine_y = { "searchcount" },
+			},
+			winbar = {
+				lualine_b = { "filename", "diff" },
 			},
 		})
 	end,
