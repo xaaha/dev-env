@@ -84,13 +84,13 @@ return {
 			{ desc = "Find open buffers" }
 		)
 		keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd, exclude hidden" })
-		keymap.set("n", "<leader>fg", function()
-			require("telescope.builtin").live_grep({
-				additional_args = function()
-					return { "--hidden", "-g", "!.git" }
-				end,
-			})
-		end, { desc = "Grep in all files, including hidden, exclude .git" })
+		-- keymap.set("n", "<leader>fg", function()
+		-- 	require("telescope.builtin").live_grep({
+		-- 		additional_args = function()
+		-- 			return { "--hidden", "-g", "!.git" }
+		-- 		end,
+		-- 	})
+		-- end, { desc = "Grep in all files, including hidden, exclude .git" })
 
 		keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 		-- this is also the key map if you want to select lsp suggestions but
@@ -101,7 +101,6 @@ return {
 			"<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>",
 			{ desc = "Find all files (including hidden) in cwd" }
 		)
-		keymap.set("n", "<leader>us", "<cmd>Telescope colorscheme<CR>", { desc = "Switch colorscheme with telescope" })
 		keymap.set(
 			"n",
 			"<leader>fw",
