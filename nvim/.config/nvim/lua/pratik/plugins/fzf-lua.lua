@@ -9,7 +9,6 @@ return {
 					["ctrl-h"] = require("fzf-lua.actions").toggle_hidden,
 					["ctrl-i"] = require("fzf-lua.actions").toggle_ignore,
 				},
-				-- rg_opts = "--hidden --glob '!.git'", // work in progress
 				rg_opts = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
 				grep_opts = "--binary-files=without-match --line-number --recursive --color=auto --perl-regexp -e",
 			},
