@@ -2,6 +2,7 @@ ripgrep
 trash
 fzf
 fd
+git
 jq
 jump
 nightfall
@@ -31,4 +32,12 @@ lazygit
 jandedobbeleer/oh-my-posh/oh-my-posh
 font-victor-mono-nerd-font 
 font-jetbrains-mono-nerd-font
+llm
+make
+task
+tealdeer
+virtualenv
+oven-sh/bun/bun
 --cask amazon-q
+--cask zen-browser
+--cask obsidian
