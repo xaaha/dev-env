@@ -1,43 +1,52 @@
-ripgrep
-trash
-fzf
+--cask 1password
+--cask alacritty
+--cask amazon-q
+--cask arc
+--cask brave
+--cask chatgpt
+--cask dozer
+--cask firefox
+--cask google-chrome@dev
+--cask notunes
+--cask obsidian
+--cask postman
+--cask raycast
+--cask rectangle
+--cask scroll-reverser
+--cask shottr
+--cask vscodium
+--cask wezterm
+--cask zed
+--cask zen-browser
 fd
+ffmpegthumbnailer 
+font-jetbrains-mono-nerd-font
+font-symbols-only-nerd-font
+font-victor-mono-nerd-font 
+fzf
 git
+imagemagick 
+jandedobbeleer/oh-my-posh/oh-my-posh
 jq
 jump
-nightfall
-scroll-reverser
---cask rectangle
---cask dozer
-sd
-alacritty
-wezterm
+lazygit
+llm
 lsd
-notunes
-tmux
-tealdear
-yazi 
-ffmpegthumbnailer 
-sevenzip 
-zoxide 
-imagemagick 
-font-symbols-only-nerd-font
+monitorcontrol 
+neovim
+nightfall
 nvm
+oven-sh/bun/bun
 pnpm
 poppler
-stow
 rbenv
-neovim
-lazygit
-jandedobbeleer/oh-my-posh/oh-my-posh
-font-victor-mono-nerd-font 
-font-jetbrains-mono-nerd-font
-llm
-make
+ripgrep
+sevenzip 
+stow
 task
-tealdeer
+tealdear
+tmux
+trash
 virtualenv
-oven-sh/bun/bun
---cask amazon-q
---cask zen-browser
---cask obsidian
+yazi 
+zoxide 
