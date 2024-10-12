@@ -32,6 +32,7 @@ jump
 lazygit
 llm
 lsd
+make
 monitorcontrol 
 neovim
 nightfall
