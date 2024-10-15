@@ -2,6 +2,12 @@
 
 ## Install Pre-requisite
 
+- Install with curl
+
+```bash
+curl -s https://raw.githubusercontent.com/xaaha/dev-env/refs/heads/main/install.sh | bash
+```
+
 - Intall all the brew apps from `install.txt`
 
 ```bash
