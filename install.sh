@@ -34,7 +34,8 @@ then
         eval "$(/opt/homebrew/bin/brew shellenv)"
         echo "Homebrew path added to ~/.bash_profile"
     elif [[ "$SHELL" == "/bin/zsh" ]]; then
-        eval "$(/opt/homebrew/bin/brew shellenv)" >> ~/.zprofile
+        echo >> ~/.zprofile
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
         eval "$(/opt/homebrew/bin/brew shellenv)"
         echo "Homebrew path added to ~/.zprofile"
     fi
