@@ -1,5 +1,6 @@
-# Read the install.txt file and install each item
-if [ -f "./install.txt" ]; then
+curl -O https://raw.githubusercontent.com/xaaha/dev-env/refs/heads/main/install.txt
+
+if [ -f install.txt ]; then
     while IFS= read -r item
     do
        echo "$item" 
