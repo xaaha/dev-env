@@ -39,24 +39,30 @@ else
     echo "Homebrew is already installed."
 fi
 
-# Read the install.txt file and install each item
-if [ -f install.txt ]; then
+# Function to process the install.txt content
+process_items() {
     while IFS= read -r item
     do
         # Skip empty lines or lines starting with a comment (#)
         if [[ -z "$item" || "$item" == \#* ]]; then
             continue
         fi
-        
+
         # If the line contains --cask, install it as a cask
         if [[ "$item" == *"--cask"* ]]; then
             brew install --cask "${item/--cask /}"
         else
             brew install "$item"
         fi
-    done < install.txt
+    done
+}
+
+# Check if install.txt is available locally
+if [ -f install.txt ]; then
+    process_items < install.txt
 else
-    echo "install.txt not found."
+    echo "install.txt not found locally. Fetching from GitHub..."
+    curl -s https://raw.githubusercontent.com/xaaha/dev-env/main/install.txt | process_items
 fi
 
 echo "Installation complete."
