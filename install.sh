@@ -21,7 +21,8 @@ fi
 if ! command -v brew &> /dev/null
 then
     echo "Homebrew not found, installing..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh) | bash
     echo "Homebrew installed."
 
     # Add Homebrew to PATH
