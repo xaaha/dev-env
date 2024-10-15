@@ -1,3 +1,4 @@
+# Remove trailing spaces :%s/\s\+$//g
 --cask 1password
 --cask alacritty
 --cask amazon-q
