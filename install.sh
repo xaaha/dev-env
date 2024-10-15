@@ -22,6 +22,9 @@ if ! command -v brew &> /dev/null
 then
     echo "Homebrew not found, installing..."
 
+    # Request sudo upfront for Homebrew installation
+    sudo -v
+
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     echo "Homebrew installed."
 
@@ -32,7 +35,6 @@ then
         echo "Homebrew path added to ~/.bash_profile"
     elif [[ "$SHELL" == "/bin/zsh" ]]; then
         eval "$(/opt/homebrew/bin/brew shellenv)" >> ~/.zprofile
-        # echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
         eval "$(/opt/homebrew/bin/brew shellenv)"
         echo "Homebrew path added to ~/.zprofile"
     fi
@@ -49,10 +51,18 @@ process_items() {
             continue
         fi
 
+        # Check if the item is already installed
+        if brew list --formula | grep -q "^${item}$" || brew list --cask | grep -q "^${item}$"; then
+            echo "$item is already installed, skipping..."
+            continue
+        fi
+
         # If the line contains --cask, install it as a cask
         if [[ "$item" == *"--cask"* ]]; then
+            echo "Installing $item as a cask..."
             brew install --cask "${item/--cask /}"
         else
+            echo "Installing $item..."
             brew install "$item"
         fi
     done
