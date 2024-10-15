@@ -22,7 +22,7 @@ fd
 ffmpegthumbnailer
 font-jetbrains-mono-nerd-font
 font-symbols-only-nerd-font
-font-victor-mono-nerd-font 
+font-victor-mono-nerd-font
 fzf
 git
 imagemagick
@@ -42,7 +42,7 @@ pnpm
 poppler
 rbenv
 ripgrep
-sevenzip 
+sevenzip
 stow
 task
 tealdeer
