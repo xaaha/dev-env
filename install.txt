@@ -2,7 +2,7 @@
 --cask alacritty
 --cask amazon-q
 --cask arc
---cask brave
+--cask brave-browser
 --cask chatgpt
 --cask dozer
 --cask firefox
@@ -19,13 +19,13 @@
 --cask zed
 --cask zen-browser
 fd
-ffmpegthumbnailer 
+ffmpegthumbnailer
 font-jetbrains-mono-nerd-font
 font-symbols-only-nerd-font
 font-victor-mono-nerd-font 
 fzf
 git
-imagemagick 
+imagemagick
 jandedobbeleer/oh-my-posh/oh-my-posh
 jq
 jump
@@ -33,7 +33,7 @@ lazygit
 llm
 lsd
 make
-monitorcontrol 
+monitorcontrol
 neovim
 nightfall
 nvm
@@ -45,9 +45,9 @@ ripgrep
 sevenzip 
 stow
 task
-tealdear
+tealdeer
 tmux
 trash
 virtualenv
-yazi 
-zoxide 
+yazi
+zoxide
