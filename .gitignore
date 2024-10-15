@@ -41,3 +41,4 @@ zsh/.config/zsh/secrets.zsh
 !README.md
 !install.txt
 !install.sh
+!test.sh
