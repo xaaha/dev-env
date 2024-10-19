@@ -26,6 +26,7 @@ font-symbols-only-nerd-font
 font-victor-mono-nerd-font
 fzf
 git
+go
 imagemagick
 jandedobbeleer/oh-my-posh/oh-my-posh
 jq

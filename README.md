@@ -2,17 +2,21 @@
 
 ## Install Pre-requisite
 
-- Install with curl
+- Install [zap](https://github.com/zap-zsh/zap)
+
+- Install all apps with curl
 
 ```bash
 curl -s https://raw.githubusercontent.com/xaaha/dev-env/refs/heads/main/install.sh | bash
 ```
 
-- Intall all the brew apps from `install.txt`
+> Intalls all apps from `install.txt` file. Just run the command again if an application fails to install
 
-```bash
-xargs brew install < install.txt
-```
+- Install tpm for tmux from [the official repo](https://github.com/tmux-plugins/tpm).
+
+  - Install with: `prefix I`
+  - Uninstall with: `prefix alt u` (option in MacOs)
+  - Upgrade packages: `prefix U`
 
 - Install the rmtree to remove formulae and all their dependencies
 
@@ -27,18 +31,6 @@ brew rmtree <packagename>
 # paste this and hit yes for all
 $(brew --prefix)/opt/fzf/install
 ```
-
-- **Jump**: To easily navigate between folders. After installation, put this in the `.zshrc`
-
-```bash
-eval "$(jump bash)"
-```
-
-- A [Nerd Font](https://www.nerdfonts.com/) **_(optional)_**
-
-> [!TIP]
-> Get Amazon Q [here](https://aws.amazon.com/codewhisperer/resources/#Getting_started/) if it's not installed with brew.
-> After Installation, run `cw integrations install input-method`
 
 - Alacritty
 
