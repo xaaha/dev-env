@@ -36,7 +36,7 @@ return {
 				"pyright", -- python
 				"gopls",
 				"jsonls",
-				"solargraph", -- ruby
+				"ruby_lsp",
 				"yamlls",
 				-- "tailwindcss", -- examples
 				-- "svelte",
