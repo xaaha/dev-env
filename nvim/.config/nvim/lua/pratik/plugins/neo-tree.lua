@@ -324,7 +324,7 @@ return {
 
 		vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
 		local keymap = vim.keymap -- for conciseness
-		keymap.set("n", "<C-n>", "<cmd>Neotree toggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
-		keymap.set("n", "<leader>ef", "<cmd>Neotree reveal<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
+		keymap.set("n", "<leader>ef", "<cmd>Neotree toggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
+		keymap.set("n", "<C-n>", "<cmd>Neotree reveal<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
 	end,
 }
