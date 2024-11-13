@@ -60,7 +60,6 @@ return {
 				"golangci-lint", -- go linters end,
 				"rubyfmt",
 				"rubocop", --  ruby linter and formatter
-				"erb-formatter", -- embeded ruby formatter
 				"erb-lint", -- ruby end
 				"yamllint", -- yaml
 				"yq", -- yaml formatter

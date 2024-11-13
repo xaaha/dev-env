@@ -77,7 +77,11 @@ return {
 			["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
 		}
 		vim.diagnostic.config({
-			virtual_text = false,
+			-- virtual_text = false, to disable the warning display
+			virtual_text = {
+				spacing = 4,
+				prefix = "●",
+			},
 			float = {
 				border = border,
 			},
