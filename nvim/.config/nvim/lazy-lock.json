@@ -8,7 +8,7 @@
   "conform.nvim": { "branch": "master", "commit": "1a7ff54dcfbe1af139b11829c6d58f5ffab87707" },
   "dressing.nvim": { "branch": "master", "commit": "43b8f74e0b1e3f41e51f640f8efa3bcd401cea0d" },
   "friendly-snippets": { "branch": "main", "commit": "de8fce94985873666bd9712ea3e49ee17aadb1ed" },
-  "fzf-lua": { "branch": "main", "commit": "6fbf7a9ee29e1e3e4cfd1af5c6406042e776883d" },
+  "fzf-lua": { "branch": "main", "commit": "8af7f00a11fbeb33a88cf95c951460eb8b1fb531" },
   "github-nvim-theme": { "branch": "main", "commit": "0e4636f556880d13c00d8a8f686fae8df7c9845f" },
   "gitsigns.nvim": { "branch": "main", "commit": "0b04035bb7b3c83e999b9676e2fb46fd0aa9f910" },
   "harpoon": { "branch": "harpoon2", "commit": "a84ab829eaf3678b586609888ef52f7779102263" },
