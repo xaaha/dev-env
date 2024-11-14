@@ -1,3 +1,5 @@
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
 console_title_template = '{{ .Shell }} in {{ .Folder }}'
 version = 3
 final_space = true
@@ -18,7 +20,7 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = '{{ .Folder }}'
+    template = '{{ .Folder }}'# {{ .PATH }} if you need full path
     foreground = 'blue'
     background = 'transparent'
     type = 'path'
@@ -61,6 +63,7 @@ final_space = true
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
+  # newline = true # if you want a new line for your command
 
   [[blocks.segments]]
     template = '→'
