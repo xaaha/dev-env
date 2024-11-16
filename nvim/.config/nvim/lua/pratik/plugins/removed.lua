@@ -1,5 +1,21 @@
--- only need this while using python, disabling this for now
+-- removing these because of varisous reasons
 return {
+	-- too heavy for large projects
+	-- {
+	-- 	"lukas-reineke/indent-blankline.nvim",
+	-- 	main = "ibl",
+	-- 	opts = {},
+	-- },
+	-- inocrrec indents
+	-- {
+	-- 	"nvimdev/indentmini.nvim",
+	-- 	config = function()
+	-- 		require("indentmini").setup({
+	-- 			only_current = true, -- Highlight only the current scope
+	-- 		})
+	-- 	end,
+	-- },
+	-- only used in python to select virtual env
 	-- "linux-cultist/venv-selector.nvim",
 	-- dependencies = {
 	-- 	"neovim/nvim-lspconfig",
