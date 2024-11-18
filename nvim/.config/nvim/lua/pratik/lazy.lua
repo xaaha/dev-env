@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "pratik.plugins" }, { import = "pratik.plugins.lsp" } }, {
 	install = {
-		colorscheme = { "github_light", "tokyonight" },
+		colorscheme = { "gruvbox" },
 	},
 	checker = {
 		enabled = true,
