@@ -1,13 +1,12 @@
 return {
 	{
 		"catppuccin/nvim",
-		priority = 1000,
 		lazy = false,
 		config = function()
 			-- configure the colorscheme here
 			require("catppuccin").setup({
 				flavour = "latte", -- latte, frappe, macchiato, mocha
-				styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+				styles = {
 					functions = { "italic" },
 				},
 				color_overrides = {},
@@ -17,37 +16,32 @@ return {
 						enabled = true,
 						style = "nvchad",
 					},
-					aerial = true,
-					noice = true,
-					notify = true,
-					-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+					-- For more plugins integrations scroll (https://github.com/catppuccin/nvim#integrations)
 				},
 			})
-			vim.cmd("colorscheme catppuccin-mocha")
+			-- vim.cmd("colorscheme catppuccin-mocha")
 		end,
 	},
 	{
 		"projekt0n/github-nvim-theme",
-		-- priority = 1000,
-		-- lazy = false,
-		-- config = function()
-		-- 	vim.cmd("colorscheme github_light_tritanopia")
-		-- end,
 	},
 	{
 		"folke/tokyonight.nvim",
 	},
 	{
-		"gbprod/nord.nvim",
-	},
-	{
 		"EdenEast/nightfox.nvim",
 		-- tons of variants. Especially, nordfox is great nord theme.
 		-- Day and Dawn fox for light themes
+		config = function()
+			require("nightfox").setup({
+				dim_inactive = true,
+			})
+		end,
 	},
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{
 		"ellisonleao/gruvbox.nvim",
+		priority = 1000,
 		config = function()
 			require("gruvbox").setup({
 				terminal_colors = true, -- add neovim terminal colors
@@ -67,16 +61,26 @@ return {
 				invert_tabline = false,
 				invert_intend_guides = false,
 				inverse = true, -- invert background for search, diffs, statuslines and errors
-				contrast = "soft", -- can be "hard", "soft" or empty string
+				contrast = "hard", -- can be "hard", "soft" or empty string
 				palette_overrides = {},
 				overrides = {},
-				dim_inactive = false,
+				dim_inactive = true,
 				transparent_mode = false,
 			})
 			vim.cmd("colorscheme gruvbox")
+			vim.opt.background = "dark"
 		end,
 	},
 	{
 		"neanias/everforest-nvim",
+		config = function()
+			require("lualine").setup({
+				dim_inactive_windows = true,
+				options = {
+					theme = "everforest", -- Can also be "auto" to detect automatically.
+				},
+			})
+			vim.opt.background = "dark"
+		end,
 	},
 }
