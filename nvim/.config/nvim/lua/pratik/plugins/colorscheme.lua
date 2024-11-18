@@ -47,14 +47,8 @@ return {
 	},
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{
-		"sainnhe/gruvbox-material",
-		config = function()
-			-- Set up the Gruvbox Material theme
-			vim.g.gruvbox_material_background = "medium" -- You can set this to 'dark', 'light', or 'medium'
-			vim.g.gruvbox_material_palette = "original" -- You can choose 'original', 'mix', or 'material'
-			vim.g.gruvbox_material_enable_italic = 1 -- Enable italics in the theme
-			vim.g.gruvbox_material_better_performance = 1 -- Enable better performance (optional)
-		end,
+		"ellisonleao/gruvbox.nvim",
+		config = function() end,
 	},
 	{
 		"neanias/everforest-nvim",
