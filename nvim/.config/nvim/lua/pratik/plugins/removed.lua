@@ -33,4 +33,11 @@ return {
 	-- 	{ "<leader>vs", "<cmd>VenvSelect<cr>", desc = "Open venv for python" },
 	-- 	{ "<leader>vc", "<cmd>VenvSelectCached<cr>", desc = "Retrieve venv from cache for python" },
 	-- },
+	-- Never really used it actually. Learning to use harpoon.
+	-- {
+	-- 	"szw/vim-maximizer",
+	-- 	keys = {
+	-- 		{ "<leader>sm", "<cmd>MaximizerToggle<CR>", desc = "Maximize/minimize a split" },
+	-- 	},
+	-- },
 }

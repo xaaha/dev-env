@@ -11,6 +11,15 @@ return {
 				},
 				rg_opts = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
 				grep_opts = "--binary-files=without-match --line-number --recursive --color=auto --perl-regexp -e",
+				rg_glob = true,
+				-- first returned string is the new search query
+				-- second returned string are (optional) additional rg flags
+				-- @return string, string?
+				rg_glob_fn = function(query, _)
+					local regex, flags = query:match("^(.-)%s%-%-(.*)$")
+					-- If no separator is detected will return the original query
+					return (regex or query), flags
+				end,
 			},
 			files = {
 				actions = {
