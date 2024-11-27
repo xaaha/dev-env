@@ -1,6 +1,5 @@
 return {
 	"ray-x/lsp_signature.nvim",
-	-- skipping tag since it is pretty old
 	event = "VeryLazy",
 	opts = {
 		handler_opts = {
