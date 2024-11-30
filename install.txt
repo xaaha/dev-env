@@ -8,6 +8,7 @@
 --cask dozer
 --cask firefox
 --cask google-chrome@dev
+--cask hyperkey
 --cask notunes
 --cask obsidian
 --cask postman
