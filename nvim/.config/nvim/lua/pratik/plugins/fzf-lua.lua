@@ -3,7 +3,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("fzf-lua").setup({
-			"fzf-vim", -- "telescope", "fzf-native", "fzf-vim", "default"
+			"telescope", -- "telescope", "fzf-native", "fzf-vim", "default"
 			grep = {
 				actions = {
 					["ctrl-h"] = require("fzf-lua.actions").toggle_hidden,
