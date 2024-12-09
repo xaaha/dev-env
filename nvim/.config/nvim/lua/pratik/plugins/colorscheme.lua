@@ -24,6 +24,9 @@ return {
 	},
 	{
 		"projekt0n/github-nvim-theme",
+		config = function()
+			vim.cmd("colorscheme github_dark")
+		end,
 	},
 	{
 		"folke/tokyonight.nvim",
@@ -67,7 +70,7 @@ return {
 				dim_inactive = true,
 				transparent_mode = false,
 			})
-			vim.cmd("colorscheme gruvbox")
+			-- vim.cmd("colorscheme gruvbox")
 			vim.opt.background = "dark"
 		end,
 	},
