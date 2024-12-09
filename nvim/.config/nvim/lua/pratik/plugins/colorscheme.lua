@@ -24,6 +24,7 @@ return {
 	},
 	{
 		"projekt0n/github-nvim-theme",
+		priority = 1000,
 		config = function()
 			require("github-theme").setup({
 				options = {
@@ -34,6 +35,7 @@ return {
 					},
 				},
 			})
+
 			vim.cmd("colorscheme github_dark")
 		end,
 	},
@@ -53,7 +55,6 @@ return {
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{
 		"ellisonleao/gruvbox.nvim",
-		priority = 1000,
 		config = function()
 			require("gruvbox").setup({
 				terminal_colors = true, -- add neovim terminal colors
