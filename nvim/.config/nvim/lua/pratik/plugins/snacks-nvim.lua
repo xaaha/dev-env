@@ -17,6 +17,7 @@ return {
 			},
 		},
 		lazygit = { enabled = true },
+		notifier = { enabled = true },
 	},
 	-- https://github.com/folke/snacks.nvim/blob/64fbb157a0b7fa2279817ed16d3f530c00b8863c/doc/snacks.nvim.txt#L258
 	keys = {
