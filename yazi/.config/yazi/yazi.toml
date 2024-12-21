@@ -4,3 +4,12 @@ edit = [
 { run = 'zed "$@"', block = true},
 { run = 'code "$@"', block = true},
 ]
+
+[manager]
+layout         = [ 1, 4, 4 ]
+sort_by        = "mtime"
+sort_sensitive = false
+sort_reverse   = true
+sort_dir_first = true
+show_hidden    = false
+show_symlink   = true
