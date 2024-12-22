@@ -4,6 +4,14 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("gitsigns").setup({
+			on_attach = function(bufnr)
+				-- Automatically refresh signs when files are modified
+				vim.api.nvim_buf_attach(bufnr, false, {
+					on_lines = function()
+						require("gitsigns").refresh()
+					end,
+				})
+			end,
 			vim.keymap.set("n", "<leader>G", ":Gitsigns<CR>", { desc = "Toggle Gitsigns selector" }),
 			vim.keymap.set("n", "<leader>hl", ":Gitsigns preview_hunk<CR>", { desc = "Preview hunk in line" }),
 			vim.keymap.set("n", "<leader>hs", ":Gitsigns stage_hunk<CR>", { desc = "Stage hunk" }),
