@@ -122,3 +122,10 @@ Lastly on the browser
 ```bash
 http://localhost:6060/
 ```
+
+### Mac Notes
+
+```bash
+# change quit unexpectedly popup to a notification
+defaults write com.apple.CrashReporter UseUNC 1
+```
