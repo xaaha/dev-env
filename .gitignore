@@ -36,6 +36,10 @@ zsh/.config/zsh/secrets.zsh
 !omp/.config/
 !omp/.config/**
 
+!mise/
+!mise/.config/
+!mise/.config/**
+
 !.stow-local-ignore
 
 !README.md

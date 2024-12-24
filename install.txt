@@ -39,7 +39,7 @@ make
 monitorcontrol
 neovim
 nightfall
-fnm
+mise
 oven-sh/bun/bun
 pnpm
 poppler

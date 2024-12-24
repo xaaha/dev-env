@@ -34,9 +34,7 @@ export PATH="$PNPM_HOME:$PATH"
 eval "$(zoxide init zsh)"
 eval "$(jump shell)" 
 
-# fast node manager
-eval "$(fnm env --use-on-cd --shell zsh)"
-
+eval "$(mise activate zsh)"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source <(fzf --zsh)
