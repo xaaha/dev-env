@@ -1,0 +1,11 @@
+title = ""
+macos-titlebar-style = hidden
+font-family = "JetBrainsMono Nerd Font"
+font-size = 17
+window-height = 57
+window-width = 150
+window-padding-x = 5,5
+window-padding-y = 5,3
+quit-after-last-window-closed=true
+theme = "Ayu Mirage"
+background-opacity = 0.98

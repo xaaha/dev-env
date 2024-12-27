@@ -24,6 +24,9 @@
 !wezterm/
 !wezterm/**
 
+!ghostty/
+!ghostty/**
+
 # zsh config
 !zsh
 !zsh/.zshrc
