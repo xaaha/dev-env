@@ -23,4 +23,5 @@ return {
 	hide_tab_bar_if_only_one_tab = true,
 	initial_cols = 150,
 	initial_rows = 57,
+	max_fps = 120,
 }
