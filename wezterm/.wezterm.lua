@@ -9,7 +9,7 @@ return {
 	use_cap_height_to_scale_fallback_fonts = true,
 	--colorscheme
 	-- colors = xaaha.XAAHA_BLUE,
-	color_scheme = "Sonokai (Gogh)", --Dracula (Official), Sonokai (Gogh), tokyonight
+	color_scheme = "Chester", --Dracula (Official), Sonokai (Gogh), tokyonight, Chester
 	-- window management
 	window_padding = {
 		left = 5,
