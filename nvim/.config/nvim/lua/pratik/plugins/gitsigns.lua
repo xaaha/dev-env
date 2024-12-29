@@ -11,6 +11,14 @@ return {
 						require("gitsigns").refresh()
 					end,
 				})
+
+				-- Refresh signs after Git commands
+				vim.api.nvim_create_autocmd("User", {
+					pattern = "Git",
+					callback = function()
+						require("gitsigns").refresh()
+					end,
+				})
 			end,
 			vim.keymap.set("n", "<leader>G", ":Gitsigns<CR>", { desc = "Toggle Gitsigns selector" }),
 			vim.keymap.set("n", "<leader>hl", ":Gitsigns preview_hunk<CR>", { desc = "Preview hunk in line" }),
