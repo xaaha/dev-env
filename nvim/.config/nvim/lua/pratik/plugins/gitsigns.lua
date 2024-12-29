@@ -5,17 +5,8 @@ return {
 	config = function()
 		require("gitsigns").setup({
 			on_attach = function(bufnr)
-				-- Automatically refresh signs when files are modified
 				vim.api.nvim_buf_attach(bufnr, false, {
 					on_lines = function()
-						require("gitsigns").refresh()
-					end,
-				})
-
-				-- Refresh signs after Git commands
-				vim.api.nvim_create_autocmd("User", {
-					pattern = "Git",
-					callback = function()
 						require("gitsigns").refresh()
 					end,
 				})
