@@ -82,7 +82,7 @@ return {
 			float = {
 				border = border,
 			},
-		}) -- disable virtual text that annoys the crap out of me.
+		})
 
 		-- used to enable autocompletion (assign to every lsp server config)
 		-- import cmp-nvim-lsp plugin
@@ -106,6 +106,13 @@ return {
 
 		-- configure typescript server with plugin
 		lspconfig["ts_ls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			handlers = handlers,
+		})
+
+		-- configure typescript server with plugin
+		lspconfig["eslint"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 			handlers = handlers,
