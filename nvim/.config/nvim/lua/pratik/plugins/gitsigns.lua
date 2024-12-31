@@ -2,6 +2,8 @@ return {
 	"lewis6991/gitsigns.nvim",
 	tag = "v0.9.0",
 	event = { "BufReadPre", "BufNewFile" },
+	signcolumn = true,
+	_signs_staged_enable = true, -- experimental
 	config = function()
 		require("gitsigns").setup({
 			on_attach = function(bufnr)
