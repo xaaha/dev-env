@@ -74,8 +74,6 @@ return {
 
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
-
-		keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
 		keymap.set(
 			"n",
 			"<c-b>",
@@ -83,37 +81,11 @@ return {
 			{ desc = "Find open buffers" }
 		)
 		keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd, exclude hidden" })
-
-		-- Disabling these keymaps and experimenting with fzf lua
-
-		-- keymap.set("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-		-- keymap.set("n", "<leader>fg", function()
-		-- 	require("telescope.builtin").live_grep({
-		-- 		additional_args = function()
-		-- 			return { "--hidden", "-g", "!.git" }
-		-- 		end,
-		-- 	})
-		-- end, { desc = "Grep in all files, including hidden, exclude .git" })
-
-		-- keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-
 		keymap.set(
 			"n",
 			"<leader>ff",
 			"<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>",
 			{ desc = "Find all files (including hidden) in cwd" }
-		)
-		keymap.set(
-			"n",
-			"<leader>fw",
-			"<cmd>Telescope current_buffer_fuzzy_find<cr>",
-			{ desc = "Grep in current buffer" }
-		)
-		keymap.set(
-			"n",
-			"<leader>fe",
-			"<cmd>Telescope live_grep grep_open_files=true<cr>",
-			{ desc = "Grep in recent buffers" }
 		)
 	end,
 }

@@ -4,6 +4,11 @@ return {
 	config = function()
 		require("fzf-lua").setup({
 			"telescope", -- "telescope", "fzf-native", "fzf-vim", "default"
+			keymap = {
+				fzf = {
+					["ctrl-q"] = "select-all+accept",
+				},
+			},
 			grep = {
 				actions = {
 					["ctrl-h"] = require("fzf-lua.actions").toggle_hidden,
@@ -19,20 +24,21 @@ return {
 				},
 			},
 		})
-		local keymap = vim.api.nvim_set_keymap
-		keymap(
+		local customKeymap = vim.api.nvim_set_keymap
+		customKeymap(
 			"n",
 			"<leader>fg",
 			"<cmd>FzfLua live_grep_native<CR>",
 			{ noremap = true, silent = true, desc = "Fzf live grep native" }
 		)
-		keymap(
+		customKeymap(
 			"n",
 			"<leader>us",
 			"<cmd>FzfLua colorschemes<CR>",
 			{ noremap = true, silent = true, desc = "Preview and pick color scheme" }
 		)
-		keymap("n", "<C-p>", "<cmd>FzfLua files<cr>", { desc = "Fuzzy find files in cwd" })
-		keymap("n", "<leader>fc", "<cmd>FzfLua grep_cword<cr>", { desc = "Find string under cursor in cwd" })
+		customKeymap("n", "<C-p>", "<cmd>FzfLua files<cr>", { desc = "Fuzzy find files in cwd" })
+		customKeymap("n", "<leader>fc", "<cmd>FzfLua grep_cword<cr>", { desc = "Find string under cursor in cwd" })
+		customKeymap("n", "<leader>fw", "<cmd>FzfLua grep_curbuf<cr>", { desc = "Grep in current buffer" })
 	end,
 }
