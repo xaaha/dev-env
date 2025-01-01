@@ -1,3 +1,5 @@
+-- inspiration
+-- https://github.com/MariaSolOs/dotfiles/blob/bbf73a31c5ee255d0ad5b5a0981c5d4d6d0661f4/.config/nvim/lua/plugins/gitsigns.lua
 return {
 	"lewis6991/gitsigns.nvim",
 	tag = "v0.9.0",
@@ -11,6 +13,7 @@ return {
 					end,
 				})
 			end,
+			preview_config = { border = "rounded" },
 			vim.keymap.set("n", "<leader>G", ":Gitsigns<CR>", { desc = "Toggle Gitsigns selector" }),
 			vim.keymap.set("n", "<leader>hl", ":Gitsigns preview_hunk<CR>", { desc = "Preview hunk in line" }),
 			vim.keymap.set("n", "<leader>hs", ":Gitsigns stage_hunk<CR>", { desc = "Stage hunk" }),

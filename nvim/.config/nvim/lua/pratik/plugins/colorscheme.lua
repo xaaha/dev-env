@@ -11,13 +11,6 @@ return {
 				},
 				color_overrides = {},
 				custom_highlights = {},
-				integrations = {
-					telescope = {
-						enabled = true,
-						style = "nvchad",
-					},
-					-- For more plugins integrations scroll (https://github.com/catppuccin/nvim#integrations)
-				},
 			})
 			-- vim.cmd("colorscheme catppuccin-mocha")
 		end,
