@@ -17,14 +17,28 @@ return {
 		local function common_on_attach(_, bufnr) -- client, bufnr
 			opts.buffer = bufnr
 			local key_mappings = {
-				{ "gr", "<cmd>Telescope lsp_references<CR>", "Show LSP references" },
-				{ "gD", vim.lsp.buf.declaration, "Go to declaration" },
-				{ "gd", "<cmd>Telescope lsp_definitions<CR>", "Show LSP definitions" },
-				{ "gi", "<cmd>Telescope lsp_implementations<CR>", "Show LSP implementations" },
-				{ "gt", "<cmd>Telescope lsp_type_definitions<CR>", "Show LSP type definitions" },
-				{ "<leader>ca", vim.lsp.buf.code_action, "See available code actions" },
+				{ "gr", "<cmd>FzfLua lsp_references<CR>", "Show LSP references" },
+				{ "gD", "<cmd>FzfLua lsp_declarations<CR>", "Go to declaration" },
+				{ "gd", "<cmd>FzfLua lsp_definitions<CR>", "Show LSP definitions" },
+				{ "gi", "<cmd>FzfLua lsp_implementations<CR>", "Show LSP implementations" },
+				{ "gt", "<cmd>FzfLua lsp_typedefs<CR>", "Show LSP type definitions" },
+				{
+					"<leader>ca",
+					function()
+						require("fzf-lua").lsp_code_actions({
+							relative = "cursor",
+							winopts = {
+								width = 0.7,
+								height = 0.7,
+								row = 1,
+								preview = { vertical = "up:80%" },
+							},
+						})
+					end,
+					"Code actions",
+				},
 				{ "<leader>rn", vim.lsp.buf.rename, "Smart rename" },
-				{ "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", "Show buffer diagnostics" },
+				{ "<leader>D", "<cmd>FzfLua lsp_document_diagnostics<CR>", "Show buffer diagnostics" },
 				{ "<leader>d", vim.diagnostic.open_float, "Show line diagnostics" },
 				{ "[d", vim.diagnostic.goto_prev, "Go to previous diagnostic" },
 				{ "]d", vim.diagnostic.goto_next, "Go to next diagnostic" },

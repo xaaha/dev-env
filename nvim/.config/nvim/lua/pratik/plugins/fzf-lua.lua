@@ -23,6 +23,12 @@ return {
 					["ctrl-g"] = require("fzf-lua.actions").toggle_ignore,
 				},
 			},
+			lsp = {
+				code_actions = {
+					previewer = "codeaction_native",
+					preview_pager = "delta --side-by-side --width=$FZF_PREVIEW_COLUMNS --hunk-header-style='omit' --file-style='omit'",
+				},
+			},
 		})
 		local customKeymap = vim.api.nvim_set_keymap
 		customKeymap(
@@ -40,5 +46,6 @@ return {
 		customKeymap("n", "<C-p>", "<cmd>FzfLua files<cr>", { desc = "Fuzzy find files in cwd" })
 		customKeymap("n", "<leader>fc", "<cmd>FzfLua grep_cword<cr>", { desc = "Find string under cursor in cwd" })
 		customKeymap("n", "<leader>fw", "<cmd>FzfLua grep_curbuf<cr>", { desc = "Grep in current buffer" })
+		customKeymap("n", "<c-b>", "<cmd>FzfLua buffers<CR>", { desc = "Find all files (including hidden) in cwd" })
 	end,
 }

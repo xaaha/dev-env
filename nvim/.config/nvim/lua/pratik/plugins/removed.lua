@@ -1,43 +1,69 @@
--- removing these because of varisous reasons
+-- Going keep nvim-cmp in this file for now
 return {
-	-- too heavy for large projects
-	-- {
-	-- 	"lukas-reineke/indent-blankline.nvim",
-	-- 	main = "ibl",
-	-- 	opts = {},
-	-- },
-	-- inocrrec indents
-	-- {
-	-- 	"nvimdev/indentmini.nvim",
-	-- 	config = function()
-	-- 		require("indentmini").setup({
-	-- 			only_current = true, -- Highlight only the current scope
-	-- 		})
-	-- 	end,
-	-- },
-	-- only used in python to select virtual env
-	-- "linux-cultist/venv-selector.nvim",
-	-- dependencies = {
-	-- 	"neovim/nvim-lspconfig",
-	-- 	"mfussenegger/nvim-dap",
-	-- 	"mfussenegger/nvim-dap-python", --optional
-	-- 	{ "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
-	-- },
-	-- lazy = false,
-	-- branch = "regexp", -- This is the regexp branch, use this for the new version
-	-- config = function()
-	-- 	require("venv-selector").setup()
-	-- end,
-	-- event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
-	-- keys = {
-	-- 	{ "<leader>vs", "<cmd>VenvSelect<cr>", desc = "Open venv for python" },
-	-- 	{ "<leader>vc", "<cmd>VenvSelectCached<cr>", desc = "Retrieve venv from cache for python" },
-	-- },
-	-- Never really used it actually. Learning to use harpoon.
-	-- {
-	-- 	"szw/vim-maximizer",
-	-- 	keys = {
-	-- 		{ "<leader>sm", "<cmd>MaximizerToggle<CR>", desc = "Maximize/minimize a split" },
+	-- 	{
+	-- 		"hrsh7th/nvim-cmp",
+	-- 		-- skipping tag since it is pretty old
+	-- 		event = "InsertEnter",
+	-- 		dependencies = {
+	-- 			"hrsh7th/cmp-buffer", -- source for text in buffer
+	-- 			"hrsh7th/cmp-path", -- source for file system paths
+	-- 			"L3MON4D3/LuaSnip", -- snippet engine
+	-- 			"saadparwaiz1/cmp_luasnip", -- for autocompletion
+	-- 			"rafamadriz/friendly-snippets", -- useful snippets
+	-- 			"onsails/lspkind.nvim", -- vs-code like pictograms
+	-- 		},
+	-- 		config = function()
+	-- 			local cmp = require("cmp")
+	--
+	-- 			local luasnip = require("luasnip")
+	--
+	-- 			-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
+	-- 			require("luasnip.loaders.from_vscode").lazy_load()
+	--
+	-- 			cmp.setup({
+	-- 				window = {
+	-- 					completion = cmp.config.window.bordered(),
+	-- 					documentation = cmp.config.window.bordered(),
+	-- 				},
+	-- 				completion = {
+	-- 					completeopt = "menu,menuone,preview,noselect",
+	-- 				},
+	-- 				snippet = { -- configure how nvim-cmp interacts with snippet engine
+	-- 					expand = function(args)
+	-- 						luasnip.lsp_expand(args.body)
+	-- 					end,
+	-- 				},
+	-- 				mapping = cmp.mapping.preset.insert({
+	-- 					["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
+	-- 					["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
+	-- 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
+	-- 					["<C-f>"] = cmp.mapping.scroll_docs(4),
+	-- 					["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
+	-- 					["<C-e>"] = cmp.mapping.abort(), -- close completion window
+	-- 					["<CR>"] = cmp.mapping.confirm({ select = false }),
+	-- 				}),
+	-- 				-- sources for autocompletion
+	-- 				sources = cmp.config.sources({
+	-- 					{ name = "nvim_lsp" },
+	-- 					{ name = "luasnip" }, -- snippets
+	-- 					{ name = "buffer" }, -- text within current buffer
+	-- 					{ name = "path" }, -- file system paths
+	-- 				}),
+	-- 				-- configure lspkind for vs-code like pictograms in completion menu
+	-- 				formatting = {
+	-- 					fields = { "kind", "abbr", "menu" },
+	-- 					format = function(entry, vim_item)
+	-- 						local kind = require("lspkind").cmp_format({
+	-- 							mode = "symbol_text",
+	-- 							maxwidth = 50,
+	-- 						})(entry, vim_item)
+	-- 						local strings = vim.split(kind.kind, "%s", { trimempty = true })
+	-- 						kind.kind = " " .. (strings[1] or "") .. " "
+	-- 						kind.menu = "    (" .. (strings[2] or "") .. ")"
+	-- 						return kind
+	-- 					end,
+	-- 				},
+	-- 			})
+	-- 		end,
 	-- 	},
-	-- },
 }
