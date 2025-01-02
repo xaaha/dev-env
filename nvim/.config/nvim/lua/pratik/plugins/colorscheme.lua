@@ -47,16 +47,5 @@ return {
 	},
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{ "savq/melange-nvim" },
-	{
-		"neanias/everforest-nvim",
-		config = function()
-			require("lualine").setup({
-				dim_inactive_windows = true,
-				options = {
-					theme = "everforest", -- Can also be "auto" to detect automatically.
-				},
-			})
-			vim.opt.background = "dark"
-		end,
-	},
+	{ "olimorris/onedarkpro.nvim" },
 }

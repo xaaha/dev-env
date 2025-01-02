@@ -23,6 +23,9 @@ return {
 			winbar = {
 				lualine_b = { "filename", "diff" },
 			},
+			inactive_winbar = {
+				lualine_c = { "filename" },
+			},
 		})
 	end,
 }
