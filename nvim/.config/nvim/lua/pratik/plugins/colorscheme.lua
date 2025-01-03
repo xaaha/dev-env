@@ -49,7 +49,7 @@ return {
 		priority = 1000,
 		config = function()
 			require("onedark").setup({
-				style = "warm", -- Set the style to "dark"
+				style = "cool", -- Set the style
 				toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" },
 			})
 			require("onedark").load() -- Ensure the theme is loaded
