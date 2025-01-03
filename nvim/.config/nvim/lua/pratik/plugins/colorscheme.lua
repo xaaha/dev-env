@@ -47,5 +47,16 @@ return {
 	},
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{ "savq/melange-nvim" },
-	{ "olimorris/onedarkpro.nvim" },
+	{
+		"navarasu/onedark.nvim",
+		config = function()
+			require("github-theme").setup({
+				style = "dark",
+				toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
+				toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" }, -- List of styles to toggle between
+			})
+
+			vim.cmd("colorscheme github_dark")
+		end,
+	},
 }
