@@ -50,13 +50,11 @@ return {
 	{
 		"navarasu/onedark.nvim",
 		config = function()
-			require("github-theme").setup({
-				style = "dark",
-				toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-				toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" }, -- List of styles to toggle between
+			require("onedark").setup({
+				style = "dark", -- Set the style to "dark"
+				toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" },
 			})
-
-			vim.cmd("colorscheme github_dark")
+			require("onedark").load() -- Ensure the theme is loaded
 		end,
 	},
 }
