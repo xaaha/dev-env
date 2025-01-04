@@ -1,3 +1,6 @@
+## Enabling profiling
+# zmodload zsh/zprof
+
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 
@@ -17,7 +20,6 @@ plug "$HOME/.config/zsh/secrets.zsh"
 # plug "zsh-users/zsh-autosuggestions" # disabled this for amazon q inline
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/vim"
-plug "zap-zsh/fzf"
 plug "zsh-users/zsh-syntax-highlighting"
 
 # keybinds
@@ -27,3 +29,6 @@ export PATH="$HOME/.local/bin":$PATH
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+## profiling
+# zprof
