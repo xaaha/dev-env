@@ -26,13 +26,13 @@ return {
 					"<leader>ca",
 					function()
 						require("fzf-lua").lsp_code_actions({
-							relative = "cursor",
-							winopts = {
-								width = 0.7,
-								height = 0.7,
-								row = 1,
-								preview = { vertical = "up:80%" },
-							},
+							-- winopts = {
+							-- relative = "cursor",
+							-- 	width = 0.7,
+							-- 	height = 0.7,
+							-- 	row = 1,
+							-- 	preview = { vertical = "up:80%" },
+							-- },
 						})
 					end,
 					"Code actions",
