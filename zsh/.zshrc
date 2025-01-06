@@ -13,7 +13,7 @@ HISTFILE=~/.zsh_history
 # source
 plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/exports.zsh"
-# plug "$HOME/.config/zsh/functions.zsh"
+plug "$HOME/.config/zsh/functions.zsh"
 plug "$HOME/.config/zsh/secrets.zsh"
 
 #plugins

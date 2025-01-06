@@ -11,3 +11,19 @@ function brew() {
     command brew "$@"
   fi
 }
+
+jwtd () {
+  local input="${1:-}"
+  if [ -z "$input" ]; then
+    if [ ! -t 0 ]; then
+      input=$(cat /dev/stdin)
+    else
+      echo >&2 '✗ Need an argument or have a piped input!'
+      return 1
+    fi
+  fi
+
+  echo "$input" | awk -F'.' '{print $1"\n"$2}' | while read -r part; do
+    echo "$part" | base64 -d 2>/dev/null | jq .
+  done
+}
