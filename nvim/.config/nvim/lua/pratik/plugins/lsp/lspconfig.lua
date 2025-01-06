@@ -11,8 +11,6 @@ return {
 		local keymap = vim.keymap
 		local opts = { noremap = true, silent = true }
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
-		-- local cmp_nvim_lsp = require("cmp_nvim_lsp")
-		-- local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		local function common_on_attach(_, bufnr) -- client, bufnr
 			opts.buffer = bufnr
@@ -25,15 +23,7 @@ return {
 				{
 					"<leader>ca",
 					function()
-						require("fzf-lua").lsp_code_actions({
-							-- winopts = {
-							-- relative = "cursor",
-							-- 	width = 0.7,
-							-- 	height = 0.7,
-							-- 	row = 1,
-							-- 	preview = { vertical = "up:80%" },
-							-- },
-						})
+						require("fzf-lua").lsp_code_actions({})
 					end,
 					"Code actions",
 				},
