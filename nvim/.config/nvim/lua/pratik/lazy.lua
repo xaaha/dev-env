@@ -10,11 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
-
 require("lazy").setup({ { import = "pratik.plugins" }, { import = "pratik.plugins.lsp" } }, {
-	install = {
-		colorscheme = { "gruvbox" },
-	},
 	checker = {
 		enabled = true,
 		notify = false,
