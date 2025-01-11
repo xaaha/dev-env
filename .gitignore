@@ -49,3 +49,7 @@ zsh/.config/zsh/secrets.zsh
 !install.txt
 !install.sh
 !Brewfile
+
+!nushell/
+!nushell/.config/
+!nushell/.config/**
