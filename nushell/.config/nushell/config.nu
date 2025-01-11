@@ -1,5 +1,7 @@
 # keep this at the top
 oh-my-posh init nu
+let mise_path = $nu.default-config-dir | path join mise.nu
+^mise activate nu | save $mise_path --force
 zoxide init nushell | save -f ~/.zoxide.nu
 
 $env.config.show_banner = false
