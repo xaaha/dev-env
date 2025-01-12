@@ -43,7 +43,6 @@ return {
 		end,
 	},
 	{ "rose-pine/neovim", name = "rose-pine" },
-	{ "savq/melange-nvim" },
 	{
 		"navarasu/onedark.nvim",
 		priority = 1000,
