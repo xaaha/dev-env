@@ -7,5 +7,5 @@ window-width = 150
 window-padding-x = 5,5
 window-padding-y = 5,3
 quit-after-last-window-closed=true
-theme = "chester"
 background-opacity = 0.99
+config-file = /Users/pratikthapa/.config/ghostty/theme/config
