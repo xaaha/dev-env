@@ -25,10 +25,8 @@ return {
 			},
 			lsp = {
 				code_actions = {
-					previewer = "codeaction_native",
 					preview_pager = "delta --side-by-side --width=$FZF_PREVIEW_COLUMNS --hunk-header-style='omit' --file-style='omit'",
 					prompt = "Code Actions󰅂 ",
-					-- ui_select = false, -- use 'vim.ui.select'?
 					async_or_timeout = 5000,
 					winopts = {
 						-- row = 0.40,
