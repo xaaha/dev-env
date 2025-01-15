@@ -16,8 +16,6 @@ plug "$HOME/.config/zsh/exports.zsh"
 plug "$HOME/.config/zsh/functions.zsh"
 plug "$HOME/.config/zsh/secrets.zsh"
 
-#plugins
-# plug "zsh-users/zsh-autosuggestions" # disabled this for amazon q inline
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/vim"
 plug "zsh-users/zsh-syntax-highlighting"
