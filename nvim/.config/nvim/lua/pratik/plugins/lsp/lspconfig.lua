@@ -81,7 +81,41 @@ return {
 		-- List of LSP servers to configure
 		local servers = {
 			html = {},
-			ts_ls = {},
+			biome = {
+				single_file_support = true,
+				cmd = { "biome", "lsp-proxy" },
+			},
+			ts_ls = {
+				settings = {
+					jsx_close_tag = {
+						enable = false,
+						filetypes = { "javascriptreact", "typescriptreact" },
+					},
+				},
+				on_attach = function(client, bufnr)
+					common_on_attach(client, bufnr)
+					-- -- Register TypeScript language server commands
+					-- local commands = {
+					-- 	_typescript_applyWorkspaceEdit = function(command)
+					-- 		client.request("workspace/executeCommand", {
+					-- 			command = command.command,
+					-- 			arguments = command.arguments or {},
+					-- 		})
+					-- 	end,
+					-- 	_typescript_goToSourceDefinition = function(command)
+					-- 		client.request("workspace/executeCommand", {
+					-- 			command = command.command,
+					-- 			arguments = command.arguments or {},
+					-- 		})
+					-- 	end,
+					-- }
+					--
+					-- client.commands = client.commands or {}
+					-- for command_name, handler in pairs(commands) do
+					-- 	client.commands[command_name] = handler
+					-- end
+				end,
+			},
 			eslint = {},
 			cssls = {},
 			jsonls = {
@@ -182,7 +216,7 @@ return {
 		for server, config in pairs(servers) do
 			lspconfig[server].setup(vim.tbl_deep_extend("force", {
 				capabilities = capabilities,
-				on_attach = common_on_attach,
+				on_attach = config.on_attach or common_on_attach,
 				handlers = handlers,
 			}, config))
 		end
