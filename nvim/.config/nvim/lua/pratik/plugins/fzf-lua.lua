@@ -21,6 +21,7 @@ return {
 			files = {
 				actions = {
 					["ctrl-g"] = require("fzf-lua.actions").toggle_ignore,
+					["ctrl-h"] = require("fzf-lua.actions").toggle_hidden,
 				},
 			},
 			lsp = {

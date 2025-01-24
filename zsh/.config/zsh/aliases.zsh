@@ -6,6 +6,7 @@ alias dt="cd ~/Desktop"
 alias dc="cd ~/Documents"
 alias pp="cd ~/Documents/Projects"
 
+alias cat='bat'
 alias g='lazygit'
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
