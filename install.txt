@@ -20,6 +20,7 @@
 --cask wezterm
 --cask zed
 --cask zen-browser
+bat
 fd
 ffmpegthumbnailer
 font-jetbrains-mono-nerd-font
@@ -43,7 +44,6 @@ mise
 oven-sh/bun/bun
 pnpm
 poppler
-rbenv
 ripgrep
 sevenzip
 stow

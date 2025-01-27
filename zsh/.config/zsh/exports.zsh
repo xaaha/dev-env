@@ -17,9 +17,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun" # bun completions
 # bun end
 
-#ruby using rbenv
-eval "$(rbenv init -)"
-
 # ohmyposh init & it's path to the conifg
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
