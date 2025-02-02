@@ -38,7 +38,7 @@
   "render-markdown.nvim": { "branch": "main", "commit": "46b0d4125fa5ef6d93a867d540f7c422c339ecc2" },
   "rose-pine": { "branch": "main", "commit": "42f0724e0bca9f57f0bcfa688787c37b8d4befe8" },
   "schemastore.nvim": { "branch": "main", "commit": "4244700eff0a9258b88f48b2b0d0339dea3338af" },
-  "snacks.nvim": { "branch": "main", "commit": "a54a21adc0e67b97fb787adcbaaf4578c6f44476" },
+  "snacks.nvim": { "branch": "main", "commit": "53010d7d529ee2d879bc1735c6c64b9acbeac6cb" },
   "tokyonight.nvim": { "branch": "main", "commit": "dca4adba7dc5f09302a00b0e76078d54d82d2658" },
   "trouble.nvim": { "branch": "main", "commit": "6f380b8826fb819c752c8fd7daaee9ef96d4c689" },
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
