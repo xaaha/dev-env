@@ -10,15 +10,17 @@
 # history
 HISTFILE=~/.zsh_history
 
-# source
+# plugins
+plug "hlissner/zsh-autopair"
+plug "zap-zsh/vim"
+plug "zsh-users/zsh-syntax-highlighting"
+
+# source local files
 plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/exports.zsh"
 plug "$HOME/.config/zsh/functions.zsh"
 plug "$HOME/.config/zsh/secrets.zsh"
-
-plug "hlissner/zsh-autopair"
-plug "zap-zsh/vim"
-plug "zsh-users/zsh-syntax-highlighting"
+# plug "$HOME/.config/zsh/prompt.zsh"
 
 # keybinds
 bindkey '^ ' autosuggest-accept
