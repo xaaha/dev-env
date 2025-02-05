@@ -21,7 +21,7 @@ final_space = true
 
   [[blocks.segments]]
     template = '{{ .Folder }}'# {{ .PATH }} if you need full path
-    foreground = 'blue'
+    foreground = '#FF7F50'# '#008080'# '#FF7F50'
     background = 'transparent'
     type = 'path'
     style = 'plain'
@@ -31,7 +31,7 @@ final_space = true
       style = 'full'
 
   [[blocks.segments]]
-    template = ' {{ .UpstreamIcon }} {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+    template = ' {{ .UpstreamIcon }} {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }} 🐳{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
     foreground = 'p:grey'
     background = 'transparent'
     type = 'git'
@@ -63,14 +63,14 @@ final_space = true
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
-  # newline = true # if you want a new line for your command
+  newline = true # if you want a new line for your command
 
   [[blocks.segments]]
-    template = '→'
+    template = '󱞩'
     background = 'transparent'
     type = 'text'
     style = 'plain'
-    foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}magenta{{end}}']
+    foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}green{{end}}']
 
     [blocks.segments.properties]
       cache_duration = 'none'
