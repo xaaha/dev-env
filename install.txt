@@ -30,7 +30,6 @@ fzf
 git
 go
 imagemagick
-jandedobbeleer/oh-my-posh/oh-my-posh
 jq
 jump
 lazygit
@@ -46,6 +45,7 @@ pnpm
 poppler
 ripgrep
 sevenzip
+starship
 stow
 task
 tealdeer
