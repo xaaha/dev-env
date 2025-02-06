@@ -1,0 +1,23 @@
+format = """$sudo$username$hostname$directory$git_branch$git_commit$git_state$git_status\
+$fill\
+$jobs$status$cmd_duration\
+$os$python$aws$nodejs$docker_context$golang$time\
+\n$character"""
+
+[directory]
+style = '#FF7F50'
+
+[character]
+success_symbol = '[󱞩](bold green)'
+error_symbol = '[󱞩](bold red)'
+
+[cmd_duration]
+min_time = 5_00
+show_milliseconds = true
+format = '[$duration](bold yellow)'
+
+[fill]
+symbol = ' '
+
+[git_branch]
+style = '#008080'

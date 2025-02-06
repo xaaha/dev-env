@@ -55,3 +55,7 @@ zsh/.config/zsh/secrets.zsh
 !nushell/
 !nushell/.config/
 !nushell/.config/**
+
+!starship/
+!starship/.config/
+!starship/.config/**
