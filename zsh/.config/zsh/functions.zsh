@@ -23,3 +23,10 @@ function jwtd () {
     fi
   done
 }
+
+# open nvim with file from fzf
+function vo() {
+  local file
+  file=$(fzf) || return 1  # Exit if no file is selected
+  nvim "$file"
+}
