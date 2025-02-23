@@ -6,6 +6,13 @@ export EDITOR="nvim"
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_ENV_HINTS=1
 
+# mise: tool version management
+eval "$(mise activate zsh)"
+
+# go path for go install <module>
+export GOPATH=$HOME/go # I might need to adjust this later
+export PATH=$PATH:$(go env GOPATH)/bin
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
@@ -23,7 +30,6 @@ export PATH="$PNPM_HOME:$PATH"
 eval "$(zoxide init zsh)"
 eval "$(jump shell)" 
 
-eval "$(mise activate zsh)"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source <(fzf --zsh)
