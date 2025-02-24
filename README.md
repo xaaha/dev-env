@@ -34,9 +34,6 @@ $(brew --prefix)/opt/fzf/install
 
 - Alacritty
 
-> [!TIP]
-> To open Alacritty on mac, right click on the `alacritty` icon click Open & click Open again
-
 - To change the theme you need to create a sym link to the file you want with the following command.
 
   ```bash
