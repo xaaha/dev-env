@@ -10,7 +10,7 @@ export HOMEBREW_NO_ENV_HINTS=1
 eval "$(mise activate zsh)"
 
 # go path for go install <module>
-export GOPATH=$HOME/go # I might need to adjust this later
+export GOPATH=$HOME/go
 export PATH=$PATH:$(go env GOPATH)/bin
 
 # bun
