@@ -79,12 +79,16 @@ keymap.set("x", "<c-k>", ":move '<-2<CR>gv-gv", opts)
 -- Copy absolute & relative file path
 ---------------------
 
+-- Copy relative file path
 keymap.set("n", "<leader>cr", function()
-	vim.cmd("let @+=expand('%')")
+	local relative_path = vim.fn.fnamemodify(vim.fn.expand("%"), ":.")
+	vim.fn.setreg("+", relative_path)
 end, { noremap = true, silent = true, desc = "Copy relative file path" })
 
+-- Copy absolute file path
 keymap.set("n", "<leader>cc", function()
-	vim.cmd("let @+=expand('%:p')")
+	local absolute_path = vim.fn.expand("%:p")
+	vim.fn.setreg("+", absolute_path)
 end, { noremap = true, silent = true, desc = "Copy complete/absolute file path" })
 
 ---------------------
