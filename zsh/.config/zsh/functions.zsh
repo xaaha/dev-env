@@ -1,27 +1,39 @@
-function jwtd () {
-  local input="${1:-}"
-  if [ -z "$input" ]; then
-    if [ ! -t 0 ]; then
-      input=$(cat /dev/stdin)
-    else
-      echo >&2 '✗ Need an argument or have a piped input!'
-      return 1
+jwtd () {
+    local input="${1:-}" 
+    if [ -z "$input" ]; then
+        if [ ! -t 0 ]; then
+            input=$(cat /dev/stdin)
+        else
+            echo '✗ Need an argument or have a piped input!' >&2
+            return 1
+        fi
     fi
-  fi
 
-  # Split JWT into parts and decode each part
-  echo "$input" | awk -F'.' '{print $1"\n"$2}' | while read -r part; do
-    decoded=$(echo "$part" | tr '_-' '/+' | base64 -d 2>/dev/null)
-    if [ $? -eq 0 ]; then
-      # Validate and format as JSON using jq
-      echo "$decoded" | jq . 2>/dev/null
-      if [ $? -ne 0 ]; then
-        echo "✗ Decoded part is not valid JSON: \n $decoded" >&2
-      fi
-    else
-      echo "✗ Failed to decode Base64 part: $part" >&2
-    fi
-  done
+    echo "$input" | awk -F'.' '{print $1"\n"$2}' | while read -r part; do
+        decoded=$(echo "$part" | tr '_-' '/+' | base64 -d 2>/dev/null)
+        if [ $? -eq 0 ]; then
+            # Try pretty-printing as JSON
+            if ! echo "$decoded" | jq . 2>/dev/null; then
+                # If jq failed, check if the decoded payload is missing a trailing }
+                # Remove any trailing whitespace and grab the last character.
+                lastChar=$(echo -n "$decoded" | sed -e 's/[[:space:]]*$//' | tail -c 1)
+                if [ "$lastChar" != "}" ]; then
+                    fixed="${decoded}}"
+                    if echo "$fixed" | jq . 2>/dev/null; then
+                        echo "$fixed" | jq .
+                    else
+                        echo "✗ Decoded part is not valid JSON even after appending '}':" >&2
+                        echo "$decoded" >&2
+                    fi
+                else
+                    echo "✗ Decoded part is not valid JSON:" >&2
+                    echo "$decoded" >&2
+                fi
+            fi
+        else
+            echo "✗ Failed to decode Base64 part: $part" >&2
+        fi
+    done
 }
 
 # open nvim with file from fzf
