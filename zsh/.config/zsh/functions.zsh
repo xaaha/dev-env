@@ -96,4 +96,10 @@ function gwa() {
     fi
 
     echo "✅ Worktree setup complete!"
+
+    # Change directory into the new worktree folder
+    cd "$worktree_folder" || {
+        echo "❌ Failed to change directory into $worktree_folder"
+        return 1
+    }
 }
