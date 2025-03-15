@@ -1,3 +1,35 @@
+function wakeup() {
+    local duration=$1
+
+    if [[ -z "$duration" ]]; then
+        echo "Keeping the screen awake indefinitely... Ctrl + C to exit"
+        caffeinate -d  
+    else
+        # Extract the number and the unit (m for minutes, h for hours)
+        local time_value=${duration%[mh]}
+        local time_unit=${duration: -1}
+
+        # Check if time_value is a valid number
+        if ! [[ "$time_value" =~ ^[0-9]+$ ]]; then
+            echo "Invalid duration value. Please provide a positive integer followed by 'm' or 'h'."
+            return 1
+        fi
+
+        if [[ "$time_unit" == "m" ]]; then
+            local seconds=$((time_value * 60))
+            echo "Keeping the screen awake for $time_value minutes ($seconds seconds)... Ctrl + C to exit"
+            caffeinate -d -t $seconds  
+        elif [[ "$time_unit" == "h" ]]; then
+            local seconds=$((time_value * 3600))
+            echo "Keeping the screen awake for $time_value hours ($seconds seconds)... Ctrl + C to exit"
+            caffeinate -d -t $seconds 
+        else
+            echo "Invalid duration format. Use '15m', '1h', or no argument for indefinite."
+            return 1
+        fi
+    fi
+}
+
 function bruc() {
   echo "Starting Homebrew maintenance..."
 
