@@ -1,4 +1,35 @@
-jwtd () {
+function bruc() {
+  echo "Starting Homebrew maintenance..."
+
+  # Update Homebrew
+  if brew update; then
+    echo "Homebrew updated successfully."
+  else
+    echo "Error: Homebrew update failed." >&2
+    return 1
+  fi
+
+  # Upgrade installed packages
+  if brew upgrade; then
+    echo "Homebrew packages upgraded successfully."
+  else
+    echo "Error: Homebrew upgrade failed." >&2
+    return 1
+  fi
+
+  # Cleanup old versions
+  if brew cleanup; then
+    echo "Homebrew cleanup completed successfully."
+  else
+    echo "Error: Homebrew cleanup failed." >&2
+    return 1
+  fi
+
+  echo "Homebrew maintenance completed."
+}
+
+
+function jwtd () {
     local input="${1:-}" 
     if [ -z "$input" ]; then
         if [ ! -t 0 ]; then
