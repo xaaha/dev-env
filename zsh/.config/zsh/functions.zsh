@@ -113,6 +113,16 @@ function gwa() {
         return 1
     fi
 
+    # Get current branch name
+    current_branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+    if [ -z "$current_branch" ]; then
+        echo "❌ Not on a branch (HEAD is detached)"
+        return 1
+    fi
+    
+    # Store the base branch for creating the worktree
+    base_branch="$current_branch"
+
     local branch="$1"
     local repo_root
     repo_root=$(git rev-parse --show-toplevel)  # Get full path of the repo root
@@ -134,8 +144,8 @@ function gwa() {
         echo "🔄 Branch '$branch' exists locally. Creating worktree..."
         git worktree add "$worktree_folder" "$branch"
     else
-        echo "🌱 Creating new branch '$branch' in a new worktree..."
-        git worktree add -b "$branch" "$worktree_folder"
+        echo "🌱 Creating new branch '$branch' from '$base_branch'..."
+        git worktree add -b "$branch" "$worktree_folder" "$base_branch"
     fi
 
     # Copy .env if it exists
