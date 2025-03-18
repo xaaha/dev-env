@@ -168,94 +168,19 @@ function gwa() {
 }
 
 # Removes git worktree fzf is required.  
-function gwr(){
-# either main or master   
-MAIN_BRANCH="main"
-
-function error_exit {
-    echo "Error: $1" >&2
-    exit 1
-}
-
-# Check that we're in a Git repository
-git rev-parse --is-inside-work-tree > /dev/null 2>&1 || error_exit "Not inside a Git repository."
-
-# Determine if we are in a worktree.
-# If .git is a file (a gitdir pointer) then we are likely in a worktree.
-if [ -f .git ]; then
-    # Check if the content of .git points to a pointer file
-    if grep -q "^gitdir:" .git ; then
-        IN_WORKTREE=true
-    else
-        IN_WORKTREE=false
-    fi
-else
-    IN_WORKTREE=false
-fi
-
-# Get current branch name. If HEAD is detached, this may fail.
-CURRENT_BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null)
-
-if [ "$CURRENT_BRANCH" != "$MAIN_BRANCH" ] || [ "$IN_WORKTREE" = true ]; then
-    echo "Switching to branch '$MAIN_BRANCH' in the main repository..."
-    # Ensure we are in the main worktree.
-    # If we are in a worktree, try switching directory into the main one
-    # by checking if repository has a main worktree.
-    # The main worktree is usually the one that contains .git (a directory, not a file).
-    MAIN_WORKTREE=""
-    while IFS= read -r line; do
-        # The first line in git worktree list is the path.
-        # We'll pick the worktree that contains a .git directory rather than a .git file.
-        if [ -d "$line/.git" ]; then
-            MAIN_WORKTREE="$line"
-            break
-        fi
-    done < <(git worktree list --porcelain | grep '^worktree ' | awk '{print $2}')
-
-    if [ -z "$MAIN_WORKTREE" ]; then
-        error_exit "Could not determine main worktree directory."
+function gwr() {
+    # If on a worktree, first switch to main branch in main worktree
+    if [ -f .git ] && grep -q "^gitdir:" .git; then
+        main_worktree=$(git worktree list --porcelain | grep '^worktree ' | awk '{print $2}' | head -1)
+        cd "$main_worktree" || return 1
+        git checkout main
     fi
 
-    # Change directory to the main worktree if not already there.
-    if [ "$PWD" != "$(cd "$MAIN_WORKTREE" && pwd)" ]; then
-        echo "Changing directory to main worktree: $MAIN_WORKTREE"
-        cd "$MAIN_WORKTREE" || error_exit "Failed to change directory."
+    # List worktrees (excluding first/main one) and pipe to fzf for selection
+    selected=$(git worktree list | tail -n +2 | fzf --prompt="Select worktree to remove> " | awk '{print $1}')
+    
+    # If a worktree was selected, remove it
+    if [ -n "$selected" ]; then
+        git worktree remove "$selected"
     fi
-
-    # Now checkout main branch.
-    git checkout "$MAIN_BRANCH" || error_exit "Failed to checkout '$MAIN_BRANCH'."
-fi
-
-# List all registered worktrees and allow user to select one to remove.
-# Note: We don't remove the main worktree.
-echo "Select a worktree below to remove (excluding the main worktree):"
-WORKTREE_LIST=$(git worktree list --porcelain | grep '^worktree ' | awk '{print $2}')
-MAIN_WORKTREE=$(git rev-parse --show-toplevel)
-
-# Filter out the main worktree from the list.
-FILTERED_LIST=()
-while IFS= read -r wt; do
-    abs_wt="$(cd "$wt" && pwd)"
-    main_abs="$(cd "$MAIN_WORKTREE" && pwd)"
-    if [ "$abs_wt" != "$main_abs" ]; then
-        FILTERED_LIST+=("$wt")
-    fi
-done < <(printf "%s\n" "$WORKTREE_LIST")
-
-if [ ${#FILTERED_LIST[@]} -eq 0 ]; then
-    echo "No extra worktrees found to remove."
-    exit 0
-fi
-
-# Use fzf to select a worktree. 
-SELECTED=$(printf "%s\n" "${FILTERED_LIST[@]}" | fzf --prompt="Select worktree to remove> ")
-if [ -z "$SELECTED" ]; then
-    echo "No worktree selected. Exiting."
-    exit 0
-fi
-
-echo "Removing worktree: $SELECTED"
-git worktree remove "$SELECTED" || error_exit "Failed to remove worktree."
-
-echo "Worktree removed successfully."
 }
