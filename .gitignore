@@ -59,3 +59,6 @@ zsh/.config/zsh/secrets.zsh
 !starship/
 !starship/.config/
 !starship/.config/**
+
+!bash/
+!bash/**
