@@ -18,12 +18,6 @@ export PS1="\W \$ "
 export GOPATH=$HOME/go
 export PATH=$PATH:$(go env GOPATH)/bin
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun" # bun completions
-# bun end
-
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
