@@ -11,7 +11,8 @@ return {
 			javascriptreact = { "biomejs" },
 			typescriptreact = { "biomejs" },
 			python = { "ruff" },
-			go = { "golangcilint" },
+			-- go = { "golangcilint" },
+			go = { "revive" },
 			ruby = { "rubocop" },
 			yaml = { "yamllint" },
 			-- svelte = { "eslint_d" }, -- add others as needed. Add with Mason first
