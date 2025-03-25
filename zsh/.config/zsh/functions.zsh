@@ -106,6 +106,26 @@ function vo() {
   nvim "$file"
 }
 
+# for new and temp dir when jump is not useful
+function cdh() {
+  # Use fd to search for directories up to a maximum depth of 1,
+  # excluding hidden directories (using the --no-hidden flag).
+  local dir
+  dir=$(fd -t d --max-depth=1 --no-hidden | sort | fzf --prompt="Select directory> ") || return 1
+  cd "$dir" || return 1
+}
+
+function cdb() {
+  # Change directory to /projects/fzf if that's the starting point,
+  # then list directories one level up (i.e., in the parent directory)
+  # using fd, and let fzf pick out one.
+  local dir
+  # List directories in the parent directory (../) with a depth of 1 (direct children)
+  dir=$(fd -t d --max-depth=1 --no-hidden . .. | sort | fzf --prompt="Select directory> ") || return 1
+  cd ../"$dir" || return 1
+}
+
+
 # git worktree add, copy .env file and do a fresh install for node_modules 
 function gwa() {
     if [ -z "$1" ]; then
