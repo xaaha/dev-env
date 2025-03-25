@@ -58,8 +58,7 @@ return {
 				"gofumpt", -- go linters 👇
 				"goimports",
 				"golines",
-				"revive",
-				"golangci-lint", -- go linters end,
+				"revive", -- go linters end,
 				"rubyfmt",
 				"rubocop", --  ruby linter and formatter
 				"erb-lint", -- ruby end
