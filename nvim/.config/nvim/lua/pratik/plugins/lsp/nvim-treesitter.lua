@@ -47,6 +47,7 @@ return {
 			"gomod",
 			"gowork",
 			"gosum",
+			"graphql",
 			"html",
 			"javascript",
 			"jsdoc",
