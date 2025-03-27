@@ -126,8 +126,7 @@ function cdb() {
     # List directories in the parent directory (../) with a depth of 1 (direct children)
     dir=$(fd -t d --max-depth=1 --no-hidden . .. | sort | fzf --prompt="Select directory> ") || return 1
     # Remove any leading "./" or "../" from the selected directory path
-    dir=${dir#./}
-    dir=${dir#../}
+    dir=${dir}
     # Change to the directory
     cd "$dir" || return 1
 }
