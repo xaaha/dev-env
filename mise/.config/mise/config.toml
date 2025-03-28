@@ -2,4 +2,4 @@
 go = "latest"
 node = "lts"
 python = "latest"
-ruby = "latest"
+ruby = "3.3.0"
