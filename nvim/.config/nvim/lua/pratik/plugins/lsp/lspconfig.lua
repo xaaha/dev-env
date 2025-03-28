@@ -11,6 +11,16 @@ return {
 		local keymap = vim.keymap
 		local opts = { noremap = true, silent = true }
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
+		local border = {
+			{ "┌", "FloatBorder" },
+			{ "─", "FloatBorder" },
+			{ "┐", "FloatBorder" },
+			{ "│", "FloatBorder" },
+			{ "┘", "FloatBorder" },
+			{ "─", "FloatBorder" },
+			{ "└", "FloatBorder" },
+			{ "│", "FloatBorder" },
+		}
 
 		local function common_on_attach(_, bufnr) -- client, bufnr
 			opts.buffer = bufnr
@@ -30,9 +40,27 @@ return {
 				{ "<leader>rn", vim.lsp.buf.rename, "Smart rename" },
 				{ "<leader>D", "<cmd>FzfLua lsp_document_diagnostics<CR>", "Show buffer diagnostics" },
 				{ "<leader>d", vim.diagnostic.open_float, "Show line diagnostics" },
-				{ "[d", vim.diagnostic.goto_prev, "Go to previous diagnostic" },
-				{ "]d", vim.diagnostic.goto_next, "Go to next diagnostic" },
-				{ "K", vim.lsp.buf.hover, "Show documentation" },
+				{
+					"[d",
+					function()
+						vim.diagnostic.jump({ count = -1, float = true })
+					end,
+					"Go to previous diagnostic",
+				},
+				{
+					"]d",
+					function()
+						vim.diagnostic.jump({ count = 1, float = true })
+					end,
+					"Go to next diagnostic",
+				},
+				{
+					"K",
+					function()
+						vim.lsp.buf.hover({ border = border })
+					end,
+					"Show documentation",
+				},
 				{ "<leader>rs", ":LspRestart<CR>", "Restart LSP" },
 			}
 
@@ -44,17 +72,6 @@ return {
 		end
 
 		-- Configure diagnostics (signs and virtual text)
-		local border = {
-			{ "┌", "FloatBorder" },
-			{ "─", "FloatBorder" },
-			{ "┐", "FloatBorder" },
-			{ "│", "FloatBorder" },
-			{ "┘", "FloatBorder" },
-			{ "─", "FloatBorder" },
-			{ "└", "FloatBorder" },
-			{ "│", "FloatBorder" },
-		}
-
 		vim.diagnostic.config({
 			virtual_text = {
 				spacing = 4,
@@ -67,8 +84,12 @@ return {
 
 		-- Configure border handlers for hover and signature help
 		local handlers = {
-			["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
-			["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+			["textDocument/hover"] = function()
+				vim.lsp.buf.hover({ border = border })
+			end,
+			["textDocument/signatureHelp"] = function()
+				vim.lsp.buf.signature_help({ border = border })
+			end,
 		}
 
 		-- Change diagnostic symbols
