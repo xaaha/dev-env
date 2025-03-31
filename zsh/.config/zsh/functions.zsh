@@ -107,10 +107,26 @@ function vo() {
 }
 
 function hg(){
+  # call hulak with global
   local file
-  file=$(fd -e yaml | fzf) || return 1
+  file=$(fd -e yml -e yaml | fzf) || return 1
   hulak -fp "$file"
 }
+
+function hs(){
+  # call hulak with stagin 
+  local file
+  file=$(fd -e yml -e yaml | fzf) || return 1
+  hulak -env staging -fp "$file"
+}
+
+function hp(){
+  # call hulak with prod file
+  local file
+  file=$(fd -e yml -e yaml | fzf) || return 1
+  hulak -env prod -fp "$file"
+}
+
 
 # for new and temp dir when jump is not useful
 function cdh() {

@@ -3,7 +3,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("fzf-lua").setup({
-			"telescope", -- "telescope", "fzf-native", "fzf-vim", "default"
+			"default", -- "telescope", "fzf-native", "fzf-vim", "default"
 			keymap = {
 				fzf = {
 					["ctrl-q"] = "select-all+accept",
