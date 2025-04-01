@@ -51,5 +51,6 @@ tealdeer
 tmux
 trash
 virtualenv
+xaaha/tap/hulak
 yazi
 zoxide
