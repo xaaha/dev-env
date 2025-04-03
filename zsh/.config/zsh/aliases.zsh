@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# basics
+alias cy="pbcopy"
+alias pe="pbpaste"
+
 # common directories
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
