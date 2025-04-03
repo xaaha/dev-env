@@ -198,8 +198,8 @@ function gwa() {
         echo "🚧 No .env file found. Skipping copy."
     fi
 
-    # Fresh install node_modules 
-    echo "📦 Checking for node Dependencies..."
+    # Install Node dependencies if applicable
+    echo "📦 Checking for Node dependencies..."
     if [ -f "$repo_root/yarn.lock" ]; then
         (cd "$worktree_folder" && yarn install)
     elif [ -f "$repo_root/package-lock.json" ]; then
@@ -207,7 +207,27 @@ function gwa() {
     elif [ -f "$repo_root/pnpm-lock.yaml" ]; then
         (cd "$worktree_folder" && pnpm install)
     else
-        echo "❌ No lock file detected. Skipping dependency installation."
+        echo "❌ No Node lock file detected. Skipping Node dependency installation."
+    fi
+
+    # Install Ruby dependencies if applicable
+    echo "💎 Checking for Ruby dependencies..."
+    if [ -f "$repo_root/Gemfile" ]; then
+        if [ -f "$repo_root/Gemfile.lock" ]; then
+            (cd "$worktree_folder" && bundle check || bundle install)
+        else
+            (cd "$worktree_folder" && bundle install)
+        fi
+    else
+        echo "❌ No Gemfile detected. Skipping Ruby dependency installation."
+    fi
+
+    # Handle Go modules if applicable
+    echo "🐹 Checking for Go dependencies..."
+    if [ -f "$repo_root/go.mod" ]; then
+        (cd "$worktree_folder" && go mod tidy)
+    else
+        echo "❌ No go.mod file detected. Skipping Go dependency setup."
     fi
 
     echo "✅ Worktree setup complete!"
