@@ -60,5 +60,6 @@ return {
 		customKeymap("n", "<leader>fw", "<cmd>FzfLua grep_curbuf<cr>", { desc = "Grep in current buffer" })
 		customKeymap("n", "<c-b>", "<cmd>FzfLua buffers<CR>", { desc = "Find all files (including hidden) in cwd" })
 		customKeymap("n", "<leader>ft", "<cmd>FzfLua git_status<CR>", { desc = "Find git_status files" })
+		customKeymap("n", "<leader>fs", "<cmd>FzfLua lsp_document_symbols<CR>", { desc = "Find lsp_document_symbols" })
 	end,
 }
