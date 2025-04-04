@@ -39,7 +39,13 @@ return {
 				},
 				{ "<leader>rn", vim.lsp.buf.rename, "Smart rename" },
 				{ "<leader>D", "<cmd>FzfLua lsp_document_diagnostics<CR>", "Show buffer diagnostics" },
-				{ "<leader>d", vim.diagnostic.open_float, "Show line diagnostics" },
+				{
+					"<leader>d",
+					function()
+						vim.diagnostic.open_float({ border = "rounded" })
+					end,
+					"Show line diagnostics",
+				},
 				{
 					"[d",
 					function()
