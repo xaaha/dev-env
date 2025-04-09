@@ -3,6 +3,12 @@ return {
 	dependencies = "rafamadriz/friendly-snippets",
 	version = "*",
 	opts = {
+		completion = {
+			menu = {
+				border = "rounded",
+				draw = { gap = 1 },
+			},
+		},
 		cmdline = {
 			enabled = true,
 			completion = {
@@ -18,6 +24,12 @@ return {
 		},
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
+		},
+		signature = {
+			enabled = true,
+			window = {
+				border = "rounded",
+			},
 		},
 	},
 	opts_extend = { "sources.default" },

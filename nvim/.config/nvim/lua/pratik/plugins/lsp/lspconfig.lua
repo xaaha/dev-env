@@ -10,7 +10,8 @@ return {
 		local util = require("lspconfig/util")
 		local keymap = vim.keymap
 		local opts = { noremap = true, silent = true }
-		local capabilities = require("blink.cmp").get_lsp_capabilities()
+		-- local capabilities = require("blink.cmp").get_lsp_capabilities()
+		local capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
 		local border = {
 			{ "┌", "FloatBorder" },
 			{ "─", "FloatBorder" },
