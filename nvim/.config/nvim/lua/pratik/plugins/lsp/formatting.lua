@@ -21,7 +21,7 @@ return {
 				python = { "isort", "black" },
 				go = { "gofumpt", "golines", "goimports" },
 				ruby = { "rubocop" },
-				eruby = { "erb-format" },
+				-- eruby = { "erb-format" },
 				-- svelte = { "prettier" }, -- add as needed
 			},
 			format_on_save = {
