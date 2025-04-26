@@ -7,19 +7,19 @@ TERM = "xterm-256color"
 size = 17.0
 
 [font.bold]
-family = "VictorMono Nerd Font"
+family = "BlexMono Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "VictorMono Nerd Font"
-style = "Medium Oblique"
+family = "BlexMono Nerd Font"
+style = "SemiBold Italic"
 
 [font.italic]
-family = "VictorMono Nerd Font"
-style = "Light Oblique"
+family = "BlexMono Nerd Font"
+style = "Italic"
 
 [font.normal]
-family = "VictorMono Nerd Font"
+family = "BlexMono Nerd Font"
 style = "Regular"
 
 [window]
