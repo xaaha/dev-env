@@ -50,6 +50,7 @@ task
 tealdeer
 tmux
 trash
+uv
 virtualenv
 xaaha/tap/hulak
 yazi
