@@ -12,6 +12,7 @@
 --cask notunes
 --cask obsidian
 --cask postman
+--cask postico
 --cask raycast
 --cask rectangle
 --cask scroll-reverser
