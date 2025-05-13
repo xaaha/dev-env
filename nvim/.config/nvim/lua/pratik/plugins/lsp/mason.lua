@@ -36,6 +36,7 @@ return {
 				"emmet_ls",
 				"pyright", -- python
 				"gopls",
+				"postgres_lsp",
 				"jsonls",
 				"ruby_lsp",
 				"yamlls",
@@ -61,6 +62,7 @@ return {
 				"revive", -- go linters end,
 				"rubyfmt",
 				"rubocop", --  ruby linter and formatter
+				"sqruff",
 				"erb-lint", -- ruby end
 				"yamllint", -- yaml
 				"yq", -- yaml formatter

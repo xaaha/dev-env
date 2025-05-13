@@ -21,6 +21,7 @@ return {
 				python = { "isort", "black" },
 				go = { "gofumpt", "golines", "goimports" },
 				ruby = { "rubocop" },
+				sql = { "sqruff" },
 				-- eruby = { "erb-format" },
 				-- svelte = { "prettier" }, -- add as needed
 			},
