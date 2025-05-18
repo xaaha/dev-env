@@ -13,6 +13,7 @@ return {
 			python = { "ruff" },
 			go = { "revive" },
 			ruby = { "rubocop" },
+			sql = { "sqruff" },
 			yaml = { "yamllint" },
 			-- svelte = { "eslint_d" }, -- add others as needed. Add with Mason first
 		}
