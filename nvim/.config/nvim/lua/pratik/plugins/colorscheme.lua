@@ -55,7 +55,4 @@ return {
 			vim.cmd("colorscheme onedark")
 		end,
 	},
-	{
-		"dgox16/oldworld.nvim",
-	},
 }
