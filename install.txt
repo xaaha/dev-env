@@ -24,6 +24,7 @@
 bat
 fd
 ffmpegthumbnailer
+font-blex-mono-nerd-font
 font-jetbrains-mono-nerd-font
 font-symbols-only-nerd-font
 font-victor-mono-nerd-font
