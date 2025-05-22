@@ -2,17 +2,12 @@ return {
 	{
 		"catppuccin/nvim",
 		lazy = false,
-		config = function()
-			-- configure the colorscheme here
-			require("catppuccin").setup({
-				flavour = "latte", -- latte, frappe, macchiato, mocha
-				styles = {
-					functions = { "italic" },
-				},
-				color_overrides = {},
-				custom_highlights = {},
-			})
-		end,
+		opts = {
+			flavour = "latte",
+			styles = { functions = { "italic" } },
+			color_overrides = {},
+			custom_highlights = {},
+		},
 	},
 	{
 		"projekt0n/github-nvim-theme",
@@ -33,25 +28,20 @@ return {
 	},
 	{
 		"EdenEast/nightfox.nvim",
-		-- tons of variants. Especially, nordfox is great nord theme.
-		-- Day and Dawn fox for light themes
-		config = function()
-			require("nightfox").setup({
-				dim_inactive = true,
-			})
-		end,
+		opts = { dim_inactive = true },
 	},
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{
 		"navarasu/onedark.nvim",
 		priority = 1000,
-		config = function()
-			require("onedark").setup({
-				style = "cool", -- Set the style
-				toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" },
-			})
-			require("onedark").load() -- Ensure the theme is loaded
-			vim.cmd("colorscheme onedark")
+		opts = {
+			style = "cool",
+			toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" },
+		},
+		config = function(_, opts)
+			require("onedark").setup(opts)
+			require("onedark").load()
+			vim.cmd.colorscheme("onedark")
 		end,
 	},
 }
