@@ -12,7 +12,6 @@ return {
 				color_overrides = {},
 				custom_highlights = {},
 			})
-			-- vim.cmd("colorscheme catppuccin-mocha")
 		end,
 	},
 	{
