@@ -1,2 +1,2 @@
-require("pratik.core")
-require("pratik.lazy")
+require("xaaha.core")
+require("xaaha.lazy")
