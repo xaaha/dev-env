@@ -43,6 +43,9 @@ nightfall
 mise
 oven-sh/bun/bun
 pnpm
+podman
+podman-compose
+podman-desktop
 poppler
 ripgrep
 sevenzip
