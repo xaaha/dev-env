@@ -4,15 +4,9 @@ return {
 	lazy = false,
 	opts = {
 		indent = {
-			enabled = false,
-			only_scope = true,
-			only_current = true,
-			hl = "SnacksIndent5",
-			scope = {
-				only_current = true,
-			},
-			chunk = {
+			indent = {
 				enabled = true,
+				only_scope = true,
 				only_current = true,
 			},
 		},
@@ -20,7 +14,6 @@ return {
 		notifier = { enabled = true },
 		gitbrowse = { enabled = true },
 	},
-	-- https://github.com/folke/snacks.nvim/blob/64fbb157a0b7fa2279817ed16d3f530c00b8863c/doc/snacks.nvim.txt#L258
 	keys = {
 		{
 			"<leader>gg",
