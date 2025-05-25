@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		"saghen/blink.cmp",
+		"b0o/schemastore.nvim",
 	},
 	config = function()
 		local lspconfig = require("lspconfig")
