@@ -2,15 +2,12 @@
 -- https://www.lazyvim.org/plugins/treesitter#nvim-treesitter-textobjects
 return {
 	"nvim-treesitter/nvim-treesitter",
-	version = false, -- last release is way too old and doesn't work on Windows
+	lazy = false,
 	build = ":TSUpdate",
+	main = "nvim-treesitter.configs", -- from kickstart nvim
 	event = { "BufReadPre", "BufNewFile" },
-	dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
+	dependencies = { "nvim-treesitter/nvim-treesitter-textobjects", branch = "main" },
 	cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-	keys = {
-		{ "<c-space>", desc = "Increment selection" },
-		{ "<bs>", desc = "Decrement selection", mode = "x" },
-	},
 	opts = {
 		highlight = { enable = true },
 		indent = { enable = true },
@@ -45,15 +42,6 @@ return {
 			"vimdoc",
 			"yaml",
 			"ruby",
-		},
-		incremental_selection = {
-			enable = true,
-			keymaps = {
-				init_selection = "<cr>",
-				node_incremental = "<cr>",
-				scope_incremental = false,
-				node_decremental = "<bs>",
-			},
 		},
 		textobjects = {
 			move = {
