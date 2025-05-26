@@ -54,6 +54,12 @@ defaults -currentHost delete -g AppleFontSmoothing
 
 ## Install
 
+- Install Tree-sitter CLI for for treesitter, required since Tree-sitter moved to on main branch
+
+```bash
+npm install tree-sitter-cli
+```
+
 - Backup Neovim Files
 
 ```bash
