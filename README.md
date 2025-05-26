@@ -3,7 +3,6 @@
 ## Install Pre-requisite
 
 - Install [zap](https://github.com/zap-zsh/zap)
-
 - Install all apps with curl
 
 ```bash
@@ -36,12 +35,12 @@ $(brew --prefix)/opt/fzf/install
 
 - To change the theme you need to create a sym link to the file you want with the following command.
 
-  ```bash
-  # for light theme
-  ln -s ~/.config/alacritty/themes/light.toml ~/.config/alacritty/themes/my_theme.toml
-  # for dark theme
-  ln -s ~/.config/alacritty/themes/dark.toml ~/.config/alacritty/themes/my_theme.toml
-  ```
+```bash
+# for light theme
+ln -s ~/.config/alacritty/themes/light.toml ~/.config/alacritty/themes/my_theme.toml
+# for dark theme
+ln -s ~/.config/alacritty/themes/dark.toml ~/.config/alacritty/themes/my_theme.toml
+```
 
 - By default, font smoothing causes fonts to be slightly bold in Alacritty.
 
