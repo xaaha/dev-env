@@ -9,7 +9,9 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 		config = function()
-			require("nvim-treesitter").install({
+			local ts = require("nvim-treesitter")
+			local installed = require("nvim-treesitter.config").installed_parsers()
+			local parsers_to_install = vim.iter({
 				"bash",
 				"c",
 				"css",
@@ -41,6 +43,14 @@ return {
 				"yaml",
 				"ruby",
 			})
+				:filter(function(name)
+					return not vim.tbl_contains(installed, name)
+				end)
+				:totable()
+
+			if #parsers_to_install > 0 then
+				ts.install(parsers_to_install)
+			end
 		end,
 	},
 	{
