@@ -36,6 +36,7 @@ return {
 				"emmet_ls",
 				"pyright", -- python
 				"gopls",
+				"harper_ls",
 				"jsonls",
 				"ruby_lsp",
 				"yamlls",

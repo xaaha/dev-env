@@ -118,6 +118,36 @@ return {
 				single_file_support = true,
 				cmd = { "biome", "lsp-proxy" },
 			},
+			harper_ls = {
+				settings = {
+					["harper-ls"] = {
+						userDictPath = "",
+						fileDictPath = "",
+						linters = {
+							SpellCheck = false, -- changed
+							SpelledNumbers = false,
+							AnA = true,
+							SentenceCapitalization = false, -- changed
+							UnclosedQuotes = true,
+							WrongQuotes = false,
+							LongSentences = true,
+							RepeatedWords = true,
+							Spaces = true,
+							Matcher = true,
+							CorrectNumberSuffix = true,
+						},
+						codeActions = {
+							ForceStable = false,
+						},
+						markdown = {
+							IgnoreLinkTitle = false,
+						},
+						diagnosticSeverity = "hint",
+						isolateEnglish = false,
+						dialect = "American",
+					},
+				},
+			},
 			ts_ls = {
 				settings = {
 					jsx_close_tag = {
