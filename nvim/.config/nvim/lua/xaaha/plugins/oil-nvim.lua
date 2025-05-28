@@ -17,6 +17,8 @@ return {
 		keymaps = {
 			["<C-c>"] = false,
 			["q"] = "actions.close",
+			["<C-p>"] = false,
+			["<C-o>"] = "actions.preview",
 		},
 	},
 	dependencies = { { "nvim-tree/nvim-web-devicons", opts = {} } },

@@ -1,6 +1,4 @@
 return {
-	"nvim-lua/plenary.nvim", -- lua functions that many plugins use
-
 	"RRethy/vim-illuminate", -- highlight other uses of the word under the cursor
 
 	"preservim/vimux", -- vim test requires this
