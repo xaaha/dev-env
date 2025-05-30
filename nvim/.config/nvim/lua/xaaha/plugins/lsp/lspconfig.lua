@@ -214,14 +214,12 @@ return {
 					"eruby",
 				},
 			},
-			pyright = {
-				settings = {
-					python = {
-						analysis = {
-							typeCheckingMode = "off",
-							useLibraryCodeForTypes = true,
-							autoSearchPaths = true,
-						},
+			ruff = {
+				init_options = {
+					-- config options here: https://docs.astral.sh/ruff/editors/settings/#configuration
+					-- configuration = "~/path/to/ruff.toml",
+					settings = {
+						lineLength = 100,
 					},
 				},
 			},

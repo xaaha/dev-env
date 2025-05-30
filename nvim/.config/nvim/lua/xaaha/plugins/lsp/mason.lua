@@ -34,14 +34,12 @@ return {
 				"lua_ls",
 				"graphql",
 				"emmet_ls",
-				"pyright", -- python
+				"ruff",
 				"gopls",
 				"harper_ls",
 				"jsonls",
 				"ruby_lsp",
 				"yamlls",
-				-- "tailwindcss", -- examples
-				-- "svelte",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -50,12 +48,10 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"biome", -- JS, TS, TSX and JSON formatter, linter and LSP
+				"biome", -- JS, TS, TSX and JSON formatter, linter, and LSP
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
-				"isort", -- python formatter
-				"black", -- python formatter
-				"ruff", -- python linter and formatter
+				"ruff", -- python lsp, linter, and formatter
 				"mypy", -- python type checker
 				"gofumpt", -- go linters 👇
 				"goimports",
