@@ -114,6 +114,7 @@ return {
 
 		-- List of LSP servers to configure
 		local servers = {
+			astro = {},
 			html = {},
 			biome = {
 				single_file_support = true,
