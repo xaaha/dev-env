@@ -11,6 +11,7 @@ return {
 		opts = {
 			-- custom handling of parsers
 			ensure_installed = {
+				"astro",
 				"bash",
 				"c",
 				"css",
