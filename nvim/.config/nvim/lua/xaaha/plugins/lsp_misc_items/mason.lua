@@ -6,7 +6,7 @@ return {
 	},
 	config = function()
 		-- import mason
-		local mason = require("mason")
+		local mason = require("nvim.config.nvim.lua.xaaha.plugins.lsp_misc.mason")
 
 		-- import mason-lspconfig
 		local mason_lspconfig = require("mason-lspconfig")
@@ -25,10 +25,10 @@ return {
 		})
 
 		mason_lspconfig.setup({
-			-- list of servers for mason to install
+			-- List of servers for mason to install
 			ensure_installed = {
 				"astro",
-				"ts_ls",
+				"vtsls",
 				"html",
 				"eslint",
 				"cssls",
