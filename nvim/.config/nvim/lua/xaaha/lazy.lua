@@ -10,7 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup({ { import = "xaaha.plugins" }, { import = "xaaha.plugins.lsp_misc_items" } }, {
+require("lazy").setup({ { import = "xaaha.plugins" } }, {
 	checker = {
 		enabled = true,
 		notify = false,

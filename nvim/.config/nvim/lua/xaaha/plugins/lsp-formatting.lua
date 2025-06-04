@@ -23,8 +23,6 @@ return {
 				go = { "gofumpt", "golines", "goimports" },
 				ruby = { "rubocop" },
 				sql = { "sqruff" },
-				-- eruby = { "erb-format" },
-				-- svelte = { "prettier" }, -- add as needed
 			},
 			format_on_save = {
 				lsp_fallback = true,

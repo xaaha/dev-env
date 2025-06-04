@@ -15,7 +15,6 @@ return {
 			ruby = { "rubocop" },
 			sql = { "sqruff" },
 			yaml = { "yamllint" },
-			-- svelte = { "eslint_d" }, -- add others as needed. Add with Mason first
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
