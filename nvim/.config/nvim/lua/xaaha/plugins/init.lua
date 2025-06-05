@@ -3,7 +3,7 @@ return {
 	"b0o/schemastore.nvim",
 	"preservim/vimux", -- vim test requires this
 
-	"norcalli/nvim-colorizer.lua", -- see colors in vim
+	-- "norcalli/nvim-colorizer.lua", -- see colors in vim
 
 	{
 		"stevearc/dressing.nvim", -- changes the default way of renaming and other ui stuff
