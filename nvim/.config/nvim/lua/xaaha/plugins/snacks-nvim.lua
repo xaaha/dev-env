@@ -6,8 +6,8 @@ return {
 		indent = {
 			indent = {
 				enabled = true,
-				only_scope = true,
-				only_current = true,
+				only_scope = false,
+				only_current = false,
 			},
 		},
 		lazygit = { enabled = true },
