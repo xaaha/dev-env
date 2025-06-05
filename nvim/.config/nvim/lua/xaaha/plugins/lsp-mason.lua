@@ -25,10 +25,10 @@ return {
 		})
 
 		mason_lspconfig.setup({
-			-- list of servers for mason to install
+			-- List of servers for mason to install
 			ensure_installed = {
 				"astro",
-				"ts_ls",
+				"vtsls",
 				"html",
 				"eslint",
 				"cssls",
