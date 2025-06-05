@@ -45,9 +45,9 @@ keymap.set("n", "<leader>sd", "<cmd>vertical resize -5<CR>", { desc = "Decrease 
 ---------------------
 -- Colorscheme
 ---------------------
-keymap.set("n", "<leader>ud", ":colorscheme github_dark<CR>", { silent = false, desc = "Toggle default dark theme" })
+keymap.set("n", "<leader>ud", ":colorscheme kanagawa-wave<CR>", { silent = false, desc = "Toggle default dark theme" })
 keymap.set("n", "<leader>ui", ":colorscheme ", { desc = "Toggle colorscheme" }) -- Toggle colorscheme and installed themes easily
-keymap.set("n", "<leader>ul", ":colorscheme catppuccin-latte<CR>", { desc = "Toggle light theme" })
+keymap.set("n", "<leader>ul", ":colorscheme dayfox<CR>", { desc = "Toggle light theme" })
 
 ---------------------
 -- Move text up and down
@@ -102,3 +102,11 @@ keymap.set(
 	[[:%!jq .<CR>:w<CR>]],
 	{ noremap = true, silent = true, desc = "Format and save json files" }
 )
+
+---------------
+--- Moving between splits
+--------------
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
