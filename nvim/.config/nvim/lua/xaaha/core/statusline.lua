@@ -29,7 +29,7 @@ local statusline = {
 	" %r", -- Readonly flag
 	git_component(),
 	" %m", -- Modified flag
-	"[%{get(b:,'gitsigns_status','')}]",
+	"%{get(b:,'gitsigns_status','')}",
 	"%=", -- divider
 	"[%{&fenc==''?&enc:&fenc}]", -- utf
 	"[Line: %l Column: %c] ",
