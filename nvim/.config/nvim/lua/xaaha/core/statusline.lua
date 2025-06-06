@@ -1,12 +1,37 @@
--- Copied and Modified from this reddit post
--- https://www.reddit.com/r/neovim/comments/17hbep3/anyone_built_a_statusline_with_no_plugins/
+--- Gets the current Git branch name
+---@return string
+local function get_git_branch()
+	local handle = io.popen("git rev-parse --abbrev-ref HEAD 2>/dev/null")
+	if handle then
+		local branch = handle:read("*a") -- Read the output of the command
+		handle:close()
+		branch = branch:gsub("%s+", "") -- Remove any trailing whitespace
+		return branch
+	end
+	return "" -- Return an empty string if the command fails
+end
+
+--- Git component for the statusline
+---@return string
+local function git_component()
+	local branch = get_git_branch()
+	if branch == "" then
+		return "" -- No branch detected
+	end
+
+	-- Trim the branch name to the last 10 characters if it's too long
+	local trimmed_branch = #branch > 10 and branch:sub(-10) or branch
+	return string.format("[ %s]", trimmed_branch)
+end
+
 local statusline = {
-	" %t", -- File name
+	"[%<%.30f]", -- File path
 	" %r", -- Readonly flag
+	git_component(),
 	" %m", -- Modified flag
 	"%=", -- divider
-	" %f", -- Full file path
-	" %3l:%-2c ", -- Line and column
+	"[%{&fenc==''?&enc:&fenc}]", -- utf
+	"[Line: %l Column: %c] ",
 }
 
 vim.o.statusline = table.concat(statusline, "")
