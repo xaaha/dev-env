@@ -6,13 +6,6 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("gitsigns").setup({
-			on_attach = function(bufnr)
-				vim.api.nvim_buf_attach(bufnr, false, {
-					on_lines = function()
-						require("gitsigns").refresh()
-					end,
-				})
-			end,
 			preview_config = { border = "rounded" },
 			vim.keymap.set("n", "<leader>G", ":Gitsigns<CR>", { desc = "Toggle Gitsigns selector" }),
 			vim.keymap.set("n", "<leader>hl", ":Gitsigns preview_hunk<CR>", { desc = "Preview hunk in line" }),

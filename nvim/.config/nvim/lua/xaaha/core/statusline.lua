@@ -21,11 +21,11 @@ local function git_component()
 
 	-- Trim the branch name to the last 10 characters if it's too long
 	local trimmed_branch = #branch > 10 and branch:sub(-10) or branch
-	return string.format("[ %s]", trimmed_branch)
+	return string.format("[ %s]", trimmed_branch)
 end
 
 local statusline = {
-	"[%<%.30f]", -- File path
+	"[%f]", -- File path. If you need to trim the path use, "[%<%.30f]"
 	" %r", -- Readonly flag
 	git_component(),
 	" %m", -- Modified flag
