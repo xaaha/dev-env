@@ -62,7 +62,7 @@ local get_gps = function()
 	end
 
 	if not isempty(gps_location) then
-		return require("user.icons").ui.ChevronRight .. " " .. gps_location
+		return "" .. " " .. gps_location
 	else
 		return ""
 	end
@@ -92,7 +92,7 @@ local get_winbar = function()
 	end
 
 	if not isempty(value) and get_buf_option("mod") then
-		local mod = "%#LineNr#" .. require("user.icons").ui.Circle .. "%*"
+		local mod = "%#LineNr#" .. "" .. "%*"
 		if gps_added then
 			value = value .. " " .. mod
 		else
