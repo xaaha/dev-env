@@ -59,4 +59,4 @@ end
 
 -- Add a Neovim command to open GitUI
 vim.api.nvim_create_user_command("Gitui", open_gitui, {})
-vim.keymap.set("n", "<leader>gi", "<cmd>Gitui<cr>", { desc = "Open Gitui" })
+vim.keymap.set("n", "<leader>gg", "<cmd>Gitui<cr>", { desc = "Open Gitui" })
