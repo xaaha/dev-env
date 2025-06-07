@@ -43,6 +43,9 @@ return {
 			},
 		})
 
+		--  not sure if I need to do this everytime
+		vim.cmd("FzfLua register_ui_select")
+
 		-- send qf list to trouble
 		local config = require("fzf-lua.config")
 		local actions = require("trouble.sources.fzf").actions
