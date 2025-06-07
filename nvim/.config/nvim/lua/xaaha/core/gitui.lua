@@ -3,7 +3,7 @@ local is_open = false
 
 -- Configuration for the floating GitUI window
 local config = {
-	binary = "/opt/homebrew/bin/gitui",
+	binary = "/opt/homebrew/bin/lazygit",
 	args = {}, -- Additional arguments to pass to gitui
 	width = 80, -- Width of the floating window (percentage)
 	height = 70, -- Height of the floating window (percentage)
