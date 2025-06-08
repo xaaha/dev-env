@@ -14,7 +14,7 @@ keymap.set("n", "<leader>qq", "<cmd>wqa<CR>", { desc = "Write quit all" })
 keymap.set("v", "p", '"_dP', { desc = "Don't override yank on visual mode" })
 keymap.set("n", "dd", '"_dd', { desc = "Delete a line without overriding the yank register" })
 
--- use jk & kj  to exit insert mode
+-- use jk & kj to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 keymap.set("i", "kj", "<ESC>", { desc = "Exit insert mode with kj" })
 

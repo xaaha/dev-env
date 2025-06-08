@@ -31,7 +31,7 @@ local statusline = {
 	" %m", -- Modified flag
 	"%{get(b:,'gitsigns_status','')}",
 	"%=", -- divider
-	"[%{&fenc==''?&enc:&fenc}]", -- utf
+	--	"[%{&fenc==''?&enc:&fenc}]", -- utf
 	"[Line: %l Column: %c] ",
 }
 

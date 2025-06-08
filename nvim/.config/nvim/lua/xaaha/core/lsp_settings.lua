@@ -4,7 +4,6 @@ vim.lsp.enable({
 	"jsonls",
 	"lua_ls",
 	"ruff",
-	-- "ts_ls",
 	"yamlls",
 	-- from lspconfig
 	"astro",
