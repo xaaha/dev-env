@@ -92,7 +92,7 @@ local get_winbar = function()
 	end
 
 	if not isempty(value) and get_buf_option("mod") then
-		local mod = "%#LineNr#" .. "" .. "%*"
+		local mod = "%#LineNr#" .. "%*"
 		if gps_added then
 			value = value .. " " .. mod
 		else
