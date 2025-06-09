@@ -36,3 +36,10 @@ local statusline = {
 }
 
 vim.o.statusline = table.concat(statusline, "")
+-- only load after colorscheme
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = function()
+		vim.cmd("hi StatusLine guifg=#BF616A")
+	end,
+})
