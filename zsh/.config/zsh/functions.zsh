@@ -265,3 +265,17 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+# for mac, take what's in the clipboard and then pass it to jq .
+function fp() {
+    if [[ "$(uname -s)" == "Darwin" ]]; then
+        if command -v pbpaste >/dev/null 2>&1 && command -v jq >/dev/null 2>&1; then
+            pbpaste | jq .
+        else
+            echo "Error: 'pbpaste' or 'jq' is missing."
+        fi
+    else
+        echo "Not running on macOS."
+    fi
+}
+
