@@ -13,6 +13,8 @@ keymap.set("n", "<leader> ", "<cmd>wa<CR>", { desc = "Save current file" })
 keymap.set("n", "<leader>qq", "<cmd>wqa<CR>", { desc = "Write quit all" })
 keymap.set("v", "p", '"_dP', { desc = "Don't override yank on visual mode" })
 keymap.set("n", "dd", '"_dd', { desc = "Delete a line without overriding the yank register" })
+keymap.set("n", "ycc", "yygccp", { remap = true }) -- copy and comment out the first line and paste
+keymap.set("x", "/", "<Esc>/\\%V") -- search within visual selection
 
 -- use jk & kj to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
