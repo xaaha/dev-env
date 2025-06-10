@@ -19,11 +19,6 @@ curl -s https://raw.githubusercontent.com/xaaha/dev-env/refs/heads/main/install.
 
 - Install the rmtree to remove formulae and all their dependencies
 
-```bash
-brew tap beeftornado/rmtree
-brew rmtree <packagename>
-```
-
 - Enable fzf keybindings
 
 ```bash
@@ -33,7 +28,7 @@ $(brew --prefix)/opt/fzf/install
 
 - Alacritty
 
-- To change the theme you need to create a sym link to the file you want with the following command.
+- To change the theme you need to create a symlink to the file you want with the following command.
 
 ```bash
 # for light theme
@@ -53,7 +48,7 @@ defaults -currentHost delete -g AppleFontSmoothing
 
 ## Install
 
-- Install Tree-sitter CLI for for treesitter, required since Tree-sitter moved to on main branch
+- Install Tree-sitter CLI, required since Tree-sitter moved to on main branch
 
 ```bash
 pnpm install tree-sitter-cli
