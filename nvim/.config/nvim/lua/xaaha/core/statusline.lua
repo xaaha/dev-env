@@ -1,3 +1,6 @@
+local chevron_right = "\u{eab6}" -- 
+local chevron_left = "\u{eab5}" -- 
+
 --- Gets the current Git branch name
 ---@return string
 local function get_git_branch()
@@ -21,25 +24,31 @@ local function git_component()
 
 	-- Trim the branch name to the last 10 characters if it's too long
 	local trimmed_branch = #branch > 10 and branch:sub(-10) or branch
-	return string.format("[ %s]", trimmed_branch)
+	return string.format(" %s " .. chevron_right .. " ", trimmed_branch)
 end
 
 local statusline = {
-	"[%f]", -- File path. If you need to trim the path use, "[%<%.30f]"
+	"%f " .. chevron_right, -- File path. If you need to trim the path use, "[%<%.30f]"
 	" %r", -- Readonly flag
+	"%#GitBranch#", -- Start git component highlight
 	git_component(),
-	" %m", -- Modified flag
+	"%*", -- Reset to default highlight
+	"%#GitChanges#",
 	"%{get(b:,'gitsigns_status','')}",
+	"%*", -- Reset to default highlight
+	" %m ", -- Modified flag
 	"%=", -- divider
-	--	"[%{&fenc==''?&enc:&fenc}]", -- utf
-	"[Line: %l Column: %c] ",
+	chevron_left .. " Line: %l Column: %c ",
 }
 
 vim.o.statusline = table.concat(statusline, "")
+
 -- only load after colorscheme
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
 	callback = function()
 		vim.cmd("hi StatusLine guifg=#BF616A")
+		vim.cmd("hi GitBranch guifg=#008080 guibg=NONE")
+		vim.cmd("hi GitChanges guifg=#D79921 guibg=NONE")
 	end,
 })
