@@ -103,8 +103,15 @@ local key_mappings = {
 		"Show documentation",
 	},
 	{ "<leader>rs", ":LspRestart<CR>", "Restart LSP" },
+	{
+		"<leader>td",
+		function()
+			local is_enabled = vim.diagnostic.is_enabled()
+			vim.diagnostic.enable(not is_enabled)
+		end,
+		"Toggle Diagnostics for this repo",
+	},
 }
-
 -- set all keybindings
 for _, mapping in ipairs(key_mappings) do
 	local opts = { noremap = true, silent = true }
