@@ -11,21 +11,25 @@ return {
 	},
 	{
 		"rebelot/kanagawa.nvim",
-		priority = 1000,
+		-- priority = 1000,
 		config = function()
-			vim.cmd("colorscheme kanagawa-wave")
+			-- vim.cmd("colorscheme kanagawa-wave")
 		end,
 	},
 	{
 		"navarasu/onedark.nvim",
-		-- priority = 1000,
+		priority = 1000,
 		config = function()
 			require("onedark").setup({
 				style = "cool", -- Set the style
 				toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" },
+				highlights = {
+					BlinkCmpMenuSelection = { fg = "#EBC175" },
+					FzfLuaBorder = { fg = "#BF616A" },
+				},
 			})
-			-- require("onedark").load() -- Ensure the theme is loaded
-			-- vim.cmd("colorscheme onedark")
+			require("onedark").load() -- Ensure the theme is loaded
+			vim.cmd("colorscheme onedark")
 		end,
 	},
 	-- {
