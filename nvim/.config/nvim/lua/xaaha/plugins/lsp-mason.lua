@@ -59,8 +59,7 @@ return {
 				"golines",
 				"postgrestools",
 				"revive", -- go linters end,
-				"rubyfmt",
-				"rubocop", --  ruby linter and formatter
+				"standardrb", --  ruby linter and formatter
 				"sqruff",
 				"erb-lint", -- ruby end
 				"yamllint", -- yaml
