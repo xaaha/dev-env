@@ -28,7 +28,7 @@ local function git_component()
 end
 
 local statusline = {
-	"%f " .. chevron_right, -- File path. If you need to trim the path use, "[%<%.30f]"
+	" %f " .. chevron_right, -- File path. If you need to trim the path use, "[%<%.30f]"
 	" %r", -- Readonly flag
 	"%#GitBranch#", -- Start git component highlight
 	git_component(),
