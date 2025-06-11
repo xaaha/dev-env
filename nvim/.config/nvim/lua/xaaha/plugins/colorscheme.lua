@@ -24,7 +24,7 @@ return {
 				style = "cool", -- Set the style
 				toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" },
 				highlights = {
-					BlinkCmpMenuSelection = { fg = "#EBC175" },
+					BlinkCmpMenuSelection = { fg = "#EBC175", bg = "#2A2A2A" },
 					FzfLuaBorder = { fg = "#BF616A" },
 				},
 			})
