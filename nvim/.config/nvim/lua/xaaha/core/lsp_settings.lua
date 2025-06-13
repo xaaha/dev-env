@@ -29,12 +29,12 @@ local border = {
 }
 
 vim.diagnostic.config({
-	virtual_lines = true,
+	-- virtual_lines = true, -- this gets messy on large code base with tons of errors
 	-- Select either virtual lines or text below otherwise it gets messy
-	-- virtual_text = {
-	-- 	spacing = 4,
-	-- 	prefix = "●", - This is fine as a string
-	-- },
+	virtual_text = {
+		spacing = 4,
+		prefix = "●", -- This is fine as a string
+	},
 
 	underline = true,
 	update_in_insert = false,
