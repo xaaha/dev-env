@@ -1,6 +1,6 @@
 vim.lsp.enable({
 	"gopls",
-	"harper_ls",
+	-- "harper_ls",
 	"jsonls",
 	"lua_ls",
 	"ruff",
