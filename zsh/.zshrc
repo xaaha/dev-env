@@ -14,6 +14,7 @@ HISTFILE=~/.zsh_history
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/vim"
 plug "zsh-users/zsh-syntax-highlighting"
+plug "mroth/evalcache"
 
 # source local files
 plug "$HOME/.config/zsh/aliases.zsh"

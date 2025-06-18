@@ -6,8 +6,12 @@ export EDITOR="nvim"
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_ENV_HINTS=1
 
-# mise: tool version management
-eval "$(mise activate zsh)"
+## evals ##
+# eval "$(jump shell)" --> becomes
+_evalcache  jump shell
+_evalcache mise activate zsh
+_evalcache zoxide init zsh
+_evalcache starship init zsh
 
 # go path for go install <module>
 export GOPATH=$HOME/go
@@ -19,16 +23,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun" # bun completions
 # bun end
 
-eval "$(starship init zsh)"
-
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
-
-# zoxide & Jump
-eval "$(zoxide init zsh)"
-eval "$(jump shell)" 
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -15,12 +15,7 @@ alias cat='bat'
 alias g='lazygit'
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
 
-alias ls=lsd
-alias nvimrc='nvim ~/.config/nvim/'
-alias pf="fzf  --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
 alias pip=pip3
 alias pn=pnpm
 alias python=python3
@@ -37,9 +32,6 @@ alias ts="tmux ls"
 alias tn="tmux new -s"
 alias ta="tmux a"
 alias tat="tmux a -t"
-
-# mise
-alias m="mise"
 
 alias pd="podman"
 
