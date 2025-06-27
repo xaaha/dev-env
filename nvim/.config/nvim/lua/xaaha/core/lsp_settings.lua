@@ -14,7 +14,7 @@ vim.lsp.enable({
 	"graphql",
 	"html",
 	"ruby_lsp",
-	"vtsls",
+	"ts_ls",
 })
 
 local border = {

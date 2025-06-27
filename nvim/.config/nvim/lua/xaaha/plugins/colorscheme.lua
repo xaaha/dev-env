@@ -32,37 +32,4 @@ return {
 			vim.cmd("colorscheme onedark")
 		end,
 	},
-	-- {
-	-- 	"catppuccin/nvim",
-	-- 	lazy = false,
-	-- 	config = function()
-	-- 		-- configure the colorscheme here
-	-- 		require("catppuccin").setup({
-	-- 			flavour = "latte", -- latte, frappe, macchiato, mocha
-	-- 			styles = {
-	-- 				functions = { "italic" },
-	-- 			},
-	-- 			color_overrides = {},
-	-- 			custom_highlights = {},
-	-- 		})
-	-- 	end,
-	-- },
-	-- {
-	-- 	"folke/tokyonight.nvim",
-	-- },
-	-- { "rose-pine/neovim", name = "rose-pine" },
-	-- {
-	-- 	"projekt0n/github-nvim-theme",
-	-- 	config = function()
-	-- 		require("github-theme").setup({
-	-- 			options = {
-	-- 				styles = {
-	-- 					comments = "italic",
-	-- 					keywords = "bold",
-	-- 					types = "italic,bold",
-	-- 				},
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
 }

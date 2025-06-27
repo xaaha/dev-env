@@ -28,7 +28,7 @@ return {
 			-- List of servers for mason to install
 			ensure_installed = {
 				"astro",
-				"vtsls",
+				"ts_ls",
 				"html",
 				"eslint",
 				"cssls",
