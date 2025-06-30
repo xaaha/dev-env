@@ -7,7 +7,7 @@
 --cask chatgpt
 --cask dozer
 --cask firefox
---cask google-chrome@dev
+--cask ungoogled-chromium 
 --cask hyperkey
 --cask notunes
 --cask obsidian
