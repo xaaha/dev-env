@@ -47,7 +47,10 @@ keymap.set("n", "<leader>sd", "<cmd>vertical resize -5<CR>", { desc = "Decrease 
 ---------------------
 -- Colorscheme
 ---------------------
-keymap.set("n", "<leader>ud", ":colorscheme kanagawa-wave<CR>", { silent = false, desc = "Toggle default dark theme" })
+keymap.set("n", "<leader>ud", function()
+	require("onedark").setup({ style = "cool" })
+	require("onedark").load()
+end, { desc = "Toggle dark theme" })
 keymap.set("n", "<leader>ui", ":colorscheme ", { desc = "Toggle colorscheme" }) -- Toggle colorscheme and installed themes easily
 keymap.set("n", "<leader>ul", function()
 	require("onedark").setup({ style = "light" })
