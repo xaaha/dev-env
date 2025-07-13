@@ -2,7 +2,6 @@ local ns = vim.api.nvim_create_namespace("indent_guides")
 local indent_char = "│"
 local indent_hl = "IndentGuide"
 local indent_priority = 10
-local has_repeat_lb = vim.fn.has("nvim-0.10.0") == 1
 
 -- Set default highlight if not set
 vim.api.nvim_set_hl(0, indent_hl, { link = "NonText", default = true })
@@ -25,7 +24,6 @@ local function get_extmarks(indent, shiftwidth, leftcol)
 				hl_mode = "combine",
 				priority = indent_priority,
 				ephemeral = true,
-				virt_text_repeat_linebreak = has_repeat_lb or nil,
 			})
 		end
 	end
