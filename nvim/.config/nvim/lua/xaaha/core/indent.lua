@@ -43,11 +43,9 @@ vim.api.nvim_set_decoration_provider(ns, {
 		if vim.bo[buf].buftype ~= "" then
 			return
 		end
-
 		local leftcol = vim.fn.winsaveview().leftcol
 		local shiftwidth = vim.bo[buf].shiftwidth > 0 and vim.bo[buf].shiftwidth or vim.bo[buf].tabstop
 		local indent_scope_only = only_scope_enabled(buf)
-
 		-- Determine current scope bounds
 		local scope_start, scope_end = 1, vim.api.nvim_buf_line_count(buf)
 		if indent_scope_only then
@@ -55,7 +53,6 @@ vim.api.nvim_set_decoration_provider(ns, {
 			scope_start = vim.fn.prevnonblank(cursor)
 			scope_end = vim.fn.nextnonblank(cursor)
 		end
-
 		for lnum = top + 1, bot do
 			if lnum >= scope_start and lnum <= scope_end then
 				local indent = get_indent(lnum)
