@@ -1,28 +1,45 @@
 local ns = vim.api.nvim_create_namespace("indent_guides")
 local indent_char = "│"
-local indent_hl = "IndentGuide"
+local indent_hl = "TroubleIndent"
 local indent_priority = 10
 
--- Set default highlight if not set
 vim.api.nvim_set_hl(0, indent_hl, { link = "NonText", default = true })
 
--- Indentation per line
-local function get_indent(line_num)
-	return vim.fn.indent(line_num)
+-- Get indent level in spaces
+local function get_indent(lnum)
+	local indent = vim.fn.indent(lnum)
+	if indent > 0 or vim.fn.getline(lnum):match("%S") then
+		return indent
+	end
+
+	local prev = vim.fn.prevnonblank(lnum)
+	local next = vim.fn.nextnonblank(lnum)
+	if prev == 0 and next == 0 then
+		return 0
+	end
+
+	local indent_prev = prev > 0 and vim.fn.indent(prev) or 0
+	local indent_next = next > 0 and vim.fn.indent(next) or 0
+
+	if indent_prev ~= indent_next and indent_prev > 0 and indent_next > 0 then
+		return math.min(indent_prev, indent_next) + vim.bo.shiftwidth
+	end
+
+	return math.min(indent_prev, indent_next)
 end
 
+-- Generate extmarks for a given line's indent level
 local function get_extmarks(indent, shiftwidth, leftcol)
 	local extmarks = {}
-	local level = math.floor(indent / shiftwidth)
-	for i = 1, level do
+	local levels = math.floor(indent / shiftwidth)
+	for i = 1, levels do
 		local col = (i - 1) * shiftwidth - leftcol
 		if col >= 0 then
 			table.insert(extmarks, {
 				virt_text = { { indent_char, indent_hl } },
-				virt_text_pos = "overlay",
 				virt_text_win_col = col,
 				hl_mode = "combine",
-				priority = indent_priority,
+				priority = indent_priority, -- so that other plugin won't be able to overwrite this.
 				ephemeral = true,
 			})
 		end
@@ -30,14 +47,14 @@ local function get_extmarks(indent, shiftwidth, leftcol)
 	return extmarks
 end
 
--- Decoration callback
+-- Decoration callback: runs during redraws
 vim.api.nvim_set_decoration_provider(ns, {
 	on_win = function(_, _, buf, top, bot)
 		if vim.bo[buf].buftype ~= "" then
 			return
 		end
-		local leftcol = vim.fn.winsaveview().leftcol
 		local shiftwidth = vim.bo[buf].shiftwidth > 0 and vim.bo[buf].shiftwidth or vim.bo[buf].tabstop
+		local leftcol = vim.fn.winsaveview().leftcol
 		for lnum = top + 1, bot do
 			local indent = get_indent(lnum)
 			if indent > 0 then
