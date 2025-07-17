@@ -1,7 +1,7 @@
 local ns = vim.api.nvim_create_namespace("indent_guides")
 local indent_char = "│"
 local indent_hl = "TroubleIndent"
-local indent_priority = 10
+local indent_priority = 10 -- just in case another setup tries to override
 
 vim.api.nvim_set_hl(0, indent_hl, { link = "NonText", default = true })
 
