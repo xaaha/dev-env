@@ -15,15 +15,18 @@ local function get_indent(lnum)
 	return (ip ~= in_ and ip > 0 and in_ > 0) and math.min(ip, in_) + vim.bo.shiftwidth or math.min(ip, in_)
 end
 
+local enabled = true
+
 vim.api.nvim_set_decoration_provider(ns, {
 	on_win = function(_, win, buf, top, bot)
-		-- Only draw in current window
-		if win ~= vim.api.nvim_get_current_win() then
+		-- Only draw in current window and when enabled
+		if not enabled or win ~= vim.api.nvim_get_current_win() then
 			return
 		end
 		if vim.bo[buf].buftype ~= "" then
 			return
 		end
+
 		local sw = vim.bo[buf].shiftwidth > 0 and vim.bo[buf].shiftwidth or vim.bo[buf].tabstop
 		local leftcol = vim.fn.winsaveview().leftcol
 		for lnum = top + 1, bot do
@@ -44,3 +47,8 @@ vim.api.nvim_set_decoration_provider(ns, {
 		end
 	end,
 })
+
+vim.keymap.set("n", "<leader>et", function()
+	enabled = not enabled -- Toggle the state
+	vim.cmd("redraw!") -- Force redraw to update the display
+end, { desc = "Toggle indent in current file" })
