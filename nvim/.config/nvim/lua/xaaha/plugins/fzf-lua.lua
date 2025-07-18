@@ -3,7 +3,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("fzf-lua").setup({
-			"default", -- "telescope", "fzf-native", "fzf-vim", "default"
+			"fzf-native", -- "telescope", "fzf-native", "fzf-vim", "default"
 			keymap = {
 				fzf = {
 					["ctrl-q"] = "select-all+accept",
@@ -70,6 +70,7 @@ return {
 		customKeymap("n", "<c-b>", "<cmd>FzfLua buffers<CR>", { desc = "Find all files (including hidden) in cwd" })
 		customKeymap("n", "<leader>ft", "<cmd>FzfLua git_status<CR>", { desc = "Find git_status files" })
 		customKeymap("n", "<leader>fs", "<cmd>FzfLua lsp_document_symbols<CR>", { desc = "Find lsp_document_symbols" })
+		customKeymap("n", "<leader>fk", "<cmd>FzfLua keymaps<CR>", { desc = "Find Keymaps" })
 		customKeymap(
 			"n",
 			"<leader>bd",
@@ -78,3 +79,5 @@ return {
 		)
 	end,
 }
+
+-- inspiration
