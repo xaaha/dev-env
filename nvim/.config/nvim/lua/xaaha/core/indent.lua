@@ -1,9 +1,6 @@
 local ns = vim.api.nvim_create_namespace("indent_guides")
 local indent_char = "│"
-local indent_hl = "TroubleIndent"
-local indent_priority = 10
-
-vim.api.nvim_set_hl(0, indent_hl, { link = "NonText", default = true })
+local indent_hl = "NonText"
 
 -- Get effective indent for a line
 local function get_indent(lnum)
@@ -35,7 +32,6 @@ local function get_extmarks(indent, sw, leftcol)
 				virt_text = { { indent_char, indent_hl } },
 				virt_text_win_col = col,
 				hl_mode = "combine",
-				priority = indent_priority,
 				ephemeral = true,
 			}
 		end
