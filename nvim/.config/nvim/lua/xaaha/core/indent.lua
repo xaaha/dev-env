@@ -15,7 +15,7 @@ local function get_indent(lnum)
 	return (ip ~= in_ and ip > 0 and in_ > 0) and math.min(ip, in_) + vim.bo.shiftwidth or math.min(ip, in_)
 end
 
-local enabled = true
+local enabled = false
 
 vim.api.nvim_set_decoration_provider(ns, {
 	on_win = function(_, win, buf, top, bot)
