@@ -49,3 +49,12 @@ opt.scrolloff = 8 -- Minimum number of line to keep at the top or bottom
 -- editing modes
 opt.virtualedit = "block" -- lets you move to the end of line in Visual block mode even after end character. :h virtualedit
 opt.inccommand = "split" -- groups the global search and replace to a window below with a line number
+
+-- highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "highlight on Yank",
+	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
