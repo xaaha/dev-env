@@ -12,7 +12,6 @@ curl -s https://raw.githubusercontent.com/xaaha/dev-env/refs/heads/main/install.
 > Intalls all apps from `install.txt` file. Just run the command again if an application fails to install
 
 - Install tpm for tmux from [the official repo](https://github.com/tmux-plugins/tpm).
-
   - Install with: `prefix I`
   - Uninstall with: `prefix alt u` (option in MacOs)
   - Upgrade packages: `prefix U`
@@ -24,26 +23,6 @@ curl -s https://raw.githubusercontent.com/xaaha/dev-env/refs/heads/main/install.
 ```bash
 # paste this and hit yes for all
 $(brew --prefix)/opt/fzf/install
-```
-
-- Alacritty
-
-- To change the theme you need to create a symlink to the file you want with the following command.
-
-```bash
-# for light theme
-ln -s ~/.config/alacritty/themes/light.toml ~/.config/alacritty/themes/my_theme.toml
-# for dark theme
-ln -s ~/.config/alacritty/themes/dark.toml ~/.config/alacritty/themes/my_theme.toml
-```
-
-- By default, font smoothing causes fonts to be slightly bold in Alacritty.
-
-```bash
-# disble font smoothing
-defaults -currentHost write -g AppleFontSmoothing -int 0
-# reset font smoothing
-defaults -currentHost delete -g AppleFontSmoothing
 ```
 
 ## Install
@@ -125,4 +104,13 @@ http://localhost:6060/
 ```bash
 # change quit unexpectedly popup to a notification
 defaults write com.apple.CrashReporter UseUNC 1
+```
+
+- By default, font smoothing causes fonts to be slightly bold in Alacritty.
+
+```bash
+# disble font smoothing
+defaults -currentHost write -g AppleFontSmoothing -int 0
+# reset font smoothing
+defaults -currentHost delete -g AppleFontSmoothing
 ```
