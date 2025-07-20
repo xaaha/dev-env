@@ -17,9 +17,8 @@ return {
 			},
 		})
 
-		-- Mapping of lspconfig name (dimmed name in Mason UI) => mason package name
-		-- dimmed name is required if you want to use the name to enable the config declared in the lspconfig
 		local servers = {
+			-- lspconfigName :h lspconfig-all = to Mason package name often "official tool name"
 			biome = "biome", -- JS/TS formatter/linter/LSP
 			astro = "astro-language-server",
 			ts_ls = "typescript-language-server",
@@ -37,27 +36,43 @@ return {
 			yamlls = "yaml-language-server",
 		}
 
-		vim.lsp.enable({
-			"gopls",
-			-- "harper_ls",
-			"jsonls",
-			"lua_ls",
-			"ruff",
-			"yamlls",
-			-- from lspconfig
-			"astro",
-			"biome",
-			"cssls",
-			"emmet_ls",
-			"eslint",
-			"graphql",
-			"html",
-			"ruby_lsp",
-			"ts_ls",
-		})
+		local linter_and_formatters = {
+			"prettier", -- Prettier formatter
+			"stylua", -- Lua formatter
+			"mypy", -- Python type checker
+			"gofumpt", -- Go formatter
+			"goimports",
+			"golines",
+			"postgrestools",
+			"revive", -- Go linter
+			"standardrb", -- Ruby linter
+			"sqruff", -- SQL formatter
+			"erb-lint", -- Ruby templating linter "yamllint", -- YAML linter
+			"yq", -- YAML formatter
+		}
+
+		-- Collect all mason tool names from LSPs
+		local serversToInstall = {}
+		local serversToEnable = {}
+		local exclude = {
+			"harper_ls",
+		}
+
+		for lsp, tool in pairs(servers) do
+			table.insert(serversToInstall, tool)
+			if not vim.tbl_contains(exclude, lsp) then
+				table.insert(serversToEnable, lsp)
+			end
+		end
+
+		-- Append extra tools to the install list
+		vim.list_extend(serversToInstall, linter_and_formatters)
 
 		mason_tool_installer.setup({
 			ensure_installed = serversToInstall,
 		})
+
+		-- Enable the LSP servers
+		vim.lsp.enable(serversToEnable)
 	end,
 }
