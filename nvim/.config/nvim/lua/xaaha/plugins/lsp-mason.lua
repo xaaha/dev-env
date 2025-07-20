@@ -27,20 +27,20 @@ return {
 		mason_lspconfig.setup({
 			-- List of servers for mason to install
 			ensure_installed = {
-				"astro",
-				"ts_ls",
-				"html",
-				"eslint",
-				"cssls",
-				"lua_ls",
-				"graphql",
-				"emmet_ls",
-				"ruff",
-				"gopls",
-				"harper_ls",
-				"jsonls",
-				"ruby_lsp",
-				"yamlls",
+				-- "astro",
+				-- "ts_ls",
+				-- "html",
+				-- "eslint",
+				-- "cssls",
+				-- "lua_ls",
+				-- "graphql",
+				-- "emmet_ls",
+				-- "ruff",
+				-- "gopls",
+				-- "harper_ls",
+				-- "jsonls",
+				-- "ruby_lsp",
+				-- "yamlls",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -49,11 +49,23 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
+				"css-lsp",
+				"eslint-lsp",
+				"emmet-ls",
+				"graphql-language-service-cli",
+				"html-lsp",
+				"harper-ls",
+				"json-lsp",
+				"typescript-language-server",
 				"biome", -- JS, TS, TSX and JSON formatter, linter, and LSP
 				"prettier", -- prettier formatter
+				"astro-language-server",
+				"lua-language-server",
 				"stylua", -- lua formatter
+				"ruby-lsp",
 				"ruff", -- python lsp, linter, and formatter
 				"mypy", -- python type checker
+				"gopls",
 				"gofumpt", -- go linters 👇
 				"goimports",
 				"golines",
@@ -62,7 +74,8 @@ return {
 				"standardrb", --  ruby linter and formatter
 				"sqruff",
 				"erb-lint", -- ruby end
-				"yamllint", -- yaml
+				"yaml-language-server",
+				"yamllint",
 				"yq", -- yaml formatter
 			},
 		})
