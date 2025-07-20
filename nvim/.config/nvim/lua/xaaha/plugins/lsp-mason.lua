@@ -47,6 +47,42 @@ return {
 			automatic_enable = false, -- removes multiple lsp servers
 		})
 
+		local servers = {
+			astro = "astro-language-server",
+			ts_ls = "typescript-language-server",
+			html = "html-lsp",
+			eslint = "eslint-lsp",
+			cssls = "css-lsp",
+			lua_ls = "lua-language-server",
+			graphql = "graphql-language-service-cli",
+			emmet_ls = "emmet-ls",
+			ruff = "ruff",
+			gopls = "gopls",
+			harper_ls = "harper-ls",
+			jsonls = "json-lsp",
+			ruby_lsp = "ruby-lsp",
+			yamlls = "yaml-language-server",
+		}
+
+		vim.lsp.enable({
+			"gopls",
+			-- "harper_ls",
+			"jsonls",
+			"lua_ls",
+			"ruff",
+			"yamlls",
+			-- from lspconfig
+			"astro",
+			"biome",
+			"cssls",
+			"emmet_ls",
+			"eslint",
+			"graphql",
+			"html",
+			"ruby_lsp",
+			"ts_ls",
+		})
+
 		mason_tool_installer.setup({
 			ensure_installed = {
 				"css-lsp",

@@ -1,21 +1,4 @@
-vim.lsp.enable({
-	"gopls",
-	-- "harper_ls",
-	"jsonls",
-	"lua_ls",
-	"ruff",
-	"yamlls",
-	-- from lspconfig
-	"astro",
-	"biome",
-	"cssls",
-	"emmet_ls",
-	"eslint",
-	"graphql",
-	"html",
-	"ruby_lsp",
-	"ts_ls",
-})
+-- we enable the lsp in lsp-mason.lua since we install servers there
 
 local border = {
 	{ "┌", "FloatBorder" },
