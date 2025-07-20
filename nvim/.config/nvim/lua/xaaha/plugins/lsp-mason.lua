@@ -1,70 +1,79 @@
 return {
 	"mason-org/mason.nvim",
 	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	config = function()
-		-- import mason
 		local mason = require("mason")
-
-		-- import mason-lspconfig
-		local mason_lspconfig = require("mason-lspconfig")
-
 		local mason_tool_installer = require("mason-tool-installer")
 
-		-- enable mason and configure icons
 		mason.setup({
 			ui = {
 				icons = {
-					package_installed = "✓",
-					package_pending = "➜",
-					package_uninstalled = "✗",
+					package_installed = "󰄳 ",
+					package_pending = " ",
+					package_uninstalled = " ",
 				},
 			},
 		})
 
-		mason_lspconfig.setup({
-			-- List of servers for mason to install
-			ensure_installed = {
-				"astro",
-				"ts_ls",
-				"html",
-				"eslint",
-				"cssls",
-				"lua_ls",
-				"graphql",
-				"emmet_ls",
-				"ruff",
-				"gopls",
-				"harper_ls",
-				"jsonls",
-				"ruby_lsp",
-				"yamlls",
-			},
-			-- auto-install configured servers (with lspconfig)
-			automatic_installation = true, -- not the same as ensure_installed
-			automatic_enable = false, -- removes multiple lsp servers
+		local servers = {
+			-- lspconfigName :h lspconfig-all = to Mason package name often "official tool name"
+			biome = "biome", -- JS/TS formatter/linter/LSP
+			astro = "astro-language-server",
+			ts_ls = "typescript-language-server",
+			html = "html-lsp",
+			eslint = "eslint-lsp",
+			cssls = "css-lsp",
+			lua_ls = "lua-language-server",
+			graphql = "graphql-language-service-cli",
+			emmet_ls = "emmet-ls",
+			ruff = "ruff",
+			gopls = "gopls",
+			harper_ls = "harper-ls",
+			jsonls = "json-lsp",
+			ruby_lsp = "ruby-lsp",
+			yamlls = "yaml-language-server",
+		}
+
+		local linter_and_formatters = {
+			"prettier", -- Prettier formatter
+			"stylua", -- Lua formatter
+			"mypy", -- Python type checker
+			"gofumpt", -- Go formatter
+			"goimports",
+			"golines",
+			"postgrestools",
+			"revive", -- Go linter
+			"standardrb", -- Ruby linter
+			"sqruff", -- SQL formatter
+			"erb-lint", -- Ruby templating linter "yamllint", -- YAML linter
+			"yq", -- YAML formatter
+		}
+
+		-- Collect all mason tool names from LSPs
+		local serversToInstall = {}
+		local serversToEnable = {}
+		local exclude = {
+			"harper_ls",
+		}
+
+		for lsp, tool in pairs(servers) do
+			table.insert(serversToInstall, tool)
+			if not vim.tbl_contains(exclude, lsp) then
+				table.insert(serversToEnable, lsp)
+			end
+		end
+
+		-- Append extra tools to the install list
+		vim.list_extend(serversToInstall, linter_and_formatters)
+
+		-- Mason tool installer requires official name (mason package name) not lspconfig name
+		mason_tool_installer.setup({
+			ensure_installed = serversToInstall,
 		})
 
-		mason_tool_installer.setup({
-			ensure_installed = {
-				"biome", -- JS, TS, TSX and JSON formatter, linter, and LSP
-				"prettier", -- prettier formatter
-				"stylua", -- lua formatter
-				"ruff", -- python lsp, linter, and formatter
-				"mypy", -- python type checker
-				"gofumpt", -- go linters 👇
-				"goimports",
-				"golines",
-				"postgrestools",
-				"revive", -- go linters end,
-				"standardrb", --  ruby linter and formatter
-				"sqruff",
-				"erb-lint", -- ruby end
-				"yamllint", -- yaml
-				"yq", -- yaml formatter
-			},
-		})
+		-- Enable the LSP servers
+		vim.lsp.enable(serversToEnable)
 	end,
 }
