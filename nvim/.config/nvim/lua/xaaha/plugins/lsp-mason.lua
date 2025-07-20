@@ -68,6 +68,7 @@ return {
 		-- Append extra tools to the install list
 		vim.list_extend(serversToInstall, linter_and_formatters)
 
+		-- Mason tool installer requires official name (mason package name) not lspconfig name
 		mason_tool_installer.setup({
 			ensure_installed = serversToInstall,
 		})
