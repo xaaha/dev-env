@@ -44,11 +44,12 @@ return {
 			"goimports",
 			"golines",
 			"postgrestools",
-			"revive", -- Go linter
+			"golangci-lint", -- Go linter
 			"standardrb", -- Ruby linter
 			"sqruff", -- SQL formatter
 			"erb-lint", -- Ruby templating linter "yamllint", -- YAML linter
 			"yq", -- YAML formatter
+			"yamllint",
 		}
 
 		-- Collect all mason tool names from LSPs
