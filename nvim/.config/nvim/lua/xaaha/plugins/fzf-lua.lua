@@ -3,7 +3,17 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("fzf-lua").setup({
-			"fzf-native", -- "telescope", "fzf-native", "fzf-vim", "default"
+			"fzf-tmux", -- "telescope", "fzf-native", "fzf-vim", "default", "fzf-tmux"
+			fzf_opts = {
+				["--info"] = false,
+				["--border"] = false,
+				["--preview-window"] = "border-sharp",
+				["--tmux"] = "80%,80%",
+			},
+			defaults = {
+				formatter = "path.filename_first",
+				multiline = 1,
+			},
 			keymap = {
 				fzf = {
 					["ctrl-q"] = "select-all+accept",
@@ -26,25 +36,19 @@ return {
 			},
 			lsp = {
 				code_actions = {
-					preview_pager = "delta --side-by-side --width=$FZF_PREVIEW_COLUMNS --hunk-header-style='omit' --file-style='omit'",
-					prompt = "Code Actions󰅂 ",
-					async_or_timeout = 5000,
-					winopts = {
-						-- row = 0.40,
-						-- height = 0.60,
-						-- width = 0.60,
-						preview = {
-							border = "border-thinblock",
-							layout = "vertical",
-							vertical = "up:75%",
-						},
+					fzf_opts = {
+						["--tmux"] = "bottom,50%",
 					},
 				},
 			},
 		})
 
-		--  not sure if I need to do this everytime
 		vim.cmd("FzfLua register_ui_select")
+		-- require("fzf-lua").register_ui_select({
+		-- 	fzf_opts = {
+		-- 		["--tmux"] = "bottom,50%",
+		-- 	},
+		-- })
 
 		-- send qf list to trouble
 		local config = require("fzf-lua.config")
@@ -80,4 +84,5 @@ return {
 	end,
 }
 
--- inspiration
+-- Some inspiration from
+--https://github.com/deathbeam/dotfiles/blob/master/nvim/.config/nvim/lua/config/finder.lua
