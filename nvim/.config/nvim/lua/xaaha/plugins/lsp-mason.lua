@@ -45,6 +45,7 @@ return {
 			"golines",
 			"postgrestools",
 			"golangci-lint", -- Go linter
+			"revive",
 			"standardrb", -- Ruby linter
 			"sqruff", -- SQL formatter
 			"erb-lint", -- Ruby templating linter "yamllint", -- YAML linter

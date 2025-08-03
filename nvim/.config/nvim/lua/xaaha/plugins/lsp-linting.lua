@@ -11,7 +11,7 @@ return {
 			javascriptreact = { "biomejs" },
 			typescriptreact = { "biomejs" },
 			python = { "ruff" },
-			go = { "golangcilint" }, -- revive is also another great option
+			go = { "revive" }, -- revive is also another great option
 			ruby = { "standardrb" },
 			sql = { "sqruff" },
 			yaml = { "yamllint" },
