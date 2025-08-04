@@ -3,13 +3,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("fzf-lua").setup({
-			"fzf-tmux", -- "telescope", "fzf-native", "fzf-vim", "default", "fzf-tmux"
-			fzf_opts = {
-				["--info"] = false,
-				["--border"] = false,
-				["--preview-window"] = "border-sharp",
-				["--tmux"] = "80%,80%",
-			},
+			"default", -- multiple profiles available in fzf-lua
 			defaults = {
 				formatter = "path.filename_first",
 				multiline = 1,
@@ -36,19 +30,14 @@ return {
 			},
 			lsp = {
 				code_actions = {
-					fzf_opts = {
-						["--tmux"] = "bottom,50%",
-					},
+					prompt = "Code Actions> ",
+					async_or_timeout = 5000,
+					previewer = "codeaction",
 				},
 			},
 		})
 
 		vim.cmd("FzfLua register_ui_select")
-		-- require("fzf-lua").register_ui_select({
-		-- 	fzf_opts = {
-		-- 		["--tmux"] = "bottom,50%",
-		-- 	},
-		-- })
 
 		-- send qf list to trouble
 		local config = require("fzf-lua.config")
@@ -83,6 +72,3 @@ return {
 		)
 	end,
 }
-
--- Some inspiration from
---https://github.com/deathbeam/dotfiles/blob/master/nvim/.config/nvim/lua/config/finder.lua
