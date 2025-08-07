@@ -48,7 +48,7 @@ keymap.set("n", "<leader>sd", "<cmd>vertical resize -5<CR>", { desc = "Decrease 
 -- Colorscheme
 ---------------------
 keymap.set("n", "<leader>ud", function()
-	require("onedark").setup({ style = "deep" })
+	require("onedark").setup({ style = "cool" })
 	require("onedark").load()
 end, { desc = "Toggle dark theme" })
 keymap.set("n", "<leader>ui", ":colorscheme ", { desc = "Toggle colorscheme" }) -- Toggle colorscheme and installed themes easily
