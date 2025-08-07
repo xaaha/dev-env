@@ -99,7 +99,7 @@ Lastly on the browser
 http://localhost:6060/
 ```
 
-### Mac Notes
+### Mac Settings 
 
 ```bash
 # change quit unexpectedly popup to a notification
@@ -113,4 +113,12 @@ defaults write com.apple.CrashReporter UseUNC 1
 defaults -currentHost write -g AppleFontSmoothing -int 0
 # reset font smoothing
 defaults -currentHost delete -g AppleFontSmoothing
+```
+
+### Git Global Ignore
+
+Remove annoying `..DS_Store`
+
+```bash
+git config --global core.excludesfile "~/.gitignore" &&  echo .DS_Store >> ~/.gitignore
 ```
