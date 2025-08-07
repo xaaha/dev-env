@@ -1,15 +1,5 @@
 return {
 	{
-		"EdenEast/nightfox.nvim",
-		-- tons of variants. Especially, nordfox is great nord theme.
-		-- Day and Dawn fox for light themes
-		config = function()
-			require("nightfox").setup({
-				dim_inactive = true,
-			})
-		end,
-	},
-	{
 		"navarasu/onedark.nvim",
 		priority = 1000,
 		config = function()
