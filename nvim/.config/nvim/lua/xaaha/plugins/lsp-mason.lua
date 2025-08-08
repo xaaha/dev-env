@@ -4,10 +4,7 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	config = function()
-		local mason = require("mason")
-		local mason_tool_installer = require("mason-tool-installer")
-
-		mason.setup({
+		require("mason").setup({
 			ui = {
 				icons = {
 					package_installed = "󰄳 ",
@@ -71,7 +68,7 @@ return {
 		vim.list_extend(serversToInstall, linter_and_formatters)
 
 		-- Mason tool installer requires official name (mason package name) not lspconfig name
-		mason_tool_installer.setup({
+		require("mason-tool-installer").setup({
 			ensure_installed = serversToInstall,
 		})
 

@@ -1,5 +1,3 @@
--- inspiration
--- https://github.com/MariaSolOs/dotfiles/blob/bbf73a31c5ee255d0ad5b5a0981c5d4d6d0661f4/.config/nvim/lua/plugins/gitsigns.lua
 return {
 	"lewis6991/gitsigns.nvim",
 	event = { "BufReadPre", "BufNewFile" },

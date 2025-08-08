@@ -3,9 +3,7 @@ return {
 	lazy = true,
 	event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
 	config = function()
-		local conform = require("conform")
-
-		conform.setup({
+		require("conform").setup({
 			formatters_by_ft = {
 				astro = { "prettier" },
 				javascript = { "biome", "prettier" },
@@ -32,7 +30,7 @@ return {
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>mp", function()
-			conform.format({
+			require("conform").format({
 				lsp_fallback = true,
 				async = false,
 				timeout_ms = 1000,
