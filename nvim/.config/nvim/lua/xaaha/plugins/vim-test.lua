@@ -5,5 +5,5 @@ return {
 	vim.keymap.set("n", "<leader>ts", ":TestSuite<CR>", { desc = "Test entire suite" }),
 	-- vim.keymap.set("n", "<leader>l", ":TestLast<CR>"),
 	-- vim.keymap.set("n", "<leader>g", ":TestVisit<CR>"),
-	vim.cmd("let test#strategy = 'neovim_sticky'"),
+	vim.cmd("let test#strategy = 'neovim'"),
 }
