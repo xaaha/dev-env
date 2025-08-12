@@ -18,7 +18,6 @@ keymap.set("x", "/", "<Esc>/\\%V") -- search within visual selection
 
 -- use jk & kj to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
-keymap.set("i", "kj", "<ESC>", { desc = "Exit insert mode with kj" })
 
 -- Scroll
 keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll up and center screen" })
