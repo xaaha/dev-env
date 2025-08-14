@@ -6,10 +6,10 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				astro = { "prettier" },
-				javascript = { "biome", "prettier" },
-				typescript = { "biome", "prettier" },
-				javascriptreact = { "biome", "prettier" },
-				typescriptreact = { "biome", "prettier" },
+				javascript = { "biome", "prettier", "biome-organize-imports" },
+				typescript = { "biome", "prettier", "biome-organize-imports" },
+				javascriptreact = { "biome", "prettier", "biome-organize-imports" },
+				typescriptreact = { "biome", "prettier", "biome-organize-imports" },
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "biome", "prettier" },
