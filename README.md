@@ -99,7 +99,7 @@ Lastly on the browser
 http://localhost:6060/
 ```
 
-### Mac Settings 
+### Mac Settings
 
 ```bash
 # change quit unexpectedly popup to a notification
@@ -117,8 +117,6 @@ defaults -currentHost delete -g AppleFontSmoothing
 
 ### Git Global Ignore
 
-Remove annoying `..DS_Store`
-
 ```bash
-git config --global core.excludesfile "~/.gitignore" &&  echo .DS_Store >> ~/.gitignore
+git config --global core.excludesfile "~/.gitignore_global"
 ```

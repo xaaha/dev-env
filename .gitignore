@@ -67,4 +67,5 @@ zsh/.config/zsh/secrets.zsh
 !gitui/.config/
 !gitui/.config/**
 
-
+!git/
+!git/**
