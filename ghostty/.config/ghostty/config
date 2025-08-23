@@ -8,5 +8,5 @@ window-padding-x = 5,5
 window-padding-y = 5,3
 quit-after-last-window-closed=true
 background-opacity = 0.99
-theme = light:github,dark:tokyonight
+theme = light:BlulocoLight,dark:tokyonight
 config-file = /Users/pratikthapa/.config/ghostty/theme/config
