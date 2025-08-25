@@ -21,6 +21,7 @@
 --cask wezterm
 --cask zed
 --cask zen-browser
+act
 bat
 fd
 ffmpegthumbnailer
