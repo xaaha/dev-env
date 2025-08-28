@@ -43,7 +43,7 @@ vim.diagnostic.config({
 -- define common keybindings
 
 local key_mappings = {
-	{ "gr", "<cmd>FzfLua lsp_references<CR>", "Show LSP references" },
+	{ "gR", "<cmd>FzfLua lsp_references<CR>", "Show LSP references" },
 	{ "gD", "<cmd>FzfLua lsp_declarations<CR>", "Go to declaration" },
 	{ "gd", "<cmd>FzfLua lsp_definitions<CR>", "Show LSP definitions" },
 	{ "gi", "<cmd>FzfLua lsp_implementations<CR>", "Show LSP implementations" },
