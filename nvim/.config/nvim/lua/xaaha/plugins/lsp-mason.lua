@@ -16,20 +16,20 @@ return {
 
 		local servers = {
 			-- lspconfigName :h lspconfig-all = to Mason package name often "official tool name"
-			biome = "biome", -- JS/TS formatter/linter/LSP
 			astro = "astro-language-server",
-			ts_ls = "typescript-language-server",
-			html = "html-lsp",
-			eslint = "eslint-lsp",
+			biome = "biome", -- JS/TS formatter/linter/LSP
 			cssls = "css-lsp",
-			lua_ls = "lua-language-server",
-			graphql = "graphql-language-service-cli",
 			emmet_ls = "emmet-ls",
-			ruff = "ruff",
+			eslint = "eslint-lsp",
 			gopls = "gopls",
+			graphql = "graphql-language-service-cli",
 			harper_ls = "harper-ls",
+			html = "html-lsp",
 			jsonls = "json-lsp",
+			lua_ls = "lua-language-server",
 			ruby_lsp = "ruby-lsp",
+			ruff = "ruff",
+			ts_ls = "typescript-language-server",
 			yamlls = "yaml-language-server",
 		}
 
