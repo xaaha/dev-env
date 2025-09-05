@@ -1,7 +1,7 @@
 format = """$sudo$username$hostname$directory$git_branch$git_commit$git_state$git_status\
-$fill\
-$jobs$status$cmd_duration\
 $os$python$nodejs$docker_context$golang$time\
+$jobs$status$cmd_duration\
+$fill\
 \n$character"""
 
 [directory]
