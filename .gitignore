@@ -26,8 +26,8 @@
 
 !ghostty/
 !ghostty/**
-## push theme folder but ignore theme file
-ghostty/.config/ghostty/theme/config
+## push theme folder but ignore custom file
+ghostty/.config/ghostty/custom/config
 
 # zsh config
 !zsh
