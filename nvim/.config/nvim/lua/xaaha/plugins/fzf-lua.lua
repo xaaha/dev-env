@@ -72,5 +72,3 @@ return {
 		)
 	end,
 }
-
--- vinglish
