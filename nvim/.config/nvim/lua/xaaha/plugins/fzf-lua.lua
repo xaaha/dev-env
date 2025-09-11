@@ -48,7 +48,7 @@ return {
 		customKeymap(
 			"n",
 			"<leader>fg",
-			"<cmd>FzfLua live_grep_native<CR>",
+			"<cmd>FzfLua live_grep<CR>",
 			{ noremap = true, silent = true, desc = "Fzf live grep native" }
 		)
 		customKeymap(
