@@ -48,7 +48,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
 	callback = function()
 		vim.cmd("hi StatusLine guifg=#BF616A")
-		vim.cmd("hi GitBranch guifg=#008080 guibg=NONE")
-		vim.cmd("hi GitChanges guifg=#D79921 guibg=NONE")
+		if vim.g.colors_name ~= "onenord" then
+			vim.cmd("hi GitBranch guifg=#008080 guibg=NONE")
+			vim.cmd("hi GitChanges guifg=#D79921 guibg=NONE")
+		end
 	end,
 })

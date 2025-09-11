@@ -23,6 +23,7 @@ return {
 		config = function()
 			require("onenord").setup()
 			require("onenord").load()
+			vim.cmd("colorscheme onenord")
 		end,
 	},
 }
