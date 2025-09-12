@@ -109,7 +109,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 		local bufnr = args.buf
 
-		-- Only do for Ruby files (optional, but recommended)
+		-- Only do for Ruby files for now
 		local filetype = vim.api.nvim_buf_get_option(bufnr, "filetype")
 		if filetype ~= "ruby" then
 			return

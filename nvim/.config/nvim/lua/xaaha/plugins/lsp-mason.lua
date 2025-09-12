@@ -45,7 +45,7 @@ return {
 			"revive",
 			"standardrb", -- Ruby linter
 			"sqruff", -- SQL formatter
-			"erb-lint", -- Ruby templating linter "yamllint", -- YAML linter
+			"erb-lint", -- Ruby templating linter
 			"yq", -- YAML formatter
 			"yamllint",
 		}
