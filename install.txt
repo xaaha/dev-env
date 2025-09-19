@@ -5,7 +5,6 @@
 --cask arc
 --cask brave-browser
 --cask chatgpt
---cask dozer
 --cask firefox
 --cask ungoogled-chromium 
 --cask hyperkey

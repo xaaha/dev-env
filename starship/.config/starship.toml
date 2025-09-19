@@ -8,8 +8,8 @@ $fill\
 style = '#FF7F50'
 
 [character]
-success_symbol = '[󱞩](bold green)'
-error_symbol = '[󱞩](bold red)'
+success_symbol = '[ _](bold green)'
+error_symbol = '[ _](bold red)'
 
 [cmd_duration]
 min_time = 5_00
