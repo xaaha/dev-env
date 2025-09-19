@@ -3,7 +3,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("fzf-lua").setup({
-			"default", -- multiple profiles available in fzf-lua
+			"fzf-vim", -- multiple profiles :FzfLua Profiles
 			defaults = {
 				formatter = "path.filename_first",
 				multiline = 1,
@@ -67,9 +67,9 @@ return {
 		customKeymap("n", "<c-m>", "<cmd>FzfLua resume<CR>", { desc = "Resume Last Fzf Search" })
 		customKeymap(
 			"n",
-			"<leader>bd",
-			"<cmd>FzfLua diagnostics_document<CR>",
-			{ desc = "List Current Buffer diagnostics" }
+			"<leader>wd",
+			"<cmd>FzfLua diagnostics_workspace<CR>",
+			{ desc = "List Current Workspace diagnostics" }
 		)
 	end,
 }
