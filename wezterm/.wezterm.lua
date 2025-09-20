@@ -4,7 +4,7 @@ local wezterm = require("wezterm")
 return {
 	-- font
 	font_size = 17,
-	font = wezterm.font("JetBrainsMono Nerd Font"),
+	font = wezterm.font("BlexMono Nerd Font"),
 	-- font = wezterm.font_with_fallback({ "Hack Nerd Font", { family = "JetBrainsMono Nerd Font", scale = 0.75 } }),
 	use_cap_height_to_scale_fallback_fonts = true,
 	--colorscheme
