@@ -19,7 +19,7 @@
   "onenord.nvim": { "branch": "main", "commit": "9dc5bffa630351fdb8c3c5fe9e795f0ec6fea8eb" },
   "outline.nvim": { "branch": "main", "commit": "6b62f73a6bf317531d15a7ae1b724e85485d8148" },
   "render-markdown.nvim": { "branch": "main", "commit": "9ab9dade85d8c7d411cc89b592028da3d1b7955a" },
-  "schemastore.nvim": { "branch": "main", "commit": "68938d9751f0a0c2d1059d8fc077f50c5bbf3f91" },
+  "schemastore.nvim": { "branch": "main", "commit": "fea7b3eb30d6e7261529ae7e8e94bf717f9c428f" },
   "trouble.nvim": { "branch": "main", "commit": "f176232e7759c4f8abd923c21e3e5a5c76cd6837" },
   "vim-test": { "branch": "master", "commit": "2b0ee6036473c86a2f3e9dedf5beb91c9e84e691" }
 }
