@@ -22,6 +22,7 @@
 --cask zen-browser
 act
 bat
+betterdisplay
 fd
 ffmpegthumbnailer
 font-blex-mono-nerd-font
@@ -50,6 +51,7 @@ poppler
 ripgrep
 sevenzip
 starship
+stillcolor
 stow
 task
 tealdeer
