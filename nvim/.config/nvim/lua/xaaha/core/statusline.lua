@@ -23,7 +23,7 @@ local function git_component()
 	end
 
 	-- Trim the branch name to the last 10 characters if it's too long
-	local trimmed_branch = #branch > 10 and branch:sub(-10) or branch
+	local trimmed_branch = #branch > 15 and branch:sub(-15) or branch
 	return string.format(" %s " .. chevron_right .. " ", trimmed_branch)
 end
 
@@ -42,15 +42,3 @@ local statusline = {
 }
 
 vim.o.statusline = table.concat(statusline, "")
-
--- only load after colorscheme
-vim.api.nvim_create_autocmd("ColorScheme", {
-	pattern = "*",
-	callback = function()
-		vim.cmd("hi StatusLine guifg=#BF616A")
-		if vim.g.colors_name ~= "onenord" then
-			vim.cmd("hi GitBranch guifg=#008080 guibg=NONE")
-			vim.cmd("hi GitChanges guifg=#D79921 guibg=NONE")
-		end
-	end,
-})

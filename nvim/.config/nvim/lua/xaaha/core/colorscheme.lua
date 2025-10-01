@@ -257,6 +257,7 @@ local function apply(colors, bg)
 			GitBranch = { fg = colors.cyan, bg = "NONE", italic = true },
 			GitChanges = { fg = colors.yellow, bg = "NONE", bold = true },
 
+			-- TreesitterContext
 			TreesitterContext = { fg = "NONE", bg = colors.active },
 
 			-- Treesitter
