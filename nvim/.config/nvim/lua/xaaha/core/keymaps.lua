@@ -46,16 +46,17 @@ keymap.set("n", "<leader>sd", "<cmd>vertical resize -5<CR>", { desc = "Decrease 
 ---------------------
 -- Colorscheme
 ---------------------
-keymap.set("n", "<leader>ud", function()
-	require("onedark").setup({ style = "cool" })
-	require("onedark").load()
-end, { desc = "Toggle dark theme" })
-keymap.set("n", "<leader>ui", ":colorscheme ", { desc = "Toggle colorscheme" }) -- Toggle colorscheme and installed themes easily
-keymap.set("n", "<leader>ul", function()
-	require("onedark").setup({ style = "light" })
-	require("onedark").load()
-end, { desc = "Toggle light theme" })
-
+local colorscheme = require("xaaha.core.colorscheme")
+colorscheme.setup_dark()
+vim.keymap.set("n", "<leader>ud", function()
+	if vim.o.background == "dark" then
+		require("xaaha.core.colorscheme").setup_light()
+		vim.o.background = "light"
+	else
+		require("xaaha.core.colorscheme").setup_dark()
+		vim.o.background = "dark"
+	end
+end, { desc = "Toggle theme" })
 ---------------------
 -- Move text up and down
 ---------------------
