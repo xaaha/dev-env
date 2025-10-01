@@ -113,7 +113,7 @@ local function apply(colors, bg)
 		vim.o.background = bg
 		vim.g.colors_name = "onenord"
 
-		-- in case something is missing reference here
+		-- in case I need to add more highlights
 		-- https://github.com/xaaha/onenord.nvim/blob/9dc5bffa630351fdb8c3c5fe9e795f0ec6fea8eb/lua/onenord/theme.lua
 
 		-- Define highlight groups
@@ -343,6 +343,39 @@ local function apply(colors, bg)
 
 			["@namespace"] = { fg = colors.base08 },
 			["@operator"] = { fg = colors.base05 },
+
+			-- Treesitter/LSP semantic token links
+			["@lsp.type.namespace"] = { link = "@namespace" },
+			["@lsp.type.type"] = { link = "@type" },
+			["@lsp.type.class"] = { link = "@type" },
+			["@lsp.type.enum"] = { link = "@type" },
+			["@lsp.type.interface"] = { link = "@type" },
+			["@lsp.type.typeParameter"] = { link = "@type" },
+			["@lsp.type.parameter"] = { link = "@parameter" },
+			["@lsp.type.variable"] = { link = "@variable" },
+			["@lsp.type.property"] = { link = "@property" },
+			["@lsp.type.enumMember"] = { link = "@constant" },
+			["@lsp.type.function"] = { link = "@function" },
+			["@lsp.type.method"] = { link = "@method" },
+			["@lsp.type.macro"] = { link = "@constant.macro" },
+			["@lsp.type.keyword"] = { link = "@keyword" },
+			["@lsp.type.comment"] = { link = "@comment" },
+			["@lsp.type.string"] = { link = "@string" },
+			["@lsp.type.number"] = { link = "@number" },
+			["@lsp.type.regexp"] = { link = "@string.regex" },
+			["@lsp.type.operator"] = { link = "@operator" },
+			["@lsp.type.decorator"] = { link = "@function.macro" },
+			["@lsp.mod.deprecated"] = { strikethrough = true },
+			["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
+			["@lsp.typemod.method.defaultLibrary"] = { link = "@function.builtin" },
+			["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
+
+			["@text.environment"] = { link = "@markup.environment" },
+			["@text.environment.name"] = { link = "@markup.environment.name" },
+			["@text.todo"] = { link = "@comment.todo" },
+			["@text.warning"] = { link = "@comment.warning" },
+			["@text.note"] = { link = "@comment.note" },
+			["@text.danger"] = { link = "@comment.error" },
 		}
 
 		-- Apply highlights
