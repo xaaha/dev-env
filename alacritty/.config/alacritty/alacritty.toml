@@ -4,7 +4,7 @@ general.import = ["~/.config/alacritty/themes/night_owl.toml"]
 TERM = "xterm-256color"
 
 [font]
-size = 17.0
+size = 11.0
 
 [font.bold]
 family = "BlexMono Nerd Font"
@@ -23,7 +23,7 @@ family = "BlexMono Nerd Font"
 style = "Regular"
 
 [window]
-decorations = "buttonless"
+decorations = "none"
 # Available values:
   # - full: borders and title bar
   # - none: neither borders nor title bar
