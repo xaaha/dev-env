@@ -2,6 +2,10 @@
 .DS_Store
 *
 
+# used by tree-sitter-cli 
+!package.json
+!pnpm-lock.yaml
+
 # nvim
 !nvim/
 !nvim/.config/
