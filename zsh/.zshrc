@@ -1,9 +1,6 @@
 ## Enabling profiling
 # zmodload zsh/zprof
 
-# Amazon Q pre block. Keep at the top of this file.
-# [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
-
 #plugin manager zap
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
@@ -29,9 +26,6 @@ plug "$HOME/.config/zsh/secrets.zsh"
 bindkey '^ ' autosuggest-accept
 
 export PATH="$HOME/.local/bin":$PATH
-
-# Amazon Q post block. Keep at the bottom of this file.
-# [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
 
 ## profiling
 # zprof
