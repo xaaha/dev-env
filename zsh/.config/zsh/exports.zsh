@@ -11,7 +11,7 @@ export HOMEBREW_NO_ENV_HINTS=1
 _evalcache  jump shell
 _evalcache mise activate zsh
 _evalcache zoxide init zsh
-_evalcache starship init zsh
+# _evalcache starship init zsh
 
 # go path for go install <module>
 export GOPATH=$HOME/go
