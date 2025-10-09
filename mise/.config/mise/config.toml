@@ -2,7 +2,7 @@
 go = "latest"
 node = "24"
 python = "latest"
-ruby = "3.4.5"
+ruby = "3.3.0"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby", "go", "node", "yarn", "terraform"]

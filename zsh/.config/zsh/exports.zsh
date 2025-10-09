@@ -7,11 +7,10 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_ENV_HINTS=1
 
 ## evals ##
-# eval "$(jump shell)" --> becomes
-_evalcache  jump shell
-_evalcache mise activate zsh
-_evalcache zoxide init zsh
-# _evalcache starship init zsh
+eval "$(jump shell)"
+eval "$(mise activate zsh)"
+eval "$(mise activate zsh)"
+eval "$(zoxide init zsh)"
 
 # go path for go install <module>
 export GOPATH=$HOME/go

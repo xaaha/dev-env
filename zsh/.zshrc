@@ -11,7 +11,6 @@ HISTFILE=~/.zsh_history
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/vim"
 plug "zsh-users/zsh-syntax-highlighting"
-plug "mroth/evalcache"
 plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/supercharge"
 plug "zap-zsh/zap-prompt"
