@@ -196,6 +196,14 @@ local function apply(colors, bg)
 			Macro = { fg = colors.base08 },
 			PreCondit = { fg = colors.base0A },
 
+			-- Markview
+			["@markup.heading.1.markdown"] = { fg = colors.red },
+			["@markup.heading.2.markdown"] = { fg = colors.orange },
+			["@markup.heading.3.markdown"] = { fg = colors.yellow },
+			["@markup.heading.4.markdown"] = { fg = colors.green },
+			["@markup.heading.5.markdown"] = { fg = colors.blue },
+			["@markup.heading.6.markdown"] = { fg = colors.purple },
+
 			-- Types
 			Type = { fg = colors.base0A },
 			StorageClass = { fg = colors.base0A },
