@@ -30,7 +30,6 @@ local function get_winbar()
 		icon = devicons.get_icon(filename, ext, { default = true }) or icon
 	end
 
-	-- Icon + filename, all under StatusLine highlight
 	return string.format("%%#StatusLine# %s %s %%=", icon, filename)
 end
 
