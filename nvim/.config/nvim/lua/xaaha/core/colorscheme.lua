@@ -1,110 +1,5 @@
 local M = {}
 
-local onenord_dark = {
-	-- Colors from
-	-- https://github.com/NvChad/base46/blob/v3.0/lua/base46/themes/onenord.lua
-	-- Base30
-	white = "#D8DEE9",
-	darker_black = "#252b37",
-	black = "#2a303c", --  nvim bg
-	black2 = "#2f3541",
-	one_bg = "#343a46",
-	one_bg2 = "#3e4450",
-	one_bg3 = "#484e5a",
-	grey = "#4d535f",
-	grey_fg = "#545a66",
-	grey_fg2 = "#595f6b",
-	light_grey = "#606672",
-	red = "#d57780",
-	baby_pink = "#de878f",
-	pink = "#da838b",
-	line = "#414753", -- for lines like vertsplit
-	green = "#A3BE8C",
-	vibrant_green = "#afca98",
-	blue = "#7797b7",
-	nord_blue = "#81A1C1",
-	yellow = "#EBCB8B",
-	sun = "#e1c181",
-	purple = "#aab1be",
-	dark_purple = "#B48EAD",
-	teal = "#6484a4",
-	orange = "#e39a83",
-	cyan = "#9aafe6",
-	statusline_bg = "#333945",
-	lightbg = "#3f4551",
-	pmenu_bg = "#A3BE8C",
-	folder_bg = "#7797b7",
-
-	-- Base16 colors from NvChad
-	base00 = "#2a303c",
-	base01 = "#3B4252",
-	base02 = "#434C5E",
-	base03 = "#4C566A",
-	base04 = "#566074",
-	base05 = "#bfc5d0",
-	base06 = "#c7cdd8",
-	base07 = "#ced4df",
-	base08 = "#d57780",
-	base09 = "#e39a83",
-	base0A = "#EBCB8B",
-	base0B = "#A3BE8C",
-	base0C = "#97b7d7",
-	base0D = "#81A1C1",
-	base0E = "#B48EAD",
-	base0F = "#d57780",
-}
-
-local onenord_light = {
-	white = "#54555b",
-	darker_black = "#efeff0",
-	black = "#fafafa", --  nvim bg
-	black2 = "#EAEAEB",
-	one_bg = "#dadadb", -- real bg of onedark
-	one_bg2 = "#d4d4d5",
-	one_bg3 = "#cccccd",
-	grey = "#b7b7b8",
-	grey_fg = "#b0b0b1",
-	grey_fg2 = "#a9a9aa",
-	light_grey = "#a2a2a3",
-	red = "#d84a3d",
-	baby_pink = "#F07178",
-	pink = "#ff75a0",
-	line = "#e2e2e2",
-	green = "#50a14f",
-	vibrant_green = "#7eca9c",
-	nord_blue = "#428bab",
-	blue = "#4078f2",
-	yellow = "#c18401",
-	sun = "#dea95f",
-	purple = "#a28dcd",
-	dark_purple = "#8e79b9",
-	teal = "#519ABA",
-	orange = "#FF6A00",
-	cyan = "#0b8ec6",
-	statusline_bg = "#ececec",
-	lightbg = "#d3d3d3",
-	pmenu_bg = "#5e5f65",
-	folder_bg = "#6C6C6C",
-
-	-- Base16
-	base00 = "#fafafa",
-	base01 = "#f4f4f4",
-	base02 = "#e5e5e6",
-	base03 = "#dfdfe0",
-	base04 = "#d7d7d8",
-	base05 = "#383a42",
-	base06 = "#202227",
-	base07 = "#090a0b",
-	base08 = "#d84a3d",
-	base09 = "#d75f00",
-	base0A = "#c18401",
-	base0B = "#50a14f",
-	base0C = "#0070a8",
-	base0D = "#4078f2",
-	base0E = "#a626a4",
-	base0F = "#986801",
-}
-
 local function apply(colors, bg)
 	vim.cmd("hi clear")
 	if vim.fn.exists("syntax_on") then
@@ -411,12 +306,12 @@ local function apply(colors, bg)
 	end
 end
 
-function M.setup_dark()
-	apply(onenord_dark, "dark")
+function M.setup_dark(colors)
+	apply(colors, "dark")
 end
 
-function M.setup_light()
-	apply(onenord_light, "light")
+function M.setup_light(colors)
+	apply(colors, "light")
 end
 
 return M
