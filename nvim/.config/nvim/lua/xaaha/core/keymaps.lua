@@ -47,13 +47,15 @@ keymap.set("n", "<leader>sd", "<cmd>vertical resize -5<CR>", { desc = "Decrease 
 -- Colorscheme
 ---------------------
 local colorscheme = require("xaaha.core.colorscheme")
-colorscheme.setup_dark()
+local dark = require("xaaha.pallettes.onenord")
+local light = require("xaaha.pallettes.onenord-light")
+colorscheme.setup_dark(dark)
 vim.keymap.set("n", "<leader>ud", function()
 	if vim.o.background == "dark" then
-		require("xaaha.core.colorscheme").setup_light()
+		require("xaaha.core.colorscheme").setup_light(light)
 		vim.o.background = "light"
 	else
-		require("xaaha.core.colorscheme").setup_dark()
+		require("xaaha.core.colorscheme").setup_dark(dark)
 		vim.o.background = "dark"
 	end
 end, { desc = "Toggle theme" })
