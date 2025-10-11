@@ -4,7 +4,7 @@
 
 return {
 	-- Base30
-	white = "#ffffff",
+	white = "#54555b",
 	darker_black = "#252e39",
 	black = "#2c3643", -- nvim background
 	black2 = "#333e4c",
