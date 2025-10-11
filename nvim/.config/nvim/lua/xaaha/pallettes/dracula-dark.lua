@@ -8,7 +8,7 @@ return {
 	one_bg3 = "#f8f8f2",
 	grey = "#6272a4",
 	grey_fg = "#bbbbbb",
-	grey_fg2 = "#d2d2d2",
+	grey_fg2 = "#7a7f85",
 	light_grey = "#d2d2d2",
 	red = "#ff5555",
 	baby_pink = "#ff79c6",
