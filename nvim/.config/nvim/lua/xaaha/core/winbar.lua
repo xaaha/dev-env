@@ -29,7 +29,7 @@ local function get_filename()
 
 	vim.api.nvim_set_hl(0, hl_group, { fg = color, bg = "NONE" })
 
-	return string.format(" %%#%s#%s %%* %%#StatusLine#%s%%*", hl_group, icon or "", filename)
+	return string.format(" %%#%s#  %s %s  %%*", hl_group, icon or "", filename)
 end
 
 local function get_winbar()
