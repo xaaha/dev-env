@@ -17,14 +17,8 @@ return {
     local servers = {}
 
     local linter_and_formatters = {
-      "mypy",    -- Python type checker
-      "gofumpt", -- Go formatter
-      "goimports",
-      "golines",
-      "postgrestools",
-      "revive",
+      "mypy",       -- Python type checker
       "standardrb", -- Ruby linter
-      "sqruff",     -- SQL formatter
       "erb-lint",   -- Ruby templating linter
     }
 
