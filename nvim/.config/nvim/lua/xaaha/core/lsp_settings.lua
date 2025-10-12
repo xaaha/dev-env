@@ -133,10 +133,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 --:h lspconfig-all names = official tool names
 local language_servers = {
   -- lspconfigName
-  -- astro = "astro-language-server",
-  "biome", -- "biome", -- JS/TS formatter/linter/LSP
-  "cssls", -- "css-lsp",
-  -- emmet_ls = "emmet-ls",
+  "astro",                 -- "astro-language-server", (with npm)
+  "biome",                 -- "biome", -- JS/TS formatter/linter/LSP
+  "cssls",                 -- with  vscode-langservers-extracted
+  "emmet_language_server", -- (with npm)
+  "html",                  --with  vscode-langservers-extracted
   -- eslint = "eslint-lsp",
   -- gopls = "gopls",
   -- graphql = "graphql-language-service-cli",

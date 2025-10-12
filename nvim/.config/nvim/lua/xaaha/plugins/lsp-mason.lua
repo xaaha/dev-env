@@ -15,13 +15,10 @@ return {
     })
 
     local servers = {
-      astro = "astro-language-server",
-      emmet_ls = "emmet-ls",
       eslint = "eslint-lsp",
       gopls = "gopls",
       graphql = "graphql-language-service-cli",
       harper_ls = "harper-ls",
-      html = "html-lsp",
       jsonls = "json-lsp",
       ruby_lsp = "ruby-lsp",
       ruff = "ruff",
