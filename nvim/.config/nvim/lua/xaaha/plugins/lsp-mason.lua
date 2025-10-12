@@ -17,7 +17,6 @@ return {
     local servers = {}
 
     local linter_and_formatters = {
-      "mypy",       -- Python type checker
       "standardrb", -- Ruby linter
       "erb-lint",   -- Ruby templating linter
     }
