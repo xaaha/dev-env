@@ -14,15 +14,7 @@ return {
       },
     })
 
-    local servers = {
-      eslint = "eslint-lsp",
-      gopls = "gopls",
-      graphql = "graphql-language-service-cli",
-      harper_ls = "harper-ls",
-      jsonls = "json-lsp",
-      ruby_lsp = "ruby-lsp",
-      ruff = "ruff",
-    }
+    local servers = {}
 
     local linter_and_formatters = {
       "mypy",    -- Python type checker

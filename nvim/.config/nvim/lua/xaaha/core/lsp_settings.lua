@@ -137,18 +137,16 @@ local language_servers = {
   "biome",                 -- "biome", -- JS/TS formatter/linter/LSP
   "cssls",                 -- with  vscode-langservers-extracted
   "emmet_language_server", -- (with npm)
-  "html",                  --with  vscode-langservers-extracted
-  -- eslint = "eslint-lsp",
-  -- gopls = "gopls",
+  "html",                  -- with  vscode-langservers-extracted
+  "eslint",                -- with vscode-langservers-extracted
+  "gopls",                 -- "gopls",
   -- graphql = "graphql-language-service-cli",
-  -- harper_ls = "harper-ls",
-  -- html = "html-lsp",
-  -- jsonls = "json-lsp",
-  "lua_ls", -- lsp and also formatter
-  -- ruby_lsp = "ruby-lsp",
-  -- ruff = "ruff",
-  "ts_ls", -- "typescript-language-server"
-  "yamlls" -- "yaml-language-server",
+  "jsonls",                -- with  vscode-langservers-extracted
+  "lua_ls",                -- lsp and also formatter
+  "ruby_lsp",              -- known as ruby-lsp in brew
+  "ruff",                  -- "ruff",
+  "ts_ls",                 -- "typescript-language-server"
+  "yamlls"                 -- "yaml-language-server",
 }
 
 for _, server in ipairs(language_servers) do
