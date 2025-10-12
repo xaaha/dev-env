@@ -130,10 +130,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- Enable servers
 
+--:h lspconfig-all names = official tool names
 local language_servers = {
   -- lspconfigName
   -- astro = "astro-language-server",
-  -- biome = "biome", -- JS/TS formatter/linter/LSP
+  "biome", -- "biome", -- JS/TS formatter/linter/LSP
   -- cssls = "css-lsp",
   -- emmet_ls = "emmet-ls",
   -- eslint = "eslint-lsp",
@@ -145,8 +146,8 @@ local language_servers = {
   "lua_ls", -- lsp and also formatter
   -- ruby_lsp = "ruby-lsp",
   -- ruff = "ruff",
-  -- ts_ls = "typescript-language-server",
-  -- yamlls = "yaml-language-server",
+  "ts_ls", -- "typescript-language-server"
+  "yamlls" -- "yaml-language-server",
 }
 
 for _, server in ipairs(language_servers) do

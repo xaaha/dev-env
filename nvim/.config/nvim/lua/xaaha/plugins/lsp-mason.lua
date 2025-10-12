@@ -15,9 +15,7 @@ return {
     })
 
     local servers = {
-      -- lspconfigName :h lspconfig-all = to Mason package name often "official tool name"
       astro = "astro-language-server",
-      biome = "biome", -- JS/TS formatter/linter/LSP
       cssls = "css-lsp",
       emmet_ls = "emmet-ls",
       eslint = "eslint-lsp",
@@ -28,24 +26,18 @@ return {
       jsonls = "json-lsp",
       ruby_lsp = "ruby-lsp",
       ruff = "ruff",
-      ts_ls = "typescript-language-server",
-      yamlls = "yaml-language-server",
     }
 
     local linter_and_formatters = {
-      "prettier", -- Prettier formatter
-      "mypy",     -- Python type checker
-      "gofumpt",  -- Go formatter
+      "mypy",    -- Python type checker
+      "gofumpt", -- Go formatter
       "goimports",
       "golines",
       "postgrestools",
-      "golangci-lint", -- Go linter
       "revive",
-      "standardrb",    -- Ruby linter
-      "sqruff",        -- SQL formatter
-      "erb-lint",      -- Ruby templating linter
-      "yq",            -- YAML formatter
-      "yamllint",
+      "standardrb", -- Ruby linter
+      "sqruff",     -- SQL formatter
+      "erb-lint",   -- Ruby templating linter
     }
 
     -- Collect all mason tool names from LSPs
