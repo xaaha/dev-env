@@ -135,7 +135,7 @@ local language_servers = {
   -- lspconfigName
   -- astro = "astro-language-server",
   "biome", -- "biome", -- JS/TS formatter/linter/LSP
-  -- cssls = "css-lsp",
+  "cssls", -- "css-lsp",
   -- emmet_ls = "emmet-ls",
   -- eslint = "eslint-lsp",
   -- gopls = "gopls",

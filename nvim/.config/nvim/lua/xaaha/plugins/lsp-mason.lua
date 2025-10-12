@@ -16,7 +16,6 @@ return {
 
     local servers = {
       astro = "astro-language-server",
-      cssls = "css-lsp",
       emmet_ls = "emmet-ls",
       eslint = "eslint-lsp",
       gopls = "gopls",
