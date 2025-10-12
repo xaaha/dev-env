@@ -1,6 +1,6 @@
 [tools]
 go = "latest"
-node = "24"
+node = "latest"
 python = "latest"
 ruby = "3.3.0"
 
