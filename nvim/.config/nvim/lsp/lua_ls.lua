@@ -1,19 +1,14 @@
-return {
-	lua_ls = {
-		settings = {
-			Lua = {
-				diagnostics = {
-					enable = true,
-					globals = { "vim", "Snacks" },
-					disable = { "lowercase-global" },
-				},
-				workspace = {
-					library = {
-						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-						[vim.fn.stdpath("config") .. "/lua"] = true,
-					},
-				},
-			},
-		},
-	},
-}
+-- return {
+-- 	cmd = { "lua-language-server" },
+-- 	filetypes = { "lua" },
+-- 	root_markers = {
+-- 		".luarc.json",
+-- 		".luarc.jsonc",
+-- 		".luacheckrc",
+-- 		".stylua.toml",
+-- 		"stylua.toml",
+-- 		"selene.toml",
+-- 		"selene.yml",
+-- 		".git",
+-- 	},
+-- }
