@@ -140,7 +140,7 @@ local language_servers = {
   "html",                  -- with  vscode-langservers-extracted
   "eslint",                -- with vscode-langservers-extracted
   "gopls",                 -- "gopls",
-  -- graphql = "graphql-language-service-cli",
+  -- graphql               -- graphql-language-service-cli, not using it for now
   "jsonls",                -- with  vscode-langservers-extracted
   "lua_ls",                -- lsp and also formatter
   "ruby_lsp",              -- known as ruby-lsp in brew
