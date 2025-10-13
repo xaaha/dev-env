@@ -16,10 +16,7 @@ return {
 
     local servers = {}
 
-    local linter_and_formatters = {
-      "standardrb", -- Ruby linter
-      "erb-lint",   -- Ruby templating linter
-    }
+    local linter_and_formatters = {}
 
     -- Collect all mason tool names from LSPs
     local serversToInstall = {}
