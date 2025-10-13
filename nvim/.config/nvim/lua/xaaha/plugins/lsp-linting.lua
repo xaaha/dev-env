@@ -10,7 +10,7 @@ return {
       typescriptreact = { "biomejs" },
       python = { "ruff" },
       go = { "revive" },
-      ruby = { "standardrb" },
+      ruby = { "rubocop" }, -- standardrb
       sql = { "sqruff" },
       yaml = { "yamllint" },
     }

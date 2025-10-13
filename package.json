@@ -1,5 +1,5 @@
 {
-	"dependencies": {
-		"tree-sitter-cli": "^0.25.10"
-	}
+  "dependencies": {
+    "tree-sitter-cli": "^0.25.10"
+  }
 }

@@ -19,6 +19,7 @@ return {
         python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
         go = { "gofumpt", "golines", "goimports" },
         sql = { "sqruff" },
+        ruby = { "rubocop" }
       },
       format_on_save = {
         lsp_fallback = true,

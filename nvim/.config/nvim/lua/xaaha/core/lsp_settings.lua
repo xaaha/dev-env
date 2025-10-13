@@ -144,9 +144,9 @@ local language_servers = {
   "lua_ls",                -- lsp/formatter
   "ruby_lsp",              -- ruby-lsp in brew
   "ruff",                  -- python
-  "standardrb",            -- ruby linter/formatter with some lsp capabilities
   "ts_ls",                 -- "typescript-language-server"
   "yamlls"                 -- "yaml-language-server",
+  -- "standardrb",            -- ruby linter/formatter with some lsp capabilities
 }
 
 for _, server in ipairs(language_servers) do
