@@ -56,8 +56,8 @@ zsh/.config/zsh/secrets.zsh
 !install.sh
 !Brewfile
 
-!node/
-!node/*
+!defaults/
+!defaults/*
 
 !nushell/
 !nushell/.config/
