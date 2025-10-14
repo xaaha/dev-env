@@ -1,12 +1,23 @@
 -- State to track if the window is open
 local is_open = false
 
+
+local function getlazygit()
+  local handle = io.popen("which lazygit")
+  local lazygit = "lazygit not found"
+  if handle then
+    lazygit = handle:read("*a"):gsub("%s+", "")
+    handle:close()
+  end
+  return lazygit
+end
+
+
 -- Configuration for the floating GitUI window
 local config = {
-  binary = "/opt/homebrew/bin/lazygit",
-  args = {},         -- Additional arguments to pass to lazygit or gitui
-  width = 80,        -- Width of the floating window (percentage)
-  height = 70,       -- Height of the floating window (percentage)
+  args = {},          -- Additional arguments to pass to lazygit or gitui
+  width = 80,         -- Width of the floating window (percentage)
+  height = 70,        -- Height of the floating window (percentage)
   border = "rounded", -- Border style: "none", "single", "rounded", "solid", "shadow"
 }
 
@@ -16,8 +27,9 @@ local function open_gitui()
     return
   end
 
+  local binary_path = getlazygit()
   -- Ensure the `gitui` binary is executable
-  assert(vim.fn.executable(config.binary) == 1, config.binary .. " is not an executable")
+  assert(vim.fn.executable(binary_path) == 1, binary_path .. " is not an executable")
 
   -- Create a new buffer for the floating window
   local bufnr = vim.api.nvim_create_buf(false, true)
@@ -46,7 +58,7 @@ local function open_gitui()
   vim.api.nvim_open_win(bufnr, true, window_options)
 
   -- Start the GitUI process in the terminal buffer
-  vim.fn.termopen(table.concat(vim.tbl_flatten({ config.binary, config.args }), " "), {
+  vim.fn.termopen(table.concat(vim.tbl_flatten({ binary_path, config.args }), " "), {
     on_exit = function()
       -- Close the buffer and reset the state when the process exits
       vim.api.nvim_buf_delete(bufnr, { force = true })
