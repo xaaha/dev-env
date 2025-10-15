@@ -29,6 +29,9 @@ $(brew --prefix)/opt/fzf/install
 
 - Install Tree-sitter CLI, required since Tree-sitter moved to on main branch
 
+>[!Note]
+>I have found it's just easier overhead to install npm packages with node itself. Look into `.default-npm-packages`
+
 ```bash
 pnpm install tree-sitter-cli
 ```
@@ -66,38 +69,6 @@ stow -t ~ tmux
 ```
 
 ## Useful Steps for tools
-
-### Language Tools
-
-- GoDoc: Go Standard library documentation offline
-
-```bash
-go install golang.org/x/tools/cmd/godoc@latest
-```
-
-Add this to the `.zshrc` file
-
-```bash
-export PATH=$PATH:$(go env GOPATH)/bin
-```
-
-Source and reload the zsh config
-
-```bash
-source .zshrc
-```
-
-Then, run with
-
-```bash
-godoc -http=:6060
-```
-
-Lastly on the browser
-
-```bash
-http://localhost:6060/
-```
 
 ### Mac Settings
 
