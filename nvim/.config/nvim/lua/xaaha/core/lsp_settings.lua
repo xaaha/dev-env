@@ -1,16 +1,3 @@
--- we enable the lsp in lsp-mason.lua since we install servers there
-
-local border = {
-  { "┌", "FloatBorder" },
-  { "─", "FloatBorder" },
-  { "┐", "FloatBorder" },
-  { "│", "FloatBorder" },
-  { "┘", "FloatBorder" },
-  { "─", "FloatBorder" },
-  { "└", "FloatBorder" },
-  { "│", "FloatBorder" },
-}
-
 vim.diagnostic.config({
   -- virtual_lines = true, -- this gets messy on large code base with tons of errors
   -- Select either virtual lines or text below otherwise it gets messy
@@ -81,7 +68,7 @@ local key_mappings = {
   {
     "K",
     function()
-      vim.lsp.buf.hover({ border = border })
+      vim.lsp.buf.hover({ border = "rounded" })
     end,
     "Show documentation",
   },
