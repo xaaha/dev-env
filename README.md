@@ -29,8 +29,8 @@ $(brew --prefix)/opt/fzf/install
 
 - Install Tree-sitter CLI, required since Tree-sitter moved to on main branch
 
->[!Note]
->I have found it's just easier overhead to install npm packages with node itself. Look into `.default-npm-packages`
+> [!Note]
+> I have found it's just easier overhead to install npm packages with node itself. Look into `.default-npm-packages`
 
 ```bash
 pnpm install tree-sitter-cli
@@ -84,6 +84,19 @@ defaults write com.apple.CrashReporter UseUNC 1
 defaults -currentHost write -g AppleFontSmoothing -int 0
 # reset font smoothing
 defaults -currentHost delete -g AppleFontSmoothing
+```
+
+### Arch Settings
+
+Until I have time to consolidate stuff
+
+#### Keymap Settings
+
+```bash
+# GNOME
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
+# to reset this
+gsettings reset org.gnome.desktop.input-sources xkb-options
 ```
 
 ### Git Global Ignore
