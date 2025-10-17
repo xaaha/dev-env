@@ -10,7 +10,6 @@ export HOMEBREW_NO_ENV_HINTS=1
 ## evals ##
 eval "$(jump shell)"
 eval "$(mise activate zsh)"
-eval "$(mise activate zsh)"
 eval "$(zoxide init zsh)"
 
 # go path for go install <module>
