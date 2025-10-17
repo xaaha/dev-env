@@ -1,58 +1,71 @@
-#!/bin/sh
-# HISTFILE="$XDG_DATA_HOME"/zsh/history
+#!/usr/bin/env zsh
+
+# History
 HISTSIZE=2000
 SAVEHIST=2000
+
+# General exports
 export SHELL_SESSIONS_DISABLE=1
 export EDITOR="nvim"
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_ENV_HINTS=1
 
-## evals ##
-eval "$(jump shell)"
-eval "$(mise activate zsh)"
-eval "$(zoxide init zsh)"
+# --- PATH SETUP ---
 
-# go path for go install <module>
-export GOPATH=$HOME/go
-export PATH=$PATH:$(go env GOPATH)/bin
+# Go
+export GOPATH="$HOME/go"
+path=("$GOPATH/bin" $path)
 
-# bun
+# Bun
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun" # bun completions
-# bun end
+path=("$BUN_INSTALL/bin" $path)
+# Lazy-load Bun completions
+[[ -s "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun" &!
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+path=("$PNPM_HOME" $path)
 
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source <(fzf --zsh)
+# Docker init (optional)
+[[ -f "$HOME/.docker/init-zsh.sh" ]] && source "$HOME/.docker/init-zsh.sh"
 
-# modified docker command 
-if [ -f "$HOME/.docker/init-zsh.sh" ]; then
-  source $HOME/.docker/init-zsh.sh
-fi
-
-# export PATH="$HOME/.docker/bin":$PATH
-
+# --- Conditional platform exports ---
 case "$(uname -s)" in
-
-Darwin)
-	# echo 'Mac OS X'
-  export DYLD_LIBRARY_PATH=/opt/homebrew/lib/
-  export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
-	;;
-
-Linux)
-	;;
-
-CYGWIN* | MINGW32* | MSYS* | MINGW*)
-	# echo 'MS Windows'
-	;;
-*)
-	# echo 'Other OS'
-	;;
+  Darwin)
+    export DYLD_LIBRARY_PATH=/opt/homebrew/lib/
+    export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
+    ;;
 esac
+
+# --- Lazy evals ---
+# Defer these heavy ones until needed
+function _init_mise() {
+  unfunction _init_mise
+  eval "$(mise activate zsh)"
+}
+function _init_jump() {
+  unfunction _init_jump
+  eval "$(jump shell)"
+}
+function _init_zoxide() {
+  unfunction _init_zoxide
+  eval "$(zoxide init zsh)"
+}
+
+# Auto-load them on demand (when you first use these commands)
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _init_zoxide
+add-zsh-hook precmd _init_jump
+add-zsh-hook precmd _init_mise
+
+# --- FZF setup ---
+# Only source fzf if it exists
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+
+if [[ -r "/opt/homebrew/opt/fzf/shell/completion.zsh" ]]; then
+  source /opt/homebrew/opt/fzf/shell/completion.zsh
+  source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+elif [[ -r "/usr/share/fzf/completion.zsh" ]]; then
+  source /usr/share/fzf/completion.zsh
+  source /usr/share/fzf/key-bindings.zsh
+fi
