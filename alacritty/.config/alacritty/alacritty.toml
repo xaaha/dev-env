@@ -1,10 +1,10 @@
-general.import = ["~/.config/alacritty/themes/night_owl.toml"]
+general.import = ["~/.config/alacritty/themes/tokyo-night.toml"]
 
 [env]
 TERM = "xterm-256color"
 
 [font]
-size = 11.0
+size = 10.0
 
 [font.bold]
 family = "BlexMono Nerd Font"
