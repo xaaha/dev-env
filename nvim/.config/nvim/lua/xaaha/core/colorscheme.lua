@@ -1,15 +1,11 @@
 local M = {}
 
-local function apply(colors, bg)
+local function apply(colors, bg, overwriteHighlights)
   vim.cmd("hi clear")
   if vim.fn.exists("syntax_on") then
     vim.cmd("syntax reset")
 
     vim.o.background = bg
-    vim.g.colors_name = "onenord"
-
-    -- in case I need to add more highlights
-    -- https://github.com/xaaha/onenord.nvim/blob/9dc5bffa630351fdb8c3c5fe9e795f0ec6fea8eb/lua/onenord/theme.lua
 
     -- Define highlight groups
     local highlights = {
@@ -272,6 +268,12 @@ local function apply(colors, bg)
       ["@text.danger"] = { link = "@comment.error" },
     }
 
+    if type(overwriteHighlights) == "table" then
+      for name, value in pairs(overwriteHighlights) do
+        highlights[name] = value
+      end
+    end
+
     -- Apply highlights
     for group, settings in pairs(highlights) do
       vim.api.nvim_set_hl(0, group, settings)
@@ -297,12 +299,12 @@ local function apply(colors, bg)
   end
 end
 
-function M.setup_dark(colors)
-  apply(colors, "dark")
+function M.setup_dark(colors, highlights)
+  apply(colors, "dark", highlights)
 end
 
-function M.setup_light(colors)
-  apply(colors, "light")
+function M.setup_light(colors, highlights)
+  apply(colors, "light", highlights)
 end
 
 return M

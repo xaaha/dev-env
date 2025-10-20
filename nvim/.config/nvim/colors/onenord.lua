@@ -1,2 +1,2 @@
 local clrs = require("xaaha.pallettes.onenord")
-require("xaaha.core.colorscheme").setup_light(clrs)
+require("xaaha.core.colorscheme").setup_dark(clrs)
