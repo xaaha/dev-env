@@ -148,7 +148,7 @@ local function apply(colors, bg, overwriteHighlights)
 
 
       -- TreesitterContext
-      TreesitterContext = { fg = "NONE", bg = colors.active },
+      TreesitterContext = { fg = "NONE", bg = colors.statusline_bg },
 
       -- Treesitter
       ["@variable"] = { fg = colors.base05 },
