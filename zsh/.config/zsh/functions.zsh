@@ -43,6 +43,11 @@ function vo() {
   nvim "$file"
 }
 
+# enter a dir in nvim
+function ve() {
+  nvim --cmd "cd $(find . -type d | fzf)"
+}
+
 function hg(){
   # call hulak with global
   local file
