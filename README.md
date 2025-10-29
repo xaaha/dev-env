@@ -1,5 +1,7 @@
 # Development Configurations
 
+Minimal Personal Development Environment configuration.
+
 ## Install Pre-requisite
 
 - Install [zap](https://github.com/zap-zsh/zap)
@@ -9,14 +11,13 @@
 curl -s https://raw.githubusercontent.com/xaaha/dev-env/refs/heads/main/install.sh | bash
 ```
 
-> Intalls all apps from `install.txt` file. Just run the command again if an application fails to install
+> Intalls all apps from `Brewfile` for MacOs. Run the command again if an application fails to install
 
 - Install tpm for tmux from [the official repo](https://github.com/tmux-plugins/tpm).
+
   - Install with: `prefix I`
   - Uninstall with: `prefix alt u` (option in MacOs)
   - Upgrade packages: `prefix U`
-
-- Install the rmtree to remove formulae and all their dependencies
 
 - Enable fzf keybindings
 
@@ -25,18 +26,9 @@ curl -s https://raw.githubusercontent.com/xaaha/dev-env/refs/heads/main/install.
 $(brew --prefix)/opt/fzf/install
 ```
 
-## Install
+## Configure Nvim
 
-- Install Tree-sitter CLI, required since Tree-sitter moved to on main branch
-
-> [!Note]
-> I have found it's just easier overhead to install npm packages with node itself. Look into `.default-npm-packages`
-
-```bash
-pnpm install tree-sitter-cli
-```
-
-- Backup Neovim Files
+- Backup Neovim Files (if it exists)
 
 ```bash
 # required
