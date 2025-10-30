@@ -14,7 +14,7 @@ keymap.set("n", "<leader>qq", "<cmd>wqa<CR>", { desc = "Write quit all" })
 keymap.set("v", "p", '"_dP', { desc = "Don't override yank on visual mode" })
 keymap.set("n", "dd", '"_dd', { desc = "Delete a line without overriding the yank register" })
 keymap.set("n", "ycc", "yygccp", { remap = true }) -- copy and comment out the first line and paste
-keymap.set("x", "/", "<Esc>/\\%V") -- search within visual selection
+keymap.set("x", "/", "<Esc>/\\%V")                 -- search within visual selection
 
 -- use jk & kj to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
@@ -46,34 +46,29 @@ keymap.set("n", "<leader>sd", "<cmd>vertical resize -5<CR>", { desc = "Decrease 
 ---------------------
 -- Colorscheme
 ---------------------
-local colorscheme = require("xaaha.core.colorscheme")
-local dark = require("xaaha.pallettes.onenord")
-local light = require("xaaha.pallettes.onenord-light")
-colorscheme.setup_dark(dark)
+vim.cmd.colorscheme("onenord")
 vim.keymap.set("n", "<leader>ud", function()
-	if vim.o.background == "dark" then
-		require("xaaha.core.colorscheme").setup_light(light)
-		vim.o.background = "light"
-	else
-		require("xaaha.core.colorscheme").setup_dark(dark)
-		vim.o.background = "dark"
-	end
+  if vim.o.background == "dark" then
+    vim.cmd.colorscheme("onenord-light")
+  else
+    vim.cmd.colorscheme("onenord")
+  end
 end, { desc = "Toggle theme" })
 ---------------------
 -- Move text up and down
 ---------------------
 --- in normal mode
 keymap.set(
-	"n",
-	"<Down>",
-	":m .+1<CR>==",
-	{ noremap = true, silent = true, desc = "Move current line down with down arraw key" }
+  "n",
+  "<Down>",
+  ":m .+1<CR>==",
+  { noremap = true, silent = true, desc = "Move current line down with down arraw key" }
 )
 keymap.set(
-	"n",
-	"<Up>",
-	":m .-2<CR>==",
-	{ noremap = true, silent = true, desc = "Move current line up with up arrow key" }
+  "n",
+  "<Up>",
+  ":m .-2<CR>==",
+  { noremap = true, silent = true, desc = "Move current line up with up arrow key" }
 )
 -- in visual, mode use control j or k
 keymap.set("v", "<c-j>", ":m .+1<CR>==", opts)
@@ -92,16 +87,16 @@ keymap.set("x", "<c-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Copy relative file path
 keymap.set("n", "<leader>cr", function()
-	local relative_path = vim.fn.fnamemodify(vim.fn.expand("%"), ":.")
-	vim.fn.setreg("+", relative_path)
-	print("Relative Path: ", relative_path)
+  local relative_path = vim.fn.fnamemodify(vim.fn.expand("%"), ":.")
+  vim.fn.setreg("+", relative_path)
+  print("Relative Path: ", relative_path)
 end, { noremap = true, silent = true, desc = "Copy relative file path" })
 
 -- Copy absolute file path
 keymap.set("n", "<leader>cc", function()
-	local absolute_path = vim.fn.expand("%:p")
-	vim.fn.setreg("+", absolute_path)
-	print("Complete Path: ", absolute_path)
+  local absolute_path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", absolute_path)
+  print("Complete Path: ", absolute_path)
 end, { noremap = true, silent = true, desc = "Copy complete/absolute file path" })
 
 ---------------------
@@ -109,10 +104,10 @@ end, { noremap = true, silent = true, desc = "Copy complete/absolute file path" 
 ---------------------
 
 keymap.set(
-	"n",
-	"<leader>jf",
-	[[:%!jq .<CR>:w<CR>]],
-	{ noremap = true, silent = true, desc = "Format and save json files" }
+  "n",
+  "<leader>jf",
+  [[:%!jq .<CR>:w<CR>]],
+  { noremap = true, silent = true, desc = "Format and save json files" }
 )
 
 ---------------

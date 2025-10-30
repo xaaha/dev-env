@@ -1,12 +1,13 @@
 local M = {}
 
-local function apply(colors, bg, overwriteHighlights)
+local function apply(colors, bg, overwriteHighlights, colorscheme_name)
   vim.cmd("hi clear")
   if vim.fn.exists("syntax_on") then
     vim.cmd("syntax reset")
 
     vim.o.background = bg
 
+    vim.g.colors_name = colorscheme_name
     -- Define highlight groups
     local highlights = {
       -- Editor highlights
@@ -299,12 +300,19 @@ local function apply(colors, bg, overwriteHighlights)
   end
 end
 
-function M.setup_dark(colors, highlights)
-  apply(colors, "dark", highlights)
+local function get_colors_name()
+  local source = debug.getinfo(3, "S").source
+  return source:match("([^/]+)%.lua$")
 end
 
-function M.setup_light(colors, highlights)
-  apply(colors, "light", highlights)
+function M.setup_dark(colors, highlights, colorscheme_name)
+  colorscheme_name = colorscheme_name or get_colors_name()
+  apply(colors, "dark", highlights, colorscheme_name)
+end
+
+function M.setup_light(colors, highlights, colorscheme_name)
+  colorscheme_name = colorscheme_name or get_colors_name()
+  apply(colors, "light", highlights, colorscheme_name)
 end
 
 return M
