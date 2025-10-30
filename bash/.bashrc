@@ -25,3 +25,5 @@ export PATH="$PNPM_HOME:$PATH"
 
 # Amazon Q post block. Keep at the bottom of this file.
 # [[ -f "${HOME}/Library/Application Support/amazon-q/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bashrc.post.bash"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

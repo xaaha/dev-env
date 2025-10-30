@@ -28,3 +28,5 @@ export PATH="$HOME/.local/bin":$PATH
 
 ## profiling
 # zprof
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
