@@ -76,3 +76,5 @@ zsh/.config/zsh/secrets.zsh
 
 !git/
 !git/**
+
+!Preview.png

@@ -1,25 +1,25 @@
 # Development Configurations
 
-Minimal Personal Development Environment configuration.
+Minimal Personal Development Environment.
 
-## Install Pre-requisite
+![Preview](https://github.com/xaaha/dev-env/blob/main/Preview.png)
 
-- Install [zap](https://github.com/zap-zsh/zap)
-- Install all apps with curl
+## Install
+
+> [!Note]
+> Script installs all apps from `Brewfile`. Primarily for new Mac setup
 
 ```bash
 curl -s https://raw.githubusercontent.com/xaaha/dev-env/refs/heads/main/install.sh | bash
 ```
 
-> Intalls all apps from `Brewfile` for MacOs. Run the command again if an application fails to install
-
-- Install tpm for tmux from [the official repo](https://github.com/tmux-plugins/tpm).
-
+- Checks and instals if `xcode-select` is not available
+- Installs [zap](https://github.com/zap-zsh/zap)
+- Installs TPM for tmux from [the official repo](https://github.com/tmux-plugins/tpm).
   - Install with: `prefix I`
   - Uninstall with: `prefix alt u` (option in MacOs)
   - Upgrade packages: `prefix U`
-
-- Enable fzf keybindings
+- Enables fzf keybindings
 
 ```bash
 # paste this and hit yes for all
@@ -51,10 +51,11 @@ git clone git@github.com:xaaha/dev-env.git #  https://www.github.com/xaaha/dev-e
 ```bash
 # stow all at once
 for dir in $(pwd)/*/; do stow -t ~ $(basename "$dir"); done
-```
 
-```bash
-# stow one at a time
+# pick which dir to stow with
+for dir in zsh yazi; do stow -t ~ "$dir"; done
+
+# OR stow one at a time
 stow -t ~ config # to stow the config
 stow -t ~ wezterm # to stow the wezterm and so on
 stow -t ~ tmux

@@ -16,6 +16,14 @@ else
     echo "Xcode Command Line Tools are already installed."
 fi
 
+echo "Installing zap..."
+zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
+echo "Zap installed."
+
+echo "Installing TPM..."
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo "TPM Installed."
+
 # Check if Homebrew is installed, install if not
 if ! command -v brew &> /dev/null; then
     echo "Homebrew not found, installing..."
@@ -41,12 +49,22 @@ else
 fi
 
 if [ -f Brewfile ]; then
-    echo "Brewfile not found locally. Fetching from GitHub..."
+    echo "Fetching BrewFile"
     curl -s -O https://raw.githubusercontent.com/xaaha/dev-env/refs/heads/main/BrewFile 
     brew bundle --file=Brewfile
 else
     echo "Could not fetch githubusercontent, try providing local brew file \n"
     exit 1
+fi
+
+# Check if fzf is already installed
+echo "Enable Fzf Commands"
+if command -v fzf >/dev/null 2>&1; then
+  echo "fzf already installed."
+else
+  echo "Installing fzf..."
+  yes | "$(brew --prefix)/opt/fzf/install"
+  echo "fzf installed."
 fi
 
 echo "Installation complete."
