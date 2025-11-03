@@ -39,11 +39,6 @@ return {
 
 		vim.cmd("FzfLua register_ui_select")
 
-		-- send qf list to trouble
-		local config = require("fzf-lua.config")
-		local actions = require("trouble.sources.fzf").actions
-		config.defaults.actions.files["ctrl-t"] = actions.open
-
 		local customKeymap = vim.api.nvim_set_keymap
 		customKeymap(
 			"n",
