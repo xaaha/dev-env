@@ -45,7 +45,7 @@ function vo() {
 
 # enter a dir in nvim
 function ve() {
-  nvim --cmd "cd $(find . -type d | fzf)"
+  nvim --cmd "cd $(fd -t d | fzf)" -c "Oil"
 }
 
 function hg(){
