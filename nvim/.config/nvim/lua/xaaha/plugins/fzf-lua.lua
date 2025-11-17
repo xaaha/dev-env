@@ -3,7 +3,7 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     require("fzf-lua").setup({
-      "ivy", -- multiple profiles :FzfLua Profiles
+      "fzf-vim", -- multiple profiles :FzfLua Profiles
       defaults = {
         formatter = "path.filename_first",
         multiline = 1,
