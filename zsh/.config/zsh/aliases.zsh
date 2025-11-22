@@ -5,6 +5,11 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dc="cd ~/Documents"
 alias pp="cd ~/Documents/Projects"
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    icloud() {
+        cd ~/Library/Mobile\ Documents/com~apple~CloudDocs
+    }
+fi
 
 alias cat='bat'
 alias g='lazygit'
