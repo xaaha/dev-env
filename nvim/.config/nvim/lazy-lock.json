@@ -3,7 +3,7 @@
   "blink.indent": { "branch": "main", "commit": "2f4ac0d1bc642049d97da909cae02a5a5bd0beab" },
   "conform.nvim": { "branch": "master", "commit": "afce105eb47b0869dfafdac90d82f02ef2419d61" },
   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
-  "fzf-lua": { "branch": "main", "commit": "3b4a5d13adeb33f387d744b6ed777bb5401cba94" },
+  "fzf-lua": { "branch": "main", "commit": "39dcc9318650a44eae66f9a500f55bb2dfa96175" },
   "gitsigns.nvim": { "branch": "main", "commit": "cdafc320f03f2572c40ab93a4eecb733d4016d07" },
   "lazy.nvim": { "branch": "main", "commit": "85c7ff3711b730b4030d03144f6db6375044ae82" },
   "nvim-autopairs": { "branch": "master", "commit": "7a2c97cccd60abc559344042fefb1d5a85b3e33b" },
