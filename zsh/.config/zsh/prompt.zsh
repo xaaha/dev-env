@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+# more info here https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
 autoload -Uz vcs_info
 autoload -U colors && colors
 
