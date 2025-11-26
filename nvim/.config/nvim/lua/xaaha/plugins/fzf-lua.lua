@@ -5,7 +5,7 @@ return {
     require("fzf-lua").setup({
       "fzf-vim", -- multiple profiles :FzfLua Profiles
       defaults = {
-        formatter = "path.filename_first",
+        -- formatter = "path.filename_first",
         multiline = 1,
       },
       keymap = {
