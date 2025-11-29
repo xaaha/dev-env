@@ -9,8 +9,8 @@ return {
       javascriptreact = { "biomejs" },
       typescriptreact = { "biomejs" },
       python = { "ruff" },
-      go = { "revive" },
-      ruby = { "rubocop" }, -- standardrb
+      go = { "golangcilint" }, -- revive
+      ruby = { "rubocop" },    -- standardrb
       sql = { "sqruff" },
       yaml = { "yamllint" },
     }
