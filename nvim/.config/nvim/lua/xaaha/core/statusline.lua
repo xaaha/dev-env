@@ -7,7 +7,7 @@ local function git_branch()
     return ""
   end
   branch = #branch > 30 and branch:sub(-30) or branch
-  return "  " .. branch .. " " --.. sep_right .. " "
+  return "  " .. branch .. " "
 end
 
 local statusline = table.concat({
