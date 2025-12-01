@@ -16,9 +16,6 @@ keymap.set("n", "dd", '"_dd', { desc = "Delete a line without overriding the yan
 keymap.set("n", "ycc", "yygccp", { remap = true }) -- copy and comment out the first line and paste
 keymap.set("x", "/", "<Esc>/\\%V")                 -- search within visual selection
 
--- use jk & kj to exit insert mode
-keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
-
 -- Scroll
 keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll up and center screen" })
 keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true, desc = "Scroll down and center screen" })
