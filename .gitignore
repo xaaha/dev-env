@@ -78,3 +78,6 @@ zsh/.config/zsh/secrets.zsh
 !git/**
 
 !Preview.png
+
+!karabiner/
+!karabiner/**
