@@ -23,7 +23,9 @@ return {
         rg_glob = true,
       },
       files = {
-        actions = {
+        cwd_prompt = false,
+        prompt     = 'Files❯ ',
+        actions    = {
           ["ctrl-g"] = require("fzf-lua.actions").toggle_ignore,
           ["ctrl-h"] = require("fzf-lua.actions").toggle_hidden,
         },
