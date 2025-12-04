@@ -14,6 +14,8 @@ return {
         },
       },
       grep = {
+        hidden = true, -- enable search in hidden files by default
+        no_ignore = true,
         actions = {
           ["ctrl-h"] = require("fzf-lua.actions").toggle_hidden,
           ["ctrl-i"] = require("fzf-lua.actions").toggle_ignore,
@@ -29,6 +31,8 @@ return {
           ["ctrl-g"] = require("fzf-lua.actions").toggle_ignore,
           ["ctrl-h"] = require("fzf-lua.actions").toggle_hidden,
         },
+        hidden     = true,
+        no_ignore  = true,
       },
       lsp = {
         code_actions = {
@@ -44,7 +48,7 @@ return {
     local customKeymap = vim.api.nvim_set_keymap
     customKeymap(
       "n",
-      "<leader>fg",
+      "<C-i>",
       "<cmd>FzfLua live_grep<CR>",
       { noremap = true, silent = true, desc = "Fzf live grep native" }
     )
