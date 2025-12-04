@@ -33,3 +33,4 @@ alias ta="tmux a"
 alias tat="tmux a -t"
 
 alias pd="podman"
+alias fzf="fzf --height=40% --layout=reverse --border"
