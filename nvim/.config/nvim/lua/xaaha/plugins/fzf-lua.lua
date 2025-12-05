@@ -4,8 +4,8 @@ return {
   config = function()
     require("fzf-lua").setup({
       "fzf-vim", -- multiple profiles :FzfLua Profiles
+      fzf_bin = 'sk',
       defaults = {
-        -- formatter = "path.filename_first",
         multiline = 1,
       },
       keymap = {
@@ -20,8 +20,17 @@ return {
           ["ctrl-h"] = require("fzf-lua.actions").toggle_hidden,
           ["ctrl-i"] = require("fzf-lua.actions").toggle_ignore,
         },
-        rg_opts = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
-        grep_opts = "--binary-files=without-match --line-number --recursive --color=auto --perl-regexp -e",
+        rg_opts = table.concat({
+          "--column",
+          "--line-number",
+          "--no-heading",
+          "--color=always",
+          "--smart-case",
+          "--max-columns=4096",
+          "--glob=!node_modules/**",
+          "--glob=!.git/**",
+          "-e"
+        }, " "),
         rg_glob = true,
       },
       files = {
