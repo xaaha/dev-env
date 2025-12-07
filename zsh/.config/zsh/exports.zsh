@@ -1,9 +1,5 @@
 #!/usr/bin/env zsh
 
-# History
-HISTSIZE=2000
-SAVEHIST=2000
-
 # General exports
 export SHELL_SESSIONS_DISABLE=1
 export EDITOR="nvim"
