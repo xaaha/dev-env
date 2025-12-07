@@ -1,41 +1,3 @@
-function jwtd () {
-    local input="${1:-}" 
-    if [ -z "$input" ]; then
-        if [ ! -t 0 ]; then
-            input=$(cat /dev/stdin)
-        else
-            echo '✗ Need an argument or have a piped input!' >&2
-            return 1
-        fi
-    fi
-
-    echo "$input" | awk -F'.' '{print $1"\n"$2}' | while read -r part; do
-        decoded=$(echo "$part" | tr '_-' '/+' | base64 -d 2>/dev/null)
-        if [ $? -eq 0 ]; then
-            # Try pretty-printing as JSON
-            if ! echo "$decoded" | jq . 2>/dev/null; then
-                # If jq failed, check if the decoded payload is missing a trailing }
-                # Remove any trailing whitespace and grab the last character.
-                lastChar=$(echo -n "$decoded" | sed -e 's/[[:space:]]*$//' | tail -c 1)
-                if [ "$lastChar" != "}" ]; then
-                    fixed="${decoded}}"
-                    if echo "$fixed" | jq . 2>/dev/null; then
-                        echo "$fixed" | jq .
-                    else
-                        echo "✗ Decoded part is not valid JSON even after appending '}':" >&2
-                        echo "$decoded" >&2
-                    fi
-                else
-                    echo "✗ Decoded part is not valid JSON:" >&2
-                    echo "$decoded" >&2
-                fi
-            fi
-        else
-            echo "✗ Failed to decode Base64 part: $part" >&2
-        fi
-    done
-}
-
 # open nvim with file from fzf
 function vo() {
   local file
@@ -67,6 +29,13 @@ function hp(){
   local file
   file=$(fd -e yml -e yaml | fzf) || return 1
   hulak -env prod -fp "$file"
+}
+
+function hp(){
+  # call hulak with prod file
+  local file
+  file=$(fd -e yml -e yaml | fzf) || return 1
+  hulak -env pr -fp "$file"
 }
 
 
@@ -207,17 +176,3 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
-
-# for mac, take what's in the clipboard and then pass it to jq .
-function fp() {
-    if [[ "$(uname -s)" == "Darwin" ]]; then
-        if command -v pbpaste >/dev/null 2>&1 && command -v jq >/dev/null 2>&1; then
-            pbpaste | jq .
-        else
-            echo "Error: 'pbpaste' or 'jq' is missing."
-        fi
-    else
-        echo "Not running on macOS."
-    fi
-}
-
