@@ -31,7 +31,7 @@ function hp(){
   hulak -env prod -fp "$file"
 }
 
-function hp(){
+function hr(){
   # call hulak with prod file
   local file
   file=$(fd -e yml -e yaml | fzf) || return 1
