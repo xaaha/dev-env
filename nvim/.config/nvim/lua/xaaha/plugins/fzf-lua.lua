@@ -58,7 +58,7 @@ return {
     local customKeymap = vim.api.nvim_set_keymap
     customKeymap(
       "n",
-      "<leader>rg",
+      "<leader>fg",
       "<cmd>FzfLua live_grep<CR>",
       { noremap = true, silent = true, desc = "Fzf live grep native" }
     )
