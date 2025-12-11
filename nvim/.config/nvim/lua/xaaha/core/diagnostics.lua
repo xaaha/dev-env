@@ -1,40 +1,3 @@
---[[
-*Fancy* diagnostics for `Neovim`.
-
-## Usage
-
-```lua
-require("diagnostics").setup();
-```
-
-You can then hit `D` to show diagnostics for the current line.
-
-## Highlight groups
-
-This script uses highlight groups provided by [highlights.lua](https://github.com/OXY2DEV/nvim/blob/main/lua/scripts/highlights.lua).
-
-The used groups are,
-- `FancyDiagnostic`, Default group for diagnostics.
-- `FancyDiagnosticIcon`, Default group for the icons of diagnostics.
-- `FancyDiagnosticInfo`, Group for `information` diagnostics.
-- `FancyDiagnosticInfoIcon`, Group for the icons of `information` diagnostics.
-- `FancyDiagnosticHint`, Group for `hint` diagnostics.
-- `FancyDiagnosticHintIcon`, Group for the icons of `hint` diagnostics.
-- `FancyDiagnosticWarn`, Group for `warning` diagnostics.
-- `FancyDiagnosticWarnIcon`, Group for the icons of `warning` diagnostics.
-- `FancyDiagnosticError`, Group for `error` diagnostics.
-- `FancyDiagnosticErrorIcon`, Group for the icons of `error` diagnostics.
-
-## Dependencies
-
-- [beacon.lua](https://github.com/OXY2DEV/nvim/blob/main/lua/scripts/beacon.lua), For highlighting cursor.
-- [highlights.lua](https://github.com/OXY2DEV/nvim/blob/main/lua/scripts/highlights.lua), For highlight groups.
-- [types/diagnostics.lua](https://github.com/OXY2DEV/nvim/blob/main/lua/scripts/types/diagnostics.lua), For type definition.
-
-## Configuration
-
-Use `setup()` for setting configuration. See [types/diagnostics.lua#diagnostics.config](https://github.com/OXY2DEV/nvim/blob/main/lua/scripts/types/diagnostics.lua#L3-L19) for the type definition.
-]]
 local diagnostics = {};
 
 ---@param level string
@@ -78,7 +41,7 @@ end
 diagnostics.config = {
   ---|fS
 
-  keymap = "D",
+  keymap = "M",
 
   decoration_width = 4,
   width = function(items)
