@@ -63,6 +63,10 @@ stow -t ~ tmux
 
 ## Useful Steps for tools
 
+Collection of random items
+
+<details>
+  <summary>Click to Expand</summary>
 ### Mac Settings
 
 ```bash
@@ -97,3 +101,12 @@ gsettings reset org.gnome.desktop.input-sources xkb-options
 ```bash
 git config --global core.excludesfile "~/.gitignore_global"
 ```
+
+### Vimium Mapping for Vertical Tab
+
+```bash
+map K previousTab
+map J nextTab
+```
+
+</details>
