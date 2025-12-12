@@ -1,6 +1,8 @@
 brew "awscli"
 brew "bash"
 brew "bat"
+brew "basedpyright"
+brew "shfmt"
 brew "biome"
 brew "coreutils"
 brew "fd"

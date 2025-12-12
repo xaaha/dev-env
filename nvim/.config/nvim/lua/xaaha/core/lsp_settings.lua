@@ -120,8 +120,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 --:h lspconfig-all for info
 local language_servers = {
   -- lspconfigName
-  "astro",                 -- with default-npm-packages
-  "basedpyright",          -- python lsp
+  "astro",        -- with default-npm-packages
+  "basedpyright", -- python lsp
+  "bashls",
   "biome",
   "cssls",                 -- with  vscode-langservers-extracted
   "emmet_language_server", -- with default-npm-packages

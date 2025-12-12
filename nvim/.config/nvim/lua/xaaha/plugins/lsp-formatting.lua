@@ -6,6 +6,9 @@ return {
     require("conform").setup({
       formatters_by_ft = {
         astro = { "prettier" },
+        sh = { "shfmt" },
+        zsh = { "shfmt" },
+        bash = { "shfmt" },
         javascript = { "biome", "prettier", "biome-organize-imports" },
         typescript = { "biome", "prettier", "biome-organize-imports" },
         javascriptreact = { "biome", "prettier", "biome-organize-imports" },
