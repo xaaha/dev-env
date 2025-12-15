@@ -1,7 +1,7 @@
 return {
   "b0o/schemastore.nvim",
   "nvim-tree/nvim-web-devicons",
-  'saghen/blink.indent',
+  "saghen/blink.indent",
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
