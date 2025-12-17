@@ -4,7 +4,6 @@ return {
   config = function()
     require("fzf-lua").setup({
       "fzf-vim", -- multiple profiles :FzfLua Profiles
-      fzf_bin = 'sk',
       defaults = {
         multiline = 1,
       },
@@ -58,9 +57,9 @@ return {
     local customKeymap = vim.api.nvim_set_keymap
     customKeymap(
       "n",
-      "<leader>fg",
+      "<leader>ff",
       "<cmd>FzfLua live_grep<CR>",
-      { noremap = true, silent = true, desc = "Fzf live grep native" }
+      { desc = "Fzf live grep native" }
     )
     customKeymap(
       "n",
