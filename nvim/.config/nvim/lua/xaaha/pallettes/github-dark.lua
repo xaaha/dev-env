@@ -1,54 +1,67 @@
 local M = {}
 
 M.colors = {
-  white = "#d3dbe3",
-  darker_black = "#1F2428",
-  black = "#24292E", --  nvim bg
-  black2 = "#2e3338",
-  one_bg = "#33383d",
-  one_bg2 = "#383d42", -- StatusBar (filename)
-  one_bg3 = "#42474c",
-  grey = "#4c5156",    -- Line numbers (shouldn't be base01?)
-  grey_fg = "#565b60", -- Why this affects comments?
-  grey_fg2 = "#60656a",
-  light_grey = "#6a6f74",
-  red = "#ff7f8d", -- StatusBar (username)
-  baby_pink = "#ffa198",
-  pink = "#ec6cb9",
-  line = "#33383d",      -- for lines like vertsplit
-  green = "#56d364",     -- StatusBar (file percentage)
-  vibrant_green = "#85e89d",
-  nord_blue = "#58a6ff", -- Mode indicator
-  blue = "#79c0ff",
-  yellow = "#ffdf5d",
-  sun = "#ffea7f",
-  purple = "#d2a8ff",
-  dark_purple = "#bc8cff",
+  -- Core UI
+  white = "#c9d1d9",
+  darker_black = "#161b22",
+  black = "#212830", --"#0d1117",
+  black2 = "#161b22",
+  one_bg = "#1f2428",
+  one_bg2 = "#21262d",
+  one_bg3 = "#30363d",
+
+  -- Greys
+  grey = "#30363d",
+  grey_fg = "#484f58",
+  grey_fg2 = "#6e7681",
+  light_grey = "#8b949e",
+
+  -- Accent colors
+  red = "#f85149",
+  baby_pink = "#ff7b72",
+  pink = "#db61a2",
+
+  green = "#3fb950",
+  vibrant_green = "#7ee787",
+
+  blue = "#58a6ff",
+  nord_blue = "#79c0ff",
+
+  yellow = "#d29922",
+  sun = "#e3b341",
+
+  purple = "#a371f7",
+  dark_purple = "#8957e5",
+
   teal = "#39c5cf",
-  orange = "#ffab70",
   cyan = "#56d4dd",
-  statusline_bg = "#2b3035",
-  lightbg = "#383d42",
-  pmenu_bg = "#58a6ff", -- Command bar suggestions
-  folder_bg = "#58a6ff",
+  orange = "#ff9b50",
 
-  base00 = "#24292E",
-  base01 = "#33383d",
-  base02 = "#383d42",
-  base03 = "#42474c",
-  base04 = "#4c5156",
+  -- UI specific
+  line = "#21262d",
+  statusline_bg = "#161b22",
+  lightbg = "#21262d",
+  pmenu_bg = "#2f81f7",
+  folder_bg = "#2f81f7",
+
+  -- Base16
+  base00 = "#0d1117",
+  base01 = "#161b22",
+  base02 = "#21262d",
+  base03 = "#30363d",
+  base04 = "#484f58",
   base05 = "#c9d1d9",
-  base06 = "#d3dbe3",
-  base07 = "#dde5ed",
-  base08 = "#B392E9",
-  base09 = "#ffab70",
-  base0A = "#ffdf5d",
-  base0B = "#a5d6ff",
-  base0C = "#83caff",
-  base0D = "#6AB1F0",
-  base0E = "#ff7f8d",
-  base0F = "#85e89d",
+  base06 = "#e6edf3",
+  base07 = "#f0f6fc",
 
+  base08 = "#f85149", -- red
+  base09 = "#ff9b50", -- orange
+  base0A = "#d29922", -- yellow
+  base0B = "#3fb950", -- green
+  base0C = "#39c5cf", -- cyan
+  base0D = "#58a6ff", -- blue
+  base0E = "#a371f7", -- purple
+  base0F = "#7ee787", -- bright green
 }
 
 M.highlights = {
