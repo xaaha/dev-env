@@ -11,7 +11,8 @@ return {
       vim.keymap.set("n", "<leader>hd", ":Gitsigns diffthis<CR>", { desc = "Diff this page" }),
       vim.keymap.set("n", "]g", ":Gitsigns next_hunk<CR>", { desc = "Next hunk" }),
       vim.keymap.set("n", "[g", ":Gitsigns prev_hunk<CR>", { desc = "Next hunk" }),
-      vim.keymap.set("n", "<leader>bb", ":Gitsigns blame_line<CR>", { desc = "Blame line" }),
+      vim.keymap.set("n", "<leader>bb", ":Gitsigns blame_line<CR>", { desc = "Blame line awesome" }),
+      vim.cmd("Gitsigns toggle_numhl")
     })
   end,
 }
