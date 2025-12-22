@@ -4,7 +4,7 @@ M.colors = {
   -- Core UI
   white = "#c9d1d9",
   darker_black = "#161b22",
-  black = "#212830", --"#0d1117",
+  black = "#0d1117", --"#0d1117", #212830
   black2 = "#161b22",
   one_bg = "#1f2428",
   one_bg2 = "#21262d",
