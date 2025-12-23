@@ -35,7 +35,8 @@ return {
       files = {
         cwd_prompt = false,
         prompt     = 'Files❯ ',
-        fd_opts    = [[--color=never --hidden --type f --type l --exclude .git --exclude node_modules]],
+        fd_opts    =
+        [[--color=never --hidden --type f --type l --exclude .git --exclude node_modules --exclude __pycache__]],
         actions    = {
           ["ctrl-g"] = require("fzf-lua.actions").toggle_ignore,
           ["ctrl-h"] = require("fzf-lua.actions").toggle_hidden,
