@@ -8,12 +8,12 @@
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
   "nvim-autopairs": { "branch": "master", "commit": "c2a0dd0d931d0fb07665e1fedb1ea688da3b80b4" },
   "nvim-lint": { "branch": "master", "commit": "1f19dacd945a7b1a57f29f32b2d7168384df3d36" },
-  "nvim-lspconfig": { "branch": "master", "commit": "5eeb45c8c469b84777a5bd8796b698c8a1c780a7" },
+  "nvim-lspconfig": { "branch": "master", "commit": "8973916a3d015d65a8c4614e141f4270a713cf33" },
   "nvim-treesitter": { "branch": "main", "commit": "6e42d823ce0a5a76180c473c119c7677738a09d1" },
   "nvim-treesitter-context": { "branch": "master", "commit": "64dd4cf3f6fd0ab17622c5ce15c91fc539c3f24a" },
-  "nvim-treesitter-textobjects": { "branch": "main", "commit": "e91c585ac0ee760198dabc1fad2e6227effdcd5e" },
+  "nvim-treesitter-textobjects": { "branch": "main", "commit": "f7122acf1bd2c9e4626651ad33bf5944be9d9392" },
   "nvim-web-devicons": { "branch": "master", "commit": "6788013bb9cb784e606ada44206b0e755e4323d7" },
   "oil.nvim": { "branch": "master", "commit": "756dec855b4811f2d27f067a3aca477f368d99f5" },
   "outline.nvim": { "branch": "main", "commit": "1967ef50036b0b1eac4977aeede55915a741afe0" },
-  "schemastore.nvim": { "branch": "main", "commit": "8b92ea89835b8e5dbc779a675ebb0e5fcb9a1993" }
+  "schemastore.nvim": { "branch": "main", "commit": "5ed01fc84e587e0883e7d04122684d768eb76bbc" }
 }
