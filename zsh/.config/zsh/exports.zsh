@@ -3,6 +3,7 @@
 # General exports
 export SHELL_SESSIONS_DISABLE=1
 export EDITOR="nvim"
+export VISUAL="nvim"
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_ENV_HINTS=1
 
