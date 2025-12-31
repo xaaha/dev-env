@@ -42,7 +42,7 @@ keymap.set("n", "<leader>sd", "<cmd>vertical resize -5<CR>", { desc = "Decrease 
 ---------------------
 -- Colorscheme
 ---------------------
-vim.cmd.colorscheme("onenord")
+-- vim.cmd.colorscheme("onenord")
 vim.keymap.set("n", "<leader>ud", function()
   if vim.o.background == "dark" then
     vim.cmd.colorscheme("onenord-light")
