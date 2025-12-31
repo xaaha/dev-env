@@ -15,4 +15,5 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' formats " %{$fg[yellow]%}%{$fg[red]%}%u%c%{$fg[magenta]%} %b%{$fg[blue]%}%{$reset_color%}"
 
 PROMPT="%B%(?:%{$fg_bold[green]%}%c:%{$fg_bold[red]%}%c )%{$reset_color%}"
-PROMPT+="\$vcs_info_msg_0_ $ "
+PROMPT+="\$vcs_info_msg_0_"
+PROMPT+=$'\n ; '
