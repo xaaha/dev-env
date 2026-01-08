@@ -49,12 +49,12 @@ keymap.set("n", "<leader>sd", "<cmd>vertical resize -5<CR>", { desc = "Decrease 
 ---------------------
 -- Colorscheme
 ---------------------
--- vim.cmd.colorscheme("onenord")
-vim.keymap.set("n", "<leader>ud", function()
+vim.cmd.colorscheme("xaaha")
+vim.keymap.set("n", "<leader>th", function()
   if vim.o.background == "dark" then
-    vim.cmd.colorscheme("onenord-light")
+    vim.cmd.colorscheme("xaaha-light")
   else
-    vim.cmd.colorscheme("onenord")
+    vim.cmd.colorscheme("xaaha")
   end
 end, { desc = "Toggle theme" })
 ---------------------
