@@ -19,6 +19,8 @@ keymap.set("x", "/", "<Esc>/\\%V")                 -- search within visual selec
 keymap.set("i", "{<Tab>", "{}<Left>", { noremap = true })
 keymap.set("i", "[<Tab>", "[]<Left>", { noremap = true })
 keymap.set("i", "(<Tab>", "()<Left>", { noremap = true })
+keymap.set("i", '"<Tab>', '""<Left>', { noremap = true })
+keymap.set("i", "'<Tab>", "''<Left>", { noremap = true })
 
 -- Scroll
 keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll up and center screen" })
