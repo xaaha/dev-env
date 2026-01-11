@@ -15,13 +15,6 @@ keymap.set("n", "dd", '"_dd', { desc = "Delete a line without overriding the yan
 keymap.set("n", "ycc", "yygccp", { remap = true }) -- copy and comment out the first line and paste
 keymap.set("x", "/", "<Esc>/\\%V")                 -- search within visual selection
 
--- Autopairs basics
-keymap.set("i", "{<Tab>", "{}<Left>", { noremap = true })
-keymap.set("i", "[<Tab>", "[]<Left>", { noremap = true })
-keymap.set("i", "(<Tab>", "()<Left>", { noremap = true })
-keymap.set("i", '"<Tab>', '""<Left>', { noremap = true })
-keymap.set("i", "'<Tab>", "''<Left>", { noremap = true })
-
 -- Scroll
 keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll up and center screen" })
 keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true, desc = "Scroll down and center screen" })
