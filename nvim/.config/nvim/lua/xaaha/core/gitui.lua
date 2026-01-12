@@ -74,6 +74,8 @@ local function open_gitui()
 
   -- Open the floating window
   vim.api.nvim_open_win(bufnr, true, window_options)
+
+  -- quit on control + z
   vim.keymap.set("t", "<C-z>", function()
     close_gitui(bufnr)
   end, { buffer = bufnr, silent = true })
