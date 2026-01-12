@@ -1,7 +1,6 @@
 -- State to track if the window is open
 local is_open = false
 
-
 local function getlazygit()
   -- assumes that which is always present
   local handle = io.popen("which lazygit")
@@ -22,6 +21,14 @@ local config = {
   height = 70,        -- Height of the floating window (percentage)
   border = "rounded", -- Border style: "none", "single", "rounded", "solid", "shadow"
 }
+
+-- Close the buffer and reset the state when the process exits
+local function close_gitui(bufnr)
+  if vim.api.nvim_buf_is_valid(bufnr) then
+    vim.api.nvim_buf_delete(bufnr, { force = true })
+  end
+  is_open = false
+end
 
 -- Function to open the GitUI floating window
 local function open_gitui()
@@ -61,11 +68,15 @@ local function open_gitui()
   -- Start the GitUI process in the terminal buffer
   vim.fn.termopen(table.concat(vim.tbl_flatten({ config.binay, config.args }), " "), {
     on_exit = function()
-      -- Close the buffer and reset the state when the process exits
-      vim.api.nvim_buf_delete(bufnr, { force = true })
-      is_open = false
+      close_gitui(bufnr)
     end,
   })
+
+  -- Open the floating window
+  vim.api.nvim_open_win(bufnr, true, window_options)
+  vim.keymap.set("t", "<C-z>", function()
+    close_gitui(bufnr)
+  end, { buffer = bufnr, silent = true })
   vim.cmd([[startinsert!]])
   is_open = true
 end
