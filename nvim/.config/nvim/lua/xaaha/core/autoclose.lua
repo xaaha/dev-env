@@ -114,7 +114,13 @@ local function handler(key, info, mode)
   elseif info.escape and pair:sub(2, 2) == key then
     return mode == "insert" and "<C-G>U<Right>" or "<Right>"
   elseif info.close then
-    -- disable if the cursor touches alphanumeric character
+    -- disable pairing for apostrophe if the cursor touches alphanumeric character
+    if key == "'" then
+      local left = pair:sub(1, 1)
+      if left:match("[%w_]") then
+        return key
+      end
+    end
     if
         config.options.disable_when_touch
         and (pair .. "_"):sub(2, 2):match(config.options.touch_regex)
