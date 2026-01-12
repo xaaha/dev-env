@@ -182,4 +182,8 @@ function autoclose.toggle()
   config.disabled = not config.disabled
 end
 
-autoclose.setup({})
+vim.api.nvim_create_autocmd({ "InsertEnter" }, {
+  callback = function()
+    autoclose.setup({})
+  end,
+})
