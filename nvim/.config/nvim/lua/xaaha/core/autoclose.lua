@@ -183,6 +183,7 @@ function autoclose.toggle()
 end
 
 vim.api.nvim_create_autocmd({ "InsertEnter" }, {
+  once = true,
   callback = function()
     autoclose.setup({})
   end,
