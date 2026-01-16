@@ -134,6 +134,10 @@ M.highlights = {
   -- Punctuation: minimal
   ["@punctuation.bracket"] = { fg = M.colors.base0F },
   ["@punctuation.delimiter"] = { fg = M.colors.base0F },
+
+  -- Diff
+  DiffAdd = { fg = "#A5E5AB" },
+  GitSignsAdd = { fg = "#8BD98F" },
 }
 
 require("xaaha.core.colorscheme").setup_dark(M.colors, M.highlights)
