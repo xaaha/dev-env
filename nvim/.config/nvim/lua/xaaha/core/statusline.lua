@@ -2,8 +2,8 @@ local sep_right = "" -- 
 local chevron_left = "\u{eab5}" -- 
 
 local function git_branch()
-  local branch = vim.fn.systemlist("git rev-parse --abbrev-ref HEAD")[1]
-  if not branch or branch == "" or branch == "HEAD" then
+  local branch = vim.fn.systemlist("git rev-parse --abbrev-ref HEAD 2>/dev/null")[1]
+  if vim.v.shell_error ~= 0 or not branch or branch == "" then
     return ""
   end
   branch = #branch > 30 and branch:sub(-30) or branch
