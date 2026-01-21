@@ -34,10 +34,16 @@ $(brew --prefix)/opt/fzf/install
 # required
 mv ~/.config/nvim{,.bak}
 
-# optional but recommended
+# backup old assets
 mv ~/.local/share/nvim{,.bak}
 mv ~/.local/state/nvim{,.bak}
 mv ~/.cache/nvim{,.bak}
+
+# remove old assets
+rm -rf ~/.local/share/nvim/
+rm -rf ~/.local/state/nvim/
+rm -rf ~/.cache/nvim/
+
 ```
 
 - Clone the repo
