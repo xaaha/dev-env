@@ -1,6 +1,6 @@
 local M = {}
 
--- Monochrome: A minimal colorscheme with neutral greys and teal-amber accents
+-- xaaha: A minimal colorscheme with neutral greys and teal-amber accents
 -- Background: #151B23
 -- Design philosophy: Following Neovim default - minimal, accessible, functional, with teal and amber
 -- Contrast: 13:1 for main text, 8:1 for variables, 5.5:1 for comments
@@ -77,15 +77,10 @@ M.highlights = {
   -- Variables: slightly dimmed but enough contrast (8:1)
   ["@variable"] = { fg = M.colors.base08 },
   ["@variable.member"] = { fg = M.colors.base08 },
-
-  -- Builtin variables: keep distinct
   ["@variable.builtin"] = { fg = M.colors.base08 },
-
-  -- Function parameters: subtle distinction
   ["@variable.parameter"] = { fg = M.colors.base08 },
   ["@parameter"] = { fg = M.colors.base08 },
 
-  -- Keywords: bold + white (not purple) - like default Neovim
   ["@keyword"] = { fg = M.colors.white, bold = true },
   ["@keyword.function"] = { fg = M.colors.white, bold = true },
   ["@keyword.return"] = { fg = M.colors.white, bold = true },
@@ -96,14 +91,12 @@ M.highlights = {
   Conditional = { fg = M.colors.white, bold = true },
   Repeat = { fg = M.colors.white, bold = true },
 
-  -- Identifiers: keep blue for distinction (sparingly used)
   Identifier = { fg = M.colors.blue },
 
-  -- Operators: normal foreground (minimal)
   ["@operator"] = { fg = M.colors.base05 },
   Operator = { fg = M.colors.base05 },
 
-  -- Numbers and constants: same as normal text (minimal like default)
+  -- Numbers and constants: same as normal text
   ["@number"] = { fg = M.colors.base05 },
   ["@float"] = { fg = M.colors.base05 },
   ["@boolean"] = { fg = M.colors.base05 },
