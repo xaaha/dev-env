@@ -1,6 +1,6 @@
 local M = {}
 
--- xaaha: A minimal colorscheme with neutral greys and teal-amber accents
+-- xaaha: A minimal colorscheme with neutral greys and teal-amber accents (High Contrast)
 -- Background: #151B23
 -- Design philosophy: Following Neovim default - minimal, accessible, functional, with teal and amber
 -- Contrast: 13:1 for main text, 8:1 for variables, 5.5:1 for comments
