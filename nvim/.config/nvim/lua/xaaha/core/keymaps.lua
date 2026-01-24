@@ -47,7 +47,7 @@ vim.keymap.set("n", "<leader>th", function()
   if vim.o.background == "dark" then
     vim.cmd.colorscheme("xaaha-light")
   else
-    vim.cmd.colorscheme("xaaha")
+    vim.cmd.colorscheme("xaaha-dark")
   end
 end, { desc = "Toggle theme" })
 ---------------------
