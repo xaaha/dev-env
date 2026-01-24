@@ -212,7 +212,7 @@ local function apply(colors, bg, overwriteHighlights, colorscheme_name)
       ["@punctuation.special"] = { fg = colors.base0F },
 
       ["@comment"] = { fg = colors.grey_fg2, italic = true },
-      ["@comment.documentation"] = { fg = colors.base0C },
+      ["@comment.documentation"] = { fg = colors.grey_fg2, italic = true },
 
       ["@tag"] = { fg = colors.base0A },
       ["@tag.attribute"] = { fg = colors.base08 },
