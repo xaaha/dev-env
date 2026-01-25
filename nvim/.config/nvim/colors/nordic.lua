@@ -129,7 +129,6 @@ M.highlights = {
   ["@function.call"] = { fg = M.colors.blue2 },
   ["@method"] = { fg = M.colors.blue2 },
   ["@method.call"] = { fg = M.colors.blue2 },
-  ["@function.method.call"] = { fg = M.colors.blue2 },
 
   -- Function macros use red
   ["@function.macro"] = { fg = M.colors.red },
@@ -193,7 +192,6 @@ M.highlights = {
   String = { fg = M.colors.green },
   Character = { fg = M.colors.green },
   ["@string"] = { fg = M.colors.green },
-  ["@string.documentation"] = { fg = M.colors.green },
   ["@character"] = { fg = M.colors.green },
 
   -- String escape/regex use magenta.bright
@@ -224,19 +222,16 @@ M.highlights = {
   -- Include/imports
   Include = { fg = M.colors.blue1 },
   ["@include"] = { fg = M.colors.blue1 },
-  ["@keyword.import"] = { fg = M.colors.blue1 },
 
   -- PreProc
   PreProc = { fg = M.colors.blue1 },
   Define = { fg = M.colors.blue1 },
-  ["@keyword.directive"] = { fg = M.colors.blue1 },
 
   -- Comments use gray5
   Comment = { fg = M.colors.grey_fg, italic = true },
   ["@comment"] = { fg = M.colors.grey_fg, italic = true },
-  ["@comment.documentation"] = { fg = M.colors.grey_fg, italic = true },
 
-  -- Comment annotations
+  -- Comment annotations (override base with nordic diagnostic colors)
   ["@comment.note"] = { fg = M.colors.hint },
   ["@comment.error"] = { fg = M.colors.error },
   ["@comment.warning"] = { fg = M.colors.warn },
@@ -258,17 +253,14 @@ M.highlights = {
 
   -- Storage
   StorageClass = { fg = M.colors.orange },
-  ["@keyword.storage"] = { fg = M.colors.orange },
   ["@storageclass"] = { fg = M.colors.orange },
 
   -- Exception
   Exception = { fg = M.colors.orange },
   ["@exception"] = { fg = M.colors.orange },
-  ["@keyword.exception"] = { fg = M.colors.orange },
 
   -- Debug
   Debug = { fg = M.colors.red },
-  ["@keyword.debug"] = { fg = M.colors.red },
 
   -- Coroutine keywords use macro color (red)
   ["@keyword.coroutine"] = { fg = M.colors.red },

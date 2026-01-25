@@ -165,6 +165,7 @@ local function apply(colors, bg, overwriteHighlights, colorscheme_name)
       ["@label"] = { fg = colors.base0A },
 
       ["@string"] = { fg = colors.green },
+      ["@string.documentation"] = { link = "@string" },
       ["@string.regex"] = { fg = colors.base0B },
       ["@string.escape"] = { fg = colors.base0C },
       ["@string.special"] = { fg = colors.base0C },
@@ -180,6 +181,7 @@ local function apply(colors, bg, overwriteHighlights, colorscheme_name)
       ["@function.builtin"] = { fg = colors.base0D },
       ["@function.call"] = { fg = colors.base0D },
       ["@function.macro"] = { fg = colors.base08 },
+      ["@function.method.call"] = { link = "@method.call" },
       ["@method"] = { fg = colors.base0D },
       ["@method.call"] = { fg = colors.base0D },
       ["@constructor"] = { fg = colors.base0C },
@@ -190,6 +192,13 @@ local function apply(colors, bg, overwriteHighlights, colorscheme_name)
       ["@keyword.function"] = { fg = colors.base0E },
       ["@keyword.operator"] = { fg = colors.base0E },
       ["@keyword.return"] = { fg = colors.base0E },
+      ["@keyword.conditional"] = { link = "@conditional" },
+      ["@keyword.repeat"] = { link = "@repeat" },
+      ["@keyword.import"] = { link = "@include" },
+      ["@keyword.storage"] = { link = "@storageclass" },
+      ["@keyword.exception"] = { link = "@exception" },
+      ["@keyword.directive"] = { link = "PreProc" },
+      ["@keyword.debug"] = { link = "Debug" },
 
       ["@conditional"] = { fg = colors.base0E },
       ["@repeat"] = { fg = colors.base0E },
@@ -213,6 +222,10 @@ local function apply(colors, bg, overwriteHighlights, colorscheme_name)
 
       ["@comment"] = { fg = colors.grey_fg2, italic = true },
       ["@comment.documentation"] = { fg = colors.grey_fg2, italic = true },
+      ["@comment.note"] = { fg = colors.purple },
+      ["@comment.error"] = { fg = colors.red },
+      ["@comment.warning"] = { fg = colors.yellow },
+      ["@comment.todo"] = { fg = colors.blue },
 
       ["@tag"] = { fg = colors.base0A },
       ["@tag.attribute"] = { fg = colors.base08 },

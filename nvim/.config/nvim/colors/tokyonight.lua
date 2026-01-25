@@ -93,7 +93,6 @@ M.highlights = {
   ["@function.call"] = { fg = M.colors.blue },
   ["@method"] = { fg = M.colors.blue },
   ["@method.call"] = { fg = M.colors.blue },
-  ["@function.method.call"] = { fg = M.colors.blue },
 
   -- Keywords use purple/magenta
   Keyword = { fg = M.colors.purple },
