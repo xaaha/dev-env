@@ -280,6 +280,83 @@ local function apply(colors, bg, overwriteHighlights, colorscheme_name)
       ["@text.warning"] = { link = "@comment.warning" },
       ["@text.note"] = { link = "@comment.note" },
       ["@text.danger"] = { link = "@comment.error" },
+
+      -- fzf-lua highlights
+      -- Main window
+      FzfLuaNormal = { fg = colors.base05, bg = colors.black },
+      FzfLuaBorder = { fg = colors.grey_fg, bg = colors.black },
+      FzfLuaTitle = { fg = colors.white, bg = colors.grey, bold = true },
+      FzfLuaTitleFlags = { fg = colors.green, bg = colors.grey },
+      FzfLuaBackdrop = { bg = colors.darker_black },
+
+      -- Preview window
+      FzfLuaPreviewNormal = { fg = colors.base05, bg = colors.black },
+      FzfLuaPreviewBorder = { fg = colors.grey_fg, bg = colors.black },
+      FzfLuaPreviewTitle = { fg = colors.white, bg = colors.grey, bold = true },
+      FzfLuaCursor = { link = "Cursor" },
+      FzfLuaCursorLine = { link = "CursorLine" },
+      FzfLuaCursorLineNr = { link = "CursorLineNr" },
+      FzfLuaSearch = { fg = colors.black, bg = colors.yellow },
+
+      -- Scrollbar
+      FzfLuaScrollBorderEmpty = { fg = colors.grey },
+      FzfLuaScrollBorderFull = { fg = colors.green },
+      FzfLuaScrollFloatEmpty = { fg = colors.grey },
+      FzfLuaScrollFloatFull = { fg = colors.green },
+
+      -- Help window
+      FzfLuaHelpNormal = { fg = colors.base05, bg = colors.black2 },
+      FzfLuaHelpBorder = { fg = colors.grey_fg, bg = colors.black2 },
+
+      -- Header
+      FzfLuaHeaderBind = { fg = colors.cyan, bold = true },
+      FzfLuaHeaderText = { fg = colors.grey_fg },
+
+      -- Path highlights (key for distinguishing file paths from content)
+      FzfLuaPathColNr = { fg = colors.green },
+      FzfLuaPathLineNr = { fg = colors.yellow },
+      FzfLuaDirPart = { fg = colors.grey_fg },
+      FzfLuaFilePart = { fg = colors.white, bold = true },
+
+      -- Buffer highlights
+      FzfLuaBufName = { fg = colors.cyan },
+      FzfLuaBufId = { fg = colors.grey_fg },
+      FzfLuaBufNr = { fg = colors.yellow },
+      FzfLuaBufLineNr = { fg = colors.green },
+      FzfLuaBufFlagCur = { fg = colors.green, bold = true },
+      FzfLuaBufFlagAlt = { fg = colors.blue },
+
+      -- Tab highlights
+      FzfLuaTabTitle = { fg = colors.cyan },
+      FzfLuaTabMarker = { fg = colors.yellow },
+
+      -- Directory/file icons
+      FzfLuaDirIcon = { fg = colors.blue },
+
+      -- Live query
+      FzfLuaLivePrompt = { fg = colors.cyan, bold = true },
+      FzfLuaLiveSym = { fg = colors.yellow, bold = true },
+
+      -- Command highlights
+      FzfLuaCmdEx = { fg = colors.yellow },
+      FzfLuaCmdBuf = { fg = colors.cyan },
+      FzfLuaCmdGlobal = { fg = colors.purple },
+
+      -- Fzf native highlights
+      FzfLuaFzfNormal = { fg = colors.base05 },
+      FzfLuaFzfCursorLine = { bg = colors.one_bg2 },
+      FzfLuaFzfMatch = { fg = colors.green, bold = true },
+      FzfLuaFzfBorder = { fg = colors.grey_fg },
+      FzfLuaFzfScrollbar = { fg = colors.cyan },
+      FzfLuaFzfSeparator = { fg = colors.grey },
+      FzfLuaFzfGutter = { bg = colors.black },
+      FzfLuaFzfHeader = { fg = colors.grey_fg },
+      FzfLuaFzfInfo = { fg = colors.grey_fg },
+      FzfLuaFzfPointer = { fg = colors.cyan, bold = true },
+      FzfLuaFzfMarker = { fg = colors.yellow, bold = true },
+      FzfLuaFzfSpinner = { fg = colors.cyan },
+      FzfLuaFzfPrompt = { fg = colors.cyan, bold = true },
+      FzfLuaFzfQuery = { fg = colors.white },
     }
 
     if type(overwriteHighlights) == "table" then
