@@ -1,52 +1,120 @@
-local colors = {
-  white = "#54555b",
-  darker_black = "#efeff0",
-  black = "#fafafa", --  nvim bg
-  black2 = "#EAEAEB",
-  one_bg = "#dadadb", -- real bg of onedark
-  one_bg2 = "#d4d4d5",
-  one_bg3 = "#cccccd",
-  grey = "#b7b7b8",
-  grey_fg = "#b0b0b1",
-  grey_fg2 = "#a9a9aa",
-  light_grey = "#a2a2a3",
-  red = "#d84a3d",
-  baby_pink = "#F07178",
-  pink = "#ff75a0",
-  line = "#e2e2e2",
-  green = "#50a14f",
-  vibrant_green = "#7eca9c",
-  nord_blue = "#428bab",
-  blue = "#4078f2",
-  yellow = "#c18401",
-  sun = "#dea95f",
-  purple = "#a28dcd",
-  dark_purple = "#8e79b9",
-  teal = "#519ABA",
-  orange = "#FF6A00",
-  cyan = "#0b8ec6",
-  statusline_bg = "#ececec",
-  lightbg = "#d3d3d3",
-  pmenu_bg = "#5e5f65",
-  folder_bg = "#6C6C6C",
+local M = {}
 
-  -- Base16
-  base00 = "#fafafa",
-  base01 = "#f4f4f4",
-  base02 = "#e5e5e6",
-  base03 = "#dfdfe0",
-  base04 = "#d7d7d8",
-  base05 = "#383a42",
-  base06 = "#202227",
-  base07 = "#090a0b",
-  base08 = "#d84a3d",
-  base09 = "#d75f00",
-  base0A = "#c18401",
-  base0B = "#50a14f",
-  base0C = "#0070a8",
-  base0D = "#4078f2",
-  base0E = "#a626a4",
-  base0F = "#986801",
+-- Official onenord light palette: https://github.com/rmehri01/onenord.nvim
+M.colors = {
+  -- Backgrounds (inverted for light theme)
+  black = "#F7F8FA",        -- bg
+  darker_black = "#FFFFFF", -- lighter than bg
+  black2 = "#EFF0F2",       -- active
+  one_bg = "#EDEEF0",       -- float
+  one_bg2 = "#EAEBED",      -- highlight
+  one_bg3 = "#DFE1E4",      -- highlight_dark
+
+  -- Greys
+  grey = "#DCDEE1",       -- selection
+  grey_fg = "#838FA6",    -- gray
+  grey_fg2 = "#646A76",   -- light_gray (comments)
+  light_grey = "#646A76", -- light_gray
+
+  -- Foregrounds (dark for light theme)
+  white = "#2E3440",        -- fg
+  darker_white = "#4C566A", -- fg_light
+  bright_white = "#1D2128",
+
+  -- Frost colors (adjusted for light bg)
+  teal = "#5F9E9D",      -- light_green
+  cyan = "#3EA1AD",      -- cyan
+  nord_blue = "#3879C5", -- blue
+  blue = "#1B40A6",      -- dark_blue
+
+  -- Aurora colors (vivid for light bg)
+  red = "#CB4F53",          -- red
+  dark_red = "#C53B40",     -- dark_red
+  orange = "#EE5E25",       -- orange
+  yellow = "#BA793E",       -- yellow
+  green = "#48A53D",        -- green
+  purple = "#9F4ACA",       -- purple
+  light_purple = "#9665AF", -- light_purple
+
+  -- Pinks
+  pink = "#E85B7A",
+  dark_pink = "#E44675",
+  baby_pink = "#D16366", -- light_red
+
+  -- UI colors
+  line = "#EDEEF0",          -- float color for splits
+  statusline_bg = "#F7F8FA", -- bg
+  lightbg = "#EAEBED",       -- highlight
+  pmenu_bg = "#3879C5",      -- blue
+  folder_bg = "#3879C5",     -- blue
+
+  -- Derived colors
+  vibrant_green = "#48A53D",
+  sun = "#BA793E",
+  dark_purple = "#9665AF",
+
+  -- Base16 mapping for onenord light
+  base00 = "#F7F8FA", -- bg
+  base01 = "#EFF0F2", -- active
+  base02 = "#EAEBED", -- highlight
+  base03 = "#DFE1E4", -- highlight_dark
+  base04 = "#DCDEE1", -- selection
+  base05 = "#2E3440", -- fg
+  base06 = "#4C566A", -- fg_light
+  base07 = "#1D2128", -- dark text
+  base08 = "#CB4F53", -- red - variables/identifiers
+  base09 = "#EE5E25", -- orange - constants/numbers
+  base0A = "#BA793E", -- yellow - types
+  base0B = "#48A53D", -- green - strings
+  base0C = "#3EA1AD", -- cyan - support/regex
+  base0D = "#3879C5", -- blue - functions
+  base0E = "#9F4ACA", -- purple - keywords
+  base0F = "#C53B40", -- dark_red - special
 }
 
-require("xaaha.core.colorscheme").setup_light(colors)
+-- Override highlights to match original onenord.nvim behavior
+M.highlights = {
+  -- Functions use blue
+  Function = { fg = M.colors.nord_blue },
+  ["@function"] = { fg = M.colors.nord_blue },
+  ["@function.builtin"] = { fg = M.colors.nord_blue },
+  ["@function.call"] = { fg = M.colors.nord_blue },
+  ["@method"] = { fg = M.colors.nord_blue },
+  ["@method.call"] = { fg = M.colors.nord_blue },
+
+  -- Keywords use purple
+  Keyword = { fg = M.colors.purple },
+  Statement = { fg = M.colors.purple },
+  Conditional = { fg = M.colors.purple },
+  Repeat = { fg = M.colors.purple },
+  ["@keyword"] = { fg = M.colors.purple },
+  ["@keyword.function"] = { fg = M.colors.purple },
+  ["@keyword.return"] = { fg = M.colors.purple },
+  ["@conditional"] = { fg = M.colors.purple },
+  ["@repeat"] = { fg = M.colors.purple },
+
+  -- Types use yellow
+  Type = { fg = M.colors.yellow },
+  ["@type"] = { fg = M.colors.yellow },
+  ["@type.builtin"] = { fg = M.colors.yellow },
+
+  -- Variables use fg
+  ["@variable"] = { fg = M.colors.white },
+  ["@variable.builtin"] = { fg = M.colors.cyan },
+
+  -- Parameters use red
+  ["@parameter"] = { fg = M.colors.red },
+  ["@variable.parameter"] = { fg = M.colors.red },
+
+  -- Numbers use orange
+  Number = { fg = M.colors.orange },
+  Float = { fg = M.colors.orange },
+  ["@number"] = { fg = M.colors.orange },
+  ["@float"] = { fg = M.colors.orange },
+
+  -- Comments use light_gray
+  Comment = { fg = M.colors.grey_fg2, italic = true },
+  ["@comment"] = { fg = M.colors.grey_fg2, italic = true },
+}
+
+require("xaaha.core.colorscheme").setup_light(M.colors, M.highlights)
