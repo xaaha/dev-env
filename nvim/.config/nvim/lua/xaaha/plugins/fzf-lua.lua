@@ -43,6 +43,9 @@ return {
         rg_glob = true,
       },
       files = {
+        winopts    = {
+          preview = { hidden = true },
+        },
         cwd_prompt = false,
         prompt     = 'Files❯ ',
         fd_opts    =
