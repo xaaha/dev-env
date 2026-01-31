@@ -7,6 +7,16 @@ return {
       defaults = {
         multiline = 1,
       },
+      winopts = {
+        height = 0.95,
+        width = 0.55,
+        preview = {
+          hidden = false,
+          scrollbar = false,
+          layout = 'vertical',
+          vertical = 'up:50%',
+        },
+      },
       keymap = {
         fzf = {
           ["ctrl-q"] = "select-all+accept",
