@@ -2,85 +2,85 @@ local M = {}
 
 -- https://github.com/AlexvZyl/nordic.nvim
 M.colors = {
-  -- Backgrounds
-  black = "#191D24",
-  darker_black = "#1E222A",
-  black2 = "#222630",
-  one_bg = "#242933",
-  one_bg2 = "#2E3440",
-  one_bg3 = "#3B4252",
+  -- Backgrounds (darker)
+  black = "#14181E",
+  darker_black = "#191D24",
+  black2 = "#1D212A",
+  one_bg = "#1F242D",
+  one_bg2 = "#29303B",
+  one_bg3 = "#363D4D",
   -- Greys
-  grey = "#3B4252",
-  grey_fg = "#60728A",
-  grey_fg2 = "#4C566A",
-  light_grey = "#60728A",
-  -- Foregrounds
-  white = "#BBC3D4",
-  darker_white = "#D8DEE9",
-  bright_white = "#ECEFF4",
-  -- Blues
-  blue = "#81A1C1",
-  blue0 = "#5E81AC",
-  blue2 = "#88C0D0",
-  nord_blue = "#81A1C1",
-  -- Cyans
-  cyan = "#8FBCBB",
-  cyan_bright = "#9FC6C5",
-  teal = "#8FBCBB",
-  -- Reds
-  red = "#BF616A",
-  red_bright = "#C5727A",
+  grey = "#363D4D",
+  grey_fg = "#6A7C95",
+  grey_fg2 = "#526078",
+  light_grey = "#6A7C95",
+  -- Foregrounds (brighter for contrast)
+  white = "#C4CCD8",
+  darker_white = "#DCE2ED",
+  bright_white = "#F0F3F8",
+  -- Blues (more saturated)
+  blue = "#7BA5C8",
+  blue0 = "#5A85B8",
+  blue2 = "#80C5D8",
+  nord_blue = "#7BA5C8",
+  -- Cyans (more saturated)
+  cyan = "#88C0C0",
+  cyan_bright = "#98CACA",
+  teal = "#88C0C0",
+  -- Reds (more vivid)
+  red = "#C55B65",
+  red_bright = "#D06A74",
   dark_red = "#B74E58",
-  -- Oranges
-  orange = "#D08770",
-  orange_bright = "#D79784",
-  -- Yellows
-  yellow = "#EBCB8B",
-  yellow_bright = "#EFD49F",
-  sun = "#EFD49F",
-  -- Greens
-  green = "#A3BE8C",
-  green_bright = "#B1C89D",
-  vibrant_green = "#B1C89D",
-  -- Purples
-  purple = "#B48EAD",
-  purple_bright = "#BE9DB8",
-  dark_purple = "#A97EA1",
+  -- Oranges (more vivid)
+  orange = "#D68268",
+  orange_bright = "#E0927A",
+  -- Yellows (more vivid)
+  yellow = "#F0C880",
+  yellow_bright = "#F5D494",
+  sun = "#F5D494",
+  -- Greens (more saturated)
+  green = "#9DC285",
+  green_bright = "#ABCC96",
+  vibrant_green = "#ABCC96",
+  -- Purples (more saturated)
+  purple = "#BB8AB0",
+  purple_bright = "#C89ABD",
+  dark_purple = "#AD7AA5",
   -- Pinks
-  pink = "#B48EAD",
-  baby_pink = "#BE9DB8",
+  pink = "#BB8AB0",
+  baby_pink = "#C89ABD",
   -- UI
-  line = "#242933",
-  statusline_bg = "#1E222A",
-  lightbg = "#242933",
-  pmenu_bg = "#81A1C1",
-  folder_bg = "#81A1C1",
+  line = "#1F242D",
+  statusline_bg = "#191D24",
+  lightbg = "#1F242D",
+  pmenu_bg = "#7BA5C8",
+  folder_bg = "#7BA5C8",
   -- Diagnostics
-  error = "#BF616A",
-  warn = "#EBCB8B",
-  hint = "#B48EAD",
-  info = "#88C0D0",
+  error = "#C55B65",
+  warn = "#F0C880",
+  hint = "#BB8AB0",
+  info = "#80C5D8",
   -- Git
-  git_add = "#A3BE8C",
-  git_change = "#EBCB8B",
-  git_delete = "#BF616A",
-  -- Base16
-  base00 = "#191D24",
-  base01 = "#242933",
-  base02 = "#2E3440",
-  base03 = "#3B4252",
-  base04 = "#4C566A",
-  base05 = "#BBC3D4",
-  base06 = "#D8DEE9",
-  base07 = "#ECEFF4",
-  base08 = "#BF616A",
-  base09 = "#D08770",
-  base0A = "#EBCB8B",
-  base0B = "#A3BE8C",
-  base0C = "#8FBCBB",
-  base0D = "#88C0D0",
-  base0E = "#B48EAD",
-  base0F = "#5E81AC",
+  git_add = "#9DC285",
+  git_change = "#F0C880",
+  git_delete = "#C55B65",
+  -- Base16 (updated to match)
+  base00 = "#14181E",
+  base01 = "#1F242D",
+  base02 = "#29303B",
+  base03 = "#363D4D",
+  base04 = "#526078",
+  base05 = "#C4CCD8",
+  base06 = "#DCE2ED",
+  base07 = "#F0F3F8",
+  base08 = "#C55B65",
+  base09 = "#D68268",
+  base0A = "#F0C880",
+  base0B = "#9DC285",
+  base0C = "#88C0C0",
+  base0D = "#80C5D8",
+  base0E = "#BB8AB0",
+  base0F = "#5A85B8",
 }
 
 M.highlights = {
