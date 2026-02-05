@@ -33,6 +33,9 @@
 ## push theme folder but ignore custom file
 ghostty/.config/ghostty/custom/config
 
+!opencode/
+!opencode/**
+
 # zsh config
 !zsh
 !zsh/.zshrc
