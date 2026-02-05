@@ -17,7 +17,10 @@
     },
     "aws-docs": {
       "type": "local",
-      "command": ["uvx", "awslabs.aws-documentation-mcp-server@latest"],
+      "command": [
+        "uvx",
+        "awslabs.aws-documentation-mcp-server@latest"
+      ],
       "enabled": true,
       "environment": {
         "FASTMCP_LOG_LEVEL": "ERROR",
@@ -27,7 +30,10 @@
     },
     "playwright": {
       "type": "local",
-      "command": ["npx", "@playwright/mcp@latest"],
+      "command": [
+        "npx",
+        "@playwright/mcp@latest"
+      ],
       "enabled": true
     }
   },
@@ -36,5 +42,8 @@
     "atlassian*": true,
     "aws-docs*": true,
     "playwright*": true
-  }
+  },
+  "plugin": [
+    "oh-my-opencode@latest"
+  ]
 }
