@@ -6,6 +6,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_ENV_HINTS=1
+export GITHUB_TOKEN=$(gh auth token)
 
 # --- PATH SETUP ---
 
