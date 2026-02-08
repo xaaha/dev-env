@@ -4,7 +4,7 @@ local M = {}
 -- Colors sourced from official github-nvim-theme github_dark_dimmed palette
 M.colors = {
   -- Backgrounds (canvas)
-  black = "#22272e",        -- canvas.default
+  black = "#212830",        -- canvas.default
   darker_black = "#1c2128", -- canvas.inset
   black2 = "#2d333b",       -- canvas.overlay/subtle
   one_bg = "#373e47",       -- border.muted / scale.gray[7]
