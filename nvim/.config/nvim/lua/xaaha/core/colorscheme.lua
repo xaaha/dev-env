@@ -245,6 +245,44 @@ local function apply(colors, bg, overwriteHighlights, colorscheme_name)
       ["@text.diff.add"] = { fg = colors.green },
       ["@text.diff.delete"] = { fg = colors.red },
 
+      -- Markup (Neovim 0.10+ treesitter captures for markdown, etc.)
+      ["@markup.heading"] = { fg = colors.base0D, bold = true },
+      ["@markup.heading.1"] = { fg = colors.red, bold = true },
+      ["@markup.heading.1.markdown"] = { fg = colors.red, bold = true },
+      ["@markup.heading.2"] = { fg = colors.orange, bold = true },
+      ["@markup.heading.2.markdown"] = { fg = colors.orange, bold = true },
+      ["@markup.heading.3"] = { fg = colors.yellow, bold = true },
+      ["@markup.heading.3.markdown"] = { fg = colors.yellow, bold = true },
+      ["@markup.heading.4"] = { fg = colors.green, bold = true },
+      ["@markup.heading.4.markdown"] = { fg = colors.green, bold = true },
+      ["@markup.heading.5"] = { fg = colors.cyan, bold = true },
+      ["@markup.heading.5.markdown"] = { fg = colors.cyan, bold = true },
+      ["@markup.heading.6"] = { fg = colors.purple, bold = true },
+      ["@markup.heading.6.markdown"] = { fg = colors.purple, bold = true },
+
+      ["@markup.strong"] = { bold = true },
+      ["@markup.italic"] = { italic = true },
+      ["@markup.underline"] = { underline = true },
+      ["@markup.strikethrough"] = { strikethrough = true },
+
+      ["@markup.quote"] = { fg = colors.grey_fg2, italic = true },
+      ["@markup.quote.markdown"] = { fg = colors.grey_fg2, italic = true },
+      ["@markup.math"] = { fg = colors.base0C },
+      ["@markup.environment"] = { fg = colors.base0D },
+      ["@markup.environment.name"] = { fg = colors.base0A },
+
+      ["@markup.link"] = { fg = colors.base0C },
+      ["@markup.link.label"] = { fg = colors.base0C, underline = true },
+      ["@markup.link.url"] = { fg = colors.base0C, underline = true },
+
+      ["@markup.raw"] = { fg = colors.green },
+      ["@markup.raw.block"] = { fg = colors.green },
+      ["@markup.raw.markdown_inline"] = { fg = colors.green },
+
+      ["@markup.list"] = { fg = colors.base0D },
+      ["@markup.list.checked"] = { fg = colors.green },
+      ["@markup.list.unchecked"] = { fg = colors.grey_fg },
+
       ["@namespace"] = { fg = colors.base08 },
       ["@operator"] = { fg = colors.base05 },
 
