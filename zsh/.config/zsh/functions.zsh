@@ -5,6 +5,12 @@ function vo() {
   nvim "$file"
 }
 
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  icloud() {
+    cd ~/Library/Mobile\ Documents/com~apple~CloudDocs
+  }
+fi
+
 # enter a dir in nvim
 function ve() {
   nvim --cmd "cd $(fd -t d | fzf)" -c "Oil"

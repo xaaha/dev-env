@@ -1,8 +1,45 @@
+[env]
+SHELL_SESSIONS_DISABLE = "1"
+EDITOR = "nvim"
+VISUAL = "nvim"
+HOMEBREW_NO_ANALYTICS = "1"
+HOMEBREW_NO_ENV_HINTS = "1"
+
 [tools]
 go = "latest"
 node = "latest"
 python = "latest"
 ruby = "3.3.0"
+zoxide = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby", "go", "node", "yarn", "terraform"]
+
+[shell_alias]
+j = "z"
+
+# directories
+dl = "cd ~/Downloads"
+dt = "cd ~/Desktop"
+dc = "cd ~/Documents"
+
+# tools
+cat = "bat"
+g = "lazygit"
+grep = "grep --color=auto"
+pip = "pip3"
+v = "nvim"
+
+# confirm before overwriting
+cp = "cp -i"
+mv = "mv -i"
+rm = "rm -i"
+
+# tmux
+t = "tmux"
+ts = "tmux ls"
+tn = "tmux new -s"
+ta = "tmux a"
+tat = "tmux a -t"
+
+fzf = "fzf --height=40% --layout=reverse --border"

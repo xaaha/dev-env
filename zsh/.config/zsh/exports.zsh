@@ -1,11 +1,5 @@
 #!/usr/bin/env zsh
 
-# General exports
-export SHELL_SESSIONS_DISABLE=1
-export EDITOR="nvim"
-export VISUAL="nvim"
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_ENV_HINTS=1
 export GITHUB_TOKEN=$(gh auth token)
 
 # --- PATH SETUP ---
@@ -35,16 +29,7 @@ case "$(uname -s)" in
     ;;
 esac
 
-# --- Lazy evals ---
-# Defer these heavy ones until needed
-function _init_mise() {
-  unfunction _init_mise
-  eval "$(mise activate zsh)"
-}
-function _init_jump() {
-  unfunction _init_jump
-  eval "$(jump shell)"
-}
+eval "$(mise activate zsh)"
 function _init_zoxide() {
   unfunction _init_zoxide
   eval "$(zoxide init zsh)"
@@ -53,8 +38,6 @@ function _init_zoxide() {
 # Auto-load them on demand (when you first use these commands)
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd _init_zoxide
-add-zsh-hook precmd _init_jump
-add-zsh-hook precmd _init_mise
 
 # --- FZF setup ---
 # Only source fzf if it exists
