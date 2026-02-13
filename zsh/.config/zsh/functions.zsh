@@ -198,3 +198,37 @@ function y() {
   [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
   rm -f -- "$tmp"
 }
+
+# Genesis Login
+function loginGene() {
+  if [ -z "$1" ]; then
+    echo "Usage: loginGene <profile>"
+    echo "Example: loginGene dev"
+    return 1
+  fi
+
+  local profile="guild-$1"
+  local repo_root
+  repo_root=$(git rev-parse --show-toplevel) # Get repo root directory
+
+  # Check if node_modules exists, if not, install dependencies first
+  if [ ! -d "$repo_root/node_modules" ]; then
+    echo "node_modules not found. Running yarn install..."
+    yarn install
+    if [ $? -ne 0 ]; then
+      echo "Yarn install failed! Exiting..."
+      return 1
+    fi
+  fi
+
+  echo "Logging into AWS SSO with profile: $profile..."
+
+  aws sso login --profile "$profile"
+  if [ $? -eq 0 ]; then
+    echo "✅ AWS Login successful, running Yarn login command..."
+    yarn dev:aws:login
+  else
+    echo "❌ AWS Login failed!"
+    return 1
+  fi
+}
