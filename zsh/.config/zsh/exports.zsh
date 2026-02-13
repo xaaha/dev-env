@@ -8,25 +8,19 @@ export GITHUB_TOKEN=$(gh auth token)
 export GOPATH="$HOME/go"
 path=("$GOPATH/bin" $path)
 
-# Bun
-export BUN_INSTALL="$HOME/.bun"
-path=("$BUN_INSTALL/bin" $path)
-# Lazy-load Bun completions
-[[ -s "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun" &!
-
-# pnpm
-export PNPM_HOME="$HOME/Library/pnpm"
-path=("$PNPM_HOME" $path)
+# # pnpm
+# export PNPM_HOME="$HOME/Library/pnpm"
+# path=("$PNPM_HOME" $path)
 
 # Docker init (optional)
 [[ -f "$HOME/.docker/init-zsh.sh" ]] && source "$HOME/.docker/init-zsh.sh"
 
 # --- Conditional platform exports ---
 case "$(uname -s)" in
-  Darwin)
-    export DYLD_LIBRARY_PATH=/opt/homebrew/lib/
-    export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
-    ;;
+Darwin)
+  export DYLD_LIBRARY_PATH=/opt/homebrew/lib/
+  export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
+  ;;
 esac
 
 eval "$(mise activate zsh)"
