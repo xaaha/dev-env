@@ -14,6 +14,7 @@ keymap.set("v", "p", '"_dP', { desc = "Don't override yank on visual mode" })
 keymap.set("n", "dd", '"_dd', { desc = "Delete a line without overriding the yank register" })
 keymap.set("n", "ycc", "yygccp", { remap = true }) -- copy and comment out the first line and paste
 keymap.set("x", "/", "<Esc>/\\%V")                 -- search within visual selection
+keymap.set("x", "<leader>r", "<Esc>:'<,'>s/\\%V", { noremap = true })
 
 -- Scroll
 keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll up and center screen" })
