@@ -15,7 +15,7 @@ keymap.set("n", "dd", '"_dd', { desc = "Delete a line without overriding the yan
 keymap.set("n", "ycc", "yygccp", { remap = true }) -- copy and comment out the first line and paste
 keymap.set("x", "/", "<Esc>/\\%V")                 -- search within visual selection
 keymap.set("x", "<leader>r", "<Esc>:'<,'>s/\\%V", { noremap = true })
-keymap.set("i", "<leader>`", function() return "```\n\n```<Up>" end, { expr = true })
+keymap.set("i", "<leader>cb", function() return "```\n\n```<Up>" end, { expr = true })
 
 -- Scroll
 keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll up and center screen" })
