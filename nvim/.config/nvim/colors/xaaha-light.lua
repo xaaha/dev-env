@@ -1,60 +1,96 @@
 local M = {}
 
--- xaaha-light: Minimal colorscheme with neutral greys and teal-amber accents
-M.colors = {
-  -- Backgrounds
-  black = "#F0F5FC",
-  darker_black = "#F7FAFF",
-  black2 = "#E7EDF5",
-  one_bg = "#E2E9F2",
-  one_bg2 = "#DCE3ED",
-  one_bg3 = "#D5DCE6",
+-- true color palette for campfire light
+local campfire = {
+  -- Backgrounds (light tones)
+  morning = "#F7FAFF",
+  daylight = "#F0F5FC",
+  haze = "#E7EDF5",
+  mist = "#E2E9F2",
+  cloud = "#DCE3ED",
+  overcast = "#D5DCE6",
+  fog = "#DEE5EE",
   -- Greys
-  grey = "#A7B0BD",
-  grey_fg = "#8B94A0",
-  grey_fg2 = "#6A7684",
-  light_grey = "#596674",
-  -- Foregrounds
-  white = "#192330",
-  -- Accents
-  red = "#C73238",
-  orange = "#945C14",
-  yellow = "#A46707",
+  pebble = "#A7B0BD",
+  stone = "#8B94A0",
+  flint = "#6A7684",
+  slate = "#596674",
+  -- Foregrounds (dark tones)
+  dusk = "#364458",
+  midnight = "#192330",
+  deep_night = "#101924",
+  pitch = "#0B1219",
+  -- Warm accents
+  ember = "#C73238",
+  amber = "#945C14",
+  dark_amber = "#9C5F10",
+  gold = "#A46707",
   sun = "#B06C00",
-  green = "#945C14",
-  vibrant_green = "#9C5F10",
+  rose = "#C04A62",
+  -- Cool accents
   teal = "#0D6E7B",
   cyan = "#0F7C8A",
   blue = "#2468A5",
-  nord_blue = "#2468A5",
-  purple = "#7F478F",
-  magenta = "#7F478F",
-  dark_purple = "#6A3977",
-  pink = "#C04A62",
-  baby_pink = "#C04A62",
+  -- Purples
+  lavender = "#7F478F",
+  plum = "#6A3977",
+}
+
+-- xaaha-light: Minimal colorscheme with neutral greys and teal-amber accents
+M.colors = {
+  -- Backgrounds
+  black = campfire.daylight,
+  darker_black = campfire.morning,
+  black2 = campfire.haze,
+  one_bg = campfire.mist,
+  one_bg2 = campfire.cloud,
+  one_bg3 = campfire.overcast,
+  -- Greys
+  grey = campfire.pebble,
+  grey_fg = campfire.stone,
+  grey_fg2 = campfire.flint,
+  light_grey = campfire.slate,
+  -- Foregrounds
+  white = campfire.midnight,
+  -- Accents
+  red = campfire.ember,
+  orange = campfire.amber,
+  yellow = campfire.gold,
+  sun = campfire.sun,
+  green = campfire.amber,
+  vibrant_green = campfire.dark_amber,
+  teal = campfire.teal,
+  cyan = campfire.cyan,
+  blue = campfire.blue,
+  nord_blue = campfire.blue,
+  purple = campfire.lavender,
+  magenta = campfire.lavender,
+  dark_purple = campfire.plum,
+  pink = campfire.rose,
+  baby_pink = campfire.rose,
   -- UI
-  line = "#DCE3ED",
-  statusline_bg = "#E7EDF5",
-  lightbg = "#DEE5EE",
-  pmenu_bg = "#0F7C8A",
-  folder_bg = "#2468A5",
+  line = campfire.cloud,
+  statusline_bg = campfire.haze,
+  lightbg = campfire.fog,
+  pmenu_bg = campfire.cyan,
+  folder_bg = campfire.blue,
   -- Base16
-  base00 = "#F0F5FC",
-  base01 = "#E2E9F2",
-  base02 = "#DCE3ED",
-  base03 = "#8B94A0",
-  base04 = "#6A7684",
-  base05 = "#192330",
-  base06 = "#101924",
-  base07 = "#0B1219",
-  base08 = "#364458",
-  base09 = "#192330",
-  base0A = "#2468A5",
-  base0B = "#945C14",
-  base0C = "#0F7C8A",
-  base0D = "#0F7C8A",
-  base0E = "#192330",
-  base0F = "#596674",
+  base00 = campfire.daylight,
+  base01 = campfire.mist,
+  base02 = campfire.cloud,
+  base03 = campfire.stone,
+  base04 = campfire.flint,
+  base05 = campfire.midnight,
+  base06 = campfire.deep_night,
+  base07 = campfire.pitch,
+  base08 = campfire.dusk,
+  base09 = campfire.midnight,
+  base0A = campfire.blue,
+  base0B = campfire.amber,
+  base0C = campfire.cyan,
+  base0D = campfire.cyan,
+  base0E = campfire.midnight,
+  base0F = campfire.slate,
 }
 
 M.highlights = {
