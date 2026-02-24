@@ -19,6 +19,7 @@ idiomatic_version_file_enable_tools = ["ruby", "go", "node", "yarn", "terraform"
 
 [shell_alias]
 j = "z"
+h = "hulak"
 
 # directories
 dl = "cd ~/Downloads"
