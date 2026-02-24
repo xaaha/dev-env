@@ -16,34 +16,6 @@ function ve() {
   nvim --cmd "cd $(fd -t d | fzf)" -c "Oil"
 }
 
-function hg() {
-  # call hulak with global
-  local file
-  file=$(fd -e yml -e yaml | fzf) || return 1
-  hulak -fp "$file"
-}
-
-function hs() {
-  # call hulak with stagin
-  local file
-  file=$(fd -e yml -e yaml | fzf) || return 1
-  hulak -env staging -fp "$file"
-}
-
-function hp() {
-  # call hulak with prod file
-  local file
-  file=$(fd -e yml -e yaml | fzf) || return 1
-  hulak -env prod -fp "$file"
-}
-
-function hr() {
-  # call hulak with prod file
-  local file
-  file=$(fd -e yml -e yaml | fzf) || return 1
-  hulak -env pr -fp "$file"
-}
-
 # for new and temp dir when jump is not useful
 function cdh() {
   # Use fd to search for directories up to a maximum depth of 1,
