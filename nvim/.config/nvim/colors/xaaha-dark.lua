@@ -128,8 +128,8 @@ M.highlights = {
   ["@method.call"] = { fg = M.colors.cyan },
   Function = { fg = M.colors.cyan },
   -- Strings
-  ["@string"] = { fg = M.colors.green },
-  String = { fg = M.colors.green },
+  ["@string"] = { fg = campfire.amber },
+  String = { fg = campfire.amber },
   -- Numbers/Constants
   ["@number"] = { fg = M.colors.base05 },
   ["@float"] = { fg = M.colors.base05 },
