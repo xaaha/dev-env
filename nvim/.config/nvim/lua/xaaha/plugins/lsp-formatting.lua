@@ -22,6 +22,7 @@ return {
         python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
         go = { "gofumpt", "golines", "goimports" },
         sql = { "sqruff" },
+        toml = { "tombi" },
         ruby = { "rubocop" }
       },
       format_on_save = {
