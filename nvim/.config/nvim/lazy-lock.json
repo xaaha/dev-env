@@ -7,7 +7,7 @@
   "gitsigns.nvim": { "branch": "main", "commit": "9f3c6dd7868bcc116e9c1c1929ce063b978fa519" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
   "nvim-lint": { "branch": "master", "commit": "606b823a57b027502a9ae00978ebf4f5d5158098" },
-  "nvim-lspconfig": { "branch": "master", "commit": "f2193125da0bff2e4eae8e0a45e343ec9bca4c72" },
+  "nvim-lspconfig": { "branch": "master", "commit": "ead0f5f342d8d323441e7d4b88f0fc436a81ad5f" },
   "nvim-treesitter": { "branch": "main", "commit": "ae2081cfcd3719d74b600f8377e4a99d1ec19c4a" },
   "nvim-treesitter-context": { "branch": "master", "commit": "64dd4cf3f6fd0ab17622c5ce15c91fc539c3f24a" },
   "nvim-web-devicons": { "branch": "master", "commit": "737cf6c657898d0c697311d79d361288a1343d50" },
