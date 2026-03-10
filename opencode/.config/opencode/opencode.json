@@ -15,12 +15,14 @@
       "url": "https://mcp.atlassian.com/v1/sse",
       "enabled": true
     },
+    "glean": {
+      "type": "remote",
+      "url": "https://guild-be.glean.com/mcp/default",
+      "enabled": true
+    },
     "aws-docs": {
       "type": "local",
-      "command": [
-        "uvx",
-        "awslabs.aws-documentation-mcp-server@latest"
-      ],
+      "command": ["uvx", "awslabs.aws-documentation-mcp-server@latest"],
       "enabled": true,
       "environment": {
         "FASTMCP_LOG_LEVEL": "ERROR",
@@ -30,10 +32,7 @@
     },
     "playwright": {
       "type": "local",
-      "command": [
-        "npx",
-        "@playwright/mcp@latest"
-      ],
+      "command": ["npx", "@playwright/mcp@latest"],
       "enabled": true
     }
   },
@@ -43,7 +42,5 @@
     "aws-docs*": true,
     "playwright*": true
   },
-  "plugin": [
-    "oh-my-opencode@latest"
-  ]
+  "plugin": ["oh-my-opencode@latest"]
 }
