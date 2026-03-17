@@ -2,43 +2,50 @@ local M = {}
 
 -- true color palette for campfire
 local campfire = {
-  -- Backgrounds
-  night = "#0D1117",
-  coal = "#151B23",
-  charcoal = "#1A2129",
-  dark_ash = "#1C2329",
-  ash = "#212931",
-  light_ash = "#252B33",
-  -- UI tones
-  deep_smoke = "#1A2028",
-  smoke = "#202830",
-  light_smoke = "#252D35",
-  -- Greys
-  slate = "#5A6474",
-  stone = "#7A8997",
-  light_stone = "#8A98A8",
-  silver = "#98A4B6",
-  -- Foregrounds
-  pale = "#C5D0E0",
-  frost = "#E5EDFA",
-  ice = "#EDF3FF",
-  snow = "#F5FAFF",
-  -- Warm accents
-  flame = "#E96468",
-  amber = "#E4B46D",
-  vibrant_amber = "#F0C878",
-  gold = "#F2BF69",
-  sun = "#FFCD7C",
-  rose = "#F0A7B1",
-  -- Cool accents
-  teal = "#69B2B7",
-  cyan = "#75BEC4",
-  blue = "#75A9E0",
-  -- Purples
-  lavender = "#BF97BB",
-  plum = "#AD86A9",
-  -- Green
-  green = "#A8E4AC",
+  -- Backgrounds (closer to Ghostty base ramp)
+  night = "#0F141B",
+  coal = "#151B23", -- matches Ghostty background
+  charcoal = "#1B2430",
+  dark_ash = "#202A36",
+  ash = "#26313D",
+  light_ash = "#2B3542", -- matches selection bg feel
+
+  -- UI tones (cleaner separation)
+  deep_smoke = "#1B2530",
+  smoke = "#212C38",
+  light_smoke = "#283340",
+
+  -- Greys (more blue, less muddy)
+  slate = "#6C7688", -- matches palette[8]
+  stone = "#8A96A8",
+  light_stone = "#A2ADBD",
+  silver = "#B8C2D3",
+
+  -- Foregrounds (Ghostty-aligned ramp)
+  pale = "#D5DEEC", -- palette[7]
+  frost = "#E6EDF7",
+  ice = "#EEF4FF",
+  snow = "#F3F7FF", -- foreground
+
+  -- Warm accents (shifted toward Ghostty hues)
+  flame = "#FF6570",         -- palette[1]
+  amber = "#F8C278",         -- palette[3]
+  vibrant_amber = "#FFD08A", -- palette[11]
+  gold = "#F8C278",
+  sun = "#FFD08A",
+  rose = "#FF7E87", -- palette[9]
+
+  -- Cool accents (more vibrant + clean)
+  teal = "#7AD9DF", -- palette[6]
+  cyan = "#94E5EA", -- palette[14]
+  blue = "#78B4FF", -- palette[4]
+
+  -- Purples (aligned to Ghostty)
+  lavender = "#D0A4F5", -- palette[5]
+  plum = "#DEB8FA",     -- palette[13]
+
+  -- Green (brighter + fresher)
+  green = "#BFF38F", -- palette[2]
 }
 
 -- xaaha: Minimal colorscheme with neutral greys and teal-amber accents
@@ -106,12 +113,12 @@ M.highlights = {
   ["@variable.parameter"] = { fg = M.colors.base08 },
   ["@parameter"] = { fg = M.colors.base08 },
   -- Keywords
-  ["@keyword"] = { fg = campfire.vibrant_amber, italic = true, bold = true },
-  ["@keyword.function"] = { fg = campfire.vibrant_amber, italic = true, bold = true },
-  ["@keyword.return"] = { fg = campfire.vibrant_amber, italic = true, bold = true },
-  ["@keyword.operator"] = { fg = campfire.vibrant_amber, italic = true, bold = true },
-  ["@keyword.coroutine"] = { fg = campfire.vibrant_amber, italic = true, bold = true },
-  Keyword = { fg = campfire.vibrant_amber, italic = true, bold = true },
+  ["@keyword"] = { fg = campfire.snow, italic = true },
+  ["@keyword.function"] = { fg = campfire.snow, italic = true },
+  ["@keyword.return"] = { fg = campfire.snow, italic = true },
+  ["@keyword.operator"] = { fg = campfire.snow, italic = true },
+  ["@keyword.coroutine"] = { fg = campfire.snow, italic = true },
+  Keyword = { fg = campfire.snow, italic = true },
   Statement = { fg = campfire.vibrant_amber, italic = true, bold = true },
   Conditional = { fg = campfire.vibrant_amber, italic = true, bold = true },
   Repeat = { fg = campfire.vibrant_amber, italic = true, bold = true },
