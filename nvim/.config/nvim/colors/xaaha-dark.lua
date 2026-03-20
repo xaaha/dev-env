@@ -113,12 +113,12 @@ M.highlights = {
   ["@variable.parameter"] = { fg = M.colors.base08 },
   ["@parameter"] = { fg = M.colors.base08 },
   -- Keywords
-  ["@keyword"] = { fg = campfire.snow, italic = true },
-  ["@keyword.function"] = { fg = campfire.snow, italic = true },
-  ["@keyword.return"] = { fg = campfire.snow, italic = true },
-  ["@keyword.operator"] = { fg = campfire.snow, italic = true },
-  ["@keyword.coroutine"] = { fg = campfire.snow, italic = true },
-  Keyword = { fg = campfire.snow, italic = true },
+  ["@keyword"] = { fg = campfire.lavender, italic = true },
+  ["@keyword.function"] = { fg = campfire.lavender, italic = true },
+  ["@keyword.return"] = { fg = campfire.lavender, italic = true },
+  ["@keyword.operator"] = { fg = campfire.lavender, italic = true },
+  ["@keyword.coroutine"] = { fg = campfire.lavender, italic = true },
+  Keyword = { fg = campfire.lavender, italic = true },
   Statement = { fg = campfire.vibrant_amber, italic = true, bold = true },
   Conditional = { fg = campfire.vibrant_amber, italic = true, bold = true },
   Repeat = { fg = campfire.vibrant_amber, italic = true, bold = true },
@@ -153,6 +153,7 @@ M.highlights = {
   -- Punctuation
   ["@punctuation.bracket"] = { fg = M.colors.base0F },
   ["@punctuation.delimiter"] = { fg = M.colors.base0F },
+  ["@exception"] = { fg = campfire.plum },
   -- Diff
   DiffAdd = { fg = M.colors.base0A },
   GitSignsAdd = { fg = M.colors.base0A },
