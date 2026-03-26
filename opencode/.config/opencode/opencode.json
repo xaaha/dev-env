@@ -42,5 +42,5 @@
     "aws-docs*": true,
     "playwright*": true
   },
-  "plugin": ["oh-my-opencode@latest"]
+  "plugin": ["oh-my-opencode@latest", "@ex-machina/opencode-anthropic-auth"]
 }
