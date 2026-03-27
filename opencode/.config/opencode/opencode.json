@@ -34,6 +34,11 @@
       "type": "local",
       "command": ["npx", "@playwright/mcp@latest"],
       "enabled": true
+    },
+    "datadog": {
+      "type": "remote",
+      "url": "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp",
+      "enabled": true
     }
   },
   "tools": {
