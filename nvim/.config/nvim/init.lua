@@ -1,2 +1,2 @@
-require("xaaha.core")
 require("xaaha.lazy")
+require("xaaha.core")
