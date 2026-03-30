@@ -144,4 +144,4 @@ M.highlights = {
   ["@module"] = { fg = M.colors.blue1 },
 }
 
-require("xaaha.core.colorscheme").setup_dark(M.colors, M.highlights)
+require("core.colorscheme").setup_dark(M.colors, M.highlights)

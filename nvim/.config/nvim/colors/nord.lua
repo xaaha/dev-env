@@ -148,4 +148,4 @@ M.highlights = {
   ["@text.title"] = { fg = M.colors.nord_blue, bold = true },
 }
 
-require("xaaha.core.colorscheme").setup_dark(M.colors, M.highlights)
+require("core.colorscheme").setup_dark(M.colors, M.highlights)

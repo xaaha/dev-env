@@ -368,6 +368,5 @@ require 'treesitter-context'.setup({
   multiwindow = true,
 })
 
-
 --- Load finally
-require("xaaha.core")
+require("core")

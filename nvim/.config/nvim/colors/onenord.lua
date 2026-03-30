@@ -102,4 +102,4 @@ M.highlights = {
   ["@comment"] = { fg = M.colors.grey_fg2, italic = true },
 }
 
-require("xaaha.core.colorscheme").setup_dark(M.colors, M.highlights)
+require("core.colorscheme").setup_dark(M.colors, M.highlights)

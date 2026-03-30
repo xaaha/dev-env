@@ -159,4 +159,4 @@ M.highlights = {
   GitSignsAdd = { fg = M.colors.base0A },
 }
 
-require("xaaha.core.colorscheme").setup_dark(M.colors, M.highlights)
+require("core.colorscheme").setup_dark(M.colors, M.highlights)

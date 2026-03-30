@@ -61,4 +61,4 @@ M.highlights = {
   ["@variable.member.key"] = { fg = M.colors.orange },
 }
 
-require("xaaha.core.colorscheme").setup_dark(M.colors, M.highlights)
+require("core.colorscheme").setup_dark(M.colors, M.highlights)
