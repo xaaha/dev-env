@@ -1,15 +1,11 @@
+--- config reference: https://echasnovski.com/blog/2026-03-13-a-guide-to-vim-pack#lazy-loading
 vim.g.mapleader = " "
-
-require("xaaha.lazy")
-require("xaaha.core")
-
--- TEMP: lazy.nvim resets packpath; restore it so vim.pack can work
-vim.opt.packpath:prepend(vim.fn.stdpath("data") .. "/site")
 
 vim.pack.add({
   --- Dependencies -------
   "https://github.com/b0o/schemastore.nvim",
   "https://github.com/nvim-tree/nvim-web-devicons",
+  "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/rafamadriz/friendly-snippets",
   --- plugins ----
   "https://github.com/ibhagwan/fzf-lua",                                               -- picker
@@ -20,9 +16,9 @@ vim.pack.add({
   { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.x") }, --completion
   "https://github.com/stevearc/conform.nvim",                                          -- formatting
   "https://github.com/mfussenegger/nvim-lint",                                         -- linting
-  "https://github.com/stevearc/oil.nvim",                                              -- linting
-  "https://github.com/hedyhli/outline.nvim",                                           -- linting
-  "https://github.com/nvim-treesitter/nvim-treesitter",                                -- linting
+  "https://github.com/stevearc/oil.nvim",
+  "https://github.com/hedyhli/outline.nvim",
+  "https://github.com/nvim-treesitter/nvim-treesitter-context", -- must come after treesitter
 }, { load = true })
 
 
@@ -31,6 +27,9 @@ local setKeyMap = vim.keymap.set
 ----- Markdown ------
 vim.cmd("RenderMarkdown toggle")
 vim.keymap.set("n", "<leader>tm", "<cmd>RenderMarkdown toggle<CR>", { desc = "Toggle RenderMarkdown" })
+
+--- Outline ----
+setKeyMap("n", "<leader>a", "<cmd>Outline<CR>", { desc = "Toggle outline/aerial view" })
 
 --- Fzf Lua ----
 require("fzf-lua").setup({
@@ -261,6 +260,97 @@ require("oil").setup({
 })
 setKeyMap("n", "<C-n>", "<cmd>Oil<cr>", { desc = "Open Oil" })
 
+----- Treesitter -----
+-- modified version of code from this config
+--https://github.com/fredrikaverpil/dotfiles/blob/main/nvim-fredrik/lua/fredrik/plugins/core/treesitter.lua
+local ts_ensure_installed = {
+  "astro",
+  "bash",
+  "c",
+  "css",
+  "diff",
+  "go",
+  "gomod",
+  "gowork",
+  "gosum",
+  "graphql",
+  "html",
+  "javascript",
+  "jsdoc",
+  "json",
+  "lua",
+  "luadoc",
+  "luap",
+  "markdown",
+  "markdown_inline",
+  "python",
+  "query",
+  "regex",
+  "toml",
+  "tsx",
+  "typescript",
+  "vim",
+  "vimdoc",
+  "yaml",
+  "ruby",
+}
 
---- Outline ----
-setKeyMap("n", "<leader>a", "<cmd>Outline<CR>", { desc = "Toggle outline/aerial view" })
+-- Install parsers and register them for filetypes
+require("nvim-treesitter").install(ts_ensure_installed)
+for _, parser in ipairs(ts_ensure_installed) do
+  vim.treesitter.language.register(parser, parser)
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = parser,
+    callback = function(event)
+      vim.treesitter.start(event.buf, parser)
+    end,
+  })
+end
+
+-- Auto-install and start parsers for any buffer not in the list above
+vim.api.nvim_create_autocmd("BufRead", {
+  callback = function(event)
+    local bufnr = event.buf
+    local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
+
+    if filetype == "" then
+      return
+    end
+
+    -- Skip if already handled by ts_ensure_installed
+    if vim.tbl_contains(ts_ensure_installed, filetype) then
+      return
+    end
+
+    local parser_name = vim.treesitter.language.get_lang(filetype)
+    if not parser_name then
+      return
+    end
+
+    local parser_configs = require("nvim-treesitter.parsers")
+    if not parser_configs[parser_name] then
+      return
+    end
+
+    local parser_installed = pcall(vim.treesitter.get_parser, bufnr, parser_name)
+
+    if not parser_installed then
+      require("nvim-treesitter").install({ parser_name }):wait(30000)
+    end
+
+    parser_installed = pcall(vim.treesitter.get_parser, bufnr, parser_name)
+
+    if parser_installed then
+      vim.treesitter.start(bufnr, parser_name)
+    end
+  end,
+})
+
+--- Treesitter Context -----
+require 'treesitter-context'.setup({
+  multiwindow = true,
+})
+
+
+--- Load finally
+require("xaaha.core")
