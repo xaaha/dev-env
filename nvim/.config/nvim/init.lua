@@ -35,6 +35,7 @@ require("outline").setup({
   }
 })
 setKeyMap("n", "<leader>a", "<cmd>Outline<CR>", { desc = "Toggle outline/aerial view" })
+
 --- Fzf Lua ----
 require("fzf-lua").setup({
   "fzf-vim", -- multiple profiles :FzfLua Profiles
@@ -127,6 +128,8 @@ setKeyMap(
   "<cmd>FzfLua diagnostics_workspace<CR>",
   { desc = "List Current Workspace diagnostics" }
 )
+
+require("fzf-lua").register_ui_select()
 
 ---- Gitsigns  -----
 require("gitsigns").setup({
