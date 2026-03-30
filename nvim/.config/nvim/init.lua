@@ -21,7 +21,6 @@ vim.pack.add({
   "https://github.com/nvim-treesitter/nvim-treesitter-context", -- must come after treesitter
 }, { load = true })
 
-
 local setKeyMap = vim.keymap.set
 
 ----- Markdown ------
