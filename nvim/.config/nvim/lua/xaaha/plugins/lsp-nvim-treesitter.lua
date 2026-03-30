@@ -2,7 +2,7 @@
 --https://github.com/fredrikaverpil/dotfiles/blob/main/nvim-fredrik/lua/fredrik/plugins/core/treesitter.lua
 return {
   {
-    "nvim-treesitter/nvim-treesitter",
+    "",
     lazy = false,
     event = "BufRead",
     branch = "main",
