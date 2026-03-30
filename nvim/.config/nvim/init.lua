@@ -8,14 +8,14 @@ vim.pack.add({
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/rafamadriz/friendly-snippets",
   --- plugins ----
-  "https://github.com/ibhagwan/fzf-lua",                                               -- picker
-  "https://github.com/MeanderingProgrammer/render-markdown.nvim",                      -- md
+  "https://github.com/ibhagwan/fzf-lua",                                -- picker
+  "https://github.com/MeanderingProgrammer/render-markdown.nvim",       -- md
   "https://github.com/neovim/nvim-lspconfig",
-  "https://github.com/saghen/blink.indent",                                            -- indent
-  "https://github.com/lewis6991/gitsigns.nvim",                                        --gitsigns
-  { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.x") }, --completion
-  "https://github.com/stevearc/conform.nvim",                                          -- formatting
-  "https://github.com/mfussenegger/nvim-lint",                                         -- linting
+  "https://github.com/saghen/blink.indent",                             -- indent
+  "https://github.com/lewis6991/gitsigns.nvim",                         --gitsigns
+  { src = "https://github.com/saghen/blink.cmp", version = "v1.10.1" }, --completion
+  "https://github.com/stevearc/conform.nvim",                           -- formatting
+  "https://github.com/mfussenegger/nvim-lint",                          -- linting
   "https://github.com/stevearc/oil.nvim",
   "https://github.com/hedyhli/outline.nvim",
   "https://github.com/nvim-treesitter/nvim-treesitter-context", -- must come after treesitter
@@ -140,6 +140,9 @@ require("gitsigns").setup({
 
 ----- Blink Completion -----
 require('blink.cmp').setup({
+  fuzzy = {
+    implementation = "prefer_rust",
+  },
   completion = {
     menu = {
       border = "rounded",
@@ -344,6 +347,16 @@ vim.api.nvim_create_autocmd("BufRead", {
       vim.treesitter.start(bufnr, parser_name)
     end
   end,
+})
+
+vim.api.nvim_create_autocmd('PackChanged', {
+  callback = function(ev)
+    local name, kind = ev.data.spec.name, ev.data.kind
+    if name == 'nvim-treesitter' and kind == 'update' then
+      if not ev.data.active then vim.cmd.packadd('nvim-treesitter') end
+      vim.cmd('TSUpdate')
+    end
+  end
 })
 
 --- Treesitter Context -----
