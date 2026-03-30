@@ -29,8 +29,13 @@ vim.cmd("RenderMarkdown toggle")
 vim.keymap.set("n", "<leader>tm", "<cmd>RenderMarkdown toggle<CR>", { desc = "Toggle RenderMarkdown" })
 
 --- Outline ----
+require("outline").setup({
+  outline_window = {
+    position = 'left',
+    width = 30
+  }
+})
 setKeyMap("n", "<leader>a", "<cmd>Outline<CR>", { desc = "Toggle outline/aerial view" })
-
 --- Fzf Lua ----
 require("fzf-lua").setup({
   "fzf-vim", -- multiple profiles :FzfLua Profiles
