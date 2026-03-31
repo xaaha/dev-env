@@ -162,4 +162,4 @@ M.highlights = {
   ["@attribute"] = { fg = M.colors.aqua },
 }
 
-require("xaaha.core.colorscheme").setup_dark(M.colors, M.highlights)
+require("core.colorscheme").setup_dark(M.colors, M.highlights)

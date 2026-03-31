@@ -175,4 +175,4 @@ M.highlights = {
   ["@exception"] = { fg = M.colors.red },
 }
 
-require("xaaha.core.colorscheme").setup_light(M.colors, M.highlights)
+require("core.colorscheme").setup_light(M.colors, M.highlights)

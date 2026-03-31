@@ -2,7 +2,7 @@
 
 Minimal Personal Development Environment.
 
-![Preview](https://github.com/xaaha/dev-env/blob/main/Preview.png)
+![Preview](./PDE.png)
 
 ## Install
 

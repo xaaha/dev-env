@@ -1,0 +1,7 @@
+require("core.keymaps")
+require("core.options")
+require("core.lsp_settings")
+require("core.statusline")
+require("core.gitui")
+require("core.winbar")
+require("core.autoclose")

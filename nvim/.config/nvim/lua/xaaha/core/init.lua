@@ -1,7 +1,0 @@
-require("xaaha.core.keymaps")
-require("xaaha.core.options")
-require("xaaha.core.lsp_settings")
-require("xaaha.core.statusline")
-require("xaaha.core.gitui")
-require("xaaha.core.winbar")
-require("xaaha.core.autoclose")

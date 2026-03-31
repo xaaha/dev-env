@@ -190,4 +190,4 @@ M.highlights = {
   ["@property.cpp"] = { fg = M.colors.cyan },
 }
 
-require("xaaha.core.colorscheme").setup_dark(M.colors, M.highlights)
+require("core.colorscheme").setup_dark(M.colors, M.highlights)
