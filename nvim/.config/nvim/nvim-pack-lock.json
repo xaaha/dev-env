@@ -18,11 +18,11 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "bde73a6886b607246095aa59f396de5e0d036890",
+      "rev": "c9e7b7bfbd01f949164988ee1684035468e1995c",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
-      "rev": "50c205548d8b037b7ff6378fca6d21146f0b6161",
+      "rev": "caa98e2e5e4c23a1652c23be839d2e1722cecc29",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "nvim-lint": {
@@ -54,11 +54,11 @@
       "src": "https://github.com/hedyhli/outline.nvim"
     },
     "render-markdown.nvim": {
-      "rev": "e3c18ddd27a853f85a6f513a864cf4f2982b9f26",
+      "rev": "c7188a8f9d2953696b6303caccbf39c51fa2c1b1",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "schemastore.nvim": {
-      "rev": "24eeb97da8d605c480dc68bb6276248702e31d2a",
+      "rev": "4f1c58a59d3a4da095743dd6f04b73caa0cefc3d",
       "src": "https://github.com/b0o/schemastore.nvim"
     }
   }
