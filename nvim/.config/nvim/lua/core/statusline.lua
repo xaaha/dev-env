@@ -6,7 +6,9 @@ local function git_branch()
   if vim.v.shell_error ~= 0 or not branch or branch == "" then
     return "Not a Git Repo "
   end
-  branch = #branch > 30 and branch:sub(-30) or branch
+  if #branch > 50 then
+    branch = branch:sub(1, 48) .. "..."
+  end
   return "  " .. branch .. " "
 end
 
@@ -31,8 +33,6 @@ local function file_size()
 
   return string.format(" %.1f%s ", size, units[i])
 end
-
-
 
 local statusline = table.concat({
   " %f " .. " | %{v:lua.git_branch()}" .. chevron_left, -- File name/path
