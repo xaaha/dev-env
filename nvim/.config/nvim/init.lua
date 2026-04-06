@@ -5,7 +5,7 @@ vim.pack.add({
   --- Dependencies -------
   "https://github.com/b0o/schemastore.nvim",
   "https://github.com/nvim-tree/nvim-web-devicons",
-  "https://github.com/nvim-treesitter/nvim-treesitter",
+  "https://github.com/xaaha/nvim-treesitter",
   "https://github.com/rafamadriz/friendly-snippets",
   --- plugins ----
   "https://github.com/ibhagwan/fzf-lua",                                -- picker
