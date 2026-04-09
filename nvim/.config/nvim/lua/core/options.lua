@@ -70,6 +70,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Show progress messages nvim -v >= 0.12
 vim.api.nvim_create_autocmd('LspProgress', {
   callback = function(ev)
     local value = ev.data.params.value
