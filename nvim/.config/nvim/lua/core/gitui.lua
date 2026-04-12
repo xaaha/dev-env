@@ -66,7 +66,7 @@ local function open_gitui()
   vim.api.nvim_open_win(bufnr, true, window_options)
 
   -- Start the GitUI process in the terminal buffer
-  vim.fn.termopen(table.concat(vim.tbl_flatten({ config.binay, config.args }), " "), {
+  vim.fn.termopen(table.concat(vim.iter({ config.binay, config.args }):flatten():totable(), " "), {
     on_exit = function()
       close_gitui(bufnr)
     end,
