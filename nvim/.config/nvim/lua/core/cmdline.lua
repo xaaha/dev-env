@@ -32,7 +32,7 @@ ui2.enable({
     },
     msg = {
       height = 0.3,
-      timeout = 5000,
+      timeout = 2000,
     },
     pager = {
       height = 0.5,
@@ -65,8 +65,8 @@ msgs.set_pos = function(tgt)
   if (tgt == "msg" or tgt == nil) and vim.api.nvim_win_is_valid(ui2.wins.msg) then
     pcall(vim.api.nvim_win_set_config, ui2.wins.msg, {
       relative = "editor",
-      anchor = "NE",
-      row = 1,
+      anchor = "SE",
+      row = vim.o.lines - 2,
       col = vim.o.columns - 1,
       border = "rounded",
     })
