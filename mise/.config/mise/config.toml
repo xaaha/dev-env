@@ -20,6 +20,7 @@ zoxide = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby", "go", "node", "terraform"]
+env_shell_expand = true
 
 [shell_alias]
 j = "z"
