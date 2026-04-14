@@ -1,6 +1,9 @@
 # config.nu
 
 $env.config.show_banner = false
+$env.config.buffer_editor = "nvim"
+$env.EDITOR = "nvim"
+# $env.config.edit_mode = 'vi'
 
 use ($nu.default-config-dir | path join mise.nu)
 source ($nu.default-config-dir | path join zoxide.nu)

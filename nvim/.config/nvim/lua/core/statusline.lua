@@ -1,15 +1,27 @@
-local chevron_left = ""
-local chevron_right = ""
+local chevron_left = ""
+local chevron_right = ""
 
-local function git_branch()
+local cached_branch = ""
+
+local function update_git_branch()
   local branch = vim.fn.systemlist("git rev-parse --abbrev-ref HEAD 2>/dev/null")[1]
   if vim.v.shell_error ~= 0 or not branch or branch == "" then
-    return "Not a Git Repo "
+    cached_branch = "Not a Git Repo "
+  elseif #branch > 50 then
+    cached_branch = "  " .. branch:sub(1, 48) .. "... "
+  else
+    cached_branch = "  " .. branch .. " "
   end
-  if #branch > 50 then
-    branch = branch:sub(1, 48) .. "..."
-  end
-  return "  " .. branch .. " "
+end
+
+-- Only update on events that can change the branch, not every statusline redraw
+update_git_branch()
+vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "DirChanged" }, {
+  callback = update_git_branch,
+})
+
+local function git_branch()
+  return cached_branch
 end
 
 local function file_size()
