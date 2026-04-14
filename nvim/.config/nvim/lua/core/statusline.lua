@@ -1,4 +1,3 @@
--- Mode colors (applied as highlight groups)
 local mode_colors = {
   n = "StModeNormal",
   i = "StModeInsert",
@@ -25,97 +24,108 @@ local mode_labels = {
   t = "TER",
 }
 
--- Define mode highlight groups (refreshed on ColorScheme)
-local function set_mode_highlights()
-  local normal_bg = vim.api.nvim_get_hl(0, { name = "Normal" }).bg
-  vim.api.nvim_set_hl(0, "StModeNormal", { fg = "#a3be8c", bg = normal_bg, bold = true })
-  vim.api.nvim_set_hl(0, "StModeInsert", { fg = "#88c0d0", bg = normal_bg, bold = true })
-  vim.api.nvim_set_hl(0, "StModeVisual", { fg = "#d08770", bg = normal_bg, bold = true })
-  vim.api.nvim_set_hl(0, "StModeReplace", { fg = "#bf616a", bg = normal_bg, bold = true })
-  vim.api.nvim_set_hl(0, "StModeCommand", { fg = "#ebcb8b", bg = normal_bg, bold = true })
-  vim.api.nvim_set_hl(0, "StModeTerminal", { fg = "#b48ead", bg = normal_bg, bold = true })
-  vim.api.nvim_set_hl(0, "StFile", { fg = "NONE", bg = "NONE" })
-  vim.api.nvim_set_hl(0, "StDim", { link = "NonText" })
-  vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE", fg = "NONE" })
-  vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", fg = "NONE" })
+local function set_highlights()
+  local st_bg = vim.api.nvim_get_hl(0, { name = "StatusLine" }).bg
+
+  -- Mode: colored text on statusline bg
+  vim.api.nvim_set_hl(0, "StModeNormal", { fg = "#a3be8c", bg = st_bg, bold = true })
+  vim.api.nvim_set_hl(0, "StModeInsert", { fg = "#88c0d0", bg = st_bg, bold = true })
+  vim.api.nvim_set_hl(0, "StModeVisual", { fg = "#d08770", bg = st_bg, bold = true })
+  vim.api.nvim_set_hl(0, "StModeReplace", { fg = "#bf616a", bg = st_bg, bold = true })
+  vim.api.nvim_set_hl(0, "StModeCommand", { fg = "#ebcb8b", bg = st_bg, bold = true })
+  vim.api.nvim_set_hl(0, "StModeTerminal", { fg = "#b48ead", bg = st_bg, bold = true })
 end
 
-set_mode_highlights()
-vim.api.nvim_create_autocmd("ColorScheme", { callback = set_mode_highlights })
+vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, { callback = set_highlights })
 
--- Cached git branch
+-- Cached git branch (async to avoid blocking)
 local cached_branch = ""
 
 local function update_git_branch()
-  local branch = vim.fn.systemlist("git rev-parse --abbrev-ref HEAD 2>/dev/null")[1]
-  if vim.v.shell_error ~= 0 or not branch or branch == "" then
-    cached_branch = ""
-  elseif #branch > 30 then
-    cached_branch = branch:sub(1, 28) .. ".."
-  else
-    cached_branch = branch
-  end
+  vim.system({ "git", "rev-parse", "--abbrev-ref", "HEAD" }, { text = true }, function(result)
+    vim.schedule(function()
+      if result.code ~= 0 or not result.stdout or result.stdout == "" then
+        cached_branch = ""
+      else
+        local branch = vim.trim(result.stdout)
+        if #branch > 30 then
+          cached_branch = branch:sub(1, 28) .. ".."
+        else
+          cached_branch = branch
+        end
+      end
+      vim.cmd.redrawstatus()
+    end)
+  end)
 end
 
-update_git_branch()
-vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "DirChanged" }, {
+vim.api.nvim_create_autocmd({ "VimEnter", "BufEnter", "FocusGained", "DirChanged" }, {
   callback = update_git_branch,
 })
 
--- Global statusline
+local function file_size()
+  local file = vim.fn.expand("%:p")
+  if file == "" then return "" end
+  local size = vim.fn.getfsize(file)
+  if size < 0 then return "" end
+  local units = { "B", "KB", "MB", "GB" }
+  local i = 1
+  while size >= 1024 and i < #units do
+    size = size / 1024
+    i = i + 1
+  end
+  return string.format("%.1f%s", size, units[i])
+end
+
 function _G.statusline()
   local mode = vim.fn.mode()
-  local hl = mode_colors[mode] or "StModeNormal"
+  local mode_hl = mode_colors[mode] or "StModeNormal"
   local label = mode_labels[mode] or "NOR"
 
-  local left = {}
-  local center = {}
-  local right = {}
+  -- LEFT
+  local left = "%#" .. mode_hl .. "# " .. label .. " "
 
-  -- LEFT: mode
-  table.insert(left, "%#" .. hl .. "# " .. label .. " ")
-
-  -- CENTER: file path + modified + branch + gitsigns
   local path = vim.fn.expand("%:~:.")
   if path == "" then path = "[No Name]" end
-  table.insert(center, "%#StFile#" .. path)
+  left = left .. "%#StatusLine# " .. path .. " "
 
-  if vim.bo.modified then
-    table.insert(center, " %#StDim#[+]")
-  end
   if vim.bo.readonly then
-    table.insert(center, " %#StDim#[RO]")
+    left = left .. "[RO] "
+  end
+  if vim.bo.modified then
+    left = left .. "[+] "
   end
 
+  left = left .. "| %#GitBranch#"
   if cached_branch ~= "" then
-    table.insert(center, "%#StDim#  " .. cached_branch)
+    left = left .. " " .. cached_branch .. " "
   end
 
   local gs = vim.b.gitsigns_status
   if gs and gs ~= "" then
-    table.insert(center, " %#GitChanges#" .. gs)
+    left = left .. "%#GitChanges#" .. gs .. " "
   end
 
-  -- RIGHT: diagnostics + line.col
+  -- LEFT: diagnostics
   local errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
   local warns = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
   if errors > 0 then
-    table.insert(right, "%#DiagnosticError# " .. errors .. " ")
+    left = left .. "%#DiagnosticError# " .. errors .. " "
   end
   if warns > 0 then
-    table.insert(right, "%#DiagnosticWarn# " .. warns .. " ")
+    left = left .. "%#DiagnosticWarn# " .. warns .. " "
   end
 
-  local line = vim.fn.line(".")
-  local col = vim.fn.virtcol(".")
-  table.insert(right, "%#StDim#" .. line .. "." .. col .. " ")
+  -- RIGHT
+  local right = ""
+  local fsize = file_size()
+  if fsize ~= "" then
+    right = "%#StatusLine# " .. fsize .. " | %L Lines "
+  end
 
-  return table.concat(left)
-      .. "%="
-      .. table.concat(center)
-      .. "%="
-      .. table.concat(right)
+  return left .. "%#StatusLine#%=" .. right
 end
 
+_G.file_size = file_size
 vim.o.laststatus = 3
 vim.o.statusline = "%{%v:lua.statusline()%}"
