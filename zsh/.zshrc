@@ -32,7 +32,5 @@ plug "$HOME/.config/zsh/prompt.zsh"
 # keybinds
 bindkey '^ ' autosuggest-accept
 
-export PATH="$HOME/.local/bin":$PATH
-
 ## profiling
 # zprof
