@@ -97,13 +97,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local bufnr = args.buf
 
     -- Only do for Ruby files for now
-    local filetype = vim.api.nvim_buf_get_option(bufnr, "filetype")
+    local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
     if filetype ~= "ruby" then
       return
     end
 
     -- Enable formatting on save if supported
-    if client.supports_method("textDocument/formatting") then
+    if client:supports_method("textDocument/formatting") then
       vim.api.nvim_create_autocmd("BufWritePre", {
         group = vim.api.nvim_create_augroup("my.lsp.format", { clear = false }),
         buffer = bufnr,
