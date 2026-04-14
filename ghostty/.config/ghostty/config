@@ -10,3 +10,4 @@ mouse-hide-while-typing = true
 quit-after-last-window-closed = true
 background-opacity = 1
 theme = light:onenord_light,dark:xaaha_dark
+command = /opt/homebrew/bin/nu

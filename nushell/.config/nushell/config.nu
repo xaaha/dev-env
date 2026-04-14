@@ -8,7 +8,7 @@ source ($nu.default-config-dir | path join zoxide.nu)
 # --- History ---
 $env.config.history = {
     file_format: sqlite
-    max_size: 2000
+    max_size: 10000
     sync_on_enter: true
     isolation: false
 }
