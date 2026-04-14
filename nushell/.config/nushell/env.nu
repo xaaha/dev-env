@@ -17,9 +17,19 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
-# Generate mise and zoxide scripts before config.nu loads
+# Generate shell integration scripts only if missing.
+# Run `nu-refresh` after updating mise, zoxide, or starship to regenerate.
 let mise_path = $nu.default-config-dir | path join mise.nu
-^mise activate nu | save $mise_path --force
+if not ($mise_path | path exists) {
+    ^mise activate nu | save $mise_path --force
+}
 
-^zoxide init nushell | save ($nu.default-config-dir | path join zoxide.nu) --force
-^starship init nu | save ($nu.default-config-dir | path join starship.nu) --force
+let zoxide_path = $nu.default-config-dir | path join zoxide.nu
+if not ($zoxide_path | path exists) {
+    ^zoxide init nushell | save $zoxide_path --force
+}
+
+let starship_path = $nu.default-config-dir | path join starship.nu
+if not ($starship_path | path exists) {
+    ^mise exec starship -- starship init nu | save $starship_path --force
+}

@@ -244,3 +244,11 @@ def loginGene [profile: string] {
         print "AWS Login failed!"
     }
 }
+
+# Regenerate cached shell integration scripts after tool updates
+def nu-refresh [] {
+    ^mise activate nu | save ($nu.default-config-dir | path join mise.nu) --force
+    ^zoxide init nushell | save ($nu.default-config-dir | path join zoxide.nu) --force
+    ^mise exec starship -- starship init nu | save ($nu.default-config-dir | path join starship.nu) --force
+    print "Regenerated mise.nu, zoxide.nu, starship.nu. Restart Nu to apply."
+}
