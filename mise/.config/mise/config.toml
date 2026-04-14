@@ -18,6 +18,7 @@ node = "latest"
 pnpm = "latest"
 python = "latest"
 ruby = "3.3.0"
+starship = "latest"
 tombi = "latest"
 zoxide = "latest"
 
