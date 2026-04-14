@@ -1,5 +1,7 @@
 # config.nu
 
+$env.config.show_banner = false
+
 use ($nu.default-config-dir | path join mise.nu)
 source ($nu.default-config-dir | path join zoxide.nu)
 
