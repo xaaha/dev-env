@@ -17,6 +17,8 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
-# Generate mise activation script before config.nu loads
+# Generate mise and zoxide scripts before config.nu loads
 let mise_path = $nu.default-config-dir | path join mise.nu
 ^mise activate nu | save $mise_path --force
+
+^zoxide init nushell | save ($nu.default-config-dir | path join zoxide.nu) --force

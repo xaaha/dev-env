@@ -85,6 +85,6 @@ zsh/.config/zsh/secrets.zsh
 !karabiner/
 !karabiner/**
 
-!nu/
-!nu/.config/
-!nu/.config/**
+!nushell/
+!nushell/.config/
+!nushell/.config/**
