@@ -11,6 +11,7 @@ _.path = ["$HOME/.local/bin", "$HOME/go/bin"]
 
 [tools]
 age = "latest"
+ast-grep = "latest"
 bun = "latest"
 go = "latest"
 neovim = "latest"
