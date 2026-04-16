@@ -1,17 +1,5 @@
 #!/usr/bin/env zsh
 
-export GITHUB_TOKEN=$(gh auth token)
-
-# --- PATH SETUP ---
-
-# Go
-export GOPATH="$HOME/go"
-path=("$GOPATH/bin" $path)
-
-# # pnpm
-# export PNPM_HOME="$HOME/Library/pnpm"
-# path=("$PNPM_HOME" $path)
-
 # Docker init (optional)
 [[ -f "$HOME/.docker/init-zsh.sh" ]] && source "$HOME/.docker/init-zsh.sh"
 

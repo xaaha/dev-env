@@ -5,9 +5,13 @@ VISUAL = "nvim"
 HOMEBREW_NO_ANALYTICS = "1"
 HOMEBREW_NO_ENV_HINTS = "1"
 XDG_CONFIG_HOME = "$HOME/.config"
+GOPATH = "$HOME/go"
+GITHUB_TOKEN = "{{ exec(command='gh auth token') }}"
+_.path = ["$HOME/.local/bin", "$HOME/go/bin"]
 
 [tools]
 age = "latest"
+ast-grep = "latest"
 bun = "latest"
 go = "latest"
 neovim = "latest"
@@ -15,6 +19,7 @@ node = "latest"
 pnpm = "latest"
 python = "latest"
 ruby = "3.3.0"
+starship = "latest"
 tombi = "latest"
 zoxide = "latest"
 

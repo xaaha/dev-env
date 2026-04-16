@@ -43,8 +43,8 @@ local function open_gitui()
   local bufnr = vim.api.nvim_create_buf(false, true)
 
   -- Calculate window dimensions
-  local width = vim.api.nvim_get_option("columns")
-  local height = vim.api.nvim_get_option("lines")
+  local width = vim.o.columns
+  local height = vim.o.lines
   local win_height = math.ceil(height * (config.height / 100))
   local win_width = math.ceil(width * (config.width / 100))
   local row = math.ceil((height - win_height) / 2)
