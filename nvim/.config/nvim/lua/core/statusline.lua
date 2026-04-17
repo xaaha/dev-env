@@ -1,27 +1,78 @@
+vim.opt.showmode = false
 local mode_colors = {
-  n = "StModeNormal",
-  i = "StModeInsert",
-  v = "StModeVisual",
-  V = "StModeVisual",
-  ["\22"] = "StModeVisual",
-  s = "StModeVisual",
-  S = "StModeVisual",
-  R = "StModeReplace",
-  c = "StModeCommand",
-  t = "StModeTerminal",
+  -- NORMAL / OPERATOR-PENDING
+  n         = "StModeNormal",
+  no        = "StModeNormal",
+  nov       = "StModeNormal",
+  noV       = "StModeNormal",
+  ["no\22"] = "StModeNormal",
+
+  -- INSERT
+  i         = "StModeInsert",
+  ic        = "StModeInsert",
+  ix        = "StModeInsert",
+
+  -- VISUAL
+  v         = "StModeVisual",
+  V         = "StModeVisual",
+  ["\22"]   = "StModeVisual",
+
+  -- SELECT (treat like visual)
+  s         = "StModeVisual",
+  S         = "StModeVisual",
+  ["\19"]   = "StModeVisual",
+
+  -- REPLACE
+  R         = "StModeReplace",
+  Rc        = "StModeReplace",
+  Rx        = "StModeReplace",
+
+  -- COMMAND / EX
+  c         = "StModeCommand",
+  cv        = "StModeCommand",
+  ce        = "StModeCommand",
+
+  -- PROMPT / MISC "r" modes → closest match is command
+  r         = "StModeCommand",
+  rm        = "StModeCommand",
+  ["r?"]    = "StModeCommand",
+
+  -- TERMINAL
+  t         = "StModeTerminal",
 }
 
 local mode_labels = {
-  n = "NOR",
-  i = "INS",
-  v = "VIS",
-  V = "V-L",
-  ["\22"] = "V-B",
-  s = "SEL",
-  S = "S-L",
-  R = "REP",
-  c = "CMD",
-  t = "TER",
+  n         = "NORMAL",
+  no        = "O-PENDING",
+  nov       = "O-PENDING",
+  oV        = "O-PENDING",
+  ["no\22"] = "O-PENDING",
+
+  i         = "INSERT",
+  ic        = "INSERT",
+  ix        = "INSERT",
+
+  v         = "VISUAL",
+  V         = "VISUAL-LINE",
+  ["\22"]   = "VISUAL-BLOCK",
+
+  s         = "SELECT",
+  S         = "SELECT-LINE",
+  ["\19"]   = "SELECT-BLOCK",
+
+  R         = "REPLACE",
+  Rc        = "REPLACE",
+  Rx        = "REPLACE",
+
+  c         = "COMMAND",
+  cv        = "EX",
+  ce        = "EX",
+
+  r         = "PROMPT",
+  rm        = "MORE",
+  ["r?"]    = "CONFIRM",
+
+  t         = "TERMINAL",
 }
 
 local function set_highlights()
