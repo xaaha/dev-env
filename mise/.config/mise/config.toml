@@ -23,6 +23,9 @@ starship = "latest"
 tombi = "latest"
 zoxide = "latest"
 
+[hooks]
+postinstall = "rm -f ~/.config/nushell/mise.nu ~/.config/nushell/zoxide.nu ~/.config/nushell/starship.nu"
+
 [settings]
 idiomatic_version_file_enable_tools = ["ruby", "go", "node", "terraform"]
 env_shell_expand = true
