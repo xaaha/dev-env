@@ -16,25 +16,6 @@ function ve() {
   nvim --cmd "cd $(fd -t d | fzf)" -c "Oil"
 }
 
-# for new and temp dir when jump is not useful
-function cdh() {
-  # Use fd to search for directories up to a maximum depth of 1,
-  # excluding hidden directories (using the --no-hidden flag).
-  local dir
-  dir=$(fd -t d --max-depth=1 --no-hidden | sort | fzf --prompt="Select directory> ") || return 1
-  cd "$dir" || return 1
-}
-
-function cdb() {
-  local dir
-  # List directories in the parent directory (../) with a depth of 1 (direct children)
-  dir=$(fd -t d --max-depth=1 --no-hidden . .. | sort | fzf --prompt="Select directory> ") || return 1
-  # Remove any leading "./" or "../" from the selected directory path
-  dir=${dir}
-  # Change to the directory
-  cd "$dir" || return 1
-}
-
 # git worktree add, copy .env file and do a fresh install for node_modules
 function gwa() {
   if [ -z "$1" ]; then
