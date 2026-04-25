@@ -1,3 +1,9 @@
+# clear cached tool init scripts (mise, starship, zoxide)
+function zsh-refresh() {
+  rm -f "${XDG_CACHE_HOME:-$HOME/.cache}"/zsh/*.zsh "${XDG_CACHE_HOME:-$HOME/.cache}"/zsh/*.zwc
+  echo "zsh cache cleared — restart your shell"
+}
+
 # open nvim with file from fzf
 function vo() {
   local file

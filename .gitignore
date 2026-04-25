@@ -39,6 +39,7 @@ ghostty/.config/ghostty/custom/config
 # zsh config
 !zsh
 !zsh/.zshrc
+!zsh/ZSH.md
 !zsh/.config
 !zsh/.config/zsh
 !zsh/.config/zsh/*
