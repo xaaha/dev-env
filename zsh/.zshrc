@@ -1,36 +1,42 @@
 ## Enabling profiling
 # zmodload zsh/zprof
 
-#plugin manager zap
-[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
+# source local files (always needed for PATH/env)
+source "$HOME/.config/zsh/exports.zsh"
+[[ -f "$HOME/.config/zsh/secrets.zsh" ]] && source "$HOME/.config/zsh/secrets.zsh"
+
+# skip everything below for non-interactive shells (fzf subshells, scripts)
+[[ ! -o interactive ]] && return
 
 # history
 HISTFILE=~/.zsh_history
-setopt APPEND_HISTORY       # append to history file, don’t overwrite
-setopt INC_APPEND_HISTORY   # write each command to history immediately
-setopt SHARE_HISTORY        # share history across all sessions
-setopt HIST_IGNORE_ALL_DUPS # only keep one occurrence of a command
-setopt HIST_FIND_NO_DUPS    # don't show duplicates when searching
-setopt HIST_IGNORE_SPACE    # ignore commands that start with a space
+setopt APPEND_HISTORY INC_APPEND_HISTORY SHARE_HISTORY \
+       HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS HIST_IGNORE_SPACE
 HISTSIZE=2000
 SAVEHIST=2000
 
-# plugins
-plug "hlissner/zsh-autopair"
-plug "zap-zsh/vim"
-plug "zsh-users/zsh-syntax-highlighting"
-plug "zsh-users/zsh-autosuggestions"
-plug "zap-zsh/supercharge"
-plug "Aloxaf/fzf-tab"
+# completion — skip compaudit unless zcompdump is >24h old
+autoload -Uz compinit
+if [[ -f "$HOME/.zcompdump" && $(date +'%j') == $(stat -f '%Sm' -t '%j' "$HOME/.zcompdump" 2>/dev/null) ]]; then
+  compinit -C
+else
+  compinit
+fi
 
-# source local files
-plug "$HOME/.config/zsh/exports.zsh"
-plug "$HOME/.config/zsh/functions.zsh"
-plug "$HOME/.config/zsh/secrets.zsh"
-plug "$HOME/.config/zsh/prompt.zsh"
+# --- source plugins directly (no plugin manager overhead) ---
+_zsh_plug="$HOME/.local/share/zap/plugins"
+
+source "$HOME/.config/zsh/functions.zsh"
+source "$_zsh_plug/zsh-autopair/autopair.zsh"
+source "$_zsh_plug/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$_zsh_plug/fzf-tab/fzf-tab.plugin.zsh"
+# syntax-highlighting must be last
+source "$_zsh_plug/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+unset _zsh_plug
 
 # keybinds
-bindkey '^ ' autosuggest-accept
+bindkey ‘^P’ autosuggest-accept
 
 ## profiling
 # zprof
