@@ -15,28 +15,36 @@ setopt APPEND_HISTORY INC_APPEND_HISTORY SHARE_HISTORY \
 HISTSIZE=2000
 SAVEHIST=2000
 
-# completion — skip compaudit unless zcompdump is >24h old
-autoload -Uz compinit
-if [[ -f "$HOME/.zcompdump" && $(date +'%j') == $(stat -f '%Sm' -t '%j' "$HOME/.zcompdump" 2>/dev/null) ]]; then
-  compinit -C
-else
-  compinit
-fi
-
-# --- source plugins directly (no plugin manager overhead) ---
+# --- eager plugins (cheap or needed immediately) ---
 _zsh_plug="$HOME/.local/share/zap/plugins"
 
 source "$HOME/.config/zsh/functions.zsh"
-source "$_zsh_plug/zsh-autopair/autopair.zsh"
 source "$_zsh_plug/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "$_zsh_plug/fzf-tab/fzf-tab.plugin.zsh"
-# syntax-highlighting must be last
-source "$_zsh_plug/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
-unset _zsh_plug
-
-# keybinds
 bindkey ‘^P’ autosuggest-accept
+
+# --- deferred plugins (loaded after first prompt) ---
+_defer_plugins() {
+  add-zsh-hook -d precmd _defer_plugins
+  unfunction _defer_plugins
+
+  # compinit — skip compaudit unless zcompdump is stale
+  autoload -Uz compinit
+  if [[ -f "$HOME/.zcompdump" && $(date +’%j’) == $(stat -f ‘%Sm’ -t ‘%j’ "$HOME/.zcompdump" 2>/dev/null) ]]; then
+    compinit -C
+  else
+    compinit
+  fi
+
+  source "$_zsh_plug/zsh-autopair/autopair.zsh"
+  source "$_zsh_plug/fzf-tab/fzf-tab.plugin.zsh"
+  # syntax-highlighting must be last
+  source "$_zsh_plug/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+  unset _zsh_plug
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _defer_plugins
 
 ## profiling
 # zprof

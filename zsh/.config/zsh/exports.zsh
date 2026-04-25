@@ -1,8 +1,5 @@
 #!/usr/bin/env zsh
 
-# Docker init (optional)
-[[ -f "$HOME/.docker/init-zsh.sh" ]] && source "$HOME/.docker/init-zsh.sh"
-
 # --- Conditional platform exports ---
 case "$(uname -s)" in
 Darwin)
@@ -11,39 +8,61 @@ Darwin)
   ;;
 esac
 
-# --- Cache slow eval outputs ---
-# Invalidates when the binary is updated (brew upgrade, mise self-update, etc.)
+# --- Cache helper ---
+# Caches eval output; invalidates when the binary is updated.
 # Force refresh: rm ~/.cache/zsh/*.zsh
-() {
-  local cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
-  [[ -d "$cache_dir" ]] || mkdir -p "$cache_dir"
+_zsh_cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+[[ -d "$_zsh_cache_dir" ]] || mkdir -p "$_zsh_cache_dir"
 
-  local -A tools=(
-    [mise]="mise activate zsh"
-    [starship]="starship init zsh"
-    [zoxide]="zoxide init zsh"
-  )
-
-  local name cmd bin cache
-  for name cmd in "${(@kv)tools}"; do
-    bin="${commands[$name]}"
-    [[ -z "$bin" ]] && continue
-    cache="$cache_dir/$name.zsh"
-    if [[ ! -f "$cache" || "$bin" -nt "$cache" ]]; then
-      eval "$cmd" > "$cache"
-      zcompile "$cache"
-    fi
-    source "$cache" 2>/dev/null
-  done
+_cache_eval() {
+  local name=$1 cmd=$2 bin="${commands[$1]}"
+  [[ -z "$bin" ]] && return 1
+  local cache="$_zsh_cache_dir/$name.zsh"
+  if [[ ! -f "$cache" || "$bin" -nt "$cache" ]]; then
+    eval "$cmd" > "$cache"
+    zcompile "$cache"
+  fi
 }
 
-# --- FZF setup ---
-[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+# --- Eager: only what's needed before first prompt ---
+# mise: use shims for instant PATH, defer full activate to after first prompt
+export PATH="$HOME/.local/share/mise/shims:$PATH"
 
-if [[ -r "/opt/homebrew/opt/fzf/shell/completion.zsh" ]]; then
-  source /opt/homebrew/opt/fzf/shell/completion.zsh
+# zoxide — tiny, load now
+_cache_eval zoxide "zoxide init zsh" && source "$_zsh_cache_dir/zoxide.zsh" 2>/dev/null
+
+# fzf — add to PATH and source key-bindings directly (skip fzf --zsh fork)
+[[ "$PATH" != */opt/homebrew/opt/fzf/bin* ]] && PATH="${PATH}:/opt/homebrew/opt/fzf/bin"
+if [[ -r "/opt/homebrew/opt/fzf/shell/key-bindings.zsh" ]]; then
   source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
-elif [[ -r "/usr/share/fzf/completion.zsh" ]]; then
-  source /usr/share/fzf/completion.zsh
+elif [[ -r "/usr/share/fzf/key-bindings.zsh" ]]; then
   source /usr/share/fzf/key-bindings.zsh
 fi
+
+# --- Deferred: load after first prompt renders ---
+_defer_init() {
+  add-zsh-hook -d precmd _defer_init
+  unfunction _defer_init
+
+  # mise activate (replaces shims with proper env hook)
+  _cache_eval mise "mise activate zsh" && source "$_zsh_cache_dir/mise.zsh" 2>/dev/null
+
+  # starship prompt
+  _cache_eval starship "starship init zsh" && source "$_zsh_cache_dir/starship.zsh" 2>/dev/null
+
+  # fzf completion (only matters on first tab)
+  if [[ -r "/opt/homebrew/opt/fzf/shell/completion.zsh" ]]; then
+    source /opt/homebrew/opt/fzf/shell/completion.zsh
+  elif [[ -r "/usr/share/fzf/completion.zsh" ]]; then
+    source /usr/share/fzf/completion.zsh
+  fi
+
+  # docker init
+  [[ -f "$HOME/.docker/init-zsh.sh" ]] && source "$HOME/.docker/init-zsh.sh"
+
+  unfunction _cache_eval
+  unset _zsh_cache_dir
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _defer_init
