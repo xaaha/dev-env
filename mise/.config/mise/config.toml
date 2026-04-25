@@ -20,11 +20,16 @@ pnpm = "latest"
 python = "latest"
 ruby = "3.3.0"
 starship = "latest"
-tombi = "latest"
 zoxide = "latest"
 
 [settings]
-idiomatic_version_file_enable_tools = ["ruby", "go", "node", "terraform"]
+idiomatic_version_file_enable_tools = [
+  "ruby",
+  "go",
+  "node",
+  "terraform",
+  "python"
+]
 env_shell_expand = true
 
 [shell_alias]

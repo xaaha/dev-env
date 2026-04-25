@@ -35,6 +35,7 @@ brew "ruff"
 brew "sqruff"
 brew "stow"
 brew "tmux"
+brew "tombi"
 brew "trash", link: true
 brew "tree-sitter-cli"
 brew "typescript-language-server"
