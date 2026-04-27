@@ -16,9 +16,6 @@ SAVEHIST=2000
 ZSH_PLUG="$HOME/.local/share/zsh/plugins"
 
 source "$HOME/.config/zsh/functions.zsh"
-source "$ZSH_PLUG/zsh-autosuggestions/zsh-autosuggestions.zsh"
-bindkey '^P' autosuggest-accept
-
 # deferred (loads after first prompt renders)
 _defer_plugins() {
   add-zsh-hook -d precmd _defer_plugins
@@ -31,9 +28,16 @@ _defer_plugins() {
     compinit
   fi
 
+  # compile plugins on first load for faster parse
+  local p; for p in "$ZSH_PLUG"/*/*.zsh; do
+    [[ ! -f "${p}.zwc" || "$p" -nt "${p}.zwc" ]] && zcompile "$p"
+  done
+
+  source "$ZSH_PLUG/zsh-autosuggestions/zsh-autosuggestions.zsh"
   source "$ZSH_PLUG/zsh-autopair/autopair.zsh"
   source "$ZSH_PLUG/fzf-tab/fzf-tab.plugin.zsh"
   source "$ZSH_PLUG/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  bindkey '^P' autosuggest-accept
 
   unset ZSH_PLUG
 }
