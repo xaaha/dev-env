@@ -18,7 +18,8 @@ _cache_eval() {
   local name=$1 cmd=$2 bin="${commands[$1]}"
   [[ -z "$bin" ]] && return 1
   local cache="$_zsh_cache_dir/$name.zsh"
-  if [[ ! -f "$cache" || "$bin" -nt "$cache" ]]; then
+  local conf="${XDG_CONFIG_HOME:-$HOME/.config}/$name/config.toml"
+  if [[ ! -f "$cache" || "$bin" -nt "$cache" || ( -f "$conf" && "$conf" -nt "$cache" ) ]]; then
     eval "$cmd" > "$cache"
     zcompile "$cache"
   fi

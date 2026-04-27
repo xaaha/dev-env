@@ -34,9 +34,15 @@ zsh-refresh
 
 ```sh
 git clone https://github.com/<user>/<plugin>.git ~/.local/share/zsh/plugins/<plugin>
+# example
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.local/share/zsh/plugins/zsh-syntax-highlighting
+git clone https://github.com/hlissner/zsh-autopair ~/.local/share/zsh/plugins/zsh-autopair
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.local/share/zsh/plugins/zsh-autosuggestions
+git clone https://github.com/aloxaf/fzf-tab ~/.local/share/zsh/plugins/fzf-tab
 ```
 
 Then add a `source` line in `.zshrc`:
+
 - If cheap/needed immediately: add to the eager section (before `_defer_plugins`)
 - If heavier or completion-related: add inside `_defer_plugins()`
 
@@ -61,9 +67,9 @@ for d in ~/.local/share/zsh/plugins/*/; do git -C "$d" pull; done
 
 ### Current plugins
 
-| Plugin | Section | Purpose |
-|--------|---------|---------|
-| zsh-autosuggestions | eager | fish-like suggestions |
-| zsh-autopair | deferred | auto-close brackets/quotes |
-| fzf-tab | deferred | fzf-powered tab completion |
-| zsh-syntax-highlighting | deferred (must be last) | command highlighting |
+| Plugin                  | Section                 | Purpose                    |
+| ----------------------- | ----------------------- | -------------------------- |
+| zsh-autosuggestions     | eager                   | fish-like suggestions      |
+| zsh-autopair            | deferred                | auto-close brackets/quotes |
+| fzf-tab                 | deferred                | fzf-powered tab completion |
+| zsh-syntax-highlighting | deferred (must be last) | command highlighting       |
