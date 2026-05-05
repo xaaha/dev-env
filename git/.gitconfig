@@ -1,0 +1,7 @@
+[user]
+	email = 109303107+xaaha@users.noreply.github.com
+	name = xaaha
+[core]
+	excludesfile = ~/.gitignore_global
+[fetch]
+	prune = true
