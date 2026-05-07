@@ -9,7 +9,7 @@ ui2.enable({
     targets = {
       [""] = "msg",
       bufwrite = "msg",
-      emsg = "pager",
+      emsg = "msg",
       echo = "msg",
       echomsg = "msg",
       echoerr = "pager",
