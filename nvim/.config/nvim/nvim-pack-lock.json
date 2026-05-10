@@ -18,7 +18,7 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "33fe4b6f0c817c4d99a7baeea82c4d17e57efd64",
+      "rev": "44816af2465bb0a17ae0f1f2d8a4f9c3df524fcd",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
@@ -30,7 +30,7 @@
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "cd576dd72d31ddffcbfa6d064c0dd697ca218758",
+      "rev": "451d4ef9abd4f0f08e379ef0d55d1c391b6125a7",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
@@ -42,7 +42,7 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-context"
     },
     "nvim-web-devicons": {
-      "rev": "4fc505ac7bd7692824a142e96e5f529c133862f8",
+      "rev": "2795c26c916bb3c57dde308b82be51971fa92747",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "oil.nvim": {
@@ -58,7 +58,7 @@
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "schemastore.nvim": {
-      "rev": "fd92aa0e35aca9d2675357d5c8fb39c23575bb5a",
+      "rev": "7127911cc824a1d2f600492edd9667b476cf3eda",
       "src": "https://github.com/b0o/schemastore.nvim"
     }
   }
