@@ -19,6 +19,7 @@ node = "26.1.0"
 pnpm = "latest"
 python = "latest"
 ruby = "3.3.0"
+rust = "latest"
 starship = "latest"
 zoxide = "latest"
 
