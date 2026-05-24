@@ -20,6 +20,7 @@ pnpm = "latest"
 python = "latest"
 ruby = "3.3.0"
 rust = "latest"
+rust-analyzer = "latest"
 starship = "latest"
 zoxide = "latest"
 

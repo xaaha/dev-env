@@ -204,7 +204,8 @@ require("conform").setup({
     go = { "gofumpt", "golines", "goimports" },
     sql = { "sqruff" },
     toml = { "tombi" },
-    ruby = { "rubocop" }
+    ruby = { "rubocop" },
+    rust = { "rustfmt" }
   },
   format_on_save = {
     lsp_fallback = true,

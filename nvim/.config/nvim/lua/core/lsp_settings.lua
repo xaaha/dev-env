@@ -134,7 +134,8 @@ local language_servers = {
   "ruby_lsp",              -- ruby-lsp in brew
   "ruff",                  -- python
   "ts_ls",                 -- "typescript-language-server"
-  "yamlls"                 -- "yaml-language-server",
+  "yamlls",                -- "yaml-language-server",
+  "rust_analyzer"
   -- "standardrb",            -- ruby linter/formatter with some lsp capabilities
 }
 
