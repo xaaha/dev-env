@@ -6,7 +6,7 @@ HOMEBREW_NO_ANALYTICS = "1"
 HOMEBREW_NO_ENV_HINTS = "1"
 XDG_CONFIG_HOME = "$HOME/.config"
 GOPATH = "$HOME/go"
-# GITHUB_TOKEN = "{{ exec(command='gh auth token') }}"
+GITHUB_TOKEN_MCP = "{{ exec(command='gh auth token') }}"
 _.path = ["$HOME/.local/bin", "$HOME/go/bin"]
 
 [tools]
