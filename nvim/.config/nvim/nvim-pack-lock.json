@@ -26,11 +26,11 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "nvim-lint": {
-      "rev": "d48f3a76189d03b2239f6df1b2f7e3fa8353743b",
+      "rev": "99cbc3ca8a76845fca50e496be7212bebf907dd3",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "229b79051b380377664edc4cbd534930154921a1",
+      "rev": "ed19590a3a9792901553c388d1aadafce012f80d",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
@@ -58,7 +58,7 @@
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "schemastore.nvim": {
-      "rev": "19936230448bfb3dfd4314070e8bc499ceb55928",
+      "rev": "c87dda7c8e5c4437d0d270ea6b73afb683607706",
       "src": "https://github.com/b0o/schemastore.nvim"
     }
   }
