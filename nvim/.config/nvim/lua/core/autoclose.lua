@@ -114,10 +114,11 @@ local function handler(key, info, mode)
   elseif info.escape and pair:sub(2, 2) == key then
     return mode == "insert" and "<C-G>U<Right>" or "<Right>"
   elseif info.close then
-    -- disable pairing for apostrophe if the cursor touches alphanumeric character
-    if key == "'" then
+    -- disable pairing if the cursor touches an alphanumeric character on either side
+    if key ~= " " then
       local left = pair:sub(1, 1)
-      if left:match("[%w_]") then
+      local right = pair:sub(2, 2)
+      if left:match("[%w_]") or right:match("[%w_]") then
         return key
       end
     end
