@@ -6,7 +6,7 @@
       "version": "'v1.10.1'"
     },
     "blink.indent": {
-      "rev": "15b3b25c2e76025733cc96df0144e9a9ef4d495c",
+      "rev": "5cb5ea0f942f17d6182fdad064a17d67f71b9375",
       "src": "https://github.com/saghen/blink.indent"
     },
     "conform.nvim": {
@@ -26,11 +26,11 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "nvim-lint": {
-      "rev": "99cbc3ca8a76845fca50e496be7212bebf907dd3",
+      "rev": "4b7957daf4b81eb578114bd6fcf20b6f5a2b59e8",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "ed19590a3a9792901553c388d1aadafce012f80d",
+      "rev": "a683e0ddf0cf64c6cd689e18ffb480ade3c162b7",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
@@ -58,7 +58,7 @@
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "schemastore.nvim": {
-      "rev": "c87dda7c8e5c4437d0d270ea6b73afb683607706",
+      "rev": "735540a7602bffd1b07deab7d508affb57b78c64",
       "src": "https://github.com/b0o/schemastore.nvim"
     }
   }
