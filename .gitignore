@@ -89,3 +89,7 @@ zsh/.config/zsh/secrets.zsh
 !nushell/
 !nushell/.config/
 !nushell/.config/**
+
+!claude/
+!claude/.claude/
+!claude/.claude/**
