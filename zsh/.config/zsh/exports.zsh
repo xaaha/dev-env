@@ -46,6 +46,9 @@ _defer_init() {
   unfunction _defer_init
 
   # mise activate (replaces shims with proper env hook)
+  # tmux leaks stale mise session vars into new panes; hook-env then thinks the
+  # session is already active and skips emitting shell_alias. Force a fresh one.
+  unset __MISE_SESSION __MISE_DIFF __MISE_ORIG_PATH __MISE_ZSH_PRECMD_RUN
   _cache_eval mise "mise activate zsh" && source "$_zsh_cache_dir/mise.zsh" 2>/dev/null
 
   # starship prompt
