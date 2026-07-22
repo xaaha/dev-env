@@ -1,6 +1,7 @@
 title = ""
 macos-titlebar-style = hidden
-font-family = "BlexMono Nerd font Mono"
+# font-family = "BlexMono Nerd font Mono"
+font-family = "JetBrainsMono Nerd Font"
 font-size = 16
 window-height = 57
 window-width = 150
