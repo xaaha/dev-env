@@ -115,8 +115,7 @@
     "gopls-lsp@claude-plugins-official": true,
     "lua-lsp@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true,
-    "ruby-lsp@claude-plugins-official": true,
-    "caveman@caveman": true
+    "ruby-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "ast-grep-marketplace": {
@@ -134,7 +133,7 @@
   },
   "effortLevel": "high",
   "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
   "theme": "auto",
-  "editorMode": "vim",
-  "skipDangerousModePermissionPrompt": true
+  "editorMode": "vim"
 }

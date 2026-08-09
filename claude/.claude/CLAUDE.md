@@ -1,6 +1,11 @@
-# Global Claude Code Guidance
+## General Guidance
 
-User-level preferences. Loaded every session. Project-level `CLAUDE.md` overrides where conflicting.
+- Never use em dahs (—). Use simple english sentences with full-stop.
+- Always explain in plain English with enough context.
+- When making technical decisions, do not give much weight to development cost. Instead, prefer quality, simplicity, robustness, scalability, and long term maintainability.
+- When doing bug fixes, always start with reproducing the bug in an E2E setting as closely aligned with how an end users would. This makes sure you find the real problem so your fix will actually solve it.
+- When end-to-end testing a product, be picky about the UI you see and be obsessed with pixel perfection. If something clearly looks off, even if it is not directly related to what you are doing, try to get it fixed
+- Apply that same high standard to engineering excellence: lint, test failures, and test flakiness. If you see one, even if it is not caused by what you are working on right now, still get it fixed.
 
 ## Search & file tools
 
