@@ -22,6 +22,7 @@ brew "mise"
 brew "neovim"
 brew "openssl@1.1", link: true
 brew "openssl@3"
+brew "opensuperwhisper"
 brew "pipx"
 brew "pnpm"
 brew "podman"
