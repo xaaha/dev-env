@@ -1,6 +1,7 @@
 ## General Guidance
 
 - Never use em dahs (—). Use simple english sentences with full-stop.
+- In commits, or any agentic workflow, never add yourself as a co-author, or mention that AI was used in any way.
 - Always explain in plain English with enough context.
 - When making technical decisions, do not give much weight to development cost. Instead, prefer quality, simplicity, robustness, scalability, and long term maintainability.
 - When doing bug fixes, always start with reproducing the bug in an E2E setting as closely aligned with how an end users would. This makes sure you find the real problem so your fix will actually solve it.
