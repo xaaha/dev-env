@@ -1,6 +1,7 @@
 ## General Guidance
 
 - Never use em dahs (—). Use simple english sentences with full-stop.
+- Always write text in plain md syntax. For example, instead of showing bold, show literally show **bold**.
 - In commits, or any agentic workflow, never add yourself as a co-author, or mention that AI was used in any way.
 - Always explain in plain English with enough context.
 - When making technical decisions, do not give much weight to development cost. Instead, prefer quality, simplicity, robustness, scalability, and long term maintainability.
