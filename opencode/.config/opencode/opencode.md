@@ -8,4 +8,3 @@ opencode mcp logout atlassian
 
 ## Tools:
 
-[Oh my opencode](https://github.com/code-yeongyu/oh-my-opencode) is a great addition to opencode tool
