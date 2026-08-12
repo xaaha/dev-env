@@ -6,13 +6,13 @@
       "url": "https://api.githubcopilot.com/mcp/",
       "enabled": true,
       "headers": {
-        "Authorization": "Bearer {env:GITHUB_TOKEN}"
+        "Authorization": "Bearer {env:GITHUB_TOKEN_MCP}"
       },
       "oauth": false
     },
     "atlassian": {
       "type": "remote",
-      "url": "https://mcp.atlassian.com/v1/mcp",
+      "url": "https://mcp.atlassian.com/v1/mcp/authv2",
       "enabled": true
     },
     "glean": {
@@ -39,13 +39,28 @@
       "type": "remote",
       "url": "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp",
       "enabled": true
+    },
+    "hulak": {
+      "type": "local",
+      "command": ["hulak", "mcp", "--project", "apis=/Users/pratikthapa/Documents/personal_projects/apis"],
+      "enabled": true,
+      "environment": {}
+    },
+    "miro": {
+      "type": "remote",
+      "url": "https://mcp.miro.com",
+      "enabled": true
     }
   },
   "tools": {
     "github*": true,
     "atlassian*": true,
     "aws-docs*": true,
-    "playwright*": true
+    "playwright*": true,
+    "glean*": true,
+    "datadog-mcp*": true,
+    "hulak*": true,
+    "miro*": true
   },
   "plugin": []
 }
