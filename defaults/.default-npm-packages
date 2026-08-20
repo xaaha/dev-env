@@ -1,3 +1,4 @@
 @astrojs/language-server
 @olrtg/emmet-language-server
 tree-sitter-cli
+typescript
