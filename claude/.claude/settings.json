@@ -109,7 +109,6 @@
       "mcp__playwright__browser_resize"
     ]
   },
-  "model": "opus[1m]",
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
