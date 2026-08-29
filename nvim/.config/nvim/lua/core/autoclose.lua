@@ -114,11 +114,12 @@ local function handler(key, info, mode)
   elseif info.escape and pair:sub(2, 2) == key then
     return mode == "insert" and "<C-G>U<Right>" or "<Right>"
   elseif info.close then
-    -- disable pairing if the cursor touches an alphanumeric character on either side
+    -- Only avoid pairing when an alphanumeric character follows the cursor.
+    -- A preceding identifier (for example, `binarySearch`) should not prevent
+    -- `(` from producing a closing `)`.
     if key ~= " " then
-      local left = pair:sub(1, 1)
       local right = pair:sub(2, 2)
-      if left:match("[%w_]") or right:match("[%w_]") then
+      if right:match("[%w_]") then
         return key
       end
     end
