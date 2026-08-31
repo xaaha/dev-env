@@ -1,4 +1,7 @@
 {
+  "env": {
+    "DISABLE_AUTOUPDATER": "1"
+  },
   "attribution": {
     "commit": "",
     "pr": ""
@@ -109,6 +112,7 @@
       "mcp__playwright__browser_resize"
     ]
   },
+  "model": "claude-fable-5[1m]",
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
@@ -135,9 +139,5 @@
   "skipDangerousModePermissionPrompt": true,
   "theme": "auto",
   "editorMode": "vim",
-  "preferredNotifChannel": "terminal_bell",
-  "model": "claude-fable-5[1m]",
-  "env": {
-    "DISABLE_AUTOUPDATER": "1"
-  }
+  "preferredNotifChannel": "terminal_bell"
 }
