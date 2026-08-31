@@ -1,8 +1,8 @@
 [opener]
 edit = [
-{ run = 'nvim "$@"', block = true },
-{ run = 'zed "$@"', block = true},
-{ run = 'code "$@"', block = true},
+{ run = 'nvim %s', block = true },
+{ run = 'zed %s', block = true},
+{ run = 'code %s', block = true},
 ]
 
 [mgr]
