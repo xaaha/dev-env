@@ -114,14 +114,20 @@ local function handler(key, info, mode)
   elseif info.escape and pair:sub(2, 2) == key then
     return mode == "insert" and "<C-G>U<Right>" or "<Right>"
   elseif info.close then
+    local left = pair:sub(1, 1)
+    local right = pair:sub(2, 2)
+
+    -- Treat a quote after a keyword character as an apostrophe, not as the
+    -- start of a quoted string (for example, `users'` or `don't`).
+    if key == "'" and left:match("[%w_]") then
+      return key
+    end
+
     -- Only avoid pairing when an alphanumeric character follows the cursor.
     -- A preceding identifier (for example, `binarySearch`) should not prevent
     -- `(` from producing a closing `)`.
-    if key ~= " " then
-      local right = pair:sub(2, 2)
-      if right:match("[%w_]") then
-        return key
-      end
+    if key ~= " " and right:match("[%w_]") then
+      return key
     end
     if
         config.options.disable_when_touch
