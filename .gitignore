@@ -53,6 +53,10 @@ zsh/.config/zsh/secrets.zsh
 !mise/.config/
 !mise/.config/**
 
+!yamllint/
+!yamllint/.config/
+!yamllint/.config/yamllint/**
+
 !.stow-local-ignore
 
 !README.md

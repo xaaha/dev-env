@@ -112,7 +112,6 @@
       "mcp__playwright__browser_resize"
     ]
   },
-  "model": "claude-fable-5[1m]",
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,

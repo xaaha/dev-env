@@ -270,6 +270,8 @@ require("oil").setup({
     ["q"] = "actions.close",
     ["<C-p>"] = false,
     ["<C-o>"] = "actions.preview",
+    ["<C-h>"] = false,
+    ["<C-l>"] = false,
   },
 })
 setKeyMap("n", "<C-n>", "<cmd>Oil<cr>", { desc = "Open Oil" })
