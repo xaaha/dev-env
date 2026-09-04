@@ -125,12 +125,6 @@
         "source": "github",
         "repo": "ast-grep/agent-skill"
       }
-    },
-    "caveman": {
-      "source": {
-        "source": "github",
-        "repo": "JuliusBrussee/caveman"
-      }
     }
   },
   "effortLevel": "high",
