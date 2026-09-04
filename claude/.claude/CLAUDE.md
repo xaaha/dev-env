@@ -9,6 +9,12 @@
 - When end-to-end testing a product, be picky about the UI you see and be obsessed with pixel perfection. If something clearly looks off, even if it is not directly related to what you are doing, try to get it fixed
 - Apply that same high standard to engineering excellence: lint, test failures, and test flakiness. If you see one, even if it is not caused by what you are working on right now, still get it fixed.
 
+## Skill usage
+
+- Only invoke a skill, including superpowers ones, when it clearly earns its cost for the task at hand. Most tasks don't need one.
+- Skip skill announcements and checklists on small, well-understood tasks.
+- Skills that regularly earn their keep: unslop, lavish, systematic-debugging for real bugs, code-review, brainstorming for genuinely new feature design.
+
 ## Search & file tools
 
 - **Code text search**: use `rg` (ripgrep). Only use `grep` when `rg` is not available. Never `grep -r` or plain `grep` on trees.
