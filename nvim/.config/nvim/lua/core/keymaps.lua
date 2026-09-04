@@ -81,7 +81,7 @@ setKeymap("x", "<c-j>", ":move '>+1<CR>gv-gv", opts)
 setKeymap("x", "<c-k>", ":move '<-2<CR>gv-gv", opts)
 
 ---------------------
--- Copy absolute & relative file path
+-- Copy
 ---------------------
 
 -- Copy relative file path
@@ -97,6 +97,12 @@ setKeymap("n", "<leader>cc", function()
   vim.fn.setreg("+", absolute_path)
   print("Complete Path: ", absolute_path)
 end, { noremap = true, silent = true, desc = "Copy complete/absolute file path" })
+
+-- mac only
+setKeymap("n", "<leader>cf", function()
+  local path = vim.fn.expand("%:p")
+  vim.fn.system({ "osascript", "-e", 'set the clipboard to (POSIX file "' .. path .. '")' })
+end, { desc = "Copy current file" })
 
 ---------------------
 -- Format files, useful for gitignored files
