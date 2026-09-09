@@ -395,6 +395,22 @@ local function apply(colors, bg, overwriteHighlights, colorscheme_name)
       FzfLuaFzfSpinner = { fg = colors.cyan },
       FzfLuaFzfPrompt = { fg = colors.cyan, bold = true },
       FzfLuaFzfQuery = { fg = colors.white },
+
+      -- csvview.nvim
+      CsvViewDelimiter = { fg = colors.grey },
+      CsvViewComment = { fg = colors.grey_fg2, italic = true },
+      CsvViewHeaderLine = { fg = colors.white, bg = colors.one_bg2, bold = true },
+      CsvViewStickyHeaderSeparator = { fg = colors.grey },
+      CsvViewStickyColumnsSeparator = { fg = colors.grey },
+      CsvViewCol0 = { fg = colors.blue },
+      CsvViewCol1 = { fg = colors.green },
+      CsvViewCol2 = { fg = colors.yellow },
+      CsvViewCol3 = { fg = colors.purple },
+      CsvViewCol4 = { fg = colors.cyan },
+      CsvViewCol5 = { fg = colors.orange },
+      CsvViewCol6 = { fg = colors.pink },
+      CsvViewCol7 = { fg = colors.teal },
+      CsvViewCol8 = { fg = colors.grey_fg },
     }
 
     if type(overwriteHighlights) == "table" then

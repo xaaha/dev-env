@@ -13,6 +13,7 @@ vim.pack.add({
   "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/saghen/blink.indent",                             -- indent
   "https://github.com/lewis6991/gitsigns.nvim",                         --gitsigns
+  "https://github.com/hat0uma/csvview.nvim",
   { src = "https://github.com/saghen/blink.cmp", version = "v1.10.1" }, --completion
   "https://github.com/stevearc/conform.nvim",                           -- formatting
   "https://github.com/mfussenegger/nvim-lint",                          -- linting
@@ -26,6 +27,32 @@ local setKeyMap = vim.keymap.set
 ----- Markdown ------
 vim.cmd("RenderMarkdown toggle")
 vim.keymap.set("n", "<leader>tm", "<cmd>RenderMarkdown toggle<CR>", { desc = "Toggle RenderMarkdown" })
+
+----- CSV ------
+require("csvview").setup({
+  view = {
+    display_mode = "border",
+    sticky_header = { enabled = true },
+  },
+  keymaps = {
+    -- Text objects for selecting a field
+    textobject_field_inner = { "if", mode = { "o", "x" } },
+    textobject_field_outer = { "af", mode = { "o", "x" } },
+    -- Excel-like navigation between cells
+    jump_next_field_end = { "<Tab>", mode = { "n", "v" } },
+    jump_prev_field_end = { "<S-Tab>", mode = { "n", "v" } },
+    jump_next_row = { "<Enter>", mode = { "n", "v" } },
+    jump_prev_row = { "<S-Enter>", mode = { "n", "v" } },
+  },
+})
+vim.keymap.set("n", "<leader>tc", "<cmd>CsvViewToggle<CR>", { desc = "Toggle CsvView" })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "csv", "tsv" },
+  group = vim.api.nvim_create_augroup("csvview_auto_enable", { clear = true }),
+  callback = function(args)
+    require("csvview").enable(args.buf)
+  end,
+})
 
 --- Outline ----
 require("outline").setup({
