@@ -26,7 +26,7 @@
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
-      "rev": "f2421c550618d257048afa650413d9e542ddbe67",
+      "rev": "ce30431d9722fd6451f2794433843fcd40adbcf1",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "nvim-lint": {
@@ -38,7 +38,7 @@
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "de9f0f3dbdab1952f136dc7bd67ff3bafdf994da",
+      "rev": "e82ef6ae2c3eeb96c6916b29917f96bf630b2cdb",
       "src": "https://github.com/xaaha/nvim-treesitter"
     },
     "nvim-treesitter-context": {
@@ -58,11 +58,11 @@
       "src": "https://github.com/hedyhli/outline.nvim"
     },
     "render-markdown.nvim": {
-      "rev": "4663eb3ecd538bd5062628fb6d95bbe6bdca78f6",
+      "rev": "640a3ec6d538bad17c328be373c7cad0293d9589",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "schemastore.nvim": {
-      "rev": "05e938c0aa5dfbdbb11972fa4c8a85f27f402ba0",
+      "rev": "72d144a9e014646963b8a5c67a4fde19b9772528",
       "src": "https://github.com/b0o/schemastore.nvim"
     }
   }
