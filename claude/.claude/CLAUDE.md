@@ -1,6 +1,7 @@
 ## General Guidance
 
 - Never use em dahs (—). Use simple english sentences with full-stop.
+- Never use AI-tell vocabulary (leverage, delve, robust, seamless, mint/minting, and the rest of the list in the `unslop` skill) in any output, spoken or written. This applies passively to every response by default, not only when the `unslop` skill is explicitly invoked for a writing task.
 - Always write text in plain md syntax. For example, instead of showing bold, show literally show **bold**.
 - In commits, or any agentic workflow, never add yourself as a co-author, or mention that AI was used in any way.
 - Always explain in plain English with enough context.
@@ -36,6 +37,7 @@
 
 ## Agentic coding workflow
 
+- **Default to a forked subagent for non-trivial work.** Use the Agent tool with `subagent_type: "fork"` instead of doing the work inline, so the main thread's context and token usage stay separate from the task itself. Fork inherits full conversation context, so no need to re-explain background. Skip forking for trivial work: quick questions, single-line edits, one-off lookups, or anything where forking would be pure overhead.
 - **Parallel tool calls** — when calls are independent (multiple Reads, multiple greps, multiple git inspects), batch them in one message.
 - **Use `Explore` subagent** for broad codebase questions (3+ queries). Saves context window. Don't use it for code review or whole-file analysis — it reads excerpts.
 - **Verify before claiming done** — type-check, test, or run the app. State results: "ran `yarn test`, 142 pass, 0 fail". Don't say "should work" — show it.
