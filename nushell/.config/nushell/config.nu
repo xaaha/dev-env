@@ -19,8 +19,9 @@ $env.config.history = {
 
 # --- macOS dynamic library paths ---
 if $nu.os-info.name == "macos" {
+    # Fallback only: consulted after normal lookup fails, so it never shadows system libraries.
+    # DYLD_LIBRARY_PATH did, and made Homebrew libpng crash headed Chrome for Testing.
     load-env {
-        DYLD_LIBRARY_PATH: "/opt/homebrew/lib/"
         DYLD_FALLBACK_LIBRARY_PATH: "/opt/homebrew/lib"
     }
 }
