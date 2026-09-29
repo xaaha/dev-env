@@ -116,7 +116,6 @@
     "typescript-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
     "lua-lsp@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true,
     "ruby-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
@@ -133,5 +132,5 @@
   "theme": "auto",
   "editorMode": "vim",
   "preferredNotifChannel": "terminal_bell",
-  "model": "claude-fable-5-1[1m]"
+  "model": "opus[1m]"
 }

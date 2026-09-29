@@ -1,82 +1,60 @@
-## General Guidance
+## Response shape
 
-- Never use em dahs (—). Use simple english sentences with full-stop.
-- Never use AI-tell vocabulary (leverage, delve, robust, seamless, mint/minting, and the rest of the list in the `unslop` skill) in any output, spoken or written. This applies passively to every response by default, not only when the `unslop` skill is explicitly invoked for a writing task.
-- Always write text in plain md syntax. For example, instead of showing bold, show literally show **bold**.
-- In commits, or any agentic workflow, never add yourself as a co-author, or mention that AI was used in any way.
-- Always explain in plain English with enough context.
-- When making technical decisions, do not give much weight to development cost. Instead, prefer quality, simplicity, robustness, scalability, and long term maintainability.
-- When doing bug fixes, always start with reproducing the bug in an E2E setting as closely aligned with how an end users would. This makes sure you find the real problem so your fix will actually solve it.
-- When end-to-end testing a product, be picky about the UI you see and be obsessed with pixel perfection. If something clearly looks off, even if it is not directly related to what you are doing, try to get it fixed
-- Apply that same high standard to engineering excellence: lint, test failures, and test flakiness. If you see one, even if it is not caused by what you are working on right now, still get it fixed.
+- First draft is always a change summary. What changed, which file, one line each. Then stop.
+- Under 10 lines. No section headers, no preamble, no recap of what I just asked.
+- Do not explain reasoning, root cause, alternatives, or verification detail unless I ask. I will ask.
+- Exception, always state it up front and unprompted: something failed, something was skipped, or you did something I did not ask for.
+- Short status updates, not narrated thinking. Tool calls speak for themselves.
 
-## Skill usage
+## Writing
 
-- Only invoke a skill, including superpowers ones, when it clearly earns its cost for the task at hand. Most tasks don't need one.
-- Skip skill announcements and checklists on small, well-understood tasks.
-- Skills that regularly earn their keep: unslop, lavish, systematic-debugging for real bugs, code-review, brainstorming for genuinely new feature design.
+- Never use em dashes. Use plain sentences with full stops.
+- Never use bold in responses. Backticks for code, paths, and identifiers.
+- Never use AI-tell vocabulary (leverage, delve, robust, seamless, mint/minting, stamping, and the rest of the list in the `unslop` skill). This applies to every response by default, not only when `unslop` is invoked.
+- When I do ask for detail, plain English. No jargon standing in for an explanation.
 
-## Search & file tools
+## Judgment
 
-- **Code text search**: use `rg` (ripgrep). Only use `grep` when `rg` is not available. Never `grep -r` or plain `grep` on trees.
-- **Structural / AST search**: use `ast-grep` (binary also exposed as `sg`) for syntax-aware queries — refactors, finding call sites by shape, language-aware lints. Prefer over regex when you care about syntax (e.g. "all `useEffect` with empty deps", "all `console.log` calls", "all `fn` returning `Result<_, _>`").
-- **File find**: use `fd` over `find` when available. Falls back to `find` only if `fd` missing.
-- **No `awk`/`sed` for code**: use `rg --replace`, `ast-grep --rewrite`, or `Edit`/`Write` tools. `sed`/`awk` reserved for log/CSV/plain-text munging.
-- **File reads/edits**: always prefer `Read`, `Edit`, `Write` tools over `cat`/`sed`/`echo >`. Better diffs, better permission UX.
+- Prefer quality, simplicity, robustness, scalability, and long term maintainability. Do not weight development cost heavily.
+- Fix lint failures, test failures, and flaky tests you run into, even when unrelated to the current task.
+- When end-to-end testing a UI, be picky. If something looks off, get it fixed.
+- Reproduce every bug end to end, the way a user hits it, before proposing a fix.
+- Verify before claiming done. Run the type-check, test, or app and state the result: "ran `yarn test`, 142 pass, 0 fail". Never "should work".
 
-### Quick reference
+## Skills
 
-| Task                                 | Tool                                                         |
-| ------------------------------------ | ------------------------------------------------------------ |
-| Find string in repo                  | `rg 'pattern'`                                               |
-| Find files by name                   | `fd 'name'`                                                  |
-| Find function/class definition shape | `ast-grep --pattern 'function $NAME($$$) { $$$ }' --lang ts` |
-| Rewrite syntactic pattern            | `ast-grep --pattern '...' --rewrite '...' --lang ts`         |
-| Inspect one file                     | `Read` tool                                                  |
-| Modify file                          | `Edit` / `Write` tool                                        |
+- Invoke a skill only when it clearly earns its cost. Most tasks need none.
+- No skill announcements or checklists on small, well-understood tasks.
+- Ones that earn their keep: `unslop`, `lavish`, `systematic-debugging`, `pr-description`, `ticket-description`, `code-review`.
 
-## Agentic coding workflow
+## Tools
 
-- **Default to a forked subagent for non-trivial work.** Use the Agent tool with `subagent_type: "fork"` instead of doing the work inline, so the main thread's context and token usage stay separate from the task itself. Fork inherits full conversation context, so no need to re-explain background. Skip forking for trivial work: quick questions, single-line edits, one-off lookups, or anything where forking would be pure overhead.
-- **Parallel tool calls** — when calls are independent (multiple Reads, multiple greps, multiple git inspects), batch them in one message.
-- **Use `Explore` subagent** for broad codebase questions (3+ queries). Saves context window. Don't use it for code review or whole-file analysis — it reads excerpts.
-- **Verify before claiming done** — type-check, test, or run the app. State results: "ran `yarn test`, 142 pass, 0 fail". Don't say "should work" — show it.
-- **TaskCreate** for any multi-step work. Mark completed as soon as each step finishes; don't batch.
-- **Don't narrate thinking** — short status updates only. Tool calls speak for themselves.
+- Text search: `rg`. Never `grep -r` or bare `grep` on a tree.
+- Structural search and rewrite: `ast-grep` (also `sg`). Prefer it over regex when syntax matters.
+- File find: `fd`.
+- File reads and edits: `Read`, `Edit`, `Write`. Not `cat`, `sed`, or `echo >`. Reserve `sed` and `awk` for logs and plain text.
+- Batch independent tool calls into one message.
+- Fork a subagent for non-trivial work so the main thread keeps its context. Skip it for quick lookups and one-line edits.
+- `Explore` subagent for broad codebase questions. It reads excerpts, so not for code review or whole-file analysis.
+- `TaskCreate` for multi-step work. Mark each step done as it finishes.
 
-## Code style
+## Code
 
-- No comments unless they capture non-obvious WHY (constraint, invariant, bug workaround). Identifier names carry WHAT.
-- No "added for X" / "used by Y" references — those rot. PR description holds that.
-- No defensive `try/catch` around code that can't fail. No fallbacks for impossible states. Boundary validation only.
-- No backward-compat shims when changing internal code. Delete unused, don't deprecate.
+- Comments only for non-obvious WHY: a constraint, an invariant, a bug workaround. Names carry WHAT.
+- No "added for X" or "used by Y" notes. Those rot. The PR description holds that.
+- No defensive try/catch around code that cannot fail. Validate at boundaries only.
+- No back-compat shims for internal code. Delete unused, do not deprecate.
 
 ## Git
 
-- New commits, never `--amend` to "fix" a failed pre-commit hook. Hook failure = no commit happened. Re-stage and make a new commit.
-- `git add <files>` by name. Never `git add .` or `-A` — risks .env, secrets, large binaries.
-- Never `--no-verify` or skip signing unless explicitly asked.
-- No `git push --force` to main.
+- Never `--amend` to fix a failed pre-commit hook. A hook failure means no commit happened. Re-stage and make a new one.
+- `git add <files>` by name. Never `git add .` or `-A`.
+- Never `--no-verify`, never skip signing, unless asked.
+- Never force push to main.
+- Never add yourself as co-author or mention AI involvement.
 
-## Project context
+## This machine
 
 - `~/Documents/personal_projects/dev-env` is the dotfiles repo, managed with GNU stow.
-
-## Memory hygiene
-
-- Auto-memory is at `~/.claude/projects/<cwd-slug>/memory/`. Index in `MEMORY.md`.
-- Save: user role, feedback (with **Why:** + **How to apply:**), project state (with absolute dates), external refs.
-- Don't save: code patterns derivable from repo, recent git history, debug recipes, ephemeral state.
-
-## Defaults
-
-- Model: `opus[1m]` (1M-token context).
-- Editor mode: `vim`.
-- Effort: `high`.
-- Co-authored-by attribution: off.
-
-## Machine-local overlay
-
-Optional. Untracked. Add machine-specific context (work repo conventions, employer-internal services) at `~/.claude/CLAUDE.local.md`. Missing file = no-op.
 
 @CLAUDE.local.md
