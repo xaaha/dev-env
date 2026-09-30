@@ -1,107 +1,81 @@
 ---
 name: pr-description
-description: Write a PR description and open the pull request. Use when asked to create, open, or raise a PR, or to write, rewrite, or shorten a PR description or body. Enforces a short lead-line-plus-bullets format and fills a repo PR template only where there is real content.
+description: Write a PR description and open the pull request. Use when asked to create, open, or raise a PR, or to write, rewrite, or shorten a PR description or body. Enforces a short two-section format and fills a repo PR template only where there is real content.
 ---
 
 # PR description
 
-The reviewer reads the diff. The description says what problem this fixes and what changed. Nothing else.
+The reviewer reads the diff. The description says what problem this fixes, what changed, and where the reasoning lives.
 
 ## Shape
 
-With no repo template, the entire body is:
-
-```
-<one sentence naming the problem this fixes>
+````
+## Summary
+<one sentence: the problem this fixes>
 
 - <what changed>
 - <what changed>
-- <what changed>
-```
+- Decision and rationale: <link>
 
-Caps, no exceptions:
+## Ticket
+<url>
+````
 
-- Lead line: one sentence, under 20 words, present tense. Names the problem, not the implementation.
-- Bullets: at most 5, under 15 words each, one per meaningful change.
-- Nothing else. No headings, no intro, no closing paragraph.
+- Summary line: one sentence, under 20 words, present tense. Names the problem, not the implementation.
+- Bullets: at most 5, under 15 words each. Each is a change with its consequence. Numbers where they exist.
+- Rationale is linked, never written out.
+- Nothing else.
 
-If the diff has more than 5 meaningful changes the PR is too big. Write the 5 largest and say the PR should be split.
+More than 5 real changes means the PR is too big. Write the 5 largest and say it should be split.
+
+## Title
+
+`<TICKET-KEY> <what changed>`, no full stop. Not the summary line: the summary names the problem, the title names the change.
+
+Use a different convention only if the last few merged PRs in that repo agree on one.
 
 ## Repo template
 
-Look for `.github/pull_request_template.md`, `.github/PULL_REQUEST_TEMPLATE/*.md`, `docs/pull_request_template.md`, and the repo root.
+Check `.github/pull_request_template.md`, `.github/PULL_REQUEST_TEMPLATE/*.md`, `docs/`, and the root.
 
-If one exists:
+If one exists: its headings, its order. Fill only sections with real content and delete the rest, heading included. Never N/A or a placeholder. Tick only boxes you verified. Caps above still apply.
 
-- Use its headings, in its order.
-- Fill only the sections you have real content for. Delete every other section, heading included.
-- Never write N/A, TBD, or a placeholder. A deleted section is better than an empty one.
-- Keep checklists. Tick only boxes you actually verified.
-- The caps above apply inside each section.
+## Ticket reference
 
-## Issue reference
+First hit wins: a ticket key in the branch name, then that key in Jira through the Atlassian MCP (use its real title to write the summary line), then an open GitHub issue (add `Fixes #123` as the last line). Nothing found: write from the diff and carry on.
 
-Check in this order and stop at the first hit:
+## Never
 
-1. A ticket key in the branch name, such as `ABC-1234` or `123`.
-2. That key in Jira through the Atlassian MCP. Use the ticket's real title to write the lead line.
-3. Open GitHub issues matching the branch or the change. Add `Fixes #123` as the last line of the body.
-
-Found nothing: write the lead line from the diff and carry on. Do not ask.
-
-## Never write
-
-- "This PR", "This change", "In this PR", "This commit".
-- A file-by-file walkthrough, or any restatement of code the reviewer can read.
-- Why this approach was chosen, alternatives considered, risk, rollback, future work, or what to watch after deploy. Only if a template heading asks for it.
+- "This PR", "This change", "In this PR".
+- A file-by-file walkthrough, or any restatement of the diff.
+- Rationale, alternatives, risk, rollback, or future work as prose. Link it.
 - Improves, enhances, ensures, leverages, robust, seamless, comprehensive.
-- Em dashes or bold.
+- Em dashes, bold.
 
-## Example
+## Model
 
-The diff dedupes webhook deliveries.
+GuildEducationInc/guild-tuition#3037, titled `MX-4330 fix where migrated requests land, and drop unclaimable rejects`:
 
-Wrong:
-
-```
+````
 ## Summary
+Migrated rejects land in a state the member can never act on.
 
-This PR addresses an issue where webhook deliveries that were retried could
-result in duplicate charges being applied to customer accounts.
+- `rejected` and `restarted` now target `PENDING_REVIEW`; nothing maps to `CORRECTIONS_REQUESTED`
+- `pre_approval_rejected` lands as a spend-period shell, so `submitRequest` stamps its own date
+- Drops fixable rejects whose submission window closed before cutover: SCH 63 to 48
+- Blocks the achievement when every term carries an unwalkable target
+- Decision, rationale and the open questions are here:
+    - <confluence url>
 
-The root cause was that the `WebhookQueue` class did not check whether an
-event had already been processed before handing it to the charge handler.
-When the retry cron fired it would re-enqueue events already in flight.
-
-## Changes
-
-- Modified `WebhookQueue.enqueue()` to check the idempotency key against the
-  `webhook_events` table before enqueueing
-- Removed the `retry_webhooks` cron job in `config/schedule.rb`
-- Added exponential backoff to the delivery path
-- Added a unique index on `webhook_events.key` via migration
-
-## Risk
-
-Low. The change is isolated to the webhook path and is covered by tests.
-```
-
-Right:
-
-```
-Fixes duplicate charges when a webhook delivery is retried.
-
-- Dedupes by idempotency key in `WebhookQueue`
-- Drops the `retry_webhooks` cron for exponential backoff
-- Adds a unique index on `webhook_events.key`
-```
+## Ticket
+<jira url>
+````
 
 ## Steps
 
-1. `git log origin/main..HEAD --oneline` and `git diff origin/main...HEAD --stat` to see the scope.
-2. Find the template. Find the issue.
-3. Write the body to a file in the scratchpad directory. Use `--body-file` so nothing has to survive shell quoting.
-4. Title is the lead line without its full stop. If recent merged PRs use a prefix convention such as `fix:` or `[ABC-1234]`, match it.
-5. Push the current branch if it has no upstream: `git push -u origin HEAD`. Never push to main.
-6. An open PR already exists for this branch: `gh pr edit --body-file <path>`. Otherwise `gh pr create --title "<title>" --body-file <path>`.
-7. Print the PR URL. Nothing else.
+1. `git log origin/main..HEAD --oneline` and `git diff origin/main...HEAD --stat`.
+2. Find the template and the ticket.
+3. Write the body to a file in the scratchpad, pass it with `--body-file`.
+4. Push the branch if it has no upstream: `git push -u origin HEAD`. Never push to main.
+5. A PR already exists: `gh pr edit --body-file <path>`. Otherwise `gh pr create --title "<title>" --body-file <path>`.
+6. Print the URL. Nothing else.
