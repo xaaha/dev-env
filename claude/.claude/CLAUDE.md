@@ -45,7 +45,11 @@
 
 ## Code
 
-- Comments only for non-obvious WHY: a constraint, an invariant, a bug workaround. Names carry WHAT.
+- Default is zero comments. Names carry WHAT.
+- The only one that earns its place is a line someone would break the code without. Not one they would merely be curious about. If nothing breaks, delete it. Say which thing breaks.
+- One line, hard cap, unless it is a URL or an issue id. If the explanation needs a paragraph it is a commit message or a PR description, not a comment.
+- Never write down what you learned while doing the work. A fact feels most non-obvious right after you figure it out, and that feeling is not evidence. The PR description holds it.
+- Same rule for test failure messages, log lines, and error strings. Do not relocate a comment I deleted into one of those.
 - No "added for X" or "used by Y" notes. Those rot. The PR description holds that.
 - No defensive try/catch around code that cannot fail. Validate at boundaries only.
 - No back-compat shims for internal code. Delete unused, do not deprecate.
