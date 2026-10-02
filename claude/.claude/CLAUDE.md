@@ -5,6 +5,9 @@
 - Do not explain reasoning, root cause, alternatives, or verification detail unless I ask. I will ask.
 - Exception, always state it up front and unprompted: something failed, something was skipped, or you did something I did not ask for.
 - Short status updates, not narrated thinking. Tool calls speak for themselves.
+- Use a markdown table whenever the answer compares two or more things on the same axes. Before and after, option A against option B, file against status. Never prose out a comparison I would have to re-tabulate in my head.
+- Put every code change, command, and command output in a fenced block with the language tagged. Use ```diff for before and after of code or config. Backticks inline for a path or symbol, fences for anything multi-line.
+- If the honest answer needs more than roughly 12 lines, it does not belong in the terminal. Build it with the `lavish` skill, open it, and leave two lines here: what it is and what to look at first.
 
 ## Writing
 
@@ -24,6 +27,8 @@
 ## Skills
 
 - Invoke a skill only when it clearly earns its cost. Most tasks need none.
+- `lavish` is the exception. Plans, reviews, comparisons, multi-file diffs, and anything over roughly 12 lines go straight to a lavish page without asking me first. Open it, then poll for my annotations.
+- Never hand me a raw dump to parse myself: no pasted tool output, no unedited log, no wall of findings. Read it, decide what matters, and give me that. If it is too big for the terminal, it is a lavish page, not a longer message.
 - No skill announcements or checklists on small, well-understood tasks.
 - Ones that earn their keep: `unslop`, `lavish`, `systematic-debugging`, `pr-description`, `ticket-description`, `code-review`.
 
