@@ -67,6 +67,14 @@ stow -t ~ wezterm # to stow the wezterm and so on
 stow -t ~ tmux
 ```
 
+- Restow after pulling changes
+
+Stow only links what exists in a package at the time it runs. If a package gains a new file later. For example, a new script under `tmux/.tmux/scripts/` and you don't re-run stow, it just sits there unlinked. Link with
+
+```bash
+stow -R -t ~ tmux # or whichever package changed
+```
+
 ## Useful Steps for tools
 
 Collection of random items

@@ -1,0 +1,29 @@
+onboarding = false
+
+[ui]
+status_indicators = "dots"
+
+[keys]
+prefix = "ctrl+space"
+
+new_tab = "prefix+c"
+previous_tab = "shift+left"
+next_tab = "shift+right"
+previous_workspace = "shift+up"
+next_workspace = "shift+down"
+switch_tab = "prefix+1..9"
+close_tab = "prefix+shift+x"
+rename_tab = "prefix+shift+t"
+
+split_vertical = "prefix+v"
+split_horizontal = "prefix+minus"
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+cycle_pane_next = "prefix+tab"
+cycle_pane_previous = "prefix+shift+tab"
+close_pane = "prefix+x"
+zoom = "prefix+z"
+
+toggle_sidebar = "prefix+b"

@@ -3,7 +3,8 @@
 # --- Conditional platform exports ---
 case "$(uname -s)" in
 Darwin)
-  export DYLD_LIBRARY_PATH=/opt/homebrew/lib/
+  # Fallback only: consulted after normal lookup fails, so it never shadows system libraries.
+  # DYLD_LIBRARY_PATH did, and made Homebrew libpng crash headed Chrome for Testing.
   export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
   ;;
 esac
