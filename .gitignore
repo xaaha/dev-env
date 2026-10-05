@@ -97,3 +97,6 @@ zsh/.config/zsh/secrets.zsh
 !claude/
 !claude/.claude/
 !claude/.claude/**
+
+!herdr/
+!herdr/**

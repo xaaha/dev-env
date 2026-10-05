@@ -132,5 +132,6 @@
   "theme": "auto",
   "editorMode": "vim",
   "preferredNotifChannel": "terminal_bell",
-  "model": "opus[1m]"
+  "model": "opus[1m]",
+  "hooks": {"SessionStart":[{"matcher":"^(startup|resume|clear|compact|fork)$","hooks":[{"type":"command","command":"bash '/Users/pratikthapa/.claude/hooks/herdr-agent-state.sh' session","timeout":10}]}]}
 }
