@@ -2,6 +2,10 @@ onboarding = false
 
 [ui]
 status_indicators = "dots"
+tab_bar_right = [
+  { type = "datetime", format = "%Y-%m-%d %H:%M:%S" },
+]
+tab_bar_right_separator = " · "
 
 [keys]
 prefix = "ctrl+space"
