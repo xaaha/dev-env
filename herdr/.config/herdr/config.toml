@@ -7,6 +7,9 @@ tab_bar_right = [
 ]
 tab_bar_right_separator = " · "
 
+[ui.toast.clipboard]
+position = "top-right"
+
 [keys]
 prefix = "ctrl+space"
 
