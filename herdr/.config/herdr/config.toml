@@ -1,5 +1,11 @@
 onboarding = false
 
+[theme]
+name = "catppuccin"
+auto_switch = true 
+light_name = "one-light"
+dark_name = "catppuccin"
+
 [ui]
 status_indicators = "dots"
 tab_bar_right = [
