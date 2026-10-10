@@ -14,7 +14,7 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "csvview.nvim": {
-      "rev": "2466bdda54047f525d4faca53040fe657c9c33db",
+      "rev": "f190de76d2eca0380ddcb2425cd582d740699b55",
       "src": "https://github.com/hat0uma/csvview.nvim"
     },
     "friendly-snippets": {
@@ -22,31 +22,31 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "05e44d38de0a79c11fba5f7bf8138791b1dbdd1e",
+      "rev": "48d7c3db291a2c7c1825905c227a6bc81c83b837",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
-      "rev": "ce30431d9722fd6451f2794433843fcd40adbcf1",
+      "rev": "851a051e2bd2caba97e23314c68d69f1b1cf5d19",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "nvim-lint": {
-      "rev": "3d55c8f67c6ae5c15e1042571e107c7a3d5c5f4e",
+      "rev": "f6230a5c06ba59e6059c14637f1dbe29a7978b9b",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "ac9d2f7c4757db6320cab6697fe73e5e8adb2457",
+      "rev": "c59fc922f718fa055f69f5f3bc888f23211571eb",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "9a168f6357ed21c3a636e1727bc7d382abc451b8",
+      "rev": "1a4f47b03dfe92d28de7d5654c67327ef008c9e6",
       "src": "https://github.com/xaaha/nvim-treesitter"
     },
     "nvim-treesitter-context": {
-      "rev": "f3061339b8eaf9fda873600bc425b8d2d8502533",
+      "rev": "8decd73460d26ef0a0befb745d022dd1fc2c38b8",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-context"
     },
     "nvim-web-devicons": {
-      "rev": "5f032a85be210cd1c6ac98861eb3b187ff3bd5eb",
+      "rev": "58447c1fca354bbf184425e4a8d01deecbd6f3c4",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "oil.nvim": {
@@ -54,15 +54,15 @@
       "src": "https://github.com/stevearc/oil.nvim"
     },
     "outline.nvim": {
-      "rev": "2a132953b944561d45b52e4541ebfff71934a742",
+      "rev": "d8e48fe265fa9c33364809bf9cf32a1f032a8ac1",
       "src": "https://github.com/hedyhli/outline.nvim"
     },
     "render-markdown.nvim": {
-      "rev": "640a3ec6d538bad17c328be373c7cad0293d9589",
+      "rev": "245956d67572c137df375dbf256e96bdb07e0937",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "schemastore.nvim": {
-      "rev": "72d144a9e014646963b8a5c67a4fde19b9772528",
+      "rev": "b463a5e79f84fd9ca22dd47f41754387d8fe7af4",
       "src": "https://github.com/b0o/schemastore.nvim"
     }
   }
