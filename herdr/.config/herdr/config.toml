@@ -2,7 +2,7 @@ onboarding = false
 
 [theme]
 name = "catppuccin"
-auto_switch = true 
+auto_switch = true
 light_name = "one-light"
 dark_name = "catppuccin"
 
@@ -30,10 +30,10 @@ rename_tab = "prefix+shift+t"
 
 split_vertical = "prefix+v"
 split_horizontal = "prefix+minus"
-focus_pane_left = "prefix+h"
+focus_pane_left = "alt+h"
 focus_pane_down = "prefix+j"
 focus_pane_up = "prefix+k"
-focus_pane_right = "prefix+l"
+focus_pane_right = "alt+l"
 cycle_pane_next = "prefix+tab"
 cycle_pane_previous = "prefix+shift+tab"
 close_pane = "prefix+x"
