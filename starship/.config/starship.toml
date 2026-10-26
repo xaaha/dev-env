@@ -1,23 +1,13 @@
-format = """$sudo$username$hostname$directory$git_branch$git_commit$git_state$git_status\
-$os$python$nodejs$docker_context$golang$time\
-$jobs$status$cmd_duration\
+format = """$directory$git_branch$git_commit$git_state$git_status$time\
 $fill\
-\n$character"""
+$all$character"""
 
-[directory]
-style = '#FF7F50'
-
-[character]
-success_symbol = '[ _](bold green)'
-error_symbol = '[ _](bold red)'
-
-[cmd_duration]
-min_time = 5_00
-show_milliseconds = true
-format = '[$duration](bold yellow)'
+[time]
+disabled = false
+time_format = '%H:%M:%S'
 
 [fill]
 symbol = ' '
 
-[git_branch]
-style = '#008080'
+[line_break]
+disabled = true
