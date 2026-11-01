@@ -25,13 +25,7 @@ starship = "latest"
 zoxide = "latest"
 
 [settings]
-idiomatic_version_file_enable_tools = [
-  "ruby",
-  "go",
-  "node",
-  "terraform",
-  "python"
-]
+idiomatic_version_file_enable_tools = ["ruby", "node", "terraform", "python"]
 env_shell_expand = true
 
 [shell_alias]
@@ -44,7 +38,7 @@ dc = "cd ~/Documents"
 # tools
 cat = "bat"
 g = "lazygit"
-gh-saml = 'env -u GITHUB_TOKEN -u GH_TOKEN gh'
+gh-saml = "env -u GITHUB_TOKEN -u GH_TOKEN gh"
 grep = "grep --color=auto"
 pip = "pip3"
 v = "nvim"
