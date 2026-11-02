@@ -7,6 +7,8 @@ description: Write a PR description and open the pull request. Use when asked to
 
 The reviewer reads the diff. The description says what problem this fixes, what changed, and where the reasoning lives.
 
+Write for a reviewer who has never seen this code. Plain words a new hire would follow. Say what a member, user, or caller sees change, not which function changed. If a line only makes sense after reading the diff, rewrite it.
+
 ## Shape
 
 ````
@@ -21,12 +23,13 @@ The reviewer reads the diff. The description says what problem this fixes, what 
 <url>
 ````
 
-- Summary line: one sentence, under 20 words, present tense. Names the problem, not the implementation.
-- Bullets: at most 5, under 15 words each. Each is a change with its consequence. Numbers where they exist.
+- Summary line: one sentence, under 15 words, present tense. Names the problem, not the implementation.
+- Bullets: at most 4 changes, under 15 words each, plus the rationale link. Each is a change with its consequence. Numbers where they exist.
+- One idea per bullet. No jargon, no unexplained acronyms. A code name in backticks only when the reviewer needs it to find the code, with plain words saying what it is.
 - Rationale is linked, never written out.
 - Nothing else.
 
-More than 5 real changes means the PR is too big. Write the 5 largest and say it should be split.
+More than 4 real changes means the PR is too big. Write the 4 largest and say it should be split.
 
 ## Title
 
@@ -58,14 +61,13 @@ GuildEducationInc/guild-tuition#3037, titled `MX-4330 fix where migrated request
 
 ````
 ## Summary
-Migrated rejects land in a state the member can never act on.
+Migrated rejected requests get stuck where the member can never fix them.
 
-- `rejected` and `restarted` now target `PENDING_REVIEW`; nothing maps to `CORRECTIONS_REQUESTED`
-- `pre_approval_rejected` lands as a spend-period shell, so `submitRequest` stamps its own date
-- Drops fixable rejects whose submission window closed before cutover: SCH 63 to 48
-- Blocks the achievement when every term carries an unwalkable target
-- Decision, rationale and the open questions are here:
-    - <confluence url>
+- Rejected and restarted requests now land in review (`PENDING_REVIEW`), where members can act
+- Pre-approval rejects arrive empty, so the submit date is set when the member submits
+- Rejects whose resubmit window already closed are skipped: SCH goes from 63 to 48
+- A program is blocked when none of its terms can move forward
+- Why, and open questions: <confluence url>
 
 ## Ticket
 <jira url>

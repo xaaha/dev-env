@@ -58,21 +58,19 @@ Gate: every decision has failure evidence, restored green checks, and a commit.
 
 Open the PR with the `pr-description` skill. It owns the title, the body, the repo template, and the `gh` invocation; do not hand-write a body or pass `--body` here. Every later edit to the body goes back through it, including after gate 4 fixes.
 
-The review packet is not the PR body. It is the brief handed to the three reviewers below, and it stays out of the PR: request, acceptance criteria, constraints, non-goals; each D-ID with behavior, evidence, check, and commit; compatibility impact; verification commands with results and counts; mutation evidence; base and head SHAs; pending check status. What the PR body carries instead is one sentence, at most five bullets, and a link to where the rationale lives.
+Then tighten the Jira ticket through the `ticket-description` skill. Show the user the new text and save it only on approval.
+
+The review packet is not the PR body. It is the brief handed to the reviewer below, and it stays out of the PR: request, acceptance criteria, constraints, non-goals; each D-ID with behavior, evidence, check, and commit; compatibility impact; verification commands with results and counts; mutation evidence; base and head SHAs; pending check status. What the PR body carries instead is one sentence, at most five bullets, and a link to where the rationale lives.
 
 Record one bot deadline: review-cycle start plus 20 minutes. It survives fixes and interruptions and is never reset.
 
-Launch three fresh-context agents in parallel. Never fork the implementation conversation; conversation-inheriting reviewers do not count. Each gets the same neutral packet, the full base-to-head diff, the engineering constraints above, repository access at that head, and one role. Withhold approval history, implementation deliberation, previous verdicts, and other reviewers' findings. They may read callers, schemas, and tests and run safe checks in a disposable workspace, but must not touch the branch or publish reviews. No fresh-context capability means `BLOCKED`.
+Run the `pr-review` skill in one fresh-context agent. Never fork the implementation conversation; a conversation-inheriting reviewer does not count. Give it the PR number, the neutral packet, the engineering constraints above, and repository access at the head. Withhold approval history, implementation deliberation, and previous verdicts. It sizes the review to the diff and spawns only the lookups the diff needs. It must not touch the branch or post to GitHub. No fresh-context capability means `BLOCKED`.
 
-- Correctness and security: concrete failures in changed paths. Boundaries, invalid input, error handling, authorization, concurrency, retries, compatibility.
-- Decision conformance: trace acceptance criteria and D-IDs to code and checks. Omissions, contradictory or extra behavior, scope creep, constraint violations. Challenge a decision that conflicts with the requirement.
-- Test effectiveness: plausible wrong implementations the tests would accept, tautologies, excessive mocking, missed failure paths, flakiness. Inspect the checks rather than trusting reported mutation results.
+The review must cover correctness and security, decision conformance against every acceptance criterion and D-ID, and test effectiveness. `NO_FINDINGS` is valid with reviewed head, coverage, checks actually run, and limitations.
 
-Each returns findings with impact, file and line, trigger, violated requirement, reproduction, and minimal correction direction, separating demonstrated defects from hypotheses. No speculative style rewrites, no unrelated pre-existing issues. `NO_FINDINGS` is valid with reviewed head, coverage, checks actually run, and limitations.
+Verify each finding yourself and record it accepted, rejected, or unresolved with evidence. Fix accepted causes through gate 2; a changed decision returns to gate 1. After corrections or a base change, a fresh `pr-review` agent covers the changed behavior and its interaction with the full PR, on the updated packet, not previous verdicts.
 
-Collect all three before editing. Deduplicate by cause, verify each finding yourself, record accepted, rejected, or unresolved with evidence. Fix accepted causes through gate 2; a changed decision returns to gate 1. After corrections or a base change, fresh reviewers cover the changed behavior and its interaction with the full PR, on the updated packet, not previous verdicts.
-
-Gate: all three roles cover the current head; findings fixed or rejected with evidence.
+Gate: a fresh `pr-review` covers the current head; findings fixed or rejected with evidence.
 
 ## 4. Bot sweep
 
@@ -100,7 +98,7 @@ Per class:
 3. Add regression coverage that fails on the class, not only on the line the bot quoted.
 4. State whether instances exist outside the diff. Fixing those is new scope and returns to gate 1.
 
-Then rerun independent review on the corrections, push verified commits, rewrite the body through `pr-description` if the changes moved it, and recollect feedback at the new head.
+Then rerun `pr-review` in a fresh agent on the corrections, push verified commits, rewrite the body through `pr-description` if the changes moved it, and recollect feedback at the new head.
 
 Bounded waiting: use the gate 3 deadline, never reset after a push. Poll at most once a minute within this execution, honoring rate limits. Collect at least once now and again at handoff even if the deadline passed. Never promise background monitoring. Verify expected checks completed for the current head; skipped, cancelled, missing, failed, or pending is not a pass, and a silent bot needs explicit completion evidence.
 
