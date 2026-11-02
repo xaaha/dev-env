@@ -8,6 +8,7 @@
   },
   "includeCoAuthoredBy": false,
   "permissions": {
+    "defaultMode": "bypassPermissions",
     "allow": [
       "Bash(grep:*)",
       "Bash(rg:*)",
