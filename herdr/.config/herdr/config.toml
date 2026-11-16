@@ -8,6 +8,7 @@ dark_name = "catppuccin"
 
 [ui]
 status_indicators = "dots"
+prompt_new_tab_name = false
 tab_bar_right = [
   { type = "datetime", format = "%Y-%m-%d %H:%M:%S" },
 ]
@@ -19,7 +20,7 @@ position = "top-right"
 [keys]
 prefix = "ctrl+space"
 
-new_tab = "prefix+c"
+new_tab = []
 previous_tab = "shift+left"
 next_tab = "shift+right"
 previous_workspace = "shift+up"
@@ -43,3 +44,9 @@ close_pane = "prefix+x"
 zoom = "prefix+z"
 
 toggle_sidebar = "prefix+b"
+
+[[keys.command]]
+key = "prefix+c"
+type = "shell"
+command = 'd="${HERDR_ACTIVE_PANE_CWD:-$PWD}"; "$HERDR_BIN_PATH" tab create --workspace "$HERDR_ACTIVE_WORKSPACE_ID" --cwd "$d" --label "$(basename "$d")" --focus'
+description = "new tab named after cwd"
