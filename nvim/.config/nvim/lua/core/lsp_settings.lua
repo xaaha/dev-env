@@ -150,9 +150,13 @@ end
 
 local tsc_version_cache = {}
 
+local function has_local_typescript(name, path)
+  return name == "node_modules" and vim.uv.fs_stat(vim.fs.joinpath(path, name, "typescript")) ~= nil
+end
+
 local function find_ts_project_root(bufnr)
   local root_markers = { "package-lock.json", "yarn.lock", "pnpm-lock.yaml", "bun.lockb", "bun.lock", ".git" }
-  return vim.fs.root(bufnr, root_markers) or vim.fn.getcwd()
+  return vim.fs.root(bufnr, has_local_typescript) or vim.fs.root(bufnr, root_markers) or vim.fn.getcwd()
 end
 
 local function resolve_tsc_binary(root_dir)
